@@ -1,0 +1,28 @@
+{
+  "name": "@beatgig/synth-css",
+  "version": "1.0.0",
+  "description": "\"Utilities to generate CSS declarations from Synth tokens.\"",
+  "author": "Elving Rodriguez <elving.pr@gmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist/commonjs",
+    "dist/esm"
+  ],
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@beatgig/synth-core": "^1.0.0"
+  }
+}

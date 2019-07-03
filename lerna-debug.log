@@ -1,0 +1,31 @@
+0 silly argv {
+0 silly argv   _: [ 'exec' ],
+0 silly argv   parallel: true,
+0 silly argv   args: [],
+0 silly argv   '--': [
+0 silly argv     'BABEL_ENV=esm',
+0 silly argv     'babel',
+0 silly argv     '--root-mode',
+0 silly argv     'upward',
+0 silly argv     'src',
+0 silly argv     '--out-dir',
+0 silly argv     'dist/esm',
+0 silly argv     '--ignore',
+0 silly argv     '__tests__,**/*.story.js,**/*.spec.js',
+0 silly argv     '--source-maps',
+0 silly argv     'inline',
+0 silly argv     '-w'
+0 silly argv   ],
+0 silly argv   lernaVersion: '3.15.0',
+0 silly argv   '$0': '/Users/elving/Dev/beatgig/synth/node_modules/.bin/lerna'
+0 silly argv }
+1 notice cli v3.15.0
+2 verbose rootPath /Users/elving/Dev/beatgig/synth
+3 info versioning independent
+4 info Executing command in 6 packages: "BABEL_ENV=esm babel --root-mode upward src --out-dir dist/esm --ignore __tests__,**/*.story.js,**/*.spec.js --source-maps inline -w"
+5 error Error: Command failed: BABEL_ENV=esm babel --root-mode upward src --out-dir dist/esm --ignore __tests__,**/*.story.js,**/*.spec.js --source-maps inline -w
+5 error
+5 error Successfully compiled 2 files with Babel.
+5 error
+5 error     at makeError (/Users/elving/Dev/beatgig/synth/node_modules/execa/index.js:174:9)
+5 error     at /Users/elving/Dev/beatgig/synth/node_modules/execa/index.js:278:16

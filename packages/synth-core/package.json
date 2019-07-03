@@ -1,0 +1,28 @@
+{
+  "name": "@beatgig/synth-core",
+  "version": "1.0.0",
+  "description": "Core Synth library to manage tokens",
+  "author": "Elving Rodriguez",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist/commonjs",
+    "dist/esm"
+  ],
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "lodash.get": "^4.4.2"
+  }
+}

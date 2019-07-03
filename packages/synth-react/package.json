@@ -1,0 +1,32 @@
+{
+  "name": "@beatgig/synth-react",
+  "version": "1.0.0",
+  "description": "React bindings for Synth",
+  "author": "Elving Rodriguez <elving.pr@gmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist/commonjs",
+    "dist/esm"
+  ],
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@beatgig/synth-css": "^1.0.0",
+    "@beatgig/synth-tokens": "^1.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0"
+  }
+}

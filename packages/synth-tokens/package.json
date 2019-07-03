@@ -1,0 +1,25 @@
+{
+  "name": "@beatgig/synth-tokens",
+  "version": "1.0.0",
+  "description": "Default token declarations for BeatGig",
+  "author": "Elving Rodriguez <elving.pr@gmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist/commonjs",
+    "dist/esm"
+  ],
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}

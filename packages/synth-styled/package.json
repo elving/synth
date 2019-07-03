@@ -1,0 +1,25 @@
+{
+  "name": "@beatgig/synth-styled",
+  "version": "1.0.0",
+  "description": "Styled-components bindings for Synth",
+  "author": "Elving Rodriguez <elving.pr@gmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist/commonjs",
+    "dist/esm"
+  ],
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}
