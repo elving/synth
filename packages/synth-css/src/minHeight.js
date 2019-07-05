@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { minHeight } from '@beatgig/synth-css'
+ *
  * minHeight({
  *   size: {
  *     minHeight: {

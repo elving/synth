@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { opacity } from '@beatgig/synth-css'
+ *
  * opacity({
  *   style: {
  *     opacity: {

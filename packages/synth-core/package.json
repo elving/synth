@@ -1,7 +1,7 @@
 {
   "name": "@beatgig/synth-core",
   "version": "1.0.0",
-  "description": "Core Synth library to manage tokens",
+  "description": "Core library to manage token declarations",
   "author": "Elving Rodriguez",
   "homepage": "",
   "license": "ISC",
@@ -22,6 +22,7 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
+  "sideEffects": false,
   "dependencies": {
     "lodash.get": "^4.4.2"
   }

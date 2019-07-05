@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { width } from '@beatgig/synth-css'
+ *
  * width({
  *   size: {
  *     width: {

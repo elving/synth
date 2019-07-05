@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { padding } from '@beatgig/synth-css'
+ *
  * padding({
  *   space: {
  *     padding: {

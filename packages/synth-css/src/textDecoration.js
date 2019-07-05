@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { textDecoration } from '@beatgig/synth-css'
+ *
  * textDecoration({
  *   typography: {
  *     decoration: {

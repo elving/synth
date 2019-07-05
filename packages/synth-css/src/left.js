@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { left } from '@beatgig/synth-css'
+ *
  * left({
  *   position: {
  *     left: {

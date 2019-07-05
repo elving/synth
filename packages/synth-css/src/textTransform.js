@@ -13,9 +13,11 @@ import {
  * @returns {string}
  * @example
  *
+ * import { textTransform } from '@beatgig/synth-css'
+ *
  * textTransform({
  *   typography: {
- *     decoration: {
+ *     transform: {
  *       menuLink: 'lowercase',
  *       'menuLink:hover': 'uppercase',
  *     },
@@ -25,7 +27,7 @@ import {
  *
  * textTransform({
  *   typography: {
- *     decoration: {
+ *     transform: {
  *       menuLink: 'lowercase',
  *       'menuLink:hover': 'uppercase',
  *     },

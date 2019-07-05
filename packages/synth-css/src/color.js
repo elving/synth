@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { color } from '@beatgig/synth-css'
+ *
  * color({
  *   color: {
  *     text: {

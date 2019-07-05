@@ -25,4 +25,4 @@
 export const isTokenDeclaration = (tokens) =>
   tokens &&
   Object.prototype.toString.call(tokens) === '[object Object]' &&
-  Object.keys(tokens).length
+  Object.keys(tokens).length > 0

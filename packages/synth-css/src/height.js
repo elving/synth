@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { height } from '@beatgig/synth-css'
+ *
  * height({
  *   size: {
  *     height: {

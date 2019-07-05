@@ -1,4 +1,8 @@
-import { isTokenDeclaration, isTokenName } from '@beatgig/synth-core'
+import {
+  getTokenValue,
+  isTokenDeclaration,
+  isTokenName,
+} from '@beatgig/synth-core'
 
 /**
  * Returns CSS declaration for the `outline` property using `box-shadow`.
@@ -9,6 +13,8 @@ import { isTokenDeclaration, isTokenName } from '@beatgig/synth-core'
  * @returns {string}
  * @example
  *
+ * import { outline } from '@beatgig/synth-css'
+ *
  * outline({
  *   color: {
  *     outline: {
@@ -18,7 +24,7 @@ import { isTokenDeclaration, isTokenName } from '@beatgig/synth-core'
  *   },
  *   size: {
  *     outline: {
- *       modalInput: '1px'
+ *       modalInput: '1px',
  *       'modalInput:focus': '3px'
  *     }
  *   }
@@ -34,7 +40,7 @@ import { isTokenDeclaration, isTokenName } from '@beatgig/synth-core'
  *   },
  *   size: {
  *     outline: {
- *       modalInput: '1px'
+ *       modalInput: '1px',
  *       'modalInput:focus': '3px'
  *     }
  *   }

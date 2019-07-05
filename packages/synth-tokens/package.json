@@ -1,7 +1,7 @@
 {
   "name": "@beatgig/synth-tokens",
   "version": "1.0.0",
-  "description": "Default token declarations for BeatGig",
+  "description": "Default token declarations used for building UI components at BeatGig",
   "author": "Elving Rodriguez <elving.pr@gmail.com>",
   "homepage": "",
   "license": "ISC",
@@ -21,5 +21,6 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
-  }
+  },
+  "sideEffects": false
 }

@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { backgroundColor } from '@beatgig/synth-css'
+ *
  * backgroundColor({
  *   color: {
  *     background: {

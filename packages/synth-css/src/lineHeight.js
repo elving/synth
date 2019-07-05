@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { lineHeight } from '@beatgig/synth-css'
+ *
  * lineHeight({
  *   typography: {
  *     lineHeight: {

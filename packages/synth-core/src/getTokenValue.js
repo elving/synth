@@ -5,7 +5,7 @@ import { getTokenParts } from './getTokenParts'
 import { isTokenDeclaration } from './isTokenDeclaration'
 
 /**
- * Returns a CSS declaration mapping to the given token.
+ * Returns a the value of the given token declaration.
  *
  * @since 1.0.0
  * @param {object} tokens - A valid Synth token declaration object.

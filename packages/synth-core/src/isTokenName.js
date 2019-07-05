@@ -15,10 +15,10 @@ import { TOKEN_CATEGORIES, TOKEN_PROPERTIES } from './constants'
  * isTokenName('@lightGrey')
  * // => true
  *
- * isTokenType('hello:world:button')
+ * isTokenName('hello:world:button')
  * // => false
  *
- * isTokenType('hello')
+ * isTokenName('hello')
  * // => false
  */
 export const isTokenName = (tokenName) => {

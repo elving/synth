@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { maxHeight } from '@beatgig/synth-css'
+ *
  * maxHeight({
  *   size: {
  *     maxHeight: {

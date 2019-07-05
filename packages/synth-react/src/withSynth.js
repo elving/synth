@@ -44,7 +44,6 @@ const withSynth = (Component) => {
    * name will make it easy to identify `Synth` components on the React
    * dev tools.
    *
-   * @constant
    * @type {string}
    */
   const displayName =

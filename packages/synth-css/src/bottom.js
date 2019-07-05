@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { bottom } from '@beatgig/synth-css'
+ *
  * bottom({
  *   position: {
  *     bottom: {

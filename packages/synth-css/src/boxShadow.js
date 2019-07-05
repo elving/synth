@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { boxShadow } from '@beatgig/synth-css'
+ *
  * boxShadow({
  *   style: {
  *     shadow: {

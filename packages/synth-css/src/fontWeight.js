@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { fontWeight } from '@beatgig/synth-css'
+ *
  * fontWeight({
  *   typography: {
  *     weight: {

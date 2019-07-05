@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { margin } from '@beatgig/synth-css'
+ *
  * margin({
  *   space: {
  *     margin: {

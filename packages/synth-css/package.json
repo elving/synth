@@ -1,7 +1,7 @@
 {
   "name": "@beatgig/synth-css",
   "version": "1.0.0",
-  "description": "\"Utilities to generate CSS declarations from Synth tokens.\"",
+  "description": "CSS bindings for Synth.",
   "author": "Elving Rodriguez <elving.pr@gmail.com>",
   "homepage": "",
   "license": "ISC",
@@ -22,6 +22,7 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
+  "sideEffects": false,
   "dependencies": {
     "@beatgig/synth-core": "^1.0.0"
   }

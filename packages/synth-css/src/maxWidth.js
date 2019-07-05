@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { maxWidth } from '@beatgig/synth-css'
+ *
  * maxWidth({
  *   size: {
  *     maxWidth: {

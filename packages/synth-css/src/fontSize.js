@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { fontSize } from '@beatgig/synth-css'
+ *
  * fontSize({
  *   typography: {
  *     size: {

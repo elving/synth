@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { fontFamily } from '@beatgig/synth-css'
+ *
  * fontFamily({
  *   typography: {
  *     font: {

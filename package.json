@@ -30,6 +30,7 @@
     "jest-haste-map": "^24.8.1",
     "jest-resolve": "^24.8.0",
     "jest-styled-components": "^6.3.3",
+    "jsdoc-to-markdown": "^5.0.0",
     "lerna": "^3.15.0",
     "prettier": "^1.18.2",
     "react": "^16.8.6",
@@ -38,12 +39,14 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap --use-workspaces",
+    "build:clean": "rm -rf ./packages/**/dist/esm ./packages/**/dist/commonjs && yarn run build",
     "build:commonjs": "lerna exec --parallel -- BABEL_ENV=commonjs babel --root-mode upward src --out-dir dist/commonjs --ignore __tests__,**/*.story.js,**/*.spec.js --source-maps inline",
     "build:esm": "lerna exec --parallel -- BABEL_ENV=esm babel --root-mode upward src --out-dir dist/esm --ignore __tests__,**/*.story.js,**/*.spec.js --source-maps inline",
     "build:watch": "concurrently --names 'commonjs,esm' 'yarn run build:commonjs -- -w' 'yarn run build:esm -- -w'",
     "build": "concurrently --names 'commonjs,esm' 'yarn run build:commonjs' 'yarn run build:esm'",
-    "coverage": "jest --coverage",
+    "coverage": "yarn run build:clean && jest --coverage",
     "dev": "start-storybook -p 5555",
-    "test": "jest"
+    "prepublishOnly": "yarn run build:clean",
+    "test": "yarn run build:clean && jest"
   }
 }

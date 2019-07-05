@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { letterSpacing } from '@beatgig/synth-css'
+ *
  * letterSpacing({
  *   typography: {
  *     spacing: {

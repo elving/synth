@@ -29,13 +29,46 @@ import { width } from './width'
 import { zIndex } from './zIndex'
 
 /**
+ * @typedef {object} CSSBindings
+ * @property {function(string): string} backgroundColor
+ * @property {function(string): string} border
+ * @property {function(string): string} borderRadius
+ * @property {function(string): string} bottom
+ * @property {function(string): string} boxShadow
+ * @property {function(string): string} color
+ * @property {function(string): string} fontFamily
+ * @property {function(string): string} fontSize
+ * @property {function(string): string} fontWeight
+ * @property {function(string): string} height
+ * @property {function(string): string} left
+ * @property {function(string): string} letterSpacing
+ * @property {function(string): string} lineHeight
+ * @property {function(string): string} margin
+ * @property {function(string): string} maxHeight
+ * @property {function(string): string} maxWidth
+ * @property {function(string): string} minHeight
+ * @property {function(string): string} minWidth
+ * @property {function(string): string} opacity
+ * @property {function(string): string} outline
+ * @property {function(string): string} padding
+ * @property {function(string): string} right
+ * @property {function(string): string} textDecoration
+ * @property {function(string): string} textTransform
+ * @property {function(string): string} top
+ * @property {function(string): string} width
+ * @property {function(string): string} zIndex
+ */
+
+/**
  * Returns an object containing all CSS helper functions with the given
  * `tokens` already passed as the first argument.
  *
  * @since 1.0.0
  * @param {object} tokens
- * @returns {object}
+ * @returns {CSSBindings}
  * @example
+ *
+ * import { withTokens } from '@beatgig/synth-css'
  *
  * const cssHelpers = withTokens({
  *   color: {

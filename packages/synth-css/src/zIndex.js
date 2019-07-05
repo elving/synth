@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { zIndex } from '@beatgig/synth-css'
+ *
  * zIndex({
  *   position: {
  *     index: {

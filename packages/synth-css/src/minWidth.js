@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { minWidth } from '@beatgig/synth-css'
+ *
  * minWidth({
  *   size: {
  *     minWidth: {

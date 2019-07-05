@@ -13,6 +13,8 @@ import {
  * @returns {string}
  * @example
  *
+ * import { borderRadius } from '@beatgig/synth-css'
+ *
  * borderRadius({
  *   size: {
  *     radius: {
@@ -31,7 +33,7 @@ import {
  *     },
  *   },
  * }, 'primary-button:disabled')
- * // => border-radius: 0;
+ * // => border-radius: 0px;
  */
 export const borderRadius = (tokens, name) => {
   if (!isTokenDeclaration(tokens)) {
