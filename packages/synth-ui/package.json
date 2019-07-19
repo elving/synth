@@ -24,6 +24,7 @@
   },
   "sideEffects": false,
   "dependencies": {
+    "@beatgig/synth-core": "^1.0.0",
     "@beatgig/synth-react": "^1.0.0",
     "@beatgig/synth-styled-components": "^1.0.0",
     "styled-components": "^4.3.2"
