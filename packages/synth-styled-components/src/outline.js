@@ -8,8 +8,8 @@
  * Returns CSS declaration for the `outline` property using `box-shadow`.
  *
  * @since 1.0.0
- * @param {string} tokenName
- * @returns {function(Props): string}
+ * @param {string} [tokenName]
+ * @returns {function(Props & object): string}
  * @example
  *
  * outline('modalInput')

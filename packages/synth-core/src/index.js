@@ -2,9 +2,12 @@ export { getCSSDeclaration } from './getCSSDeclaration'
 export { getCSSProperty } from './getCSSProperty'
 export { getTokenParts } from './getTokenParts'
 export { getTokenValue } from './getTokenValue'
+export { isGlobalToken } from './isGlobalToken'
 export { isTokenDeclaration } from './isTokenDeclaration'
 export { isTokenName } from './isTokenName'
 export { isTokenType } from './isTokenType'
+export { scale } from './scale'
+export { unit } from './unit'
 
 export {
   TOKEN_CATEGORIES,

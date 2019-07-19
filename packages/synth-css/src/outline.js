@@ -1,4 +1,5 @@
 import {
+  getCSSDeclaration,
   getTokenValue,
   isTokenDeclaration,
   isTokenName,
@@ -9,7 +10,7 @@ import {
  *
  * @since 1.0.0
  * @param {object} tokens
- * @param {string} name
+ * @param {string} [name='base']
  * @returns {string}
  * @example
  *
@@ -18,47 +19,82 @@ import {
  * outline({
  *   color: {
  *     outline: {
- *       modalInput: '#333',
- *       'modalInput:focus': '#222',
+ *       modalInput: {
+ *         default: '#333',
+ *         disabled: '#222',
+ *       },
  *     },
  *   },
  *   size: {
  *     outline: {
- *       modalInput: '1px',
- *       'modalInput:focus': '3px'
+ *       modalInput: {
+ *         default: '1px',
+ *         disabled: '3px',
+ *       },
+ *     },
+ *   },
+ *   space: {
+ *     outline: {
+ *       modalInput: 2,
+ *     }
+ *   },
+ *   style: {
+ *     outline: {
+ *       modalInput: 'solid',
  *     }
  *   }
  * }, 'modalInput')
- * // => box-shadow: 0 0 0 1px #333;
+ * // =>
+ * // outline-width: 1px;
+ * // outline-style: solid;
+ * // outline-color: #333;
+ * // outline-offset: 2px;
  *
  * outline({
  *   color: {
  *     outline: {
- *       modalInput: '#333',
- *       'modalInput:focus': '#222',
+ *       modalInput: {
+ *         default: '#333',
+ *         disabled: '#222',
+ *       },
  *     },
  *   },
  *   size: {
  *     outline: {
- *       modalInput: '1px',
- *       'modalInput:focus': '3px'
+ *       modalInput: {
+ *         default: '1px',
+ *         disabled: '3px',
+ *       },
+ *     },
+ *   },
+ *   space: {
+ *     outline: {
+ *       modalInput: 2,
+ *     }
+ *   },
+ *   style: {
+ *     outline: {
+ *       modalInput: 'solid',
  *     }
  *   }
- * }, 'modalInput:focus')
- * // => box-shadow: 0 0 0 3px #222;
+ * }, 'modalInput:disabled')
+ * // =>
+ * // outline-width: 3px;
+ * // outline-style: solid;
+ * // outline-color: #222;
+ * // outline-offset: 2px;
  */
-export const outline = (tokens, name) => {
+export const outline = (tokens, name = 'base') => {
   if (!isTokenDeclaration(tokens)) {
     throw new TypeError(
       'Invalid param `tokens` supplied, expected a valid Synth token declaration.',
     )
   }
 
-  return `box-shadow: 0 0 0 ${getTokenValue(
-    tokens,
-    isTokenName(name) ? name : `size:outline:${name}`,
-  )} ${getTokenValue(
-    tokens,
-    isTokenName(name) ? name : `color:outline:${name}`,
-  )};`
+  const outlineWidth = getCSSDeclaration(tokens, `size:outline:${name}`)
+  const outlineStyle = getCSSDeclaration(tokens, `style:outline:${name}`)
+  const outlineColor = getCSSDeclaration(tokens, `color:outline:${name}`)
+  const outlineOffset = getCSSDeclaration(tokens, `space:outline:${name}`)
+
+  return `${outlineWidth} ${outlineStyle} ${outlineColor} ${outlineOffset}`
 }

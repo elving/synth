@@ -9,7 +9,7 @@ import {
  *
  * @since 1.0.0
  * @param {object} tokens
- * @param {string} name
+ * @param {string} [name='base']
  * @returns {string}
  * @example
  *
@@ -34,16 +34,20 @@ import {
  *   },
  * }, 'primary-button:disabled')
  * // => border-radius: 0px;
+ *
+ * borderRadius({
+ *   global: {
+ *     circle: '50%',
+ *   },
+ * }, '@circle')
+ * // => border-radius: 50%;
  */
-export const borderRadius = (tokens, name) => {
+export const borderRadius = (tokens, name = 'base') => {
   if (!isTokenDeclaration(tokens)) {
     throw new TypeError(
       'Invalid param `tokens` supplied, expected a valid Synth token declaration.',
     )
   }
 
-  return getCSSDeclaration(
-    tokens,
-    isTokenName(name) ? name : `size:radius:${name}`,
-  )
+  return getCSSDeclaration(tokens, `size:radius:${name}`)
 }

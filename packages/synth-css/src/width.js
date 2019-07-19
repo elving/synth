@@ -9,7 +9,7 @@ import {
  *
  * @since 1.0.0
  * @param {object} tokens
- * @param {string} name
+ * @param {string} [name='base']
  * @returns {string}
  * @example
  *
@@ -34,16 +34,20 @@ import {
  *   },
  * }, 'primaryButton:hover')
  * // => width: 100%;
+ *
+ * width({
+ *   global: {
+ *     contentWidths: [300, 600, 900],
+ *   },
+ * }, '@contentWidths.1')
+ * // => width: 600px;
  */
-export const width = (tokens, name) => {
+export const width = (tokens, name = 'base') => {
   if (!isTokenDeclaration(tokens)) {
     throw new TypeError(
       'Invalid param `tokens` supplied, expected a valid Synth token declaration.',
     )
   }
 
-  return getCSSDeclaration(
-    tokens,
-    isTokenName(name) ? name : `size:width:${name}`,
-  )
+  return getCSSDeclaration(tokens, `size:width:${name}`)
 }

@@ -9,7 +9,7 @@ import {
  *
  * @since 1.0.0
  * @param {object} tokens
- * @param {string} name
+ * @param {string} [name='base']
  * @returns {string}
  * @example
  *
@@ -34,16 +34,20 @@ import {
  *   },
  * }, 'card_close_button:hover')
  * // => z-index: 5;
+ *
+ * zIndex({
+ *   global: {
+ *     depth: [100, 500, 1000, 5000],
+ *   },
+ * }, '@depth.2')
+ * // => z-index: 1000;
  */
-export const zIndex = (tokens, name) => {
+export const zIndex = (tokens, name = 'base') => {
   if (!isTokenDeclaration(tokens)) {
     throw new TypeError(
       'Invalid param `tokens` supplied, expected a valid Synth token declaration.',
     )
   }
 
-  return getCSSDeclaration(
-    tokens,
-    isTokenName(name) ? name : `position:index:${name}`,
-  )
+  return getCSSDeclaration(tokens, `position:index:${name}`)
 }

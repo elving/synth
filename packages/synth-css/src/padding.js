@@ -9,7 +9,7 @@ import {
  *
  * @since 1.0.0
  * @param {object} tokens
- * @param {string} name
+ * @param {string} [name='base']
  * @returns {string}
  * @example
  *
@@ -34,16 +34,20 @@ import {
  *   },
  * }, 'primaryButton:hover')
  * // => padding: 15%;
+ *
+ * padding({
+ *   global: {
+ *     spacing: [10, 12, 14, 16],
+ *   },
+ * }, '@spacing')
+ * // => padding: 10px;
  */
-export const padding = (tokens, name) => {
+export const padding = (tokens, name = 'base') => {
   if (!isTokenDeclaration(tokens)) {
     throw new TypeError(
       'Invalid param `tokens` supplied, expected a valid Synth token declaration.',
     )
   }
 
-  return getCSSDeclaration(
-    tokens,
-    isTokenName(name) ? name : `space:padding:${name}`,
-  )
+  return getCSSDeclaration(tokens, `space:padding:${name}`)
 }

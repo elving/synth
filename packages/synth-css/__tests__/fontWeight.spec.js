@@ -1,33 +1,21 @@
 import { fontWeight } from '../src/fontWeight'
 
+const tokens = {
+  typography: {
+    weight: {
+      base: 100,
+      menuLink: {
+        default: 300,
+        hover: 600,
+      },
+    },
+  },
+}
+
 describe('fontWeight', () => {
   test('returns CSS declaration for `font-weight`', () => {
-    expect(
-      fontWeight(
-        {
-          typography: {
-            weight: {
-              'menu-link': '300',
-              'menu-link:hover': '600',
-            },
-          },
-        },
-        'menu-link',
-      ),
-    ).toEqual('font-weight: 300;')
-
-    expect(
-      fontWeight(
-        {
-          typography: {
-            weight: {
-              'menu-link': '300',
-              'menu-link:hover': '600',
-            },
-          },
-        },
-        'menu-link:hover',
-      ),
-    ).toEqual('font-weight: 600;')
+    expect(fontWeight(tokens)).toEqual('font-weight: 100;')
+    expect(fontWeight(tokens, 'menuLink')).toEqual('font-weight: 300;')
+    expect(fontWeight(tokens, 'menuLink:hover')).toEqual('font-weight: 600;')
   })
 })

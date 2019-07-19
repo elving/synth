@@ -9,7 +9,7 @@ import {
  *
  * @since 1.0.0
  * @param {object} tokens
- * @param {string} name
+ * @param {string} [name='base']
  * @returns {string}
  * @example
  *
@@ -35,7 +35,10 @@ import {
  *     },
  *   }
  * }, 'default_button')
- * // => border-width: 1px; border-style: solid; border-color: #333;
+ * // =>
+ * // border-width: 1px;
+ * // border-style: solid;
+ * // border-color: #333;
  *
  * border({
  *   color: {
@@ -57,23 +60,21 @@ import {
  *     },
  *   }
  * }, 'default_button:hover')
- * // => border-width: 2px; border-style: solid; border-color: #111;
+ * // =>
+ * // border-width: 2px;
+ * // border-style: solid;
+ * // border-color: #111;
  */
-export const border = (tokens, name) => {
+export const border = (tokens, name = 'base') => {
   if (!isTokenDeclaration(tokens)) {
     throw new TypeError(
       'Invalid param `tokens` supplied, expected a valid Synth token declaration.',
     )
   }
 
-  return `${getCSSDeclaration(
-    tokens,
-    isTokenName(name) ? name : `size:border:${name}`,
-  )} ${getCSSDeclaration(
-    tokens,
-    isTokenName(name) ? name : `style:border:${name}`,
-  )} ${getCSSDeclaration(
-    tokens,
-    isTokenName(name) ? name : `color:border:${name}`,
-  )}`
+  const borderWidth = getCSSDeclaration(tokens, `size:border:${name}`)
+  const borderStyle = getCSSDeclaration(tokens, `style:border:${name}`)
+  const borderColor = getCSSDeclaration(tokens, `color:border:${name}`)
+
+  return `${borderWidth} ${borderStyle} ${borderColor}`
 }

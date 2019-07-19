@@ -9,7 +9,7 @@ import {
  *
  * @since 1.0.0
  * @param {object} tokens
- * @param {string} name
+ * @param {string} [name='base']
  * @returns {string}
  * @example
  *
@@ -34,16 +34,20 @@ import {
  *   },
  * }, 'menuLink:hover')
  * // => text-transform: uppercase;
+ *
+ * textTransform({
+ *   global: {
+ *     headingStyle: 'uppercase',
+ *   },
+ * }, '@headingStyle')
+ * // => text-transform: uppercase;
  */
-export const textTransform = (tokens, name) => {
+export const textTransform = (tokens, name = 'base') => {
   if (!isTokenDeclaration(tokens)) {
     throw new TypeError(
       'Invalid param `tokens` supplied, expected a valid Synth token declaration.',
     )
   }
 
-  return getCSSDeclaration(
-    tokens,
-    isTokenName(name) ? name : `typography:transform:${name}`,
-  )
+  return getCSSDeclaration(tokens, `typography:transform:${name}`)
 }

@@ -1,26 +1,18 @@
-import React from 'react'
-import { configure, addDecorator } from '@storybook/react'
+import { addDecorator, addParameters, configure } from '@storybook/react'
+import centered from '@storybook/addon-centered/react'
 
 const files = require.context('../packages', true, /.story.js$/)
 
 function loadStories() {
-  addDecorator((story) => (
-    <div
-      style={{
-        width: '100vw',
-        display: 'flex',
-        overflow: 'auto',
-        minHeight: '100vh',
-        alignItems: 'center',
-        alignContent: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      {story()}
-    </div>
-  ))
-
+  addDecorator(centered)
   files.keys().forEach((filename) => files(filename))
 }
+
+addParameters({
+  backgrounds: [
+    { name: 'Dark Background', value: '#212025', default: true },
+    { name: 'Light Background', value: '#f9f9f9' },
+  ],
+})
 
 configure(loadStories, module)

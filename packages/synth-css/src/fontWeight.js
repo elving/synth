@@ -9,7 +9,7 @@ import {
  *
  * @since 1.0.0
  * @param {object} tokens
- * @param {string} name
+ * @param {string} [name='base']
  * @returns {string}
  * @example
  *
@@ -34,16 +34,20 @@ import {
  *   },
  * }, 'menu-link:hover')
  * // => font-weight: 600;
+ *
+ * fontWeight({
+ *   global: {
+ *     bold: 800,
+ *   },
+ * }, '@bold')
+ * // => font-weight: 800;
  */
-export const fontWeight = (tokens, name) => {
+export const fontWeight = (tokens, name = 'base') => {
   if (!isTokenDeclaration(tokens)) {
     throw new TypeError(
       'Invalid param `tokens` supplied, expected a valid Synth token declaration.',
     )
   }
 
-  return getCSSDeclaration(
-    tokens,
-    isTokenName(name) ? name : `typography:weight:${name}`,
-  )
+  return getCSSDeclaration(tokens, `typography:weight:${name}`)
 }

@@ -11,6 +11,7 @@ We use colons to separate theming concerns so that you are free to use hyphens (
 ## Categories
 
 - color
+- global
 - position
 - size
 - space
@@ -22,7 +23,6 @@ We use colons to separate theming concerns so that you are free to use hyphens (
 - color:background
 - color:border
 - color:outline
-- color:shadow
 - color:text
 - position:bottom
 - position:index
@@ -37,12 +37,13 @@ We use colons to separate theming concerns so that you are free to use hyphens (
 - size:minWidth
 - size:outline
 - size:radius
-- size:shadow
 - size:width
 - space:margin
+- space:outline
 - space:padding
 - style:border
 - style:opacity
+- style:outline
 - style:shadow
 - typography:decoration
 - typography:font
@@ -75,9 +76,11 @@ We map categories and properties to specific CSS properties:
 - size:radius => `border-radius`
 - size:width => `width`
 - space:margin => `margin`
+- space:outline => `outline-offset`
 - space:padding => `padding`
 - style:border => `border-style`
-- style:opacity => `opacity`
+- style:opacity => `opacity-style`
+- style:outline => `outline-style`
 - style:shadow => `box-shadow`
 - typography:decoration => `text-decoration`
 - typography:font => `font-family`
@@ -87,115 +90,325 @@ We map categories and properties to specific CSS properties:
 - typography:transform => `text-transform`
 - typography:weight => `font-weight`
 
-_Note that we don't support `style:outline` like we do for borders (`style:border`) for the `outline-style` CSS property because we use `box-shadow` for to implement outlines._
-
 ## Modifiers
 
+- default
 - active
 - disabled
 - focus
 - hover
 
-## Global Tokens
-
-Synth supports global tokens so you can reuse the same value on different token declarations. In order to define a global token, define it at the root of your declarations file and prefix it's name with an "at sign", e.g. `@mediumSpacing`. You can use global tokens as values for any token:
+The `default` modifier is only necessary whenever you are defining other modifiers for your tokens.
 
 ```JSON
 {
-  "@mediumSpacing": "10px",
+  "color": {
+    "background": {
+      "button": {
+        "default": "#ddd",
+        "disabled": "#eee"
+      },
 
-  "size": {
-    "padding": {
-      "login_button": "@mediumSpacing"
+      "input": "ccc"
     }
   }
 }
 ```
 
-## Examples
+```javascript
+import { getTokenValue } from '@beatgig/synth-core'
 
-We currently support 2 types of token declaration structures:
+// Will return '#ddd'
+getTokenValue({
+  color: {
+    background: {
+      button: '#ddd',
+    },
+  },
+}, 'color:background:button')
 
-### Flat
+// Will return '#eee'
+getTokenValue({
+  color: {
+    background: {
+      button: {
+        default: '#ddd',
+        disabled: '#eee',
+      },
+    },
+  },
+}, 'color:background:button:disabled')
 
-```JSON
-{
-  "@primaryBlue": "#1976D2",
-  "color:background:primary-button": "@primaryBlue",
-  "color:shadow:user_card": "rgba(0, 0, 0, 0.35)",
-  "color:text:menuLink:hover": "#0000D0",
-  "color:text:menuLink": "#0000E0",
-  "position:right:notification": "15px",
-  "position:top:notification": "15px",
-  "size:maxWidth:user_card": "250px",
-  "size:radius:primary-button": "5px",
-  "size:shadow:user_card": "0 0 15px",
-  "space:padding:primary-button": "10px 15px",
-  "style:opacity:primary-button:disabled": 0.5,
-  "typography:decoration:menuLink:hover": "underline"
-}
+// Will return '#ddd'
+getTokenValue({
+  color: {
+    background: {
+      button: {
+        default: '#ddd',
+        disabled: '#eee',
+      },
+    },
+  },
+}, 'color:background:button')
+
+// Will also return '#ddd'
+getTokenValue({
+  color: {
+    background: {
+      button: {
+        default: '#ddd',
+        disabled: '#eee',
+      },
+    },
+  },
+}, 'color:background:button:default')
 ```
 
-### Expanded
+## Global Tokens
+
+Synth supports global tokens so you can reuse the same value on different token declarations. Global tokens are defined on the root of your tokens declaration file under the special `global` category:
 
 ```JSON
 {
-  "@primaryBlue": "#1976D2",
+  // Define global tokens under the `global` category.
+  "global": {
+    "lightDark": "#444",
+    "mediumSpacing": "10px",
+  }
 
+  // Now you can use global tokens on the rest of your token declarations.
   "color": {
     "background": {
-      "primary-button": "@primaryBlue"
+      "primaryButton": "@lightDark"
     },
 
     "text": {
-      "menuLink": "#0000E0",
-      "menuLink:hover": "#0000D0"
-    },
-
-    "shadow": {
-      "user_card": "rgba(0, 0, 0, 0.35)"
-    },
-  },
-
-  "position": {
-    "right": {
-      "notification": "15px"
-    },
-
-    "top": {
-      "notification": "15px"
-    }
-  },
-
-  "size": {
-    "radius": {
-      "primary-button": "5px"
-    },
-
-    "maxWidth": {
-      "user_card": "250px"
-    },
-
-    "shadow": {
-      "user_card": "0 0 15px"
+      "mainCopy": "@lightDark"
     }
   },
 
   "space": {
     "padding": {
-      "primary-button": "10px 15px"
+      "primaryButton": "@mediumSpacing"
+    }
+  }  
+}
+```
+
+## Token Values
+
+Synth tokens support 3 different types of values:
+
+### Strings
+
+String values will be used "as is" by `synth-css` utility functions.
+
+```JSON
+{
+  "global": {
+    "darkUniverse": "#212121",
+    "headingText": "22px"
+  }
+}
+```
+
+### Numbers
+
+Number values will be interpreted as pixel units, unless the token is being used
+for CSS properties that don't support [length data types](https://developer.mozilla.org/en-US/docs/Web/CSS/length), e.g. `line-height`,
+`font-weight`, etc.
+
+```JSON
+{
+  "global": {
+    "normalSize": 16,
+  }
+}
+```
+
+```javascript
+import styled from 'styled-components'
+import { withSynth } from '@beatgig/synth-react'
+import { fontSize, fontWeight } from '@beatgig/synth-styled-components'
+
+const Text = styled.p`  
+  /** font-size: 16px; */
+  ${fontSize('@normalSize')}
+  /** font-weight: 16; */
+  ${fontWeight('@normalSize')}
+`
+
+export default withSynth(Text)
+```
+
+### Arrays
+
+Array values will be mapped through and their elements interpreted as
+string and number values separately.
+
+```JSON
+{
+  "space": {
+    "padding": {
+      "primaryButton": [10, '5%']
+    },
+  }
+}
+```
+
+```javascript
+import styled from 'styled-components'
+import { withSynth } from '@beatgig/synth-react'
+import { padding } from '@beatgig/synth-styled-components'
+
+const Button = styled.button`  
+  /** padding: 10px 5%; */
+  ${padding('primaryButton')}
+`
+
+export default withSynth(Button)
+```
+
+You can also consume array token values on other token declarations by using
+dot notation:
+
+```JSON
+{
+  "global": {
+    "blueScale": ["#555770", "#6B758C", "#8194A7", "#97B6C2"],
+  },
+
+  "color": {
+    "background": {
+      "primaryButton": "@blueScale",
+      "secondaryButton": "@blueScale.1"
+    }
+  }
+}
+```
+
+In the example above, the `color:background:primaryButton` token will have a
+value of `#555770` because omitting the dot notation when referencing an array
+token value will default to it's first element (in this case `#555770`). The
+`color:background:secondaryButton` token will have a value of `#6B758C` because
+[using dot notation is basically accessing a specific element of the `global:blueScale` array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Accessing_array_elements).
+
+### Base Values
+
+You can define default or base values for specific categories and properties by using the special `base` name under any category property:
+
+```JSON
+{
+  "global": {
+    "fontSizes": [12, 14, 16, 18, 20, 22],
+    "textColor": "#454545"
+  },
+
+  "color": {
+    "text": {
+      "base": "@textColor",
+    },
+  },
+
+  "typography": {
+    "size": {
+      "base": "@fontSizes.1"
+    },
+  }
+}
+```
+
+```javascript
+import styled from 'styled-components'
+import { withSynth } from '@beatgig/synth-react'
+import { color, fontSize } from '@beatgig/synth-styled-components'
+
+const Text = styled.p`  
+  /** color: #454545; */
+  ${color()}
+  /** font-size: 14px; */
+  ${fontSize()}
+`
+
+export default withSynth(Text)
+```
+
+In the example above, calling the `color` and `fontSize` utility functions
+without any values will default to use the `base` token values defined on the
+token declarations object, i.e. `color() => color:text:base` and 
+`fontSize() => typography:size:base`.
+
+## Example Token Declarations
+
+```JSON
+{
+  "global": {
+    "fontSizes": [12, 14, 16, 18, 20, 22],
+    "mediumSpace": 15,
+    "primaryBlue": "#1976D2"
+  },
+
+  "color": {
+    "background": {
+      "primary_button": "@primaryBlue"
+    },
+
+    "text": {
+      "menuLink": {
+        "default": "#0000E0",
+        "hover": "#0000D0"
+      },
+    },
+  },
+
+  "position": {
+    "right": {
+      "notification": 15
+    },
+
+    "top": {
+      "notification": 15
+    }
+  },
+
+  "size": {
+    "radius": {
+      "primary_button": 6
+    },
+
+    "maxWidth": {
+      "userCard": 480
+    }
+  },
+
+  "space": {
+    "padding": {
+      "primary_button": [5, '@mediumSpace']
     }
   },
 
   "style": {
     "opacity": {
-      "primary-button:disabled": 0.5
+      "primary_button": {
+        "disabled": 0.5
+      }
+    },
+
+    "shadow": {
+      "userCard": "0 0 15px rgba(0, 0, 0, 0.5)"
     }
   },
 
   "typography": {
-    "decoration":{
-      "menuLink:hover": "underline"
+    "size": {
+      "base": "@fontSizes",
+      "menuLink": "@fontSizes.1"
+    },
+
+    "decoration": {
+      "menuLink": {
+        "hover": "underline"
+      }
     }
   }
 }

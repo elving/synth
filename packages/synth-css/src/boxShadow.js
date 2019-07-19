@@ -9,7 +9,7 @@ import {
  *
  * @since 1.0.0
  * @param {object} tokens
- * @param {string} name
+ * @param {string} [name='base']
  * @returns {string}
  * @example
  *
@@ -34,16 +34,20 @@ import {
  *   },
  * }, 'textInput:focus')
  * // => box-shadow: 0 0 3px #333;
+ *
+ * boxShadow({
+ *   global: {
+ *     subtleShadow: '0 0 2px rgba(0, 0, 0, 0.15)',
+ *   },
+ * }, '@subtleShadow')
+ * // => box-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
  */
-export const boxShadow = (tokens, name) => {
+export const boxShadow = (tokens, name = 'base') => {
   if (!isTokenDeclaration(tokens)) {
     throw new TypeError(
       'Invalid param `tokens` supplied, expected a valid Synth token declaration.',
     )
   }
 
-  return getCSSDeclaration(
-    tokens,
-    isTokenName(name) ? name : `style:shadow:${name}`,
-  )
+  return getCSSDeclaration(tokens, `style:shadow:${name}`)
 }

@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "checkJs": true,
     "jsx": "react",
+    "moduleResolution": "node",
     "paths": {
       "@beatgig/synth-*": ["./packages/synth-*/src/index.js"]
     },

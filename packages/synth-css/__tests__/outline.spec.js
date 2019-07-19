@@ -1,45 +1,56 @@
 import { outline } from '../src/outline'
 
-describe('outline', () => {
-  test('returns CSS declaration for `box-shadow`', () => {
-    expect(
-      outline(
-        {
-          color: {
-            outline: {
-              modalInput: '#333',
-              'modalInput:focus': '#222',
-            },
-          },
-          size: {
-            outline: {
-              modalInput: '1px',
-              'modalInput:focus': '3px',
-            },
-          },
-        },
-        'modalInput',
-      ),
-    ).toEqual('box-shadow: 0 0 0 1px #333;')
+const tokens = {
+  color: {
+    outline: {
+      base: '#000',
+      modalInput: {
+        default: '#333',
+        focus: '#222',
+      },
+    },
+  },
+  size: {
+    outline: {
+      base: 2,
+      modalInput: {
+        default: '1px',
+        focus: '3px',
+      },
+    },
+  },
+  space: {
+    outline: {
+      base: 1,
+      modalInput: {
+        default: 2,
+        focus: 3,
+      },
+    },
+  },
+  style: {
+    outline: {
+      base: 'dotted',
+      modalInput: {
+        default: 'solid',
+        focus: 'solid',
+      },
+    },
+  },
+}
 
-    expect(
-      outline(
-        {
-          color: {
-            outline: {
-              modalInput: '#333',
-              'modalInput:focus': '#222',
-            },
-          },
-          size: {
-            outline: {
-              modalInput: '1px',
-              'modalInput:focus': '3px',
-            },
-          },
-        },
-        'modalInput:focus',
-      ),
-    ).toEqual('box-shadow: 0 0 0 3px #222;')
+describe('outline', () => {
+  test('returns CSS declaration for `outline`', () => {
+    expect(outline(tokens)).toEqual(
+      'outline-width: 2px; outline-style: dotted; outline-color: #000; outline-offset: 1px;',
+    )
+
+    expect(outline(tokens, 'modalInput')).toEqual(
+      'outline-width: 1px; outline-style: solid; outline-color: #333; outline-offset: 2px;',
+    )
+
+    expect(outline(tokens, 'modalInput:focus')).toEqual(
+      'outline-width: 3px; outline-style: solid; outline-color: #222; outline-offset: 3px;',
+    )
   })
 })

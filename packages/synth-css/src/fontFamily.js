@@ -9,7 +9,7 @@ import {
  *
  * @since 1.0.0
  * @param {object} tokens
- * @param {string} name
+ * @param {string} [name='base']
  * @returns {string}
  * @example
  *
@@ -34,16 +34,20 @@ import {
  *   },
  * }, 'text_field:disabled')
  * // => font-family: arial;
+ *
+ * fontFamily({
+ *   global: {
+ *     bodyFont: 'helvetica',
+ *   },
+ * }, '@bodyFont')
+ * // => font-family: helvetica;
  */
-export const fontFamily = (tokens, name) => {
+export const fontFamily = (tokens, name = 'base') => {
   if (!isTokenDeclaration(tokens)) {
     throw new TypeError(
       'Invalid param `tokens` supplied, expected a valid Synth token declaration.',
     )
   }
 
-  return getCSSDeclaration(
-    tokens,
-    isTokenName(name) ? name : `typography:font:${name}`,
-  )
+  return getCSSDeclaration(tokens, `typography:font:${name}`)
 }

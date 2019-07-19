@@ -1,8 +1,10 @@
 import get from 'lodash.get'
 
-import { isTokenName } from './isTokenName'
 import { getTokenParts } from './getTokenParts'
+import { isGlobalToken } from './isGlobalToken'
 import { isTokenDeclaration } from './isTokenDeclaration'
+import { isTokenName } from './isTokenName'
+import { TOKEN_CATEGORY_GLOBAL } from './constants'
 
 /**
  * Returns a the value of the given token declaration.
@@ -10,7 +12,7 @@ import { isTokenDeclaration } from './isTokenDeclaration'
  * @since 1.0.0
  * @param {object} tokens - A valid Synth token declaration object.
  * @param {string} tokenName - A valid Synth token name.
- * @returns {string}
+ * @returns {string|array}
  * @example
  *
  * getTokenValue({
@@ -21,6 +23,32 @@ import { isTokenDeclaration } from './isTokenDeclaration'
  *   },
  * }, 'color:background:button')
  * // => "red"
+ *
+ * getTokenValue({
+ *   color: {
+ *     background: {
+ *       button: {
+ *         default: '#ddd',
+ *         disabled: '#eee',
+ *       },
+ *     },
+ *   },
+ * }, 'color:background:button:disabled')
+ * // => "#eee"
+ *
+ * getTokenValue({
+ *   global: {
+ *     fontSizes: [14, 16, 18, 22],
+ *   },
+ * }, '@fontSizes')
+ * // => 14
+ *
+ * getTokenValue({
+ *   global: {
+ *     fontSizes: [14, 16, 18, 22],
+ *   },
+ * }, '@fontSizes.2')
+ * // => 18
  */
 export const getTokenValue = (tokens, tokenName) => {
   if (!isTokenDeclaration(tokens)) {
@@ -31,22 +59,45 @@ export const getTokenValue = (tokens, tokenName) => {
 
   if (!isTokenName(tokenName)) {
     throw new TypeError(
-      'Invalid param `tokenName` supplied, expected a valid Synth token name.',
+      `Invalid param "tokenName" supplied (${tokenName}), expected a valid Synth token name.`,
     )
   }
 
-  if (tokens[tokenName]) {
-    return tokens[tokenName]
-  }
+  if (isGlobalToken(tokenName)) {
+    const index = Number.parseInt(tokenName.split('.').pop(), 10)
 
-  const { category, name, property } = getTokenParts(tokenName)
-  const tokenValue = get(tokens, `${category}.${property}.${name}`)
+    const value = get(
+      tokens,
+      `${TOKEN_CATEGORY_GLOBAL}.${tokenName.replace('@', '')}`,
+    )
 
-  if (!tokenValue) {
+    if (value) {
+      if (Array.isArray(value)) {
+        return value[index] || value[0]
+      }
+
+      return value
+    }
+
     return ''
   }
 
-  return typeof tokenValue === 'string' && tokenValue.startsWith('@')
+  const { category, modifier, name, property } = getTokenParts(tokenName)
+  const tokenPath = `${category}.${property}.${name}`
+  const tokenPathModifier = `${tokenPath}.${modifier}`
+  const tokenValue = get(tokens, tokenPathModifier, get(tokens, tokenPath))
+
+  if (tokenValue == undefined) {
+    return ''
+  }
+
+  if (Array.isArray(tokenValue)) {
+    return tokenValue.map((value) => {
+      return isTokenName(value) ? getTokenValue(tokens, value) : value
+    })
+  }
+
+  return isGlobalToken(tokenValue)
     ? getTokenValue(tokens, tokenValue)
     : tokenValue
 }

@@ -1,33 +1,21 @@
 import { left } from '../src/left'
 
+const tokens = {
+  position: {
+    left: {
+      base: 5,
+      card_close_button: {
+        default: '15px',
+        disabled: '25px',
+      },
+    },
+  },
+}
+
 describe('left', () => {
   test('returns CSS declaration for `left`', () => {
-    expect(
-      left(
-        {
-          position: {
-            left: {
-              card_close_button: '15px',
-              'card_close_button:disabled': '25px',
-            },
-          },
-        },
-        'card_close_button',
-      ),
-    ).toEqual('left: 15px;')
-
-    expect(
-      left(
-        {
-          position: {
-            left: {
-              card_close_button: '15px',
-              'card_close_button:disabled': '25px',
-            },
-          },
-        },
-        'card_close_button:disabled',
-      ),
-    ).toEqual('left: 25px;')
+    expect(left(tokens)).toEqual('left: 5px;')
+    expect(left(tokens, 'card_close_button')).toEqual('left: 15px;')
+    expect(left(tokens, 'card_close_button:disabled')).toEqual('left: 25px;')
   })
 })

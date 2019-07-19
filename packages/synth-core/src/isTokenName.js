@@ -1,5 +1,5 @@
+import { isGlobalToken } from './isGlobalToken'
 import { isTokenType } from './isTokenType'
-import { TOKEN_CATEGORIES, TOKEN_PROPERTIES } from './constants'
 
 /**
  * Validates that the given value is a valid Synth token name.
@@ -10,6 +10,9 @@ import { TOKEN_CATEGORIES, TOKEN_PROPERTIES } from './constants'
  * @example
  *
  * isTokenName('color:text:button')
+ * // => true
+ *
+ * isTokenName('color:text:button:hover')
  * // => true
  *
  * isTokenName('@lightGrey')
@@ -26,7 +29,7 @@ export const isTokenName = (tokenName) => {
     return false
   }
 
-  if (tokenName.startsWith('@')) {
+  if (isGlobalToken(tokenName)) {
     return true
   }
 

@@ -1,33 +1,21 @@
 import { height } from '../src/height'
 
+const tokens = {
+  size: {
+    height: {
+      base: 100,
+      button: {
+        default: '100%',
+        hover: '120%',
+      },
+    },
+  },
+}
+
 describe('height', () => {
   test('returns CSS declaration for `height`', () => {
-    expect(
-      height(
-        {
-          size: {
-            height: {
-              button: '100%',
-              'button:hover': '120%',
-            },
-          },
-        },
-        'button',
-      ),
-    ).toEqual('height: 100%;')
-
-    expect(
-      height(
-        {
-          size: {
-            height: {
-              button: '100%',
-              'button:hover': '120%',
-            },
-          },
-        },
-        'button:hover',
-      ),
-    ).toEqual('height: 120%;')
+    expect(height(tokens)).toEqual('height: 100px;')
+    expect(height(tokens, 'button')).toEqual('height: 100%;')
+    expect(height(tokens, 'button:hover')).toEqual('height: 120%;')
   })
 })

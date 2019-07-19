@@ -1,32 +1,27 @@
 import { backgroundColor } from '../src/backgroundColor'
 
+const tokens = {
+  color: {
+    background: {
+      base: '#777',
+      primaryButton: {
+        default: '#333',
+        hover: '#111',
+      },
+    },
+  },
+}
+
 describe('backgroundColor', () => {
   test('returns CSS declaration for `background-color`', () => {
-    expect(
-      backgroundColor(
-        {
-          color: {
-            background: {
-              primaryButton: '#333',
-            },
-          },
-        },
-        'primaryButton',
-      ),
-    ).toEqual('background-color: #333;')
+    expect(backgroundColor(tokens)).toEqual('background-color: #777;')
 
-    expect(
-      backgroundColor(
-        {
-          color: {
-            background: {
-              primaryButton: '#333',
-              'primaryButton:hover': '#111',
-            },
-          },
-        },
-        'primaryButton:hover',
-      ),
-    ).toEqual('background-color: #111;')
+    expect(backgroundColor(tokens, 'primaryButton')).toEqual(
+      'background-color: #333;',
+    )
+
+    expect(backgroundColor(tokens, 'primaryButton:hover')).toEqual(
+      'background-color: #111;',
+    )
   })
 })

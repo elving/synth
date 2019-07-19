@@ -4,13 +4,15 @@ describe('getTokenParts', () => {
   test('returns the correct token parts', () => {
     expect(getTokenParts('color:background:button')).toEqual({
       category: 'color',
+      modifier: 'default',
       name: 'button',
       property: 'background',
     })
 
     expect(getTokenParts('color:background:button:hover')).toEqual({
       category: 'color',
-      name: 'button:hover',
+      modifier: 'hover',
+      name: 'button',
       property: 'background',
     })
   })

@@ -9,7 +9,7 @@ import {
  *
  * @since 1.0.0
  * @param {object} tokens
- * @param {string} name
+ * @param {string} [name='base']
  * @returns {string}
  * @example
  *
@@ -34,16 +34,20 @@ import {
  *   },
  * }, 'primaryButton:hover')
  * // => min-height: 100%;
+ *
+ * minHeight({
+ *   global: {
+ *     cardMin: 200,
+ *   },
+ * }, '@cardMin')
+ * // => min-height: 200px;
  */
-export const minHeight = (tokens, name) => {
+export const minHeight = (tokens, name = 'base') => {
   if (!isTokenDeclaration(tokens)) {
     throw new TypeError(
       'Invalid param `tokens` supplied, expected a valid Synth token declaration.',
     )
   }
 
-  return getCSSDeclaration(
-    tokens,
-    isTokenName(name) ? name : `size:minHeight:${name}`,
-  )
+  return getCSSDeclaration(tokens, `size:minHeight:${name}`)
 }

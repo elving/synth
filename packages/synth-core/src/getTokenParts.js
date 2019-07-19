@@ -1,8 +1,11 @@
+import { isGlobalToken } from './isGlobalToken'
 import { isTokenName } from './isTokenName'
+import { TOKEN_CATEGORY_GLOBAL } from './constants'
 
 /**
  * @typedef {object} TokenParts
  * @property {string} category
+ * @property {string} modifier
  * @property {string} name
  * @property {string} property
  */
@@ -16,31 +19,45 @@ import { isTokenName } from './isTokenName'
  * @example
  *
  * getTokenParts('color:background:button')
- * // => { category: 'color', name: 'button', property: 'background' }
+ * // =>
+ * // {
+ * //   category: 'color',
+ * //   modifier: 'default',
+ * //   name: 'button',
+ * //   property: 'background',
+ * // }
  *
  * getTokenParts('color:background:button:hover')
- * // => { category: 'color', name: 'button:hover', property: 'background' }
+ * // =>
+ * // {
+ * //   category: 'color',
+ * //   modifier: 'hover',
+ * //   name: 'button',
+ * //   property: 'background',
+ * // }
  */
 export const getTokenParts = (tokenName) => {
   if (!isTokenName(tokenName)) {
     throw new TypeError(
-      'Invalid param `tokenName` supplied, expected a valid Synth token name.',
+      `Invalid param "tokenName" supplied (${tokenName}), expected a valid Synth token name.`,
     )
   }
 
-  if (tokenName.startsWith('@')) {
+  if (isGlobalToken(tokenName)) {
     return {
-      category: '',
-      name: tokenName,
+      category: TOKEN_CATEGORY_GLOBAL,
+      modifier: 'default',
+      name: tokenName.replace('@', ''),
       property: '',
     }
   }
 
-  const [category, property, name, modifier] = tokenName.split(':')
+  const [category, property, name, modifier = 'default'] = tokenName.split(':')
 
   return {
     category,
-    name: `${name}${modifier ? `:${modifier}` : ''}`,
+    modifier,
+    name,
     property,
   }
 }

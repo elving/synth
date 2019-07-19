@@ -9,7 +9,7 @@ import {
  *
  * @since 1.0.0
  * @param {object} tokens
- * @param {string} name
+ * @param {string} [name='base']
  * @returns {string}
  * @example
  *
@@ -29,21 +29,25 @@ import {
  *   space: {
  *     margin: {
  *       'primaryButton': '10%',
- *       'primaryButton:hover': '25%'
+ *       'primaryButton:hover': ['10%', '25%']
  *     },
  *   },
  * }, 'primaryButton:hover')
- * // => margin: 25%;
+ * // => margin: 10% 25%;
+ *
+ * margin({
+ *   global: {
+ *     spacing: [5, 10, 15, 20],
+ *   },
+ * }, '@spacing.1')
+ * // => margin: 10px;
  */
-export const margin = (tokens, name) => {
+export const margin = (tokens, name = 'base') => {
   if (!isTokenDeclaration(tokens)) {
     throw new TypeError(
       'Invalid param `tokens` supplied, expected a valid Synth token declaration.',
     )
   }
 
-  return getCSSDeclaration(
-    tokens,
-    isTokenName(name) ? name : `space:margin:${name}`,
-  )
+  return getCSSDeclaration(tokens, `space:margin:${name}`)
 }

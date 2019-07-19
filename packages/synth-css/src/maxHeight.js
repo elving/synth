@@ -9,7 +9,7 @@ import {
  *
  * @since 1.0.0
  * @param {object} tokens
- * @param {string} name
+ * @param {string} [name='base']
  * @returns {string}
  * @example
  *
@@ -34,16 +34,20 @@ import {
  *   },
  * }, 'primaryButton:hover')
  * // => max-height: 100%;
+ *
+ * maxHeight({
+ *   global: {
+ *     cardHeight: '60%',
+ *   },
+ * }, '@cardHeight')
+ * // => max-height: 60%;
  */
-export const maxHeight = (tokens, name) => {
+export const maxHeight = (tokens, name = 'base') => {
   if (!isTokenDeclaration(tokens)) {
     throw new TypeError(
       'Invalid param `tokens` supplied, expected a valid Synth token declaration.',
     )
   }
 
-  return getCSSDeclaration(
-    tokens,
-    isTokenName(name) ? name : `size:maxHeight:${name}`,
-  )
+  return getCSSDeclaration(tokens, `size:maxHeight:${name}`)
 }

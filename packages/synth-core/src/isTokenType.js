@@ -1,4 +1,8 @@
-import { TOKEN_CATEGORIES, TOKEN_PROPERTIES } from './constants'
+import {
+  TOKEN_CATEGORIES,
+  TOKEN_CATEGORY_GLOBAL,
+  TOKEN_PROPERTIES,
+} from './constants'
 
 /**
  * Validates that the given value is a valid Synth token type.
@@ -28,6 +32,6 @@ export const isTokenType = (tokenType) => {
   const [category, property] = tokenType.split(':')
 
   return (
-    TOKEN_CATEGORIES.includes(category) && TOKEN_PROPERTIES.includes(property)
+    category === TOKEN_CATEGORY_GLOBAL || (TOKEN_CATEGORIES.includes(category) && TOKEN_PROPERTIES.includes(property))
   )
 }

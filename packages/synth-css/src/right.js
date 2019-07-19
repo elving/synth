@@ -9,7 +9,7 @@ import {
  *
  * @since 1.0.0
  * @param {object} tokens
- * @param {string} name
+ * @param {string} [name='base']
  * @returns {string}
  * @example
  *
@@ -32,16 +32,19 @@ import {
  *   },
  * }, 'card_close_button:disabled')
  * // => right: 25px;
+ *
+ * right({
+ *   global: {
+ *     card: 10,
+ * }, '@card')
+ * // => right: 10px;
  */
-export const right = (tokens, name) => {
+export const right = (tokens, name = 'base') => {
   if (!isTokenDeclaration(tokens)) {
     throw new TypeError(
       'Invalid param `tokens` supplied, expected a valid Synth token declaration.',
     )
   }
 
-  return getCSSDeclaration(
-    tokens,
-    isTokenName(name) ? name : `position:right:${name}`,
-  )
+  return getCSSDeclaration(tokens, `position:right:${name}`)
 }

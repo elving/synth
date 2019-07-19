@@ -12,6 +12,14 @@ export const TOKEN_CATEGORY_COLOR = 'color'
  * @type {string}
  * @default
  */
+export const TOKEN_CATEGORY_GLOBAL = 'global'
+
+/**
+ * @since 1.0.0
+ * @constant
+ * @type {string}
+ * @default
+ */
 export const TOKEN_CATEGORY_POSITION = 'position'
 
 /**
@@ -54,6 +62,7 @@ export const TOKEN_CATEGORY_TYPOGRAPHY = 'typography'
  */
 export const TOKEN_CATEGORIES = [
   TOKEN_CATEGORY_COLOR,
+  TOKEN_CATEGORY_GLOBAL,
   TOKEN_CATEGORY_POSITION,
   TOKEN_CATEGORY_SIZE,
   TOKEN_CATEGORY_SPACE,
@@ -339,10 +348,12 @@ export const TOKEN_PROPERTY_CSS_MAP = {
   [`${TOKEN_CATEGORY_SIZE}:${TOKEN_PROPERTY_RADIUS}`]: 'border-radius',
   [`${TOKEN_CATEGORY_SIZE}:${TOKEN_PROPERTY_WIDTH}`]: 'width',
   [`${TOKEN_CATEGORY_SPACE}:${TOKEN_PROPERTY_MARGIN}`]: 'margin',
+  [`${TOKEN_CATEGORY_SPACE}:${TOKEN_PROPERTY_OUTLINE}`]: 'outline-offset',
   [`${TOKEN_CATEGORY_SPACE}:${TOKEN_PROPERTY_PADDING}`]: 'padding',
   [`${TOKEN_CATEGORY_STYLE}:${TOKEN_PROPERTY_BORDER}`]: 'border-style',
   [`${TOKEN_CATEGORY_STYLE}:${TOKEN_PROPERTY_OPACITY}`]: 'opacity',
   [`${TOKEN_CATEGORY_STYLE}:${TOKEN_PROPERTY_SHADOW}`]: 'box-shadow',
+  [`${TOKEN_CATEGORY_STYLE}:${TOKEN_PROPERTY_OUTLINE}`]: 'outline-style',
   [`${TOKEN_CATEGORY_TYPOGRAPHY}:${TOKEN_PROPERTY_TEXT_DECORATION}`]: 'text-decoration',
   [`${TOKEN_CATEGORY_TYPOGRAPHY}:${TOKEN_PROPERTY_FONT_FAMILY}`]: 'font-family',
   [`${TOKEN_CATEGORY_TYPOGRAPHY}:${TOKEN_PROPERTY_LINE_HEIGHT}`]: 'line-height',
@@ -351,3 +362,33 @@ export const TOKEN_PROPERTY_CSS_MAP = {
   [`${TOKEN_CATEGORY_TYPOGRAPHY}:${TOKEN_PROPERTY_TEXT_TRANSFORM}`]: 'text-transform',
   [`${TOKEN_CATEGORY_TYPOGRAPHY}:${TOKEN_PROPERTY_WEIGHT}`]: 'font-weight',
 }
+
+/**
+ * CSS properties that support length data types.
+ *
+ * @since 1.0.0
+ * @constant
+ * @type {string[]}
+ * @default
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/length}
+ */
+export const TOKEN_PROPERTY_CSS_LENGTH = [
+  TOKEN_PROPERTY_BOTTOM,
+  TOKEN_PROPERTY_LEFT,
+  TOKEN_PROPERTY_RIGHT,
+  TOKEN_PROPERTY_TOP,
+  TOKEN_PROPERTY_BORDER,
+  TOKEN_PROPERTY_HEIGHT,
+  TOKEN_PROPERTY_MAX_HEIGHT,
+  TOKEN_PROPERTY_MAX_WIDTH,
+  TOKEN_PROPERTY_MIN_HEIGHT,
+  TOKEN_PROPERTY_MIN_WIDTH,
+  TOKEN_PROPERTY_OUTLINE,
+  TOKEN_PROPERTY_RADIUS,
+  TOKEN_PROPERTY_WIDTH,
+  TOKEN_PROPERTY_MARGIN,
+  TOKEN_PROPERTY_OUTLINE,
+  TOKEN_PROPERTY_PADDING,
+  TOKEN_PROPERTY_FONT_SIZE,
+  TOKEN_PROPERTY_SPACING,
+]

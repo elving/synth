@@ -9,7 +9,7 @@ import {
  *
  * @since 1.0.0
  * @param {object} tokens
- * @param {string} name
+ * @param {string} [name='base']
  * @returns {string}
  * @example
  *
@@ -34,16 +34,20 @@ import {
  *   },
  * }, 'caption:hover')
  * // => color: #555;
+ *
+ * color({
+ *   global: {
+ *     copyColorScale: ['#333', '#444', '#555'],
+ *   },
+ * }, '@copy.2')
+ * // => color: #555;
  */
-export const color = (tokens, name) => {
+export const color = (tokens, name = 'base') => {
   if (!isTokenDeclaration(tokens)) {
     throw new TypeError(
       'Invalid param `tokens` supplied, expected a valid Synth token declaration.',
     )
   }
 
-  return getCSSDeclaration(
-    tokens,
-    isTokenName(name) ? name : `color:text:${name}`,
-  )
+  return getCSSDeclaration(tokens, `color:text:${name}`)
 }
