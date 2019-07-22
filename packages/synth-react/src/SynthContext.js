@@ -1,5 +1,5 @@
 import React from 'react'
-import { getTokenValue } from '@beatgig/synth-core'
+import { getTokenValue, unit } from '@beatgig/synth-core'
 import { tokens } from '@beatgig/synth-tokens'
 import { withTokens } from '@beatgig/synth-css'
 
@@ -17,7 +17,8 @@ const {
   Consumer: SynthConsumer,
 } = React.createContext({
   tokens,
-  getTokenValue: (tokenName) => getTokenValue(tokens, tokenName),
+  getUnit: (tokenName) => unit(getTokenValue(tokens, tokenName)),
+  getValue: (tokenName) => getTokenValue(tokens, tokenName),
   ...withTokens(tokens),
 })
 
