@@ -46,6 +46,10 @@ export const getCSSDeclaration = (tokens, tokenName) => {
   )
 
   return `${getCSSProperty(`${category}:${property}`)}: ${
-    TOKEN_PROPERTY_CSS_LENGTH.includes(property) ? unit(tokenValue) : tokenValue
+    TOKEN_PROPERTY_CSS_LENGTH.includes(property)
+      ? unit(tokenValue)
+      : Array.isArray(tokenValue)
+      ? tokenValue.join(' ')
+      : tokenValue
   };`
 }

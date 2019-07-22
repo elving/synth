@@ -92,9 +92,9 @@ export const getTokenValue = (tokens, tokenName) => {
   }
 
   if (Array.isArray(tokenValue)) {
-    return tokenValue.map((value) => {
-      return isTokenName(value) ? getTokenValue(tokens, value) : value
-    })
+    return tokenValue.map((value) =>
+      isTokenName(value) ? getTokenValue(tokens, value) : value,
+    )
   }
 
   return isGlobalToken(tokenValue)
