@@ -1,5 +1,4 @@
 import { bool, object } from 'prop-types'
-import { getTokenValue, unit } from '@beatgig/synth-core'
 import { margin } from '@beatgig/synth-styled-components'
 import { withSynth } from '@beatgig/synth-react'
 import styled from 'styled-components'
@@ -13,7 +12,7 @@ import { Flex } from '../Flex'
  * @param {object} [props.synth]
  */
 const getFormElementMarginRight = ({ inline, synth }) =>
-  inline ? unit(getTokenValue(synth.tokens, '@spacing.1')) : '0px'
+  inline ? synth.getUnit('@spacing.1') : '0px'
 
 /**
  * @param {object} props
@@ -21,7 +20,7 @@ const getFormElementMarginRight = ({ inline, synth }) =>
  * @param {object} [props.synth]
  */
 const getFormElementMarginBottom = ({ inline, synth }) =>
-  inline ? '0px' : unit(getTokenValue(synth.tokens, '@spacing.1'))
+  inline ? '0px' : synth.getUnit('@spacing.1')
 
 const FormRow = styled(Flex).attrs(({ centered, inline }) => ({
   center: centered,

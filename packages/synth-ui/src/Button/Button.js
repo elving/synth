@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { object } from 'prop-types'
+import { bool, object } from 'prop-types'
 import { withSynth } from '@beatgig/synth-react'
 
 import {
@@ -12,11 +12,11 @@ import {
 } from '@beatgig/synth-styled-components'
 
 import { baseStyles } from '../utils'
-import { Flex } from '../Flex'
 
-const Button = styled(Flex).attrs(() => ({
-  as: 'button',
-  center: true,
+const Button = styled.button.attrs(({ disabled = false }) => ({
+  cursor: disabled ? 'not-allowed' : 'pointer',
+  opacity: disabled ? 0.65 : 1,
+  pointerEvents: disabled ? 'none' : 'inherit',
   type: 'button',
 }))`
   ${baseStyles}
@@ -26,8 +26,14 @@ const Button = styled(Flex).attrs(() => ({
   ${color('control')}
   ${fontWeight('control')}
   ${padding('control')}
-  cursor: pointer;
+  cursor: ${({ cursor }) => cursor};
+  opacity: ${({ opacity }) => opacity};
+  align-content: center;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
   transition: all 0.25s ease;
+  pointer-events: ${({ pointerEvents }) => pointerEvents};
 
   :hover {
     ${backgroundColor('control:hover')}
@@ -36,9 +42,14 @@ const Button = styled(Flex).attrs(() => ({
   :focus {
     outline: 0 none;
   }
+
+  :active {
+    ${backgroundColor('control:active')}
+  }
 `
 
 Button.propTypes = {
+  disabled: bool,
   synth: object.isRequired,
 }
 

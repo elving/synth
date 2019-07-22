@@ -8,6 +8,7 @@ export const tokens = {
     Shark: '#2f3136',
     Mako: '#444850',
     Abbey: '#4C5058',
+    ShuttleGray: '#5B6066',
 
     /**
      * Spacing
@@ -22,25 +23,29 @@ export const tokens = {
   },
 
   color: {
-    border: {
-      base: 'transparent',
-      input: '@Abbey',
-    },
-
-    text: {
-      base: '@Porcelain',
-    },
-
     background: {
       control: {
-        active: '@Abbey',
-        default: '@Mako',
-        focus: '@Abbey',
-        hover: '@Abbey',
+        active: '@Mako',
+        default: '@Abbey',
+        focus: '@ShuttleGray',
+        hover: '@ShuttleGray',
       },
 
       card: '@Shark',
       header: '@Shark',
+    },
+
+    border: {
+      base: 'transparent',
+      input: '@ShuttleGray',
+    },
+
+    outline: {
+      control: 'rgba(255, 255, 255, 0.15)',
+    },
+
+    text: {
+      base: '@Porcelain',
     },
   },
 
@@ -52,6 +57,10 @@ export const tokens = {
 
     radius: {
       base: 4,
+    },
+
+    outline: {
+      base: 1,
     },
   },
 
@@ -66,12 +75,24 @@ export const tokens = {
       control: ['@spacing.1', '@spacing.2'],
       header: ['@spacing.2', '@spacing.3'],
     },
+
+    outline: {
+      base: 2,
+    },
   },
 
   style: {
     border: {
       base: 'solid',
       input: 'solid',
+    },
+
+    shadow: {
+      outlineControl: ['0 0 0 1px inset', '@ShuttleGray'],
+    },
+
+    outline: {
+      base: 'solid',
     },
   },
 
@@ -101,6 +122,7 @@ export const tokens = {
 
     size: {
       base: '@fontSizes.1',
+      control: '@fontSizes.1',
       heading: '@fontSizes.6',
       text: '@fontSizes.2',
     },

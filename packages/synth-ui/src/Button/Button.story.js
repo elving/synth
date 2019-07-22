@@ -3,4 +3,6 @@ import { storiesOf } from '@storybook/react'
 
 import Button from './Button'
 
-storiesOf('Button', module).add('default', () => <Button>Button</Button>)
+storiesOf('Button', module)
+  .add('default', () => <Button>Button</Button>)
+  .add('disabled', () => <Button disabled>Disabled Button</Button>)
