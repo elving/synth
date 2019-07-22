@@ -1,9 +1,4 @@
-import {
-  getCSSDeclaration,
-  getTokenValue,
-  isTokenDeclaration,
-  isTokenName,
-} from '@beatgig/synth-core'
+import { getCSSDeclaration, isTokenDeclaration } from '@beatgig/synth-core'
 
 /**
  * Returns CSS declaration for the `outline` property using `box-shadow`.
