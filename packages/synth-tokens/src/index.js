@@ -4,6 +4,7 @@ export const tokens = {
      * Colors
      */
     Porcelain: '#fcfdfd',
+    Thunder: '#1E1C21',
     BalticSea: '#212025',
     Shark: '#2f3136',
     Mako: '#444850',
