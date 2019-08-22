@@ -1,12 +1,14 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import centered from '@storybook/addon-centered/react'
 
+import FormRow from './FormRow'
 import { Button } from '../Button'
 import { Card } from '../Card'
-import FormRow from './FormRow'
 import { Input } from '../Input'
 
 storiesOf('FormRow', module)
+  .addDecorator(centered)
   .add('default', () => (
     <div style={{ width: 480 }}>
       <Card>
