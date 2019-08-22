@@ -3,13 +3,21 @@ export const tokens = {
     /**
      * Colors
      */
-    Porcelain: '#fcfdfd',
+    Porcelain: '#FCFDFD',
     Thunder: '#1E1C21',
     BalticSea: '#212025',
-    Shark: '#2f3136',
+    Shark: '#2F3136',
     Mako: '#444850',
     Abbey: '#4C5058',
     ShuttleGray: '#5B6066',
+    Stone: '#71777B',
+    Oslo: '#878E8F',
+    BeatGig: ['#FAC62A', '#EFB506'],
+
+    /**
+     * Sizes
+     */
+    avatars: [24, 32, 40, 48, 56, 64],
 
     /**
      * Spacing
@@ -20,7 +28,7 @@ export const tokens = {
      * Typography
      */
     fontSizes: [12, 14, 16, 18, 20, 22, 24, 26],
-    fontWeights: [300, 400, 600],
+    fontWeights: [300, 500, 600, 700],
   },
 
   color: {
@@ -34,11 +42,21 @@ export const tokens = {
 
       card: '@Shark',
       header: '@Shark',
+
+      input: {
+        default: 'transparent',
+        focus: '@ShuttleGray',
+      },
     },
 
     border: {
       base: 'transparent',
-      input: '@ShuttleGray',
+      control: 'transparent',
+
+      input: {
+        default: '@Abbey',
+        focus: '@ShuttleGray',
+      },
     },
 
     outline: {
@@ -53,11 +71,13 @@ export const tokens = {
   size: {
     border: {
       base: 1,
-      input: 1,
+      control: 2,
+      input: 2,
     },
 
     radius: {
       base: 4,
+      avatar: '50%',
     },
 
     outline: {
@@ -85,6 +105,7 @@ export const tokens = {
   style: {
     border: {
       base: 'solid',
+      control: 'solid',
       input: 'solid',
     },
 
@@ -98,6 +119,13 @@ export const tokens = {
   },
 
   typography: {
+    decoration: {
+      link: {
+        default: 'none',
+        hover: 'none',
+      },
+    },
+
     font: {
       base: [
         '-apple-system',
@@ -129,7 +157,8 @@ export const tokens = {
     },
 
     weight: {
-      base: '@fontWeights.1',
+      base: '@fontWeights',
+      link: '@fontWeights.1',
       control: '@fontWeights.2',
       heading: '@fontWeights.2',
     },
