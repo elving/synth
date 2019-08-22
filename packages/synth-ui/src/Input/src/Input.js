@@ -9,22 +9,23 @@ import {
   padding,
 } from '@beatgig/synth-styled-components'
 
-import { baseStyles } from '../utils'
+import { baseStyles } from '../../utils'
 
 const Input = styled.input.attrs(() => ({
   type: 'text',
 }))`
   ${baseStyles}
   ${border('input')}
-  ${backgroundColor('control')}
+  ${backgroundColor('input')}
   ${borderRadius()};
   ${fontWeight('control')}
   ${padding('control')}
   cursor: text;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease-in-out 0s;
 
   :focus {
-    ${backgroundColor('control:focus')}
+    ${backgroundColor('input:focus')}
+    ${border('input:focus')}
     outline: 0 none;
   }
 `
