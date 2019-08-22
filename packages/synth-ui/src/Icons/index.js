@@ -1,5 +1,7 @@
 export { default as AdminIcon } from './AdminIcon'
 export { default as ArtistIcon } from './ArtistIcon'
 export { default as CheckIcon } from './CheckIcon'
+export { default as ChevronDownIcon } from './ChevronDownIcon'
 export { default as InboxIcon } from './InboxIcon'
 export { default as LogoutIcon } from './LogoutIcon'
+export { default as SearchIcon } from './SearchIcon'
