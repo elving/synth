@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 
 import { SynthConsumer } from './SynthContext'
 
@@ -32,11 +32,11 @@ const withSynth = (Component) => {
    *
    * @type {import('react').FunctionComponent<Props>}
    */
-  const SynthComponent = (props) => (
+  const SynthComponent = forwardRef((props, ref) => (
     <SynthConsumer>
-      {(value) => <Component {...props} synth={value} />}
+      {(value) => <Component {...props} ref={ref} synth={value} />}
     </SynthConsumer>
-  )
+  ))
 
   /**
    * The name of the given `Component` used to pass it down to the wrapped
