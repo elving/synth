@@ -1,13 +1,28 @@
 import { addDecorator, addParameters, configure } from '@storybook/react'
-import centered from '@storybook/addon-centered/react'
+import { createGlobalStyle } from 'styled-components'
+import { Fragment } from 'react'
+import React from 'react'
 
 import { getTokenValue } from '../packages/synth-core'
 import { tokens } from '../packages/synth-tokens'
 
 const files = require.context('../packages', true, /.story.js$/)
 
+const GlobalStyles = createGlobalStyle`
+  body, html {
+    padding: 0;
+    margin: 0;
+  }
+`
+
 const loadStories = () => {
-  addDecorator(centered)
+  addDecorator((story) => (
+    <Fragment>
+      <GlobalStyles />
+      {story()}
+    </Fragment>
+  ))
+
   files.keys().forEach((filename) => files(filename))
 }
 
