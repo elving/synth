@@ -11,17 +11,17 @@ import {
   padding,
 } from '@beatgig/synth-styled-components'
 
-import { baseStyles } from '../utils'
+import { baseStyles } from '../../utils'
 
-const Button = styled.button.attrs(({ disabled = false }) => ({
+const Button = styled.button.attrs(({ disabled }) => ({
   cursor: disabled ? 'not-allowed' : 'pointer',
-  opacity: disabled ? 0.65 : 1,
+  opacity: disabled ? 0.5 : 1,
   pointerEvents: disabled ? 'none' : 'inherit',
   type: 'button',
 }))`
   ${baseStyles}
   ${backgroundColor('control')}
-  ${border()}
+  ${border('control')}
   ${borderRadius()}
   ${color('control')}
   ${fontWeight('control')}
@@ -32,24 +32,40 @@ const Button = styled.button.attrs(({ disabled = false }) => ({
   align-items: center;
   display: inline-flex;
   justify-content: center;
-  transition: all 0.25s ease;
+  margin: 0;
+  transition: all 0.2s ease-in-out 0s;
+  text-decoration: none;
   pointer-events: ${({ pointerEvents }) => pointerEvents};
+  ${({ secondary, synth }) =>
+    secondary
+      ? `border-color: ${synth.getValue('color:background:control')};`
+      : ''}
+  ${({ secondary }) => (secondary ? 'background-color: transparent;' : '')}
 
   :hover {
-    ${backgroundColor('control:hover')}
+    background-color: ${({ secondary, synth }) =>
+      synth.getValue(`color:background:control${!secondary ? ':hover' : ''}`)};
+    text-decoration: none;
   }
 
   :focus {
     outline: 0 none;
+    text-decoration: none;
   }
 
   :active {
     ${backgroundColor('control:active')}
+    ${({ secondary, synth }) =>
+      secondary
+        ? `border-color: ${synth.getValue('color:background:control:active')};`
+        : ''}
+    text-decoration: none;
   }
 `
 
 Button.propTypes = {
   disabled: bool,
+  secondary: bool,
   synth: object.isRequired,
 }
 
