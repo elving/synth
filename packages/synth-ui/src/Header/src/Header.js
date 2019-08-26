@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { withSynth } from '@beatgig/synth-react'
 import { backgroundColor, padding } from '@beatgig/synth-styled-components'
 
-import { Flex } from '../Flex'
+import { Flex } from '../../Flex'
 
 const Header = styled(Flex).attrs(() => ({
   alignItems: 'center',

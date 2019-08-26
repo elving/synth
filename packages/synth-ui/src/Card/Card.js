@@ -9,17 +9,13 @@ import {
 } from '@beatgig/synth-styled-components'
 
 import { baseStyles } from '../utils'
-import { Flex } from '../Flex'
 
-const Card = styled(Flex).attrs(() => ({
-  column: true,
-}))`
+const Card = styled.div`
   ${baseStyles}
   ${backgroundColor('card')}
   ${borderRadius()}
   ${padding('card')}
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.02), 2px 2px 4px rgba(0, 0, 0, 0.085);
-  width: 100%;
 `
 
 Card.propTypes = {
