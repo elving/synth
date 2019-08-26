@@ -1,38 +1,73 @@
 import { withSynth } from '@beatgig/synth-react'
-import React from 'react'
 import styled from 'styled-components'
 
 /**
- * @param {object} props
- * @param {boolean} props.inline
+ * @typedef {object} Props
+ * @property {boolean} [props.bottom]
+ * @property {boolean} [props.inline]
+ * @property {boolean} [props.left]
+ * @property {boolean} [props.right]
+ * @property {number} [props.scale=0]
+ * @property {object} [props.synth]
+ * @property {boolean} [props.top]
+ */
+
+/**
+ * @type {string}
+ * @constant
+ * @default
+ */
+const POSITION_TOP = 'top'
+
+/**
+ * @type {string}
+ * @constant
+ * @default
+ */
+const POSITION_LEFT = 'left'
+
+/**
+ * @type {string}
+ * @constant
+ * @default
+ */
+const POSITION_RIGHT = 'right'
+
+/**
+ * @type {string}
+ * @constant
+ * @default
+ */
+const POSITION_BOTTOM = 'bottom'
+
+/**
+ * @type {array}
+ * @constant
+ * @default
+ */
+const POSITIONS = [POSITION_TOP, POSITION_LEFT, POSITION_RIGHT, POSITION_BOTTOM]
+
+/**
+ * @param {Props} props
  * @returns {string}
  */
 const setDisplayProperty = ({ inline }) => (inline ? 'inline-block' : 'block')
 
 /**
- * @param {object} props
- * @param {boolean} props.bottom
- * @param {boolean} props.left
- * @param {boolean} props.right
- * @param {number} [props.scale=0]
- * @param {object} props.synth
- * @param {boolean} props.top
+ * @param {Props} props
  * @returns {string}
  */
-const setMarginProperty = ({ bottom, left, right, scale = 0, synth, top }) => {
+const setMarginProperty = ({ scale = 0, synth, ...props }) => {
+  let css = ''
   const margin = synth.getUnit(`@spacing.${scale}`)
 
-  if (bottom) {
-    return `margin-bottom: ${margin};`
-  } else if (left) {
-    return `margin-left: ${margin};`
-  } else if (right) {
-    return `margin-right: ${margin};`
-  } else if (top) {
-    return `margin-top: ${margin};`
-  }
+  Object.keys(props).forEach((key) => {
+    if (POSITIONS.includes(key)) {
+      css += `margin-${key}: ${margin};`
+    }
+  })
 
-  return `margin: ${margin};`
+  return css || `margin: ${margin};`
 }
 
 const Spacer = styled.div`
