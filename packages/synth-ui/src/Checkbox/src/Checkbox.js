@@ -9,7 +9,7 @@ import {
   padding,
 } from '@beatgig/synth-styled-components'
 
-import { CheckIcon } from '../../Icons'
+import { CheckIcon } from '../../Icons/src'
 import { Spacer } from '../../Spacer'
 import { Text } from '../../Text'
 

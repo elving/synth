@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { withSynth } from '@beatgig/synth-react'
 
 import { Input } from '../../Input'
-import { SearchIcon } from '../../Icons'
+import { SearchIcon } from '../../Icons/src'
 
 const SearchInputContainer = styled.label`
   align-items: center;
