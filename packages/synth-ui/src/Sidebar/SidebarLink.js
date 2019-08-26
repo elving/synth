@@ -27,7 +27,7 @@ const Link = styled.a`
   align-items: center;
   display: flex;
   width: 100%;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease-in-out 0s;
 
   :hover {
     ${backgroundColor('@Mako')}
