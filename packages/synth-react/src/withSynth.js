@@ -12,7 +12,7 @@ import { SynthConsumer } from './SynthContext'
  * are available.
  *
  * @param {import('react').ComponentType} Component - The component that gets wrapped in SynthConsumer.
- * @returns {import('react').FunctionComponent}
+ * @returns {import('react').RefForwardingComponent}
  * @example
  *
  * const Component ({ label, synth }) =>
