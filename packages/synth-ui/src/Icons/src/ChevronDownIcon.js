@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Icon } from '../Icon'
+import { Icon } from '../../Icon'
 
 const ChevronDownIcon = ({ className = '', ...props }) => (
   <Icon className={className} viewBox="0 0 24 24" {...props}>

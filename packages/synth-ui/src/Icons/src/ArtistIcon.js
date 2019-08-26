@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Icon } from '../Icon'
+import { Icon } from '../../Icon'
 
 const ArtistIcon = (props) => (
   <Icon {...props} viewBox="0 0 24 24">
