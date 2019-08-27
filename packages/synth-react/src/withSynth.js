@@ -11,7 +11,7 @@ import { SynthConsumer } from './SynthContext'
  * so that they have an `synth` prop where the design system values
  * are available.
  *
- * @param {import('react').ComponentType} Component - The component that gets wrapped in SynthConsumer.
+ * @param {function|import('react').ComponentType} Component - The component that gets wrapped in SynthConsumer.
  * @returns {import('react').RefForwardingComponent}
  * @example
  *
