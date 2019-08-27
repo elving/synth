@@ -1,15 +1,50 @@
-import React from 'react'
+import { createPortal } from 'react-dom'
 import { storiesOf } from '@storybook/react'
+import React, { Fragment } from 'react'
+import styled from 'styled-components'
 
 import Header from '../src/Header'
 import HeaderLink from '../src/HeaderLink'
 import { Avatar } from '../../Avatar'
-import { ChevronDownIcon } from '../../Icons'
+import { ChevronDownIcon, LogoutIcon } from '../../Icons'
 import { Flex } from '../../Flex'
 import { MiniLogo } from '../../Logo'
-import { PrimaryButton } from '../../Button'
+import { Button, Clickable } from '../../Button'
 import { SearchInput } from '../../Input'
 import { Spacer } from '../../Spacer'
+import { PopupMenuDivider, PopupMenuItem, usePopupMenu } from '../../PopupMenu'
+
+const CustomPopupMenu = styled.div`
+  width: 220px;
+`
+
+const UserPopupMenu = (props = {}) => {
+  const { isOpen, open, Popup, triggerRef } = usePopupMenu(props)
+
+  return (
+    <Fragment>
+      <Clickable
+        icon={<ChevronDownIcon />}
+        iconPosition="right"
+        onClick={open}
+        ref={triggerRef}
+      >
+        <Avatar scale={2} src="https://i.pravatar.cc/40" />
+      </Clickable>
+
+      {isOpen &&
+        createPortal(
+          <CustomPopupMenu as={Popup}>
+            <PopupMenuItem>Lists</PopupMenuItem>
+            <PopupMenuItem>Account</PopupMenuItem>
+            <PopupMenuDivider />
+            <PopupMenuItem icon={<LogoutIcon />}>Logout</PopupMenuItem>
+          </CustomPopupMenu>,
+          document.body,
+        )}
+    </Fragment>
+  )
+}
 
 storiesOf('Header', module)
   .add('default', () => (
@@ -25,7 +60,9 @@ storiesOf('Header', module)
         <Flex alignItems="center">
           <SearchInput />
           <Spacer inline right scale={3} />
-          <PrimaryButton secondary>Register</PrimaryButton>
+          <Button outline primary>
+            Register
+          </Button>
           <Spacer inline right scale={3} />
           <HeaderLink href="#">Login</HeaderLink>
         </Flex>
@@ -44,10 +81,7 @@ storiesOf('Header', module)
         </Flex>
         <Flex alignItems="center">
           <SearchInput />
-          <Spacer inline right scale={3} />
-          <Avatar scale={2} src="https://i.pravatar.cc/40" />
-          <Spacer inline right />
-          <ChevronDownIcon size={24} />
+          <UserPopupMenu y="bottom" x="right" />
         </Flex>
       </Header>
     </div>
