@@ -1,6 +1,13 @@
 import styled from 'styled-components'
 import { withSynth } from '@beatgig/synth-react'
-import { borderRadius, height, width } from '@beatgig/synth-styled-components'
+
+import {
+  backgroundColor,
+  borderRadius,
+  boxShadow,
+  height,
+  width,
+} from '@beatgig/synth-styled-components'
 
 import { baseStyles } from '../../utils'
 
@@ -17,6 +24,8 @@ const setSize = ({ scale = 0, synth }) => `
 
 const Avatar = styled.img`
   ${baseStyles}
+  ${backgroundColor('avatar')}
+  ${boxShadow('avatar')}
   ${setSize}
   ${borderRadius('avatar')}
 `

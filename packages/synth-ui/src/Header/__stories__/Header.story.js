@@ -14,6 +14,10 @@ import { SearchInput } from '../../Input'
 import { Spacer } from '../../Spacer'
 import { PopupMenuDivider, PopupMenuItem, usePopupMenu } from '../../PopupMenu'
 
+const UserAvatarClickable = styled(Clickable)`
+  padding: 0;
+`
+
 const CustomPopupMenu = styled.div`
   width: 220px;
 `
@@ -23,14 +27,14 @@ const UserPopupMenu = (props = {}) => {
 
   return (
     <Fragment>
-      <Clickable
+      <UserAvatarClickable
         icon={<ChevronDownIcon />}
         iconPosition="right"
         onClick={open}
         ref={triggerRef}
       >
-        <Avatar scale={2} src="https://i.pravatar.cc/40" />
-      </Clickable>
+        <Avatar scale={1} src="https://i.pravatar.cc/40" />
+      </UserAvatarClickable>
 
       {isOpen &&
         createPortal(
@@ -81,7 +85,8 @@ storiesOf('Header', module)
         </Flex>
         <Flex alignItems="center">
           <SearchInput />
-          <UserPopupMenu y="bottom" x="right" />
+          <Spacer inline right scale={3} />
+          <UserPopupMenu y="bottom" yOffset="3%" x="right" />
         </Flex>
       </Header>
     </div>

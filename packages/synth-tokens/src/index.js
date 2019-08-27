@@ -35,6 +35,8 @@ export const tokens = {
 
   color: {
     background: {
+      avatar: '@ShuttleGray',
+
       control: {
         active: '@Mako',
         default: '@Abbey',
@@ -112,6 +114,7 @@ export const tokens = {
     },
 
     shadow: {
+      avatar: ['0 0 0 1px', '@Oslo'],
       outlineControl: ['0 0 0 1px inset', '@ShuttleGray'],
     },
 
