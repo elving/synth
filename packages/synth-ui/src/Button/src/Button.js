@@ -1,7 +1,7 @@
 import { bool, node, object, oneOf, string } from 'prop-types'
 import { isNil } from '@beatgig/is'
 import { withSynth } from '@beatgig/synth-react'
-import React, { Fragment } from 'react'
+import React, { forwardRef, Fragment } from 'react'
 import styled from 'styled-components'
 
 import {
@@ -145,13 +145,6 @@ const setColorHover = ({ outline, primary, synth }) =>
  * @param {Props} props
  * @returns {string}
  */
-const setPadding = ({ isIconButton, ...props }) =>
-  padding(isIconButton ? '@spacing.1' : 'control')(props)
-
-/**
- * @param {Props} props
- * @returns {string}
- */
 const setCursor = ({ disabled }) => (disabled ? 'not-allowed' : 'pointer')
 
 /**
@@ -167,6 +160,13 @@ const setColor = ({ outline, primary, ...props }) => {
     return color('control')(props)
   }
 }
+
+/**
+ * @param {Props} props
+ * @returns {string}
+ */
+const setPadding = ({ isIconButton, ...props }) =>
+  padding(isIconButton ? '@spacing.1' : 'control')(props)
 
 /**
  * @param {Props} props
@@ -233,36 +233,47 @@ const StyledButton = styled.button.attrs(() => ({
   }
 `
 
-/**
- * @param {Props} props
- * @returns {import('react').ReactNode}
- */
-const Button = ({ children, className, icon, ...props }) => {
-  const hasContent = !isNil(children)
-  const hasIcon = !isNil(icon)
-  const isIconButton = hasIcon && !hasContent
+const Button = forwardRef(
+  /**
+   * @param {Props} props
+   * @param {import('react').RefObject} ref
+   * @param {*} ref.current
+   * @returns {import('react').ReactElement}
+   */
+  ({ children, className, icon, ...props }, ref) => {
+    const hasContent = !isNil(children)
+    const hasIcon = !isNil(icon)
+    const isIconButton = hasIcon && !hasContent
 
-  return (
-    <StyledButton className={className} isIconButton={isIconButton} {...props}>
-      {hasIcon && !hasContent ? <Fragment>&zwnj;</Fragment> : null}
-      {iconToLeft(props) || iconToTop(props) ? icon : null}
-      {hasIcon && !isIconButton && iconToLeft(props) ? (
-        <Spacer inline right />
-      ) : null}
-      {hasIcon && !isIconButton && iconToTop(props) ? (
-        <Spacer inline bottom />
-      ) : null}
-      {children}
-      {hasIcon && !isIconButton && iconToRight(props) ? (
-        <Spacer inline left />
-      ) : null}
-      {hasIcon && !isIconButton && iconToBottom(props) ? (
-        <Spacer inline top />
-      ) : null}
-      {iconToRight(props) || iconToBottom(props) ? icon : null}
-    </StyledButton>
-  )
-}
+    console.log(ref, props)
+
+    return (
+      <StyledButton
+        {...props}
+        className={className}
+        isIconButton={isIconButton}
+        ref={ref}
+      >
+        {hasIcon && !hasContent ? <Fragment>&zwnj;</Fragment> : null}
+        {iconToLeft(props) || iconToTop(props) ? icon : null}
+        {hasIcon && !isIconButton && iconToLeft(props) ? (
+          <Spacer inline right />
+        ) : null}
+        {hasIcon && !isIconButton && iconToTop(props) ? (
+          <Spacer inline bottom />
+        ) : null}
+        {children}
+        {hasIcon && !isIconButton && iconToRight(props) ? (
+          <Spacer inline left />
+        ) : null}
+        {hasIcon && !isIconButton && iconToBottom(props) ? (
+          <Spacer inline top />
+        ) : null}
+        {iconToRight(props) || iconToBottom(props) ? icon : null}
+      </StyledButton>
+    )
+  },
+)
 
 Button.propTypes = {
   children: node,
