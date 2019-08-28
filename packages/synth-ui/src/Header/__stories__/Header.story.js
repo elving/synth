@@ -86,7 +86,7 @@ storiesOf('Header', module)
         <Flex alignItems="center">
           <SearchInput />
           <Spacer inline right scale={3} />
-          <UserPopupMenu y="bottom" yOffset="3%" x="right" />
+          <UserPopupMenu y="bottom" yOffset="2%" x="right" />
         </Flex>
       </Header>
     </div>

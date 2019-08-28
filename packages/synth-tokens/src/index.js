@@ -20,7 +20,6 @@ export const tokens = {
      * Sizes
      */
     icons: [18, 20, 22, 24, 26, 28],
-    // icons: [24, 32, 40, 48, 56, 64],
     avatars: [24, 32, 40, 48, 56, 64],
 
     /**
@@ -53,6 +52,8 @@ export const tokens = {
         default: 'transparent',
         focus: '@Abbey',
       },
+
+      popup: '@Shark',
     },
 
     border: {
@@ -63,6 +64,8 @@ export const tokens = {
         default: '@Abbey',
         focus: '@ShuttleGray',
       },
+
+      popup: '@Abbey',
     },
 
     outline: {
@@ -79,6 +82,7 @@ export const tokens = {
       base: 1,
       control: 2,
       input: 2,
+      popup: 1,
     },
 
     radius: {
@@ -113,6 +117,7 @@ export const tokens = {
       base: 'solid',
       control: 'solid',
       input: 'solid',
+      popup: 'solid',
     },
 
     shadow: {

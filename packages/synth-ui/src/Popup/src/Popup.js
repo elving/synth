@@ -1,6 +1,13 @@
+import { backgroundColor, border } from '@beatgig/synth-styled-components'
 import React, { forwardRef } from 'react'
+import styled from 'styled-components'
 
 import { Card } from '../../Card'
+
+const PopupContainer = styled(Card)`
+  ${backgroundColor('popup')}
+  ${border('popup')}
+`
 
 /**
  * @typedef {object} PopupProps
@@ -15,9 +22,9 @@ const Popup = forwardRef(
    * @param {*} ref.current
    */
   (props, ref) => (
-    <Card {...props} className={props.className} ref={ref}>
+    <PopupContainer {...props} className={props.className} ref={ref}>
       {props.children}
-    </Card>
+    </PopupContainer>
   ),
 )
 

@@ -8,7 +8,8 @@ const PopupMenuDivider = styled(Spacer).attrs(() => ({
   scale: 1,
   top: true,
 }))`
-  border-bottom: 1px solid ${({ synth }) => synth.getValue('@Abbey')};
+  border-bottom: 1px solid
+    ${({ synth }) => synth.getValue('color:border:popup')};
 `
 
 export default withSynth(PopupMenuDivider)
