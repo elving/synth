@@ -6,7 +6,6 @@ export { isGlobalToken } from './isGlobalToken'
 export { isTokenDeclaration } from './isTokenDeclaration'
 export { isTokenName } from './isTokenName'
 export { isTokenType } from './isTokenType'
-export { scale } from './scale'
 export { unit } from './unit'
 
 export {

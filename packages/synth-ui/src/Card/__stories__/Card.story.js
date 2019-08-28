@@ -2,11 +2,11 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import centered from '@storybook/addon-centered/react'
 
-import { Button } from '../Button'
-import Card from './Card'
-import { Input } from '../Input'
-import { FormRow } from '../Form'
-import { Heading } from '../Heading'
+import Card from '../src/Card'
+import { Button } from '../../Button'
+import { Input } from '../../Input'
+import { FormRow } from '../../Form'
+import { Heading } from '../../Typography'
 
 storiesOf('Card', module)
   .addDecorator(centered)

@@ -8,7 +8,7 @@ import {
   padding,
 } from '@beatgig/synth-styled-components'
 
-import { baseStyles } from '../utils'
+import { baseStyles } from '../../utils'
 
 const Card = styled.div`
   ${baseStyles}

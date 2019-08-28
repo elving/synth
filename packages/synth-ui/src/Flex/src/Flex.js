@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { bool, oneOf, number, string, oneOfType } from 'prop-types'
 import { withSynth } from '@beatgig/synth-react'
 
-import { baseStyles } from '../utils'
+import { baseStyles } from '../../utils'
 
 /**
  * @constant

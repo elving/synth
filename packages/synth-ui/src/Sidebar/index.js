@@ -1,2 +1,2 @@
-export { default as Sidebar } from './Sidebar'
-export { default as SidebarLink } from './SidebarLink'
+export { default as Sidebar } from './src/Sidebar'
+export { default as SidebarLink } from './src/SidebarLink'

@@ -8,7 +8,7 @@ import {
   margin,
 } from '@beatgig/synth-styled-components'
 
-import { baseStyles } from '../utils'
+import { baseStyles } from '../../utils'
 
 const Heading = styled.h1`
   ${baseStyles}
