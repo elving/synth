@@ -3,7 +3,7 @@ import centered from '@storybook/addon-centered/react'
 import React, { Fragment } from 'react'
 
 import PopupMenuDivider from '../src/PopupMenuDivider'
-import { Text } from '../../Text'
+import { Text } from '../../Typography'
 
 storiesOf('Popup/PopupMenu/Divider', module)
   .addDecorator(centered)

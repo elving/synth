@@ -11,7 +11,7 @@ import {
 
 import { CheckIcon } from '../../Icons/src'
 import { Spacer } from '../../Spacer'
-import { Text } from '../../Text'
+import { Text } from '../../Typography'
 
 const Container = styled.label`
   cursor: pointer;

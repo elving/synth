@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import centered from '@storybook/addon-centered/react'
 
-import { Text } from '../../Text'
+import { Text } from '../../Typography'
 import Spacer from '../src/Spacer'
 
 storiesOf('Spacer', module)

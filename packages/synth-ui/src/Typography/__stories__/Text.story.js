@@ -2,9 +2,9 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import centered from '@storybook/addon-centered/react'
 
-import Text from './Text'
+import Text from '../src/Text'
 
-storiesOf('Text', module)
+storiesOf('Typography/Text', module)
   .addDecorator(centered)
   .add('default', () => (
     <Text>
