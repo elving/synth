@@ -1,6 +1,6 @@
 {
   "name": "@beatgig/synth-css",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CSS bindings for Synth.",
   "author": "Elving Rodriguez <elving.pr@gmail.com>",
   "homepage": "",
@@ -20,6 +20,6 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@beatgig/synth-core": "^1.0.0"
+    "@beatgig/synth-core": "^1.0.1"
   }
 }

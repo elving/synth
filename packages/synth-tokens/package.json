@@ -1,6 +1,6 @@
 {
   "name": "@beatgig/synth-tokens",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Default token declarations used for building UI components at BeatGig",
   "author": "Elving Rodriguez <elving.pr@gmail.com>",
   "homepage": "",
