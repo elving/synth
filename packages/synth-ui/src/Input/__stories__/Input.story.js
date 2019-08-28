@@ -7,3 +7,4 @@ import Input from '../src/Input'
 storiesOf('Input/Default', module)
   .addDecorator(centered)
   .add('default', () => <Input />)
+  .add('with error', () => <Input hasError />)

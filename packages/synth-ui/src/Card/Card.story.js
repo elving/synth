@@ -5,7 +5,7 @@ import centered from '@storybook/addon-centered/react'
 import { Button } from '../Button'
 import Card from './Card'
 import { Input } from '../Input'
-import { FormRow } from '../FormRow'
+import { FormRow } from '../Form'
 import { Heading } from '../Heading'
 
 storiesOf('Card', module)

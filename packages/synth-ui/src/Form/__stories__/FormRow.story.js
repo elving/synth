@@ -2,12 +2,12 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import centered from '@storybook/addon-centered/react'
 
-import FormRow from './FormRow'
-import { Button } from '../Button'
-import { Card } from '../Card'
-import { Input } from '../Input'
+import FormRow from '../src/FormRow'
+import { Button } from '../../Button'
+import { Card } from '../../Card'
+import { Input } from '../../Input'
 
-storiesOf('FormRow', module)
+storiesOf('Form/Row', module)
   .addDecorator(centered)
   .add('default', () => (
     <div style={{ width: 480 }}>
@@ -21,14 +21,26 @@ storiesOf('FormRow', module)
       </Card>
     </div>
   ))
+  .add('fullWidth', () => (
+    <div style={{ width: 480 }}>
+      <Card>
+        <FormRow fullWidth>
+          <Input />
+        </FormRow>
+        <FormRow fullWidth>
+          <Button>Button</Button>
+        </FormRow>
+      </Card>
+    </div>
+  ))
   .add('inline', () => (
     <div style={{ width: 480 }}>
       <Card>
-        <FormRow fullWidth inline>
+        <FormRow inline>
           <Input />
           <Button>Button</Button>
         </FormRow>
-        <FormRow fullWidth inline>
+        <FormRow inline>
           <Button>Button A</Button>
           <Button>Button B</Button>
           <Button>Button C</Button>

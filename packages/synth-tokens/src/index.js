@@ -13,6 +13,8 @@ export const tokens = {
     Stone: '#71777B',
     Oslo: '#878E8F',
     BeatGig: ['#FAC62A', '#EFB506'],
+    Error: '#FF4D3F',
+    Success: '#00BB53',
 
     /**
      * Sizes
@@ -30,7 +32,7 @@ export const tokens = {
      * Typography
      */
     fontSizes: [12, 14, 16, 18, 20, 22, 24, 26],
-    fontWeights: [300, 500, 600, 700],
+    fontWeights: [400, 500, 600, 700],
   },
 
   color: {
@@ -40,7 +42,7 @@ export const tokens = {
       control: {
         active: '@Mako',
         default: '@Abbey',
-        focus: '@ShuttleGray',
+        focus: '@Mako',
         hover: '@ShuttleGray',
       },
 
@@ -49,7 +51,7 @@ export const tokens = {
 
       input: {
         default: 'transparent',
-        focus: '@ShuttleGray',
+        focus: '@Abbey',
       },
     },
 
@@ -159,12 +161,13 @@ export const tokens = {
       control: '@fontSizes.1',
       heading: '@fontSizes.6',
       text: '@fontSizes.2',
+      small: '@fontSizes',
     },
 
     weight: {
       base: '@fontWeights',
-      link: '@fontWeights.1',
-      control: '@fontWeights.2',
+      link: '@fontWeights',
+      control: '@fontWeights.1',
       heading: '@fontWeights.2',
     },
   },
