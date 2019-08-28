@@ -16,7 +16,7 @@
     "test": "__tests__"
   },
   "publishConfig": {
-    "access": "restricted"
+    "access": "public"
   },
   "private": true,
   "scripts": {
