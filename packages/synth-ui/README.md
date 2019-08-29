@@ -20,7 +20,7 @@ import { Button, Card, Paragraph } from '@beatgig/synth-ui'
 ReactDOM.render(
   <Card>
     <Paragraph>This is so cool!</Paragraph>
-    <Button>Yes, I agree<Button>
+    <Button>Yes, I agree</Button>
   </Card>,
   document.getElementById('root')
 )
