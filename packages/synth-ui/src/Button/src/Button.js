@@ -245,8 +245,6 @@ const Button = forwardRef(
     const hasIcon = !isNil(icon)
     const isIconButton = hasIcon && !hasContent
 
-    console.log(ref, props)
-
     return (
       <StyledButton
         {...props}
