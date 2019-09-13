@@ -1,6 +1,6 @@
 {
   "name": "@beatgig/synth-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "UI component library built on React and styled-components and powered by Synth design tokens",
   "author": "Elving Rodriguez <elving.pr@gmail.com>",
   "homepage": "",
