@@ -1,37 +1,49 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import centered from '@storybook/addon-centered/react'
+import styled from 'styled-components'
 
 import Popup from '../src/Popup'
 import usePopup from '../src/usePopup'
 import { Button } from '../../Button'
 
-const FromHook = (props = {}) => {
-  const { isOpen, open, triggerRef, Popup: HookPopup } = usePopup(props)
+const CustomPopup = styled(Popup)`
+  width: 320px;
+`
+
+const WithHook = (props = {}) => {
+  const { isOpen, open, popupRef, props: popupProps, triggerRef } = usePopup(
+    props,
+  )
 
   return (
     <div>
       <Button ref={triggerRef} onClick={open}>
         Open Popup
       </Button>
-      {isOpen ? <HookPopup>Popup Content</HookPopup> : null}
+
+      {isOpen ? (
+        <CustomPopup {...props} {...popupProps} ref={popupRef}>
+          Popup Content
+        </CustomPopup>
+      ) : null}
     </div>
   )
 }
 
 storiesOf('Popup', module)
   .addDecorator(centered)
-  .add('component', () => <Popup>Popup Content</Popup>)
-  .add('hook', () => <FromHook />)
-  .add('left-bottom', () => <FromHook x="left" y="bottom" isOpenByDefault />)
+  .add('component', () => <CustomPopup>Popup Content</CustomPopup>)
+  .add('hook', () => <WithHook />)
+  .add('left-bottom', () => <WithHook x="left" y="bottom" isOpenByDefault />)
   .add('left-bottom with offset', () => (
-    <FromHook x="left" y="bottom" isOpenByDefault xOffset={-10} yOffset={10} />
+    <WithHook x="left" y="bottom" isOpenByDefault xOffset={-10} yOffset={10} />
   ))
   .add('center-bottom', () => (
-    <FromHook x="center" y="bottom" isOpenByDefault />
+    <WithHook x="center" y="bottom" isOpenByDefault />
   ))
   .add('center-bottom with offset', () => (
-    <FromHook
+    <WithHook
       x="center"
       y="bottom"
       isOpenByDefault
@@ -39,29 +51,29 @@ storiesOf('Popup', module)
       yOffset={5}
     />
   ))
-  .add('right-bottom', () => <FromHook x="right" y="bottom" isOpenByDefault />)
+  .add('right-bottom', () => <WithHook x="right" y="bottom" isOpenByDefault />)
   .add('right-bottom with offset', () => (
-    <FromHook x="right" y="bottom" isOpenByDefault xOffset={-30} yOffset={10} />
+    <WithHook x="right" y="bottom" isOpenByDefault xOffset={-30} yOffset={10} />
   ))
-  .add('left-top', () => <FromHook x="left" y="top" isOpenByDefault />)
+  .add('left-top', () => <WithHook x="left" y="top" isOpenByDefault />)
   .add('left-top with offset', () => (
-    <FromHook x="left" y="top" isOpenByDefault xOffset={-30} yOffset="-5%" />
+    <WithHook x="left" y="top" isOpenByDefault xOffset={-30} yOffset="-5%" />
   ))
-  .add('center-top', () => <FromHook x="center" y="top" isOpenByDefault />)
+  .add('center-top', () => <WithHook x="center" y="top" isOpenByDefault />)
   .add('center-top with offset', () => (
-    <FromHook x="center" y="top" isOpenByDefault xOffset={-10} yOffset={15} />
+    <WithHook x="center" y="top" isOpenByDefault xOffset={-10} yOffset={15} />
   ))
-  .add('right-top', () => <FromHook x="right" y="top" isOpenByDefault />)
+  .add('right-top', () => <WithHook x="right" y="top" isOpenByDefault />)
   .add('right-top with offset', () => (
-    <FromHook x="right" y="top" isOpenByDefault xOffset={10} yOffset={10} />
+    <WithHook x="right" y="top" isOpenByDefault xOffset={10} yOffset={10} />
   ))
-  .add('left-center', () => <FromHook x="left" y="center" isOpenByDefault />)
+  .add('left-center', () => <WithHook x="left" y="center" isOpenByDefault />)
   .add('left-center with offset', () => (
-    <FromHook x="left" y="center" isOpenByDefault xOffset={-5} yOffset={-5} />
+    <WithHook x="left" y="center" isOpenByDefault xOffset={-5} yOffset={-5} />
   ))
-  .add('right-center', () => <FromHook x="right" y="center" isOpenByDefault />)
+  .add('right-center', () => <WithHook x="right" y="center" isOpenByDefault />)
   .add('right-center with offset', () => (
-    <FromHook
+    <WithHook
       x="right"
       y="center"
       isOpenByDefault

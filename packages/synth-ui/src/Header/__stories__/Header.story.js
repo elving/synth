@@ -12,18 +12,26 @@ import { MiniLogo } from '../../Logo'
 import { Button, Clickable } from '../../Button'
 import { SearchInput } from '../../Input'
 import { Spacer } from '../../Spacer'
-import { PopupMenuDivider, PopupMenuItem, usePopupMenu } from '../../PopupMenu'
+import { usePopup } from '../../Popup'
+import { PopupMenuDivider, PopupMenuItem, PopupMenu } from '../../PopupMenu'
 
 const UserAvatarClickable = styled(Clickable)`
   padding: 0;
 `
 
-const CustomPopupMenu = styled.div`
+const CustomPopupMenu = styled(PopupMenu)`
   width: 220px;
 `
 
 const UserPopupMenu = (props = {}) => {
-  const { isOpen, open, Popup, triggerRef } = usePopupMenu(props)
+  const {
+    isOpen,
+    open,
+    Popup,
+    popupRef,
+    props: popupProps,
+    triggerRef,
+  } = usePopup(props)
 
   return (
     <Fragment>
@@ -38,7 +46,7 @@ const UserPopupMenu = (props = {}) => {
 
       {isOpen &&
         createPortal(
-          <CustomPopupMenu as={Popup}>
+          <CustomPopupMenu {...props} {...popupProps} ref={popupRef}>
             <PopupMenuItem>Lists</PopupMenuItem>
             <PopupMenuItem>Account</PopupMenuItem>
             <PopupMenuDivider />

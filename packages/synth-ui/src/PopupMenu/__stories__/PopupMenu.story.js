@@ -3,26 +3,30 @@ import centered from '@storybook/addon-centered/react'
 import React from 'react'
 import styled from 'styled-components'
 
+import PopupMenu from '../src/PopupMenu'
 import PopupMenuDivider from '../src/PopupMenuDivider'
 import PopupMenuItem from '../src/PopupMenuItem'
-import usePopupMenu from '../src/usePopupMenu'
+import { usePopup } from '../../Popup'
 import { Button } from '../../Button'
 import { LogoutIcon } from '../../Icons/src'
 
-const CustomPopupMenu = styled.div`
+const CustomPopupMenu = styled(PopupMenu)`
   width: 220px;
 `
 
-const PopupMenu = (props = {}) => {
-  const { isOpen, open, triggerRef, Popup } = usePopupMenu(props)
+const WithHook = (props = {}) => {
+  const { isOpen, open, popupRef, props: popupProps, triggerRef } = usePopup(
+    props,
+  )
 
   return (
     <div>
       <Button ref={triggerRef} onClick={open}>
         Open Popup
       </Button>
+
       {isOpen && (
-        <CustomPopupMenu as={Popup}>
+        <CustomPopupMenu {...props} {...popupProps} ref={popupRef}>
           <PopupMenuItem>Item 1</PopupMenuItem>
           <PopupMenuItem>Item 2</PopupMenuItem>
           <PopupMenuDivider />
@@ -36,5 +40,5 @@ const PopupMenu = (props = {}) => {
 storiesOf('Popup/PopupMenu', module)
   .addDecorator(centered)
   .add('default', () => (
-    <PopupMenu x="left" y="bottom" yOffset={5} isOpenByDefault />
+    <WithHook x="left" y="bottom" yOffset={5} isOpenByDefault />
   ))
