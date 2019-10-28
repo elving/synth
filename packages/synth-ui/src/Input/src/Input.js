@@ -51,6 +51,11 @@ const Input = styled.input.attrs(() => ({
   line-height: 1.45;
   transition: all 0.2s ease-in-out 0s;
 
+  :hover {
+    ${backgroundColor('input:hover')}
+    ${border('input:hover')}
+  }
+
   :focus {
     ${backgroundColor('input:focus')}
     ${border('input:focus')}

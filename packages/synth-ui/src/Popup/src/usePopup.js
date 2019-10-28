@@ -1,6 +1,8 @@
 import { useOnClickOutside, useRect } from '@beatgig/hooks'
 import { useLayoutEffect, useCallback, useRef, useState } from 'react'
 
+import { noop } from '../../utils'
+
 /**
  * @typedef {object} PopupHookData
  * @property {function} close - Function used to close the popup.
@@ -18,10 +20,20 @@ import { useLayoutEffect, useCallback, useRef, useState } from 'react'
  * @param {object} options
  * @param {boolean} [options.isOpenByDefault] - Flag that determines if the popup is visible or not.
  * @param {function} [options.onClickOutside] - Callback function that gets called whenever the user clicks outside of the popup **and** it's target.
+ * @param {function} [options.onClose] - Callback function that gets called whenever the popup is closed.
+ * @param {function} [options.onOpen] - Callback function that gets called whenever the popup is opened.
+ * @param {function} [options.onToggle] - Callback function that gets called whenever the popup is toggled.
  * @returns {PopupHookData}
  */
 const usePopup = (options = {}) => {
-  const { isOpenByDefault = false, onClickOutside = () => {} } = options
+  const {
+    isOpenByDefault = false,
+    onClickOutside = noop,
+    onClose = noop,
+    onOpen = noop,
+    onToggle = noop,
+  } = options
+
   const popupRef = useRef(null)
   const triggerRef = useRef(null)
   const triggerRect = useRect(triggerRef)
@@ -29,16 +41,19 @@ const usePopup = (options = {}) => {
   const [popupRect, setPopupRect] = useState({})
 
   const open = useCallback(() => {
+    onOpen()
     setOpenState(true)
-  }, [setOpenState])
+  }, [onOpen, setOpenState])
 
   const close = useCallback(() => {
+    onClose()
     setOpenState(false)
-  }, [setOpenState])
+  }, [onClose, setOpenState])
 
-  const toggle = useCallback(() => setOpenState((prevState) => !prevState), [
-    setOpenState,
-  ])
+  const toggle = useCallback(() => {
+    onToggle()
+    setOpenState((prevState) => !prevState)
+  }, [onToggle, setOpenState])
 
   const clickOutsideCallback = useCallback(() => {
     close()

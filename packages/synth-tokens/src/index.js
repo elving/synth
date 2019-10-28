@@ -7,6 +7,7 @@ export const tokens = {
     Thunder: '#1E1C21',
     BalticSea: '#212025',
     Shark: '#2F3136',
+    Tuna: '#393C40',
     Mako: '#444850',
     Abbey: '#4C5058',
     ShuttleGray: '#5B6066',
@@ -19,7 +20,8 @@ export const tokens = {
     /**
      * Sizes
      */
-    icons: [18, 20, 22, 24, 26, 28],
+    // icons: [18, 20, 22, 24, 26, 28],
+    icons: [12, 14, 16, 18, 20, 22, 24, 26],
     avatars: [24, 32, 40, 48, 56, 64],
 
     /**
@@ -51,9 +53,17 @@ export const tokens = {
       input: {
         default: 'transparent',
         focus: '@Abbey',
+        hover: 'transparent',
       },
 
       popup: '@Shark',
+
+      popupItem: {
+        default: '@Shark',
+        hover: '@Tuna',
+      },
+
+      tag: '@Stone',
     },
 
     border: {
@@ -62,7 +72,8 @@ export const tokens = {
 
       input: {
         default: '@Abbey',
-        focus: '@ShuttleGray',
+        hover: '@Stone',
+        focus: '@Stone',
       },
 
       popup: '@Abbey',
@@ -74,6 +85,7 @@ export const tokens = {
 
     text: {
       base: '@Porcelain',
+      status: '@Oslo',
     },
   },
 
@@ -88,6 +100,7 @@ export const tokens = {
     radius: {
       base: 4,
       avatar: '50%',
+      tag: '50rem',
     },
 
     outline: {
@@ -103,8 +116,10 @@ export const tokens = {
 
     padding: {
       card: '@spacing.4',
+      tag: ['@spacing', '@spacing.1'],
       control: ['@spacing.1', '@spacing.2'],
       header: ['@spacing.2', '@spacing.3'],
+      popupItem: ['@spacing.1', '@spacing.2'],
     },
 
     outline: {
@@ -167,6 +182,11 @@ export const tokens = {
       heading: '@fontSizes.6',
       text: '@fontSizes.2',
       small: '@fontSizes',
+      status: '@fontSizes.1',
+    },
+
+    transform: {
+      status: 'uppercase',
     },
 
     weight: {
@@ -174,6 +194,7 @@ export const tokens = {
       link: '@fontWeights',
       control: '@fontWeights.1',
       heading: '@fontWeights.2',
+      status: '@fontWeights.2',
     },
   },
 }

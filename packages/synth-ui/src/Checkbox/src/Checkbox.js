@@ -9,7 +9,7 @@ import {
   padding,
 } from '@beatgig/synth-styled-components'
 
-import { CheckIcon } from '../../Icons/src'
+import { CheckIcon } from '../../Icons'
 import { Spacer } from '../../Spacer'
 import { Text } from '../../Typography'
 
@@ -27,10 +27,16 @@ const Container = styled.label`
 const IconContainer = styled.div`
   ${border('input')}
   ${borderRadius()}
+  ${padding('@spacing')}
   align-items: center;
   display: inline-flex;
   justify-content: center;
-  transition: background-color 0.25s ease;
+  transition: all 0.25s ease;
+
+  :hover {
+    ${backgroundColor('input:hover')}
+    ${border('input:hover')}
+  }
 `
 
 const Icon = styled(CheckIcon)`
@@ -56,14 +62,18 @@ const Input = styled.input.attrs(() => ({
   }
 `
 
-const Checkbox = ({ className = '', label, synth, ...props }) => (
-  <Container className={className} synth={synth}>
+const Checkbox = ({ as, className = '', label, synth, ...props }) => (
+  <Container as={as} className={className} synth={synth}>
     <Input synth={synth} {...props} />
     <IconContainer synth={synth}>
-      <Icon size={synth.getUnit('@fontSizes.2')} synth={synth} />
+      <Icon synth={synth} />
     </IconContainer>
     {label ? <Spacer left inline scale={1} /> : null}
-    {label ? <Text synth={synth}>{label}</Text> : null}
+    {label ? (
+      <Text scale={1} synth={synth}>
+        {label}
+      </Text>
+    ) : null}
   </Container>
 )
 

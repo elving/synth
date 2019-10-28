@@ -8,7 +8,7 @@ import PopupMenuDivider from '../src/PopupMenuDivider'
 import PopupMenuItem from '../src/PopupMenuItem'
 import { usePopup } from '../../Popup'
 import { Button } from '../../Button'
-import { LogoutIcon } from '../../Icons/src'
+import { LogoutIcon } from '../../Icons'
 
 const CustomPopupMenu = styled(PopupMenu)`
   width: 220px;

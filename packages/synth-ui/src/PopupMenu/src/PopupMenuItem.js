@@ -1,7 +1,7 @@
 import { func, node, string } from 'prop-types'
 import { isNil } from '@beatgig/is'
 import { withSynth } from '@beatgig/synth-react'
-import React from 'react'
+import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 
 import {
@@ -9,6 +9,7 @@ import {
   color,
   fontSize,
   fontWeight,
+  padding,
 } from '@beatgig/synth-styled-components'
 
 import { Spacer } from '../../Spacer'
@@ -19,33 +20,38 @@ const Item = withSynth(styled.button`
   ${color('control')}
   ${fontSize('control')}
   ${fontWeight('control')}
-  background-color: transparent;
+  ${backgroundColor('popupItem')}
+  ${padding('popupItem')}
   border: 0 none;
   cursor: pointer;
   outline: 0 none;
   align-items: center;
-  display: flex;
-  padding: ${({ synth }) => synth.getUnit('@spacing.1')} ${({ synth }) =>
-  synth.getUnit('@spacing.2')};
+  display: flex;  
+  width: 100%;
   line-height: 1.35;
   text-align: left;
+  transition: background-color 0.25s ease;
 
-  :hover {
-    ${backgroundColor('control')}
+  :hover,
+  :focus,
+  &.active {
+    ${backgroundColor('popupItem:hover')}
   }
 `)
 
-const PopupMenuItem = ({ children, className, icon, onClick, url }) => {
-  const hasIcon = !isNil(icon)
+const PopupMenuItem = forwardRef(
+  ({ children, className, icon, onClick }, ref) => {
+    const hasIcon = !isNil(icon)
 
-  return (
-    <Item className={className} onClick={onClick}>
-      {hasIcon ? icon : null}
-      {hasIcon ? <Spacer scale={1} inline right /> : null}
-      {children}
-    </Item>
-  )
-}
+    return (
+      <Item className={className} ref={ref} onClick={onClick}>
+        {hasIcon ? icon : null}
+        {hasIcon ? <Spacer scale={1} inline right /> : null}
+        {children}
+      </Item>
+    )
+  },
+)
 
 PopupMenuItem.propTypes = {
   children: node,

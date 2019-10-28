@@ -8,7 +8,7 @@ import {
   lineHeight,
 } from '@beatgig/synth-styled-components'
 
-const baseStyles = css`
+export default css`
   ${color()}
   ${fontFamily()}
   ${fontSize()}
@@ -19,5 +19,3 @@ const baseStyles = css`
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
 `
-
-export { baseStyles }

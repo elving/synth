@@ -1,5 +1,8 @@
+import React, { Fragment } from 'react'
 import { withSynth } from '@beatgig/synth-react'
 import styled from 'styled-components'
+
+import { baseStyles } from '../../utils'
 
 /**
  * @typedef {object} Props
@@ -62,7 +65,7 @@ const setMarginProperty = ({ scale = 0, synth, ...props }) => {
   const margin = synth.getUnit(`@spacing.${scale}`)
 
   Object.keys(props).forEach((key) => {
-    if (POSITIONS.includes(key)) {
+    if (POSITIONS.includes(key) && props[key]) {
       css += `margin-${key}: ${margin};`
     }
   })
@@ -71,8 +74,17 @@ const setMarginProperty = ({ scale = 0, synth, ...props }) => {
 }
 
 const Spacer = styled.div`
+  ${baseStyles}
   display: ${setDisplayProperty};
   ${setMarginProperty}
 `
+
+// const Spacer = styled.div.attrs(() => ({
+//   children: <Fragment>&zwnj;</Fragment>,
+// }))`
+//   ${baseStyles}
+//   display: ${setDisplayProperty};
+//   ${setMarginProperty}
+// `
 
 export default withSynth(Spacer)
