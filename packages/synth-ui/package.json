@@ -1,6 +1,6 @@
 {
   "name": "@beatgig/synth-ui",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "UI component library built on React and styled-components and powered by Synth design tokens",
   "author": "Elving Rodriguez <elving.pr@gmail.com>",
   "homepage": "",
@@ -24,7 +24,7 @@
     "@beatgig/hooks": "^1.1.4",
     "@beatgig/is": "^1.1.0",
     "@beatgig/synth-core": "^1.0.1",
-    "@beatgig/synth-react": "^1.0.1",
+    "@beatgig/synth-react": "^1.0.2",
     "@beatgig/synth-styled-components": "^1.0.1",
     "@welldone-software/why-did-you-render": "^3.3.8",
     "styled-components": "^4.4.0"
