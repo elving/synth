@@ -12,17 +12,20 @@ export {
   ArtistIcon,
   CheckIcon,
   ChevronDownIcon,
+  CloseIcon,
   InboxIcon,
   LogoutIcon,
   SearchIcon,
 } from './Icons'
 
-export { Input, SearchInput } from './Input'
+export { baseStyles, noop, ScrollIntoView } from './utils'
+export { Error, Heading, Label, Small, Status, Text } from './Typography'
 export { FullLogo, MiniLogo } from './Logo'
+export { Editable, Input, SearchInput } from './Input'
 export { Popup, usePopup } from './Popup'
-export { PopupMenuDivider, PopupMenuItem, usePopupMenu } from './PopupMenu'
+export { PopupMenu, PopupMenuDivider, PopupMenuItem } from './PopupMenu'
 export { Select } from './Select'
 export { Sidebar, SidebarLink } from './Sidebar'
 export { Spacer } from './Spacer'
-export { Error, Heading, Label, Small, Text } from './Typography'
-export { baseStyles } from './utils'
+export { Tag } from './Tag'
+export { TagSelect } from './TagSelect'
