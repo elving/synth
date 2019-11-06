@@ -73,3 +73,12 @@ storiesOf('TagSelect', module)
       tags={tags}
     />
   ))
+  .add('with events', () => (
+    <CustomTagSelect
+      canCreateTags
+      placeholder="Select some tags..."
+      tags={tags}
+      onCreate={(tag) => console.log('onCreate', tag)}
+      onChange={(tags) => console.log('onChange', tags)}
+    />
+  ))

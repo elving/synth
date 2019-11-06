@@ -1,4 +1,6 @@
+import { last } from '@beatgig/array'
 import { padding } from '@beatgig/synth-styled-components'
+import { usePreviousValue } from '@beatgig/hooks'
 import { withSynth } from '@beatgig/synth-react'
 import styled from 'styled-components'
 
@@ -230,6 +232,8 @@ const TagSelect = ({
   className = '',
   defaultSelected = [],
   groupAfter = 2,
+  onChange = noop,
+  onCreate = noop,
   placeholder = '',
   renderEmptyResults = () => <Status>No results found...</Status>,
   single,
@@ -248,6 +252,20 @@ const TagSelect = ({
     },
     init,
   )
+
+  const prevState = usePreviousValue(state)
+
+  if (prevState) {
+    if (
+      state.createdTags.length &&
+      state.createdTags.length > prevState.createdTags.length
+    ) {
+      onCreate(last(state.createdTags))
+      onChange(state.selectedTags)
+    } else if (state.selectedTags.length !== prevState.selectedTags.length) {
+      onChange(state.selectedTags)
+    }
+  }
 
   const focus = useCallback(() => {
     if (inputRef.current) {
