@@ -19,9 +19,10 @@ export {
 } from './Icons'
 
 export { baseStyles, noop, ScrollIntoView } from './utils'
+export { Editable, Input, SearchInput } from './Input'
 export { Error, Heading, Label, Small, Status, Text } from './Typography'
 export { FullLogo, MiniLogo } from './Logo'
-export { Editable, Input, SearchInput } from './Input'
+export { GlobalStyles } from './GlobalStyles'
 export { Popup, usePopup } from './Popup'
 export { PopupMenu, PopupMenuDivider, PopupMenuItem } from './PopupMenu'
 export { Select } from './Select'
