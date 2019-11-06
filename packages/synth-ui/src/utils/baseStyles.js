@@ -15,7 +15,5 @@ export default css`
   ${fontWeight()}
   ${lineHeight()}
   box-sizing: border-box;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
 `
