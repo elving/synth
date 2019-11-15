@@ -30,3 +30,15 @@ export { Sidebar, SidebarLink } from './Sidebar'
 export { Spacer } from './Spacer'
 export { Tag } from './Tag'
 export { TagSelect } from './TagSelect'
+
+export {
+  Modal,
+  ModalActions,
+  ModalContent,
+  ModalHeader,
+  ModalTitle,
+} from './Modal'
+
+export { ConfirmationModal } from './ConfirmationModal'
+export { default as Grid } from './Grid'
+export * from './Grid'
