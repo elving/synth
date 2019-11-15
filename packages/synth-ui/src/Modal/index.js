@@ -1,0 +1,5 @@
+export { default as Modal } from './src/Modal'
+export { default as ModalActions } from './src/ModalActions'
+export { default as ModalContent } from './src/ModalContent'
+export { default as ModalHeader } from './src/ModalHeader'
+export { default as ModalTitle } from './src/ModalTitle'

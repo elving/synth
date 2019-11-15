@@ -1,4 +1,5 @@
 import { backgroundColor, border } from '@beatgig/synth-styled-components'
+import { createPortal } from 'react-dom'
 import { unit } from '@beatgig/synth-core'
 import { withSynth } from '@beatgig/synth-react'
 import React, { forwardRef } from 'react'
@@ -160,30 +161,33 @@ const PopupContainer = withSynth(styled(Card)`
   z-index: 1000;
 `)
 
-/**
- * @typedef {object} PopupProps
- * @property {string} [props.className]
- * @property {*} [props.children]
- * @property {(POSITION_LEFT|POSITION_RIGHT|POSITION_CENTER)} [options.x] - X position of the popup.
- * @property {(POSITION_TOP|POSITION_BOTTOM|POSITION_CENTER)} [options.y] - Y position of the popup.
- * @property {number|string} [options.xOffset] - Offset for the popup's x position.
- * @property {number|string} [options.yOffset] - Offset for the popup's y position.
- * @property {DOMRect} [options.popupRect] - The popup element's DOMRect object.
- * @property {object} [options.triggerRect] - The trigger element's DOMRect object.
- * @property {boolean} [options.useTriggerWidth] - If true, the popup's width will match it's target's width.
- * @property {boolean} [options.useTriggerHeight] - If true, the popup's height will match it's target's height.
- */
+const renderPopup = (container, renderInPlace, popup) =>
+  renderInPlace ? popup : createPortal(popup, container)
+
 const Popup = forwardRef(
   /**
-   * @param {PopupProps & object} props
-   * @param {import('react').RefObject} ref
-   * @param {*} ref.current
+   * @param {object} props
+   * @param {string} [props.className]
+   * @param {React.ReactChild} [props.children]
+   * @param {HTMLElement} [props.container=HTMLDivElement]
+   * @param {(POSITION_LEFT|POSITION_RIGHT|POSITION_CENTER)} [props.x] - X position of the popup.
+   * @param {(POSITION_TOP|POSITION_BOTTOM|POSITION_CENTER)} [props.y] - Y position of the popup.
+   * @param {number|string} [props.xOffset] - Offset for the popup's x position.
+   * @param {number|string} [props.yOffset] - Offset for the popup's y position.
+   * @param {DOMRect} [props.popupRect] - The popup element's DOMRect object.
+   * @param {object} [props.triggerRect] - The trigger element's DOMRect object.
+   * @param {boolean} [props.renderInPlace]
+   * @param {boolean} [props.useTriggerWidth] - If true, the popup's width will match it's target's width.
+   * @param {boolean} [props.useTriggerHeight] - If true, the popup's height will match it's target's height.
+   * @param {React.RefObject} ref
    */
   (
     {
       children,
       className = '',
+      container = document.getElementById('root'),
       popupRect,
+      renderInPlace = false,
       triggerRect,
       useTriggerHeight = false,
       useTriggerWidth = false,
@@ -194,23 +198,26 @@ const Popup = forwardRef(
       ...props
     },
     ref,
-  ) => (
-    <PopupContainer
-      {...props}
-      className={className}
-      popupRect={popupRect}
-      ref={ref}
-      triggerRect={triggerRect}
-      useTriggerHeight={useTriggerHeight}
-      useTriggerWidth={useTriggerWidth}
-      x={x}
-      xOffset={xOffset}
-      y={y}
-      yOffset={yOffset}
-    >
-      {children}
-    </PopupContainer>
-  ),
+  ) =>
+    renderPopup(
+      container,
+      renderInPlace,
+      <PopupContainer
+        {...props}
+        className={className}
+        popupRect={popupRect}
+        ref={ref}
+        triggerRect={triggerRect}
+        useTriggerHeight={useTriggerHeight}
+        useTriggerWidth={useTriggerWidth}
+        x={x}
+        xOffset={xOffset}
+        y={y}
+        yOffset={yOffset}
+      >
+        {children}
+      </PopupContainer>,
+    ),
 )
 
 export default Popup

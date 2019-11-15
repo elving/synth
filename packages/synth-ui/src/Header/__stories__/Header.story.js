@@ -1,4 +1,3 @@
-import { createPortal } from 'react-dom'
 import { storiesOf } from '@storybook/react'
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
@@ -44,16 +43,14 @@ const UserPopupMenu = (props = {}) => {
         <Avatar scale={1} src="https://i.pravatar.cc/40" />
       </UserAvatarClickable>
 
-      {isOpen &&
-        createPortal(
-          <CustomPopupMenu {...props} {...popupProps} ref={popupRef}>
-            <PopupMenuItem>Lists</PopupMenuItem>
-            <PopupMenuItem>Account</PopupMenuItem>
-            <PopupMenuDivider />
-            <PopupMenuItem icon={<LogoutIcon />}>Logout</PopupMenuItem>
-          </CustomPopupMenu>,
-          document.body,
-        )}
+      {isOpen && (
+        <CustomPopupMenu {...props} {...popupProps} ref={popupRef}>
+          <PopupMenuItem>Lists</PopupMenuItem>
+          <PopupMenuItem>Account</PopupMenuItem>
+          <PopupMenuDivider />
+          <PopupMenuItem icon={<LogoutIcon />}>Logout</PopupMenuItem>
+        </CustomPopupMenu>
+      )}
     </Fragment>
   )
 }
