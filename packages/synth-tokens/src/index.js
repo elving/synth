@@ -14,8 +14,8 @@ export const tokens = {
     Stone: '#71777B',
     Oslo: '#878E8F',
     BeatGig: ['#FAC62A', '#EFB506'],
-    Error: '#FF4D3F',
-    Success: '#00BB53',
+    Error: ['#C5493A', '#B0422F'],
+    Success: ['#00BB53', '#00A76D'],
 
     /**
      * Sizes
@@ -23,6 +23,7 @@ export const tokens = {
     // icons: [18, 20, 22, 24, 26, 28],
     icons: [12, 14, 16, 18, 20, 22, 24, 26],
     avatars: [24, 32, 40, 48, 56, 64],
+    cards: [240, 480, 960],
 
     /**
      * Spacing
@@ -39,6 +40,11 @@ export const tokens = {
   color: {
     background: {
       avatar: '@ShuttleGray',
+      card: '@Shark',
+      header: '@Shark',
+      modalOverlay: '@Thunder',
+      popup: '@Shark',
+      tag: '@Stone',
 
       control: {
         active: '@Mako',
@@ -47,23 +53,16 @@ export const tokens = {
         hover: '@ShuttleGray',
       },
 
-      card: '@Shark',
-      header: '@Shark',
-
       input: {
         default: 'transparent',
         focus: '@Abbey',
         hover: 'transparent',
       },
 
-      popup: '@Shark',
-
       popupItem: {
         default: '@Shark',
         hover: '@Tuna',
       },
-
-      tag: '@Stone',
     },
 
     border: {
@@ -106,6 +105,14 @@ export const tokens = {
     outline: {
       base: 1,
     },
+
+    width: {
+      modal: '100%',
+    },
+
+    maxWidth: {
+      modal: '@cards.1',
+    },
   },
 
   space: {
@@ -115,11 +122,12 @@ export const tokens = {
     },
 
     padding: {
-      card: '@spacing.4',
-      tag: ['@spacing', '@spacing.1'],
+      card: '@spacing.2',
       control: ['@spacing.1', '@spacing.2'],
       header: ['@spacing.2', '@spacing.3'],
+      modalOverlay: '@spacing.5',
       popupItem: ['@spacing.1', '@spacing.2'],
+      tag: ['@spacing', '@spacing.1'],
     },
 
     outline: {
@@ -138,6 +146,10 @@ export const tokens = {
     shadow: {
       avatar: ['0 0 0 1px', '@Oslo'],
       outlineControl: ['0 0 0 1px inset', '@ShuttleGray'],
+    },
+
+    opacity: {
+      modalOverlay: 0.85,
     },
 
     outline: {
