@@ -1,7 +1,7 @@
 import { bool, node, object, oneOf, string } from 'prop-types'
 import { isNil } from '@beatgig/is'
 import { withSynth } from '@beatgig/synth-react'
-import React, { forwardRef, Fragment } from 'react'
+import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 
 import {
@@ -13,8 +13,22 @@ import {
   padding,
 } from '@beatgig/synth-styled-components'
 
-import { baseStyles } from '../../utils'
 import { Spacer } from '../../Spacer'
+
+import { baseStyles } from '../../utils'
+
+import {
+  ICON_POSITION_BOTTOM,
+  ICON_POSITION_LEFT,
+  ICON_POSITION_RIGHT,
+  ICON_POSITION_TOP,
+  ICON_POSITIONS,
+  INTENT_HIGHLIGHT,
+  INTENT_NONE,
+  INTENTS,
+} from './constants'
+
+import { getColorFromIntent } from './utils'
 
 /**
  * @typedef {object} Props
@@ -22,7 +36,8 @@ import { Spacer } from '../../Spacer'
  * @property {string} [className]
  * @property {boolean} [disabled]
  * @property {import('react').ReactNode} [icon]
- * @property {POSITION_BOTTOM|POSITION_LEFT|POSITION_RIGHT|POSITION_TOP} [iconPosition]
+ * @property {string} [iconPosition]
+ * @property {string} [intent]
  * @property {boolean} [isIconButton]
  * @property {boolean} [outline]
  * @property {object} [synth]
@@ -30,68 +45,38 @@ import { Spacer } from '../../Spacer'
  */
 
 /**
- * @typedef {string} POSITION_TOP
- * @constant
- * @default
+ * @param {object} props
+ * @returns {boolean}
  */
-const POSITION_TOP = 'top'
-
-/**
- * @typedef {string} POSITION_LEFT
- * @constant
- * @default
- */
-const POSITION_LEFT = 'left'
-
-/**
- * @typedef {string} POSITION_RIGHT
- * @constant
- * @default
- */
-const POSITION_RIGHT = 'right'
-
-/**
- * @typedef {string} POSITION_BOTTOM
- * @constant
- * @default
- */
-const POSITION_BOTTOM = 'bottom'
+const iconToBottom = ({ iconPosition }) => iconPosition === ICON_POSITION_BOTTOM
 
 /**
  * @param {object} props
  * @returns {boolean}
  */
-const iconToBottom = ({ iconPosition }) => iconPosition === POSITION_BOTTOM
+const iconToLeft = ({ iconPosition }) => iconPosition === ICON_POSITION_LEFT
 
 /**
  * @param {object} props
  * @returns {boolean}
  */
-const iconToLeft = ({ iconPosition }) => iconPosition === POSITION_LEFT
+const iconToRight = ({ iconPosition }) => iconPosition === ICON_POSITION_RIGHT
 
 /**
  * @param {object} props
  * @returns {boolean}
  */
-const iconToRight = ({ iconPosition }) => iconPosition === POSITION_RIGHT
-
-/**
- * @param {object} props
- * @returns {boolean}
- */
-const iconToTop = ({ iconPosition }) => iconPosition === POSITION_TOP
+const iconToTop = ({ iconPosition }) => iconPosition === ICON_POSITION_TOP
 
 /**
  * @param {Props} props
  * @returns {string}
  */
-const setBackgroundColor = ({ outline, primary, ...props }) => {
+const setBackgroundColor = ({ outline, intent, ...props }) => {
   if (outline) {
     return 'background-color: transparent;'
-  } else if (primary) {
-    return backgroundColor('@BeatGig')(props)
   } else {
-    return backgroundColor('control')(props)
+    return backgroundColor(getColorFromIntent(intent))(props)
   }
 }
 
@@ -99,18 +84,29 @@ const setBackgroundColor = ({ outline, primary, ...props }) => {
  * @param {Props} props
  * @returns {string}
  */
-const setBackgroundColorHover = ({ outline, primary, synth }) =>
-  primary
-    ? synth.getValue(`@BeatGig.${outline ? 0 : 1}`)
+const setBackgroundColorHover = ({ outline, intent, synth }) =>
+  intent !== INTENT_NONE
+    ? synth.getValue(`${getColorFromIntent(intent)}.${outline ? 0 : 1}`)
     : synth.getValue(`color:background:control${!outline ? ':hover' : ''}`)
 
 /**
  * @param {Props} props
  * @returns {string}
  */
-const setBorderColor = ({ outline, primary, synth }) => {
-  if (primary) {
-    return outline ? `border-color: ${synth.getValue('@BeatGig')};` : ''
+const setBackgroundColorActive = ({ outline, intent, synth }) =>
+  intent !== INTENT_NONE
+    ? synth.getValue(getColorFromIntent(intent))
+    : synth.getValue('color:background:control:active')
+
+/**
+ * @param {Props} props
+ * @returns {string}
+ */
+const setBorderColor = ({ outline, intent, synth }) => {
+  if (intent !== INTENT_NONE) {
+    return outline
+      ? `border-color: ${synth.getValue(getColorFromIntent(intent))};`
+      : ''
   } else if (outline) {
     return `border-color: ${synth.getValue('color:background:control')};`
   }
@@ -122,8 +118,8 @@ const setBorderColor = ({ outline, primary, synth }) => {
  * @param {Props} props
  * @returns {string}
  */
-const setBorderColorActive = ({ outline, synth }) =>
-  outline
+const setBorderColorActive = ({ outline, intent, synth }) =>
+  intent === INTENT_NONE && outline
     ? `border-color: ${synth.getValue('color:background:control:active')};`
     : ''
 
@@ -138,8 +134,10 @@ const setBorderRadius = ({ isIconButton, ...props }) =>
  * @param {Props} props
  * @returns {string}
  */
-const setColorHover = ({ outline, primary, synth }) =>
-  primary && outline ? `color: ${synth.getValue('@BalticSea')};` : ''
+const setColorHover = ({ outline, intent, synth }) =>
+  intent === INTENT_HIGHLIGHT && outline
+    ? `color: ${synth.getValue('@BalticSea')};`
+    : synth.color('base')
 
 /**
  * @param {Props} props
@@ -151,13 +149,13 @@ const setCursor = ({ disabled }) => (disabled ? 'not-allowed' : 'pointer')
  * @param {Props} props
  * @returns {string}
  */
-const setColor = ({ outline, primary, ...props }) => {
-  if (primary && outline) {
-    return color('@BeatGig')(props)
-  } else if (primary && !outline) {
+const setColor = ({ outline, intent, ...props }) => {
+  if (intent !== INTENT_NONE && outline) {
+    return color(getColorFromIntent(intent))(props)
+  } else if (intent === INTENT_HIGHLIGHT && !outline) {
     return color('@BalticSea')(props)
   } else {
-    return color('control')(props)
+    return color('base')(props)
   }
 }
 
@@ -166,7 +164,7 @@ const setColor = ({ outline, primary, ...props }) => {
  * @returns {string}
  */
 const setPadding = ({ isIconButton, ...props }) =>
-  padding(isIconButton ? '@spacing.1' : 'control')(props)
+  padding(isIconButton ? '@spacing' : 'control')(props)
 
 /**
  * @param {Props} props
@@ -227,7 +225,7 @@ const StyledButton = styled.button.attrs(() => ({
   }
 
   :active {
-    ${backgroundColor('control:active')}
+    background-color: ${setBackgroundColorActive};
     ${setBorderColorActive}
     text-decoration: none;
   }
@@ -252,7 +250,6 @@ const Button = forwardRef(
         isIconButton={isIconButton}
         ref={ref}
       >
-        {hasIcon && !hasContent ? <Fragment>&zwnj;</Fragment> : null}
         {iconToLeft(props) || iconToTop(props) ? icon : null}
         {hasIcon && !isIconButton && iconToLeft(props) ? (
           <Spacer inline right />
@@ -278,14 +275,9 @@ Button.propTypes = {
   className: string,
   disabled: bool,
   icon: node,
-  iconPosition: oneOf([
-    POSITION_BOTTOM,
-    POSITION_LEFT,
-    POSITION_RIGHT,
-    POSITION_TOP,
-  ]),
+  iconPosition: oneOf(ICON_POSITIONS),
+  intent: oneOf(INTENTS),
   outline: bool,
-  primary: bool,
   synth: object.isRequired,
 }
 
@@ -293,7 +285,8 @@ Button.defaultProps = {
   children: null,
   className: '',
   icon: null,
-  iconPosition: POSITION_LEFT,
+  iconPosition: ICON_POSITION_LEFT,
+  intent: INTENT_NONE,
 }
 
 export default withSynth(Button)
