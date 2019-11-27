@@ -12,7 +12,7 @@ const CloseIcon = ({ className = '', ref, ...props }) => (
   </Icon>
 )
 
-CheckIcon.propTypes = {
+CloseIcon.propTypes = {
   className: PropTypes.string,
 }
 

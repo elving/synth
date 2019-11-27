@@ -12,7 +12,7 @@ const LogoutIcon = ({ className = '', ref, ...props }) => (
   </Icon>
 )
 
-CheckIcon.propTypes = {
+LogoutIcon.propTypes = {
   className: PropTypes.string,
 }
 

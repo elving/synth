@@ -12,7 +12,7 @@ const AdminIcon = ({ className = '', ref, ...props }) => (
   </Icon>
 )
 
-CheckIcon.propTypes = {
+AdminIcon.propTypes = {
   className: PropTypes.string,
 }
 

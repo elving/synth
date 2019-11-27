@@ -12,7 +12,7 @@ const ChevronDownIcon = ({ className = '', ref, ...props }) => (
   </Icon>
 )
 
-CheckIcon.propTypes = {
+ChevronDownIcon.propTypes = {
   className: PropTypes.string,
 }
 

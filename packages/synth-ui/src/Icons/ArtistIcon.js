@@ -12,7 +12,7 @@ const ArtistIcon = ({ className = '', ref, ...props }) => (
   </Icon>
 )
 
-CheckIcon.propTypes = {
+ArtistIcon.propTypes = {
   className: PropTypes.string,
 }
 

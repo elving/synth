@@ -12,7 +12,7 @@ const InboxIcon = ({ className = '', ref, ...props }) => (
   </Icon>
 )
 
-CheckIcon.propTypes = {
+InboxIcon.propTypes = {
   className: PropTypes.string,
 }
 

@@ -12,7 +12,7 @@ const SearchIcon = ({ className = '', ref, ...props }) => (
   </Icon>
 )
 
-CheckIcon.propTypes = {
+SearchIcon.propTypes = {
   className: PropTypes.string,
 }
 
