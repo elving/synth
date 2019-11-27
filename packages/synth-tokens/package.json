@@ -2,7 +2,7 @@
   "name": "@beatgig/synth-tokens",
   "version": "1.1.0",
   "description": "Default token declarations used for building UI components at BeatGig",
-  "author": "Elving Rodriguez <elving.pr@gmail.com>",
+  "author": "BeatGig Engineering <engineering@beatgig.com>",
   "homepage": "",
   "license": "ISC",
   "main": "dist/commonjs/index.js",
@@ -13,10 +13,11 @@
   ],
   "directories": {
     "lib": "src",
-    "test": "__tests__"
+    "test": "tests"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "types": "dist/types.d.ts"
 }

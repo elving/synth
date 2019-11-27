@@ -1,1 +1,1 @@
-export { default as TagSelect } from './src/TagSelect'
+export { default as TagSelect } from './TagSelect'

@@ -1,0 +1,24 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { Flex } from '@beatgig/synth-ui'
+
+<Meta title="Components/Flex" component={Flex} />
+
+# Flex
+
+The `<Flex>` component is a generic container whose css display property is `flex`. Use this component to layout other components.
+
+<Preview>
+  <Story name="default">
+    <Flex style={{ background: 'salmon', height: 150, width: 300 }}>FLEX</Flex>  
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="center">
+    <Flex center style={{ background: 'salmon', height: 150, width: 300 }}>FLEX</Flex>
+  </Story>
+</Preview>
+
+## Props 🎛️
+
+<Props of={Flex} />

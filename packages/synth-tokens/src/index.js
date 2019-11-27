@@ -20,8 +20,7 @@ export const tokens = {
     /**
      * Sizes
      */
-    // icons: [18, 20, 22, 24, 26, 28],
-    icons: [12, 14, 16, 18, 20, 22, 24, 26],
+    icons: [14, 16, 18, 20, 22, 24],
     avatars: [24, 32, 40, 48, 56, 64],
     cards: [240, 480, 960],
 
@@ -33,6 +32,7 @@ export const tokens = {
     /**
      * Typography
      */
+    headings: [18, 22, 26, 30, 34, 38],
     fontSizes: [12, 14, 16, 18, 20, 22, 24, 26],
     fontWeights: [400, 500, 600, 700],
   },
@@ -98,7 +98,7 @@ export const tokens = {
 
     radius: {
       base: 4,
-      avatar: '50%',
+      rounded: '50%',
       tag: '50rem',
     },
 

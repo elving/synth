@@ -1,0 +1,26 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { Button, Card, FormRow, Heading, Input } from '@beatgig/synth-ui'
+
+<Meta title="Components/Card" component={Card} />
+
+# Card
+
+The `<Card>` component is the base component for all components that are meant to highlighting content and distinguish it from other elements on the screen.
+
+<Preview>
+  <Story name="default">
+    <Card>
+      <Heading>This is a card component</Heading>
+      <FormRow>
+        <Input />
+      </FormRow>
+      <FormRow>
+        <Button>Button</Button>
+      </FormRow>
+    </Card>
+  </Story>
+</Preview>
+
+## Props 🎛️
+
+<Props of={Card} />

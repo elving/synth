@@ -1,0 +1,93 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { Button, Flex, Spacer, SearchIcon } from '@beatgig/synth-ui'
+
+<Meta title="Components/Button" component={Button} />
+
+# Button
+
+The `<Button>` component is used Use buttons to trigger actions and can contain a combination of a clear label and an icon.
+
+<Preview>
+  <Story name="default">
+    <Button>Button</Button>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="with intent">
+    <Flex alignItems="center">
+      <Button intent="none">None</Button>
+      <Spacer right scale={4} />
+      <Button intent="danger">Danger</Button>
+      <Spacer right scale={4} />
+      <Button intent="success">Success</Button>
+      <Spacer right scale={4} />
+      <Button intent="highlight">Highlight</Button>
+    </Flex>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="outline">
+    <Flex alignItems="center">
+      <Button intent="none" outline>
+        None
+      </Button>
+      <Spacer right scale={4} />
+      <Button intent="danger" outline>
+        Danger
+      </Button>
+      <Spacer right scale={4} />
+      <Button intent="success" outline>
+        Success
+      </Button>
+      <Spacer right scale={4} />
+      <Button intent="highlight" outline>
+        Highlight
+      </Button>
+    </Flex>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="disabled">
+    <Button disabled>Disabled Button</Button>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="with icon left">
+    <Button icon={<SearchIcon />}>Search Button</Button>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="with icon top">
+    <Button icon={<SearchIcon />} iconPosition="top">
+      Search Button
+    </Button>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="with icon right">
+    <Button icon={<SearchIcon />} iconPosition="right">
+      Search Button
+    </Button>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="with icon bottom">
+    <Button icon={<SearchIcon />} iconPosition="bottom">
+      Search Button
+    </Button>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="icon only"> <Button icon={<SearchIcon />} /></Story>
+</Preview>
+
+## Props 🎛️
+<Props of={Button} />

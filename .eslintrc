@@ -1,6 +1,7 @@
 {
-  "parser": "babel-eslint",
+  "ignorePatterns": ["/node_modules", "/tests", "/dist", "/docs"],
   "extends": ["plugin:prettier/recommended"],
+  "parser": "babel-eslint",
   "plugins": ["prettier", "react-hooks"],
   "rules": {
     "react-hooks/rules-of-hooks": "error",

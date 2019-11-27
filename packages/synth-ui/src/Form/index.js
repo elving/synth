@@ -1,2 +1,2 @@
-export { default as FormRow } from './src/FormRow'
-export { default as FormField } from './src/FormField'
+export { default as FormRow } from './FormRow'
+export { default as FormField } from './FormField'

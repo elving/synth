@@ -6,26 +6,12 @@ import React from 'react'
 import { getTokenValue } from '../packages/synth-core'
 import { tokens } from '../packages/synth-tokens'
 
-const files = require.context('../packages', true, /.story.js$/)
-
 const GlobalStyles = createGlobalStyle`
   body, html {
     padding: 0;
     margin: 0;
   }
 `
-
-const loadStories = () => {
-  addDecorator((story) => (
-    <Fragment>
-      <GlobalStyles />
-      {story()}
-    </Fragment>
-  ))
-
-  files.keys().forEach((filename) => files(filename))
-}
-
 const colorNames = [
   'Porcelain',
   'Thunder',
@@ -44,4 +30,14 @@ addParameters({
   })),
 })
 
-configure(loadStories, module)
+addDecorator((story) => (
+  <Fragment>
+    <GlobalStyles />
+    {story()}
+  </Fragment>
+))
+
+configure(
+  require.context('../packages/synth-ui/docs', true, /\.stories\.(js|mdx)$/),
+  module,
+)

@@ -1,0 +1,6 @@
+export { default as setCenter } from './setCenter'
+export { default as setDirection } from './setDirection'
+export { default as setDisplay } from './setDisplay'
+export { default as setFull } from './setFull'
+export { default as setProperty } from './setProperty'
+export { default as setWrap } from './setWrap'

@@ -1,0 +1,81 @@
+import { storiesOf } from '@storybook/react'
+import centered from '@storybook/addon-centered/react'
+import React from 'react'
+import styled from 'styled-components'
+
+import PopupMenu from '../src/Menu'
+import PopupMenuDivider from '../MenuDivider'
+import PopupMenuItem from '../src/MenuItem'
+import { usePopup } from '../../Popup'
+import { Button } from '../../Button'
+import { LogoutIcon } from '../../Icons'
+
+const CustomPopupMenu = styled(PopupMenu)`width: 220px;`
+
+const WithHook = (props = {}) => {
+const { isOpen, open, popupRef, props: popupProps, triggerRef } = usePopup(
+props,
+)
+
+return (
+<div>
+<Button ref={triggerRef} onClick={open}>
+Open Popup
+</Button>
+
+      {isOpen && (
+        <CustomPopupMenu {...props} {...popupProps} ref={popupRef}>
+          <PopupMenuItem>Item 1</PopupMenuItem>
+          <PopupMenuItem>Item 2</PopupMenuItem>
+          <PopupMenuDivider />
+          <PopupMenuItem icon={<LogoutIcon />}>Item 3</PopupMenuItem>
+        </CustomPopupMenu>
+      )}
+    </div>
+
+)
+}
+
+storiesOf('Popup/PopupMenu', module)
+.addDecorator(centered)
+.add('default', () => (
+<WithHook x="left" y="bottom" yOffset={5} isOpenByDefault />
+))
+
+import { storiesOf } from '@storybook/react'
+import centered from '@storybook/addon-centered/react'
+import React, { Fragment } from 'react'
+
+import PopupMenuItem from '../MenuItem'
+
+storiesOf('Popup/PopupMenu/Item', module)
+.addDecorator(centered)
+.add('default', () => (
+<Fragment>
+<PopupMenuItem>Item 1</PopupMenuItem>
+<PopupMenuItem>Item 2</PopupMenuItem>
+<PopupMenuItem>Item 3</PopupMenuItem>
+</Fragment>
+))
+import { storiesOf } from '@storybook/react'
+import centered from '@storybook/addon-centered/react'
+import React, { Fragment } from 'react'
+
+import PopupMenuDivider from '../MenuDivider'
+import { Text } from '../../Typography'
+
+storiesOf('Popup/PopupMenu/Divider', module)
+.addDecorator(centered)
+.add('default', () => (
+<Fragment>
+<Text>Divider 1</Text>
+<PopupMenuDivider />
+<PopupMenuDivider />
+<Text>Divider 2</Text>
+<PopupMenuDivider />
+<Text>Divider 3</Text>
+<br />
+<Text>Divider 4</Text>
+<PopupMenuDivider />
+</Fragment>
+))

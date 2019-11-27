@@ -1,0 +1,95 @@
+import { storiesOf } from '@storybook/react'
+import React, { Fragment } from 'react'
+import styled from 'styled-components'
+
+import Header from '../Header'
+import HeaderLink from '../HeaderLink'
+import { Avatar } from '../../Avatar'
+import { ChevronDownIcon, LogoutIcon } from '../../Icons'
+import { Flex } from '../../Flex'
+import { MiniLogo } from '../../Logo'
+import { Button } from '../../Button'
+import { Clickable } from '../../Clickable'
+import { SearchInput } from '../../Input'
+import { Spacer } from '../../Spacer'
+import { usePopup } from '../../Popup'
+import { PopupMenuDivider, PopupMenuItem, PopupMenu } from '../../PopupMenu'
+
+const UserAvatarClickable = styled(Clickable)`padding: 0;`
+
+const CustomPopupMenu = styled(PopupMenu)`width: 220px;`
+
+const UserPopupMenu = (props = {}) => {
+const {
+isOpen,
+open,
+Popup,
+popupRef,
+props: popupProps,
+triggerRef,
+} = usePopup(props)
+
+return (
+<Fragment>
+<UserAvatarClickable
+icon={<ChevronDownIcon />}
+iconPosition="right"
+onClick={open}
+ref={triggerRef} >
+<Avatar scale={1} src="https://i.pravatar.cc/40" />
+</UserAvatarClickable>
+
+      {isOpen && (
+        <CustomPopupMenu {...props} {...popupProps} ref={popupRef}>
+          <PopupMenuItem>Lists</PopupMenuItem>
+          <PopupMenuItem>Account</PopupMenuItem>
+          <PopupMenuDivider />
+          <PopupMenuItem icon={<LogoutIcon />}>Logout</PopupMenuItem>
+        </CustomPopupMenu>
+      )}
+    </Fragment>
+
+)
+}
+
+storiesOf('Header', module)
+.add('default', () => (
+<Flex full>
+<Header>
+<Flex alignItems="center">
+<MiniLogo height={40} />
+<Spacer inline right scale={5} />
+<HeaderLink href="#">Artists</HeaderLink>
+<Spacer inline right scale={3} />
+<HeaderLink href="#">Genres</HeaderLink>
+</Flex>
+<Flex alignItems="center">
+<SearchInput />
+<Spacer inline right scale={3} />
+<Button outline primary>
+Register
+</Button>
+<Spacer inline right scale={3} />
+<HeaderLink href="#">Login</HeaderLink>
+</Flex>
+</Header>
+</Flex>
+))
+.add('logged in', () => (
+<div style={{ width: '100vw' }}>
+<Header>
+<Flex alignItems="center">
+<MiniLogo height={40} />
+<Spacer inline right scale={5} />
+<HeaderLink href="#">Artists</HeaderLink>
+<Spacer inline right scale={3} />
+<HeaderLink href="#">Genres</HeaderLink>
+</Flex>
+<Flex alignItems="center">
+<SearchInput />
+<Spacer inline right scale={3} />
+<UserPopupMenu y="bottom" yOffset="2%" x="right" />
+</Flex>
+</Header>
+</div>
+))

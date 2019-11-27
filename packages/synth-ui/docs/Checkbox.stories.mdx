@@ -1,0 +1,25 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { Checkbox } from '@beatgig/synth-ui'
+import { basic } from './utils'
+
+<Meta title="Components/Checkbox" component={Checkbox} />
+
+# Checkbox
+
+Use the `<Checkbox>` component for making selections.
+
+<Preview>
+  <Story name="default">{basic()}</Story>
+</Preview>
+
+You can also add a label alongside the checkbox.
+
+<Preview withToolbar>
+  <Story name="label">
+    <Checkbox label="Clicking this will toggle the checkbox" />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Checkbox} />

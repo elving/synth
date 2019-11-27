@@ -1,2 +1,2 @@
-export { default as FullLogo } from './src/FullLogo'
-export { default as MiniLogo } from './src/MiniLogo'
+export { default as FullLogo } from './FullLogo'
+export { default as MiniLogo } from './MiniLogo'

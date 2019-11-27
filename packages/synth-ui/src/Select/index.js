@@ -1,1 +1,1 @@
-export { default as Select } from './src/Select'
+export { default as Select, setSelectStyles } from './Select'

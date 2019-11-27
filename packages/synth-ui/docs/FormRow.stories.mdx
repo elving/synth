@@ -1,0 +1,80 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { Button, Card, FormRow, Input } from '@beatgig/synth-ui'
+
+<Meta title="Components/FormRow" component={FormRow} />
+
+# FormRow
+
+The `<FormRow>` component is used to group form elements under one label.
+
+<Preview>
+  <Story name="default">
+    <div style={{ width: 320 }}>
+      <Card>
+        <FormRow label="Email">
+          <Input placeholder="email@example.com" />
+        </FormRow>
+        <FormRow>
+          <Button>Submit</Button>
+        </FormRow>
+      </Card>
+    </div>
+  </Story>
+</Preview>
+
+Form elements whitin a `<FormRow>` could be displayed inline by using the `inline` prop.
+
+<Preview>
+  <Story name="inline">
+    <div style={{ width: 320 }}>
+      <Card>
+        <FormRow inline>
+          <Input />
+          <Button>Button</Button>
+        </FormRow>
+        <FormRow inline>
+          <Button>Button A</Button>
+          <Button>Button B</Button>
+          <Button>Button C</Button>
+        </FormRow>
+      </Card>
+    </div>
+  </Story>
+</Preview>
+
+Form elements whitin a `<FormRow>` could be displayed at full width, i.e., taking all the horizontal space available.
+
+<Preview>
+  <Story name="fullWidth">
+    <div style={{ width: 320 }}>
+      <Card>
+        <FormRow fullWidth>
+          <Input />
+        </FormRow>
+        <FormRow fullWidth>
+          <Button>Button</Button>
+        </FormRow>
+      </Card>
+    </div>
+  </Story>
+</Preview>
+
+Form elements whitin a `<FormRow>` could be centered.
+
+<Preview>
+  <Story name="centered">
+    <div style={{ width: 320 }}>
+      <Card>
+        <FormRow centered>Click the button bellow</FormRow>
+        <FormRow centered>
+          <Button>Button A</Button>
+        </FormRow>
+      </Card>
+    </div>
+  </Story>
+</Preview>
+
+## Props 🎛️
+
+<Props of={FormRow} />
+
