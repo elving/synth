@@ -7,6 +7,7 @@ import {
   backgroundColor,
   border,
   borderRadius,
+  fontSize,
   padding,
 } from '@beatgig/synth-styled-components'
 
@@ -14,9 +15,13 @@ import { CheckIcon } from '../Icons'
 import { Spacer } from '../Spacer'
 import { Text } from '../Typography'
 
-import { setIconFill } from './utils'
+import { setIconFill, setIconSize } from './utils'
 
+/**
+ * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<'label'>}
+ */
 const Label = styled.label`
+  ${fontSize('@fontSizes')}
   cursor: pointer;
   align-items: center;
   display: flex;
@@ -50,6 +55,7 @@ const IconContainer = styled.div`
  */
 const Icon = styled(CheckIcon)`
   ${setIconFill()}
+  ${setIconSize()}
   cursor: pointer;
   opacity: 0;
 `
@@ -96,7 +102,9 @@ const Checkbox = ({
   return withoutLabelWrapper ? (
     render()
   ) : (
-    <Label className={className}>{render()}</Label>
+    <Label className={className} synth={synth}>
+      {render()}
+    </Label>
   )
 }
 
