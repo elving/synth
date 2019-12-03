@@ -194,7 +194,7 @@ export const tokens = {
       heading: '@fontSizes.6',
       text: '@fontSizes.2',
       small: '@fontSizes',
-      status: '@fontSizes.1',
+      status: '@fontSizes',
     },
 
     transform: {
