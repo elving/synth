@@ -7,7 +7,6 @@
 const setInputPadding = () => ({ synth }) => `
   padding-left: calc(${synth.getUnit('@icons')} + ${synth.getUnit(
   '@spacing.1',
-)} + ${synth.getUnit('size:border:control')})
-`
+)} + ${synth.getUnit('size:border:control')});`
 
 export default setInputPadding
