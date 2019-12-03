@@ -1,71 +1,77 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
-import { Clickable, Flex, Spacer, SearchIcon } from '@beatgig/synth-ui'
+import { Clickable, Flex, Spacer, SearchIcon } from '../src'
 
-<Meta title="Components/Clickable" component={Clickable} />
+<Meta title="synth-ui|Forms/Clickable" component={Clickable} />
 
 # Clickable
 
-The `<Clickable>` component leverages the `<Button>` to provide a clickable area without making it look like a traditional button.
+The `<Clickable>` component is a variant of the `<Button>` component that displays a clickable element with no background and border colors.
 
-<Preview>
+<Preview withToolbar>
   <Story name="default">
     <Clickable>Clickable</Clickable>
   </Story>
 </Preview>
 
-<Preview>
+## Props
+
+| Name  | Description                                   | Type     | Default |
+| :---- | :-------------------------------------------- | :------- | :------ |
+| children | The elements you want to display within the button. | `React.ReactNode` | `null` |
+| className | Required to properly extend styled-components.| `string` | `''` |  
+| icon | An optional icon component that can be rendered along side the button's content. | `React.ReactElement` | `null`|
+| iconPosition | The icon's position. | `'top'` \| `'right'` \| `'bottom'` \| `'left'` | `'left'` |
+|intent| The component's intent will determine it's text and background color. | `'none'` \| `'danger'` \| `'success'` \| `'highlight'` | `none` |
+| ref | A React `ref` object that will point to the button's DOM element. | `React.Ref<HTMLButtonElement>` | `null`|
+
+## Intent
+
+The `intent` property provides button with more context related to the action(s) they can trigger.
+
+<Preview withToolbar>
   <Story name="with intent">
     <Flex alignItems="center">
       <Clickable intent="none">None</Clickable>
-      <Spacer right scale={4} />
+      <Spacer right scale={2} />
       <Clickable intent="danger">Danger</Clickable>
-      <Spacer right scale={4} />
+      <Spacer right scale={2} />
       <Clickable intent="success">Success</Clickable>
-      <Spacer right scale={4} />
+      <Spacer right scale={2} />
       <Clickable intent="highlight">Highlight</Clickable>
     </Flex>
   </Story>
 </Preview>
 
-<Preview>
+## States
+
+Use the `disabled` property to conditionally disable the button if necessary.
+
+<Preview withToolbar>
   <Story name="disabled">
     <Clickable disabled>Disabled Clickable</Clickable>
   </Story>
 </Preview>
 
-<Preview>
-  <Story name="with icon left">
-    <Clickable icon={<SearchIcon />}>Search Clickable</Clickable>
+## Displaying Icons
+
+Clickables can contain a combination of a label and an icon; The `icon` property gives you the ability to pass in an icon component to be rendered with the button's text. The `iconPosition` property will let you specifiy the positioning of the icon.
+
+<Preview withToolbar>
+  <Story name="with icon">
+    <Flex alignItems="center">
+      <Clickable icon={<SearchIcon />}>Search Clickable</Clickable>
+      <Spacer right scale={2} />
+      <Clickable icon={<SearchIcon />} iconPosition="right">
+        Search Clickable
+      </Clickable>
+      <Spacer right scale={2} />
+      <Clickable icon={<SearchIcon />} iconPosition="top">
+        Search Clickable
+      </Clickable>      
+      <Spacer right scale={2} />
+      <Clickable icon={<SearchIcon />} iconPosition="bottom">
+        Search Clickable
+      </Clickable>
+    </Flex>
   </Story>
 </Preview>
-
-<Preview>
-  <Story name="with icon top">
-    <Clickable icon={<SearchIcon />} iconPosition="top">
-      Search Clickable
-    </Clickable>
-  </Story>
-</Preview>
-
-<Preview>
-  <Story name="with icon right">
-    <Clickable icon={<SearchIcon />} iconPosition="right">
-      Search Clickable
-    </Clickable>
-  </Story>
-</Preview>
-
-<Preview>
-  <Story name="with icon bottom">
-    <Clickable icon={<SearchIcon />} iconPosition="bottom">
-      Search Clickable
-    </Clickable>
-  </Story>
-</Preview>
-
-<Preview>
-  <Story name="icon only"> <Clickable icon={<SearchIcon />} /></Story>
-</Preview>
-
-## Props 🎛️
-<Props of={Clickable} />
