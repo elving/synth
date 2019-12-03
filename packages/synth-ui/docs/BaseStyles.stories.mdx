@@ -1,19 +1,22 @@
+import { Fragment } from 'react'
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
 
 import { BaseStyles } from '../src'
 
-<Meta title="Components/BaseStyles" component={BaseStyles} />
+<Meta title="synth-ui|BaseStyles" component={BaseStyles} />
 
 # BaseStyles
 
 The `<BaseStyles>` component is used apply basic global CSS styles based on our synth tokens.
 
 <Preview>
-  <Story name="default">
-    <BaseStyles />
-    <p>
-      This paragraph element has inherited the base typography styles provided
-      by the {'<BaseStyles/>'} component.
-    </p>
+  <Story name="intro">
+    <Fragment>
+      <BaseStyles />
+      <p>
+        This paragraph element has inherited the base typography styles provided
+        by the {'<BaseStyles/>'} component.
+      </p>
+    </Fragment>
   </Story>
 </Preview>
