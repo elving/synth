@@ -144,8 +144,8 @@ export const tokens = {
     },
 
     shadow: {
-      avatar: ['0 0 0 1px', '@Oslo'],
-      outlineControl: ['0 0 0 1px inset', '@ShuttleGray'],
+      avatar: '0 0 0 1px @Oslo',
+      outlineControl: '0 0 0 1px inset @ShuttleGray',
     },
 
     opacity: {
