@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
+import { unit } from '@beatgig/synth-core'
 
 import { styleProp, withForwardedRef } from '../utils'
 
 const Container = styled.svg`
-  height: ${styleProp('height')};
-  width: ${styleProp('width')};
+  height: ${unit(styleProp('height'))};
+  width: ${unit(styleProp('width'))};
 `
 
 const FullLogo = ({
@@ -26,6 +27,7 @@ const FullLogo = ({
       height={height}
       ref={ref}
       viewBox="0 0 1584 331"
+      xmlns="http://www.w3.org/2000/svg"
       width={width}
     >
       <path
