@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
-import GridItem from './GridItem'
+import * as GridItem from './GridItem'
 
 interface SynthGridProps
   extends SynthReact.SynthComponentProps,
@@ -8,7 +8,7 @@ interface SynthGridProps
   /**
    * The elements you want to display within this component.
    */
-  children?: typeof GridItem
+  children?: React.ReactNode
   /**
    * Required to properly extend styled-components.
    * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
