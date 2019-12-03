@@ -1,0 +1,44 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { IconButton, Flex, Spacer, CheckIcon } from '../src'
+
+<Meta title="synth-ui|Forms/IconButton" component={IconButton} />
+
+# IconButton
+
+The `<IconButton>` is a variant of the `<Button>` component that you can use to display buttons that will only contain icons.
+
+<Preview>
+  <Story name="intro">
+    <IconButton icon={<CheckIcon />} />
+  </Story>
+</Preview>
+
+## Props
+
+| Name      | Description                                                                      | Type                           | Default |
+| :-------- | :------------------------------------------------------------------------------- | :----------------------------- | :------ |
+| className | Required to properly extend styled-components.                                   | `string`                       | `''`    |
+| icon      | An optional icon component that can be rendered along side the button's content. | `React.ReactElement`           | `null`  |
+| ref       | A React `ref` object that will point to the button's DOM element.                | `React.Ref<HTMLButtonElement>` | `null`  |
+
+## Icon Sizes
+
+The icons within the button can be rendered in different sizes which are taken from the `@icons` global token.
+
+<Preview withToolbar>
+  <Story name="with scale">
+    <Fragment>
+      <IconButton icon={<CheckIcon />} />
+      <Spacer inline right scale={2} />
+      <IconButton icon={<CheckIcon scale={1} />} />
+      <Spacer inline right scale={2} />
+      <IconButton icon={<CheckIcon scale={2} />} />
+      <Spacer inline right scale={2} />
+      <IconButton icon={<CheckIcon scale={3} />} />
+      <Spacer inline right scale={2} />
+      <IconButton icon={<CheckIcon scale={4} />} />
+      <Spacer inline right scale={2} />
+      <IconButton icon={<CheckIcon scale={5} />} />
+    </Fragment>
+  </Story>
+</Preview>
