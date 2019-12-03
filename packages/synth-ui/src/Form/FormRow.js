@@ -24,7 +24,7 @@ const StyledFormRow = styled.div`
   display: flex;
   width: 100%;
 
-  & > * {
+  && > * {
     ${setChildMargin()}
     ${setChildWidth()}
 
