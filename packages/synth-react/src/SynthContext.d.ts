@@ -8,10 +8,16 @@ interface SynthConsumerProps extends SynthCSSBindings {
   tokens: SynthTokenDeclaration
 }
 
+/**
+ * @since 1.0.0
+ */
 declare const SynthConsumer: React.ExoticComponent<React.ConsumerProps<
   SynthConsumerProps
 >>
 
+/**
+ * @since 1.0.0
+ */
 declare const SynthProvider: React.ProviderExoticComponent<React.ProviderProps<
   SynthConsumerProps
 >>
