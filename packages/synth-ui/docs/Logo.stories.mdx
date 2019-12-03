@@ -1,21 +1,39 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
-import centered from '@storybook/addon-centered/react'
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
 
-import FullLogo from '../src/FullLogo'
+import { FullLogo, MiniLogo, Spacer } from '../src'
 
-storiesOf('Logo/FullLogo', module)
-.addDecorator(centered)
-.add('default', () => <FullLogo />)
-.add('dark', () => <FullLogo dark />)
+<Meta title="synth-ui|Logo" component={FullLogo} />
 
-import React from 'react'
-import { storiesOf } from '@storybook/react'
-import centered from '@storybook/addon-centered/react'
+# Logo
 
-import MiniLogo from '../src/MiniLogo'
+Use the `<FullLogo>` and `<MiniLogo>` components to display the BeatGig logo.
 
-storiesOf('Logo/MiniLogo', module)
-.addDecorator(centered)
-.add('default', () => <MiniLogo />)
-.add('dark', () => <MiniLogo dark />)
+<Preview>
+  <Story name="intro">
+    <div>
+      <FullLogo height={55} />
+      <Spacer scale={2} />
+      <MiniLogo height={55} />
+    </div>
+  </Story>
+</Preview>
+
+## Props
+
+| Name      | Description                                                                      | Type                           | Default |
+| :-------- | :------------------------------------------------------------------------------- | :----------------------------- | :------ |
+| className | Required to properly extend styled-components.                                   | `string`                       | `''`    |
+| dark      | A boolean flag to determine the color variant of the logo; The default is white. | `boolean`                      | `false` |
+| ref       | A React `ref` object that will point to the icon's DOM element.                  | `React.Ref<HTMLButtonElement>` | `null`  |
+
+## Dark Variations
+
+<Preview>
+  <Story name="dark">
+    <div style={{ backgroundColor: '#fff', padding: 15 }}>
+      <FullLogo dark height={55} />
+      <Spacer scale={2} />
+      <MiniLogo dark height={55} />
+    </div>
+  </Story>
+</Preview>
