@@ -1,95 +1,55 @@
-import React from 'react'
-import {
-  Button,
-  Checkbox,
-  Flex,
-  ConfirmationModal,
-  FormRow,
-  FormField,
-  ModalContent,
-  ModalHeader,
-  ModalTitle,
-  Text,
-  usePopup,
-} from '@beatgig/synth-ui'
+import React, { Fragment } from 'react'
+import styled from 'styled-components'
 
-const basic = () => {
-  console.log('Checkbox => ', Checkbox, Checkbox.propTypes)
-  return <Checkbox />
-}
+import { Button, Flex, Popup, usePopup } from '../src'
 
-basic.story = {
-  parameters: { foo: 'bar' },
-}
+const Box = styled(Flex)`
+  background-color: ${({ bg }) => bg || 'rgba(0, 0, 0, 0.15)'};
+  height: ${({ height }) => height || 'inherit'};
+  max-width: ${({ maxWidth }) => maxWidth || 'inherit'};
+  padding: 15px;
+  width: ${({ maxWidth, width }) => (width || maxWidth ? '100%' : 'inherit')};
+`
 
-export { basic }
+const PopupWrapper = styled.div`
+  min-height: 300px;
+  position: relative;
+  transform: translateZ(0);
+  max-width: ${({ maxWidth }) => maxWidth || '100%'};
+  width: 100%;
+`
 
-export const BasicConfirmationModal = (props) => {
-  const {
-    close,
-    isOpen,
-    open,
-    popupRef: modalRef,
-    props: modalProps,
-    triggerRef,
-  } = usePopup()
+const CardWrapper = styled.div`
+  max-width: ${({ maxWidth }) => maxWidth || '480px'};
+  width: 100%;
+`
+
+const StyledPopup = styled(Popup)`
+  width: 320px;
+`
+
+const PopupWithHookInner = (props = {}) => {
+  const { isOpen, open, popupRef, props: popupProps, triggerRef } = usePopup(
+    props,
+  )
+
+  console.log('triggerRef', triggerRef, Button)
 
   return (
-    <div style={{ padding: 20 }}>
-      <FormField label={'lol'} centered>
-        Boom
-      </FormField>
-
+    <Fragment>
       <Button ref={triggerRef} onClick={open}>
-        Open Modal
+        Open Popup
       </Button>
 
-      <div id="confirmation-modal-target" />
-
-      {isOpen && (
-        <ConfirmationModal
-          {...props}
-          {...modalProps}
-          container={document.getElementById('confirmation-modal-target')}
-          cancelLabel="No, stop it!"
-          close={close}
-          confirmLabel="Yes, do it now!"
-          onCancel={close}
-          onConfirm={() => console.log('confirmed!')}
-          ref={modalRef}
-        >
-          <ModalHeader close={close}>
-            <ModalTitle>Modal Title</ModalTitle>
-          </ModalHeader>
-          <ModalContent>
-            <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </Text>
-          </ModalContent>
-        </ConfirmationModal>
-      )}
-    </div>
+      {isOpen ? (
+        <StyledPopup {...props} {...popupProps} ref={popupRef}>
+          Popup Content
+        </StyledPopup>
+      ) : null}
+    </Fragment>
   )
 }
 
-// storiesOf('Modal/ConfirmationModal', module)
-//   .add('default', () => <WithHook />)
-//   .add('with custom cancel button', () => (
-//     <WithHook
-//       renderCancel={() => (
-//         <Button intent="danger" onClick={() => console.log('canceled!')}>
-//           Nope
-//         </Button>
-//       )}
-//     />
-//   ))
-//   .add('with custom confirm button', () => (
-//     <WithHook
-//       renderConfirm={() => (
-//         <Button intent="success" onClick={() => console.log('confirmed!')}>
-//           Yes!
-//         </Button>
-//       )}
-//     />
-//   ))
+const PopupWithHook = (props) => <PopupWithHookInner {...props} />
+
+export { Box, CardWrapper, PopupWrapper, PopupWithHook }
