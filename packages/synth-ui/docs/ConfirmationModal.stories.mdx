@@ -1,20 +1,140 @@
+import { Fragment } from 'react'
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
 
-import { BasicConfirmationModal } from './utils'
-import { ConfirmationModal } from '@beatgig/synth-ui'
+import {
+  Button,
+  CheckIcon,
+  CloseIcon,
+  ConfirmationModal,
+  FormField,
+  ModalContent,
+  ModalHeader,
+  ModalTitle,
+  Spacer,
+  Text,
+} from '../src'
 
-<Meta title="Components/ConfirmationModal" component={ConfirmationModal} />
+import { PopupWrapper } from './utils'
+
+<Meta
+  title="synth-ui|Popups/ConfirmationModal"
+  component={ConfirmationModal}
+/>
 
 # ConfirmationModal
 
-The `<ConfirmationModal>` component displays a modal used to get confirmation from the user on an action they are about to perform.
+The `<ConfirmationModal>` component is a variant of the `<Modal>` component that displays a modal used to get confirmation from the user on an action they are about to perform.
 
 <Preview>
-  <Story name="default">
-    <BasicConfirmationModal />
+  <Story name="intro">
+    <PopupWrapper>
+      <ConfirmationModal renderInPlace>
+        <ModalHeader>
+          <ModalTitle>Modal Title</ModalTitle>
+        </ModalHeader>
+        <ModalContent>
+          <Text>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Text>
+        </ModalContent>
+      </ConfirmationModal>
+    </PopupWrapper>
   </Story>
 </Preview>
 
-## Props 🎛️
+## Props
 
-<Props of={ConfirmationModal} />
+_Inherits from `SynthModalProps`_
+
+| Name                | Description                                                                                                                                   | Type                        | Default                    |
+| :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------- | :------------------------- |
+| cancelLabel         | The content used for the modal's cancel button which defaults to "Cancel".                                                                    | `React.ReactNode`           | `'Cancel'`                 |
+| confirmLabel        | The content used for the modal's confirm button which defaults to "Confirm".                                                                  | `React.ReactNode`           | `'Confirm'`                |
+| children            | The elements you want to display within the modal.                                                                                            | `React.ReactNode`           | `null`                     |
+| className           | Required to properly extend styled-components.                                                                                                | `string`                    | `''`                       |
+| close               | A function used to close the modal when clicking on it's overlay background. This function will generally be provided by the `usePopup` hook. | `function`                  | `() => {}`                 |
+| closeOnOverlayClick | A boolean flag to determine if the modal should be closed when clicking on it's overlay background.                                           | `boolean`                   | `false`                    |
+| onCancel            | A callback function that is called whenever the user clicks on the modal's cancel button.                                                     | `function`                  | `() => {}`                 |
+| onConfirm           | A callback function that is called whenever the user clicks on the modal's confirm button.                                                    | `function`                  | `() => {}`                 |
+| onOverlayClick      | A callback function that is called whenever the user clicks on the modal's overlay background.                                                | `function`                  | `() => {}`                 |
+| ref                 | A React `ref` object that will point to the modal's DOM element.                                                                              | `React.Ref<HTMLDivElement>` | `null`                     |
+| renderCancel        | An optional function you can provide to render a custom cancel button.                                                                        | `function`                  | `() => React.ReactElement` |
+| renderConfirm       | An optional function you can provide to render a custom confirm button.                                                                       | `function`                  | `() => React.ReactElement` |
+
+## Customization
+
+You can change the copy of the cancel and confirm buttons by using the `cancelLabel` and `confirmLabel` properties.
+
+<Preview>
+  <Story name="customization-labels">
+    <PopupWrapper>
+      <ConfirmationModal
+        cancelLabel="Do it, cancel it"
+        confirmLabel="Do it, right now"
+        renderInPlace
+      >
+        <ModalHeader>
+          <ModalTitle>Dance much?</ModalTitle>
+        </ModalHeader>
+        <ModalContent>
+          <Text>Do you want to dance?</Text>
+        </ModalContent>
+      </ConfirmationModal>
+    </PopupWrapper>
+  </Story>
+</Preview>
+
+You can also use React components on the `cancelLabel` and `confirmLabel` properties.
+
+<Preview>
+  <Story name="customization-labels-icons">
+    <PopupWrapper>
+      <ConfirmationModal
+        cancelLabel={
+          <Fragment>
+            Nope
+            <Spacer />
+            <CloseIcon />
+          </Fragment>
+        }
+        confirmLabel={
+          <Fragment>
+            Sure
+            <Spacer />
+            <CheckIcon />
+          </Fragment>
+        }
+        renderInPlace
+      >
+        <ModalHeader>
+          <ModalTitle>Dance much?</ModalTitle>
+        </ModalHeader>
+        <ModalContent>
+          <Text>Do you want to dance?</Text>
+        </ModalContent>
+      </ConfirmationModal>
+    </PopupWrapper>
+  </Story>
+</Preview>
+
+Lastly, you can use the `renderCancel` and `renderConfirm` to have complete control over the rendering of the cancel and confirm buttons.
+
+<Preview>
+  <Story name="customization-labels-advanced">
+    <PopupWrapper>
+      <ConfirmationModal
+        renderCancel={() => ':('}
+        renderConfirm={() => ':)'}
+        renderInPlace
+      >
+        <ModalHeader>
+          <ModalTitle>Dance much?</ModalTitle>
+        </ModalHeader>
+        <ModalContent>
+          <Text>Do you want to dance?</Text>
+        </ModalContent>
+      </ConfirmationModal>
+    </PopupWrapper>
+  </Story>
+</Preview>
