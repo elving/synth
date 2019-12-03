@@ -1,26 +1,32 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
-import { Button, Card, FormRow, Heading, Input } from '@beatgig/synth-ui'
+import { Button, Card, FormRow, Heading, Input } from '../src'
 
-<Meta title="Components/Card" component={Card} />
+<Meta title="synth-ui|Card" component={Card} />
 
 # Card
 
-The `<Card>` component is the base component for all components that are meant to highlighting content and distinguish it from other elements on the screen.
+The `<Card>` component is the base for all components that are used to highlighting content and distinguish it from other elements on the screen.
 
 <Preview>
-  <Story name="default">
-    <Card>
-      <Heading>This is a card component</Heading>
-      <FormRow>
-        <Input />
-      </FormRow>
-      <FormRow>
-        <Button>Button</Button>
-      </FormRow>
-    </Card>
+  <Story name="intro">
+    <div style={{ width: '55%' }}>
+      <Card>
+        <Heading>Simple email form</Heading>
+        <FormRow fullWidth>
+          <Input placeholder="email@example.com" />
+        </FormRow>
+        <FormRow>
+          <Button>Register</Button>
+        </FormRow>
+      </Card>
+    </div>
   </Story>
 </Preview>
 
-## Props 🎛️
+## Props
 
-<Props of={Card} />
+| Name      | Description                                                                      | Type                           | Default |
+| :-------- | :------------------------------------------------------------------------------- | :----------------------------- | :------ |
+| className | Required to properly extend styled-components.                                   | `string`                       | `''`    |
+| children  | The elements you want to display within the card. | `React.ReactNode`           | `null`  |
+| ref       | A React `ref` object that will point to the card's DOM element.                | `React.Ref<HTMLDivElement>` | `null`  |
