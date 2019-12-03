@@ -20,7 +20,7 @@ interface SynthFlexProps
   row?: boolean
   /**
    * A boolean flag that if `true`, will set the element's `height` and `width`
-   * CSS property to `100%`.
+   * CSS properties to `100%`.
    */
   full?: boolean
   /**
@@ -180,6 +180,10 @@ interface SynthFlexProps
 }
 
 type SynthFlexComponent = React.ComponentType<SynthFlexProps>
+
+/**
+ * @since 1.0.0
+ */
 declare const Flex: React.ForwardRefExoticComponent<SynthFlexProps>
 
 export { SynthFlexComponent, SynthFlexProps }

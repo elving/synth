@@ -20,6 +20,10 @@ interface SynthCardProps
 }
 
 type SynthCardComponent = React.ComponentType<SynthCardProps>
+
+/**
+ * @since 1.0.0
+ */
 declare const Card: React.ForwardRefExoticComponent<SynthCardProps>
 
 export { SynthCardComponent, SynthCardProps }

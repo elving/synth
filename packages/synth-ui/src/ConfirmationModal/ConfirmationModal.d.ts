@@ -37,6 +37,9 @@ type SynthConfirmationModalComponent = React.ComponentType<
   SynthConfirmationModalProps
 >
 
+/**
+ * @since 1.2.0
+ */
 declare const ConfirmationModal: React.ForwardRefExoticComponent<SynthConfirmationModalProps>
 
 export { SynthConfirmationModalComponent, SynthConfirmationModalProps }

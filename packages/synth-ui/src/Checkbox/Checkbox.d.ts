@@ -12,7 +12,6 @@ interface SynthCheckboxProps
   /**
    * Used for displaying text along with the checkbox input.
    */
-
   label?: string
   /**
    * A React `ref` object that will point to the input's DOM element.
@@ -25,6 +24,10 @@ interface SynthCheckboxProps
 }
 
 type SynthCheckboxComponent = React.ComponentType<SynthCheckboxProps>
+
+/**
+ * @since 1.0.0
+ */
 declare const Checkbox: React.ForwardRefExoticComponent<SynthCheckboxProps>
 
 export { SynthCheckboxComponent, SynthCheckboxProps }

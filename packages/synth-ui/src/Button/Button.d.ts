@@ -35,6 +35,10 @@ interface SynthButtonProps
 }
 
 type SynthButtonComponent = React.ComponentType<SynthButtonProps>
+
+/**
+ * @since 1.0.0
+ */
 declare const Button: React.ForwardRefExoticComponent<SynthButtonProps>
 
 export { SynthButtonComponent, SynthButtonProps }

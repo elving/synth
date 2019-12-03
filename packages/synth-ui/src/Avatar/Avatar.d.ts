@@ -20,6 +20,10 @@ interface SynthAvatarProps
 }
 
 type SynthAvatarComponent = React.ComponentType<SynthAvatarProps>
+
+/**
+ * @since 1.0.0
+ */
 declare const Avatar: React.ForwardRefExoticComponent<SynthAvatarProps>
 
 export { SynthAvatarComponent, SynthAvatarProps }
