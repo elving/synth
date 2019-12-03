@@ -1,0 +1,23 @@
+import { Fragment } from 'react'
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { Editable } from '../src'
+
+<Meta title="synth-ui|Editable" component={Editable} />
+
+# Editable
+
+The `<Editable>` component is variant of the `<Input>` component that displays a text input without background and border colors.
+
+<Preview withToolbar>
+  <Story name="intro">
+    <Editable placeholder="Click to write..." />
+  </Story>
+</Preview>
+
+## Props
+
+| Name      | Description                                                      | Type                          | Default |
+| :-------- | :--------------------------------------------------------------- | :---------------------------- | :------ |
+| className | Required to properly extend styled-components.                   | `string`                      | `''`    |
+| ref       | A React `ref` object that will point to the input's DOM element. | `React.Ref<HTMLInputElement>` | `null`  |
