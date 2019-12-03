@@ -33,8 +33,6 @@ const PopupWithHookInner = (props = {}) => {
     props,
   )
 
-  console.log('triggerRef', triggerRef, Button)
-
   return (
     <Fragment>
       <Button ref={triggerRef} onClick={open}>

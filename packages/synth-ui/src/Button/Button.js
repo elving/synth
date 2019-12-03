@@ -89,6 +89,7 @@ const Button = ({
   ...props
 }) => {
   const hasIcon = !isNil(icon)
+  const hasContent = !isNil(children)
 
   return (
     <SynthButton
@@ -99,11 +100,19 @@ const Button = ({
       ref={ref}
     >
       {iconToLeft(iconPosition) || iconToTop(iconPosition) ? icon : null}
-      {hasIcon && iconToLeft(iconPosition) ? <Spacer inline right /> : null}
-      {hasIcon && iconToTop(iconPosition) ? <Spacer inline bottom /> : null}
+      {hasIcon && hasContent && iconToLeft(iconPosition) ? (
+        <Spacer inline scale={1} right />
+      ) : null}
+      {hasIcon && hasContent && iconToTop(iconPosition) ? (
+        <Spacer inline scale={1} bottom />
+      ) : null}
       {children}
-      {hasIcon && iconToRight(iconPosition) ? <Spacer inline left /> : null}
-      {hasIcon && iconToBottom(iconPosition) ? <Spacer inline top /> : null}
+      {hasIcon && hasContent && iconToRight(iconPosition) ? (
+        <Spacer inline scale={1} left />
+      ) : null}
+      {hasIcon && hasContent && iconToBottom(iconPosition) ? (
+        <Spacer inline scale={1} top />
+      ) : null}
       {iconToRight(iconPosition) || iconToBottom(iconPosition) ? icon : null}
     </SynthButton>
   )
