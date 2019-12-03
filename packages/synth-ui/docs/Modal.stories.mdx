@@ -1,66 +1,77 @@
-import { storiesOf } from '@storybook/react'
-import React from 'react'
+import LinkTo from '@storybook/addon-links/react'
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
 
-import Modal from '../src/Modal'
-import ModalActions from '../src/ModalActions'
-import ModalContent from '../src/ModalContent'
-import ModalHeader from '../src/ModalHeader'
-import ModalTitle from '../src/ModalTitle'
-import { Button } from '../../Button'
-import { Heading, Text } from '../../Typography'
-import { Spacer } from '../../Spacer'
-import { usePopup } from '../../Popup'
+import {
+  Button,
+  CheckIcon,
+  Modal,
+  ModalActions,
+  ModalContent,
+  ModalHeader,
+  ModalTitle,
+  Text,
+} from '../src'
 
-const WithHook = (props = {}) => {
-const {
-close,
-isOpen,
-open,
-popupRef,
-props: popupProps,
-triggerRef,
-} = usePopup(props)
+import { PopupWrapper } from './utils'
 
-return (
-<div>
-<Heading>Page Title</Heading>
-<Text>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
-</Text>
-<Spacer scale={5} bottom />
-<Button ref={triggerRef} onClick={open}>
-Open Popup
-</Button>
+<Meta title="synth-ui|Popups/Modal" component={Modal} />
 
-      {isOpen && (
-        <Modal {...props} {...popupProps} close={close} ref={popupRef}>
-          <ModalHeader close={close}>
-            <ModalTitle>Modal Title</ModalTitle>
-          </ModalHeader>
-          <ModalContent>
-            <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </Text>
-          </ModalContent>
-          <ModalActions>
-            <Button ref={triggerRef} onClick={close}>
-              Close
-            </Button>
-          </ModalActions>
-        </Modal>
-      )}
-    </div>
+# Modal
 
-)
-}
+The `<Modal>` component is a variant of the `<Popup>` component that displays a full screen popup that requires the user's interaction.
 
-storiesOf('Modal/Default', module)
-.add('default', () => <WithHook />)
-.add('closes when clicking outside', () => <WithHook closeOnOverlayClick />)
+<Preview>
+  <Story name="intro">
+    <PopupWrapper>
+      <Modal renderInPlace>
+        <Text>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </Text>
+      </Modal>
+    </PopupWrapper>
+  </Story>
+</Preview>
+
+## Props
+
+_Inherits from `SynthPopupProps`_
+
+| Name                | Description                                                                                                                                   | Type                        | Default    |
+| :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------- | :--------- |
+| children            | The elements you want to display within the modal.                                                                                            | `React.ReactNode`           | `null`     |
+| className           | Required to properly extend styled-components.                                                                                                | `string`                    | `''`       |
+| close               | A function used to close the modal when clicking on it's overlay background. This function will generally be provided by the `usePopup` hook. | `function`                  | `() => {}` |
+| closeOnOverlayClick | A boolean flag to determine if the modal should be closed when clicking on it's overlay background.                                           | `boolean`                   | `false`    |
+| onOverlayClick      | A callback function that is called whenever the user clicks on the modal's overlay background.                                                | `function`                  | `() => {}` |
+| ref                 | A React `ref` object that will point to the modal's DOM element.                                                                              | `React.Ref<HTMLDivElement>` | `null`     |
+
+## Parts of a Modal
+
+A modal is composed of a header, the content and some times a footer. Here's a list of all available modal components you can use to build different types of modals:
+
+- `<ModalHeader>`
+- `<ModalTitle>`
+- `<ModalContent>`
+- `<ModalActions>`
+
+<Preview>
+  <Story name="modal-parts">
+    <PopupWrapper>
+      <Modal renderInPlace>
+        <ModalHeader>
+          <ModalTitle>Modal Title</ModalTitle>
+        </ModalHeader>
+        <ModalContent>
+          <Text>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Text>
+        </ModalContent>
+        <ModalActions>
+          <Button icon={<CheckIcon />} iconPosition="right">Ok</Button>
+        </ModalActions>
+      </Modal>
+    </PopupWrapper>
+  </Story>
+</Preview>
