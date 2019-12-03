@@ -1,7 +1,9 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
-import { Button, Card, FormRow, Input } from '@beatgig/synth-ui'
 
-<Meta title="Components/FormRow" component={FormRow} />
+import { CardWrapper } from './utils'
+import { Button, Card, FormRow, Input } from '../src'
+
+<Meta title="synth-ui|Forms/FormRow" component={FormRow} />
 
 # FormRow
 
@@ -9,7 +11,7 @@ The `<FormRow>` component is used to group form elements under one label.
 
 <Preview>
   <Story name="default">
-    <div style={{ width: 320 }}>
+    <CardWrapper>
       <Card>
         <FormRow label="Email">
           <Input placeholder="email@example.com" />
@@ -18,15 +20,28 @@ The `<FormRow>` component is used to group form elements under one label.
           <Button>Submit</Button>
         </FormRow>
       </Card>
-    </div>
+    </CardWrapper>
   </Story>
 </Preview>
+
+## Props
+
+| Name      | Description                                                                                       | Type                        | Default |
+| :-------- | :------------------------------------------------------------------------------------------------ | :-------------------------- | :------ |
+| centered  | Boolean flag to determine if the elements in the row should be centered.                          | `boolean`                   | `false` |
+| children  | The elements you want to display within this component.                                           | `React.ReactNode`           | `null`  |
+| clasName  | Required to properly extend styled-components.                                                    | `string`                    | `''`    |
+| fullWidth | Boolean flag to determine if the each element(s) in the row should take all the horizontal space. | `boolean`                   | `false` |
+| inline    | Boolean flag to determine if the each element(s) in the row should be displayed inline.           | `boolean`                   | `false` |
+| ref       | A React `ref` object that will point to the component's DOM element.                              | `React.Ref<HTMLDivElement>` | `null`  |
+
+## Positioning Form Elements
 
 Form elements whitin a `<FormRow>` could be displayed inline by using the `inline` prop.
 
 <Preview>
   <Story name="inline">
-    <div style={{ width: 320 }}>
+    <CardWrapper>
       <Card>
         <FormRow inline>
           <Input />
@@ -38,7 +53,7 @@ Form elements whitin a `<FormRow>` could be displayed inline by using the `inlin
           <Button>Button C</Button>
         </FormRow>
       </Card>
-    </div>
+    </CardWrapper>
   </Story>
 </Preview>
 
@@ -46,7 +61,7 @@ Form elements whitin a `<FormRow>` could be displayed at full width, i.e., takin
 
 <Preview>
   <Story name="fullWidth">
-    <div style={{ width: 320 }}>
+    <CardWrapper>
       <Card>
         <FormRow fullWidth>
           <Input />
@@ -55,7 +70,7 @@ Form elements whitin a `<FormRow>` could be displayed at full width, i.e., takin
           <Button>Button</Button>
         </FormRow>
       </Card>
-    </div>
+    </CardWrapper>
   </Story>
 </Preview>
 
@@ -63,18 +78,13 @@ Form elements whitin a `<FormRow>` could be centered.
 
 <Preview>
   <Story name="centered">
-    <div style={{ width: 320 }}>
+    <CardWrapper>
       <Card>
         <FormRow centered>Click the button bellow</FormRow>
         <FormRow centered>
           <Button>Button A</Button>
         </FormRow>
       </Card>
-    </div>
+    </CardWrapper>
   </Story>
 </Preview>
-
-## Props 🎛️
-
-<Props of={FormRow} />
-
