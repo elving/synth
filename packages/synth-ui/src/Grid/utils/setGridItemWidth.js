@@ -9,7 +9,7 @@
  */
 const getGridItemWidth = () => ({ columnSize, synth }) => {
   const spacing = synth.getUnit('@spacing.2')
-  return `calc(100% / ${columnSize} - (${spacing} - ${spacing} / ${columnSize}))`
+  return `width: calc(100% / ${columnSize} - (${spacing} - ${spacing} / ${columnSize}));`
 }
 
 export default getGridItemWidth
