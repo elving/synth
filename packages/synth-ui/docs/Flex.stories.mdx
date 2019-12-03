@@ -1,24 +1,105 @@
+import { Fragment } from 'react'
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
-import { Flex } from '@beatgig/synth-ui'
 
-<Meta title="Components/Flex" component={Flex} />
+import { Box } from './utils'
+import { Flex } from '../src'
+
+<Meta title="synth-ui|Layout/Flex" component={Flex} />
 
 # Flex
 
-The `<Flex>` component is a generic container whose css display property is `flex`. Use this component to layout other components.
+The `<Flex>` component is a generic container that uses `flex` as it's CSS `display` property. Use this component to layout other components.
 
 <Preview>
-  <Story name="default">
-    <Flex style={{ background: 'salmon', height: 150, width: 300 }}>FLEX</Flex>  
+  <Story name="intro">
+    <Flex style={{ backgroundColor: 'rgba(0,0,0,0.25)', height: 100, padding: 15, width: '100%' }}>
+      Content
+    </Flex>
+  </Story>
+</Preview>
+
+## Props
+
+| Name      | Description                                                      | Type                          | Default |
+| :-------- | :--------------------------------------------------------------- | :---------------------------- | :------ |
+| children | The elements you want to display within the flex component. | `React.ReactNode` | `null` |
+| className | Required to properly extend styled-components.                   | `string`                      | `''`    |
+| row | A boolean flag to determine what the value of the `flex-direction` CSS property will be, if `true`, then the `flex-direction` CSS property will be `row`. | `boolean` | `true` |
+| full | A boolean flag that if `true`, will set the element's `height` and `width` CSS properties to `100%`. | `boolean` | `false` |
+| flex | The value to be assigned to the `flex` CSS property. | `number` \| `string` | `''` |
+| grow | The value to be assigned to the `flex-grow` CSS property. | `number` \| `string` | `''` |
+| wrap | A boolean flag to determine what the value of the `flex-wrap` CSS property will be, if `true`, then the `flex-wrap` CSS property will be `wrap`. | `boolean` | `false` |
+| basis | The value to be assigned to the `flex-basis` CSS property. | `number` \| `string` | `''` |
+| shrink | The value to be assigned to the `flex-shrink` CSS property. | `number` \| `string` | `''` |
+| nowrap | A boolean flag to determine what the value of the `flex-wrap` CSS property will be, if `true`, then the `flex-wrap` CSS property will be `nowrap`. | `boolean` | `true` |
+| inline | A boolean flag to determine what the value of the `display` CSS property will be, if `true`, then the `display` CSS property will be `flex-inline`. | `boolean` | `false` |
+| center | A boolean flag to determine if the `children` of the flex component should be centered. If `true`, then both the `align-items` and `justify-content` CSS properties will be `center`. | `boolean` | `false` |  
+| column | A boolean flag to determine what the value of the `flex-direction` CSS property will be, if `true`, then the `flex-direction` CSS property will be `column`. | `boolean` | `false` |  
+| fullWidth | A boolean flag that if true, will set the element's `width` CSS property to `100%`. | `boolean` | `false` |
+| fullHeight | A boolean flag that if true, will set the element's `height` CSS property to `100%`. | `boolean` | `false` |
+| alignItems | The value to be assigned to the `align-items` CSS property. | `'normal'` \| `'stretch' `\| `'center' `\| `'start' `\| `'end' `\| `'flex-start'` \| `'flex-end'` \| `'self-start'` \| `'self-end'` \| `'baseline' `\| `'first baseline'` \| `'last baseline'` \| `'safe center'` \| `'unsafe center'` \| `'inherit' `\| `'initial' `\| `'unset' `| `flex-start` |
+| rowReverse | A boolean flag to determine what the value of the `flex-direction` CSS property will be, if `true`, then the `flex-direction` CSS property will be `row-reverse`. | `boolean` | `false` |
+| wrapReverse | A boolean flag to determine what the value of the `flex-wrap` CSS property will be, if `true`, then the `flex-direction` CSS property will be `wrap-reverse`. | `boolean` | `false` |
+| alignContent| The value to be assigned to the `align-content` CSS property. | `'center'` \| `'start'` \| `'end'` \| `'flex-start'` \| `'flex-end'` \| `'normal'` \| `'baseline'` \| `'first baseline'` \| `'last baseline'` \| `'space-between'` \| `'space-around'` \| `'space-evenly'` \| `'stretch'` \| `'safe center'` \| `'unsafe center'` \| `'inherit'` \| `'initial'` \| `'unset'` | `''` |
+| placeContent | The value to be assigned to the `place-content` CSS property. | `'center start'` \| `'start center'` \| `'end left'` \| `'flex-start center'` \| `'flex-end center'` \| `'baseline center'` \| `'first baseline space-evenly'` \| `'last baseline right'` \| `'space-between space-evenly'` \| `'space-around space-evenly'` \| `'space-evenly stretch'` \| `'stretch space-evenly'` \| `'inherit'` \| `'initial'` \| `'unset'` | `''` |
+| columnReverse | A boolean flag to determine what the value of the `flex-direction` CSS property will be, if `true`, then the `flex-direction` CSS property will be `column-reverse`. | `boolean` | `false` |
+| justifyContent | The value to be assigned to the `justify-content` CSS property. | `'center'` \| `'start'` \| `'end'` \| `'flex-start'` \| `'flex-end'` \| `'left'` \| `'right'` \| `'normal'` \| `'space-between'` \| `'space-around'` \| `'space-evenly'` \| `'stretch'` \| `'safe center'` \| `'unsafe center'` \| `'inherit'` \| `'initial'` \| `'unset'` | `flex-start` |
+| ref | A React `ref` object that will point to the flex component's DOM element. | `React.Ref<HTMLDivElement>` | `null` |
+
+## Flexbox Properties
+
+The `<Flex>` component has flexbox-specific properties that match their CSS counterparts, e.g., `alignItems`, `justifyContent`, `grow`, `wrap`, etc.
+
+<Preview>
+  <Story name="alignItems">
+    <Flex style={{ backgroundColor: 'rgba(0,0,0,0.25)', height: 100, padding: 15, width: '100%' }} alignItems="flex-end">
+      alignItems
+    </Flex>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="justifyContent">
+    <Flex style={{ backgroundColor: 'rgba(0,0,0,0.15)', height: 100, padding: 15, width: '100%' }} justifyContent="center">
+      justifyContent
+    </Flex>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="wrap">
+    <Flex style={{ backgroundColor: 'rgba(0,0,0,0.25)', width: '100%' }} wrap>
+      <Flex style={{ backgroundColor: 'rgba(0,0,0,0.15)', height: 100, padding: 15, width: '50%' }}>
+        wrap 1
+      </Flex>
+      <Flex style={{ backgroundColor: 'rgba(0,0,0,0.10)', height: 100, padding: 15, width: '50%' }}>
+        wrap 2
+      </Flex>    
+      <Flex style={{ backgroundColor: 'rgba(0,0,0,0.050)', height: 100, padding: 15, width: '50%' }}>
+        wrap 3
+      </Flex>            
+    </Flex>
+  </Story>
+</Preview>
+
+## Size and Positioning Properties
+
+In addition to the flexbox-specific properties, the `<Flex>` component has properties that make it easier to set the size and positioning of elements within it, e.g., `fullWidth`, `full`, `center`, etc.
+
+<Preview>
+  <Story name="fullWidth">
+    <Flex style={{ backgroundColor: 'rgba(0,0,0,0.25)', padding: 15 }} fullWidth>
+      fullWidth
+    </Flex>
   </Story>
 </Preview>
 
 <Preview>
   <Story name="center">
-    <Flex center style={{ background: 'salmon', height: 150, width: 300 }}>FLEX</Flex>
+    <Flex style={{ backgroundColor: 'rgba(0,0,0,0.25)', padding: 15 }} fullWidth center>
+      <div style={{ margin: 10 }}>center 1</div>
+      <div style={{ margin: 10 }}>center 2</div>
+    </Flex>
   </Story>
 </Preview>
 
-## Props 🎛️
-
-<Props of={Flex} />
