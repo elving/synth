@@ -1,3 +1,5 @@
+<Meta title="synth-core|Tokens" />
+
 # Tokens
 
 Synth tokens follow a naming convention that promotes maintainability by providing a consistent naming structure. This naming convention also allows tooling to parse tokens for specific usages.
@@ -119,49 +121,61 @@ The `default` modifier is only necessary whenever you are defining other modifie
 import { getTokenValue } from '@beatgig/synth-core'
 
 // Will return '#ddd'
-getTokenValue({
-  color: {
-    background: {
-      button: '#ddd',
+getTokenValue(
+  {
+    color: {
+      background: {
+        button: '#ddd',
+      },
     },
   },
-}, 'color:background:button')
+  'color:background:button',
+)
 
 // Will return '#eee'
-getTokenValue({
-  color: {
-    background: {
-      button: {
-        default: '#ddd',
-        disabled: '#eee',
+getTokenValue(
+  {
+    color: {
+      background: {
+        button: {
+          default: '#ddd',
+          disabled: '#eee',
+        },
       },
     },
   },
-}, 'color:background:button:disabled')
+  'color:background:button:disabled',
+)
 
 // Will return '#ddd'
-getTokenValue({
-  color: {
-    background: {
-      button: {
-        default: '#ddd',
-        disabled: '#eee',
+getTokenValue(
+  {
+    color: {
+      background: {
+        button: {
+          default: '#ddd',
+          disabled: '#eee',
+        },
       },
     },
   },
-}, 'color:background:button')
+  'color:background:button',
+)
 
 // Will also return '#ddd'
-getTokenValue({
-  color: {
-    background: {
-      button: {
-        default: '#ddd',
-        disabled: '#eee',
+getTokenValue(
+  {
+    color: {
+      background: {
+        button: {
+          default: '#ddd',
+          disabled: '#eee',
+        },
       },
     },
   },
-}, 'color:background:button:default')
+  'color:background:button:default',
+)
 ```
 
 ## Global Tokens
@@ -191,7 +205,7 @@ Synth supports global tokens so you can reuse the same value on different token 
     "padding": {
       "primaryButton": "@mediumSpacing"
     }
-  }  
+  }
 }
 ```
 
@@ -261,7 +275,7 @@ import styled from 'styled-components'
 import { withSynth } from '@beatgig/synth-react'
 import { padding } from '@beatgig/synth-styled-components'
 
-const Button = styled.button`  
+const Button = styled.button`
   /** padding: 10px 5%; */
   ${padding('primaryButton')}
 `
@@ -335,7 +349,7 @@ export default withSynth(Text)
 
 In the example above, calling the `color` and `fontSize` utility functions
 without any values will default to use the `base` token values defined on the
-token declarations object, i.e. `color() => color:text:base` and 
+token declarations object, i.e. `color() => color:text:base` and
 `fontSize() => typography:size:base`.
 
 ## Example Token Declarations
