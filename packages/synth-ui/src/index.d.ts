@@ -114,7 +114,23 @@ export {
   SynthMenuProps,
 } from './Menu'
 
-export { Modal, SynthModalComponent, SynthModalProps } from './Modal'
+export {
+  Modal,
+  ModalActions,
+  ModalContent,
+  ModalHeader,
+  ModalTitle,
+  SynthModalActionsComponent,
+  SynthModalActionsProps,
+  SynthModalComponent,
+  SynthModalContentComponent,
+  SynthModalContentProps,
+  SynthModalHeaderComponent,
+  SynthModalHeaderProps,
+  SynthModalProps,
+  SynthModalTitleComponent,
+  SynthModalTitleProps,
+} from './Modal'
 
 export {
   Popup,
