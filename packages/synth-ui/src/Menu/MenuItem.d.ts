@@ -21,7 +21,7 @@ interface SynthMenuItemProps
   /**
    * A React `ref` object that will point to the menu item's DOM element.
    */
-  ref?: React.Ref<HTMLHRElement>
+  ref?: React.Ref<HTMLButtonElement>
   /**
    * A callback function that is called whenever the user clicks on the
    * menu item.

@@ -9,12 +9,14 @@ import { setMenuDividerBorder } from './utils'
 const HorizontalLine = styled.hr`
   ${setMenuDividerBorder()}
   margin: 0 auto;
+  width: 100%;
 `
 
 const MenuDivider = ({ className, ref, ...props }) => (
   <Fragment>
+    <Spacer top />
     <HorizontalLine {...props} className={className} ref={ref} />
-    <Spacer bottom scale={1} top />
+    <Spacer bottom />
   </Fragment>
 )
 
