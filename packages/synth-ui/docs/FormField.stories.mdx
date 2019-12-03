@@ -1,7 +1,9 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
-import { Button, Card, FormField, Input } from '@beatgig/synth-ui'
 
-<Meta title="Components/FormField" component={FormField} />
+import { CardWrapper } from './utils'
+import { Button, Card, FormField, Input } from '../src'
+
+<Meta title="synth-ui|Forms/FormField" component={FormField} />
 
 # FormField
 
@@ -9,7 +11,7 @@ The `<FormField>` component is used to group form elements under one label.
 
 <Preview>
   <Story name="default">
-    <div style={{ width: 320 }}>
+    <CardWrapper>
       <Card>
         <FormField label="Email" fullWidth>
           <Input placeholder="email@example.com" />
@@ -18,15 +20,32 @@ The `<FormField>` component is used to group form elements under one label.
           <Button>Submit</Button>
         </FormRow>
       </Card>
-    </div>
+    </CardWrapper>
   </Story>
 </Preview>
+
+## Props
+
+| Name                | Description                                                                                                           | Type                        | Default |
+| :------------------ | :-------------------------------------------------------------------------------------------------------------------- | :-------------------------- | :------ |
+| centered            | Boolean flag to determine if the elements in the row should be centered.                                              | `boolean`                   | `false` |
+| children            | The elements you want to display within this component.                                                               | `React.ReactNode`           | `null`  |
+| clasName            | Required to properly extend styled-components.                                                                        | `string`                    | `''`    |
+| fullWidth           | Boolean flag to determine if the each element(s) in the row should take all the horizontal space.                     | `boolean`                   | `false` |
+| inline              | Boolean flag to determine if the each element(s) in the row should be displayed inline.                               | `boolean`                   | `false` |
+| error               | The error message (if any) associated with the form elements displayed on the field.                                  | `string`                    | `''`    |
+| hint                | Used to provide an optional hint or instruction message related with the form elements displayed on the field.        | `React.ReactNode`           | `null`  |
+| label               | Used to provide an optional label or title related with the form elements displayed on the field.                     | `React.ReactNode`           | `null`  |
+| withoutLabelWrapper | Boolean flag used to determine if you want the form elements of the field to **not** be wrapped by a `label` element. | `boolean`                   | `false` |
+| ref                 | A React `ref` object that will point to the component's DOM element.                                                  | `React.Ref<HTMLDivElement>` | `null`  |
+
+## Positioning Form Elements
 
 Form elements whitin a `<FormField>` could be displayed inline by using the `inline` prop.
 
 <Preview>
   <Story name="inline">
-    <div style={{ width: 320 }}>
+    <CardWrapper>
       <Card>
         <FormField label="Email" inline>
           <Input placeholder="email@example.com" />
@@ -35,15 +54,17 @@ Form elements whitin a `<FormField>` could be displayed inline by using the `inl
           <Button>Submit</Button>
         </FormRow>
       </Card>
-    </div>
+    </CardWrapper>
   </Story>
 </Preview>
+
+## Providing Information
 
 You can provide a hint or brief instruction related to the form elements by using the `hint` prop.
 
 <Preview>
   <Story name="hint">
-    <div style={{ width: 320 }}>
+    <CardWrapper>
       <Card>
         <FormField
           fullWidth
@@ -56,15 +77,15 @@ You can provide a hint or brief instruction related to the form elements by usin
           <Button>Submit</Button>
         </FormRow>
       </Card>
-    </div>
+    </CardWrapper>
   </Story>
 </Preview>
 
 Error messages related to the form elements in the field can be displayed by using the `error` prop.
 
 <Preview>
-  <Story name="hint">
-    <div style={{ width: 320 }}>
+  <Story name="error">
+    <CardWrapper>
       <Card>
         <FormField
           error="There was an error, please try again."
@@ -78,12 +99,6 @@ Error messages related to the form elements in the field can be displayed by usi
           <Button>Submit</Button>
         </FormRow>
       </Card>
-    </div>  
+    </CardWrapper>
   </Story>
 </Preview>
-
-
-## Props 🎛️
-
-<Props of={FormField} />
-
