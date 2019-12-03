@@ -1,20 +1,45 @@
+import { Fragment } from 'react'
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
 
-import { Avatar } from '../src'
-import { Intro } from './Avatar'
+import { Avatar, Spacer } from '../src'
 
-<Meta title="Components/Avatar" component={Avatar} />
+<Meta title="synth-ui|Avatar" component={Avatar} />
 
 # Avatar
 
 The `<Avatar>` component is used to render user avatars.
 
-<Preview>
-  <Story name="all avatar sizes">
-    <Intro />
+<Preview withToolbar>
+  <Story name="intro">
+    <Avatar src="https://randomuser.me/api/portraits/men/1.jpg" scale={5} />
   </Story>
 </Preview>
 
-## Props 🎛️
+## Props
 
-<Props of={Avatar} />
+| Name  | Description                                   | Type     | Default |
+| :---- | :-------------------------------------------- | :------- | :------ |
+| src\* | The URL of the embeddable content.            | `string` | `null`  |
+| scale | A scale index from the `avatars` synth token. | `number` | `0`     |
+
+## Avatar Sizes
+
+Avatars can be rendered in different sizes which are taken from the `@avatars` global token.
+
+<Preview withToolbar>
+  <Story name="scale">
+    <Fragment>
+      <Avatar src="https://randomuser.me/api/portraits/men/1.jpg" />
+      <Spacer left scale={3} />
+      <Avatar src="https://randomuser.me/api/portraits/men/1.jpg" scale={1} />
+      <Spacer left scale={3} />
+      <Avatar src="https://randomuser.me/api/portraits/men/1.jpg" scale={2} />
+      <Spacer left scale={3} />
+      <Avatar src="https://randomuser.me/api/portraits/men/1.jpg" scale={3} />
+      <Spacer left scale={3} />
+      <Avatar src="https://randomuser.me/api/portraits/men/1.jpg" scale={4} />
+      <Spacer left scale={3} />
+      <Avatar src="https://randomuser.me/api/portraits/men/1.jpg" scale={5} />
+    </Fragment>
+  </Story>
+</Preview>
