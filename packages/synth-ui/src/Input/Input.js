@@ -24,6 +24,7 @@ const Input = styled.input.attrs(() => ({
   ${setBorderColor()}
   cursor: text;
   line-height: 1.45;
+  margin: 0;
   transition: all 0.2s ease-in-out 0s;
 
   :hover {
@@ -36,6 +37,11 @@ const Input = styled.input.attrs(() => ({
     ${border('input:focus')}
     ${setBorderColorFocus()}
     outline: 0 none;
+  }
+
+  :disabled {
+    opacity: 0.5;
+    pointer-events: none;
   }
 `
 
