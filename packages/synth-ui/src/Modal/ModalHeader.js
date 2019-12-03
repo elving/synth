@@ -4,8 +4,8 @@ import styled from 'styled-components'
 import { withSynth } from '@beatgig/synth-react'
 import { borderRadius, padding } from '@beatgig/synth-styled-components'
 
-import { Button } from '../Button'
 import { CloseIcon } from '../Icons'
+import { IconButton } from '../IconButton'
 
 import { noop } from '../utils'
 import { setCloseButtonMarginLeft, setTopContentMargin } from './utils'
@@ -26,7 +26,7 @@ const Container = styled.div`
 /**
  * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('react').ComponentType<import('@beatgig/synth-ui').SynthButtonProps>>}
  */
-const CloseButton = styled(Button)`
+const CloseButton = styled(IconButton)`
   ${setCloseButtonMarginLeft()}
 `
 
@@ -46,7 +46,7 @@ const ModalHeader = ({
     <Container className={className} synth={synth}>
       {children}
       <CloseButton
-        icon={<CloseIcon scale={3} />}
+        icon={<CloseIcon />}
         onClick={handleCloseClick}
         synth={synth}
       />
