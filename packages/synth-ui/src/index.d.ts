@@ -1,193 +1,261 @@
-export { Avatar, SynthAvatarComponent, SynthAvatarProps } from './Avatar'
+export {
+  Avatar,
+  AvatarComponent,
+  AvatarProps,
+  AvatarComponentProps,
+} from './Avatar'
+
 export { BaseStyles } from './BaseStyles'
-export { Button, SynthButtonComponent, SynthButtonProps } from './Button'
-export { Card, SynthCardComponent, SynthCardProps } from './Card'
+
+export {
+  Button,
+  ButtonComponent,
+  ButtonComponentProps,
+  ButtonIconPosition,
+  ButtonIntent,
+  ButtonProps,
+} from './Button'
+
+export { Card, CardComponent, CardComponentProps, CardProps } from './Card'
 
 export {
   Checkbox,
-  SynthCheckboxComponent,
-  SynthCheckboxProps,
+  CheckboxComponent,
+  CheckboxComponentProps,
+  CheckboxProps,
 } from './Checkbox'
 
 export {
   Clickable,
-  SynthClickableComponent,
-  SynthClickableProps,
+  ClickableComponent,
+  ClickableComponentProps,
+  ClickableProps,
 } from './Clickable'
 
 export {
   ConfirmationModal,
-  SynthConfirmationModalComponent,
-  SynthConfirmationModalProps,
+  ConfirmationModalComponent,
+  ConfirmationModalComponentProps,
+  ConfirmationModalProps,
 } from './ConfirmationModal'
 
 export {
   Editable,
-  SynthEditableComponent,
-  SynthEditableProps,
+  EditableComponent,
+  EditableComponentProps,
+  EditableProps,
 } from './Editable'
 
-export { Flex, SynthFlexComponent, SynthFlexProps } from './Flex'
+export { Flex, FlexComponent, FlexProps, FlexComponentProps } from './Flex'
 
 export {
   FormField,
-  SynthFormFieldComponent,
-  SynthFormFieldProps,
+  FormFieldComponent,
+  FormFieldProps,
+  FormFieldPropsComponent,
   FormRow,
-  SynthFormRowComponent,
-  SynthFormRowProps,
+  FormRowComponent,
+  FormRowProps,
+  FormRowPropsComponent,
 } from './Form'
 
 export {
-  FullLogo,
-  SynthFullLogoComponent,
-  SynthFullLogoProps,
-  MiniLogo,
-  SynthMiniLogoComponent,
-  SynthMiniLogoProps,
-} from './Logo'
-
-export {
   Grid,
-  SynthGridComponent,
-  SynthGridProps,
+  GridComponent,
+  GridComponentProps,
+  GridProps,
   GridItem,
-  SynthGridItemComponent,
-  SynthGridItemProps,
+  GridItemComponent,
+  GridItemComponentProps,
+  GridItemProps,
 } from './Grid'
 
 export {
   Header,
-  SynthHeaderComponent,
-  SynthHeaderProps,
+  HeaderComponent,
+  HeaderComponentProps,
+  HeaderProps,
   HeaderLink,
-  SynthHeaderLinkComponent,
-  SynthHeaderLinkProps,
+  HeaderLinkComponent,
+  HeaderLinkComponentProps,
+  HeaderLinkProps,
 } from './Header'
 
-export { Icon, SynthIconComponent, SynthIconProps } from './Icon'
+export { Icon, IconComponent, IconComponentProps, IconProps } from './Icon'
 
 export {
   IconButton,
-  SynthIconButtonComponent,
-  SynthIconButtonProps,
+  IconButtonComponent,
+  IconButtonComponentProps,
+  IconButtonProps,
 } from './IconButton'
 
 export {
   AdminIcon,
-  SynthAdminIconComponent,
-  SynthAdminIconProps,
+  AdminIconComponent,
+  AdminIconComponentProps,
+  AdminIconProps,
   ArtistIcon,
-  SynthArtistIconComponent,
-  SynthArtistIconProps,
+  ArtistIconComponent,
+  ArtistIconComponentProps,
+  ArtistIconProps,
   CheckIcon,
-  SynthCheckIconComponent,
-  SynthCheckIconProps,
+  CheckIconComponent,
+  CheckIconComponentProps,
+  CheckIconProps,
   ChevronDownIcon,
-  SynthChevronDownIconComponent,
-  SynthChevronDownIconProps,
+  ChevronDownIconComponent,
+  ChevronDownIconComponentProps,
+  ChevronDownIconProps,
   CloseIcon,
-  SynthCloseIconComponent,
-  SynthCloseIconProps,
+  CloseIconComponent,
+  CloseIconComponentProps,
+  CloseIconProps,
   InboxIcon,
-  SynthInboxIconComponent,
-  SynthInboxIconProps,
+  InboxIconComponent,
+  InboxIconComponentProps,
+  InboxIconProps,
   LogoutIcon,
-  SynthLogoutIconComponent,
-  SynthLogoutIconProps,
+  LogoutIconComponent,
+  LogoutIconComponentProps,
+  LogoutIconProps,
   SearchIcon,
-  SynthSearchIconComponent,
-  SynthSearchIconProps,
+  SearchIconComponent,
+  SearchIconComponentProps,
+  SearchIconProps,
 } from './Icons'
 
-export { Input, SynthInputComponent, SynthInputProps } from './Input'
+export { Input, InputComponent, InputComponentProps, InputProps } from './Input'
+
+export {
+  FullLogo,
+  FullLogoComponent,
+  FullLogoComponentProps,
+  FullLogoProps,
+  MiniLogo,
+  MiniLogoComponent,
+  MiniLogoComponentProps,
+  MiniLogoProps,
+} from './Logo'
 
 export {
   Menu,
+  MenuComponent,
+  MenuComponentProps,
   MenuDivider,
+  MenuDividerComponent,
+  MenuDividerComponentProps,
+  MenuDividerProps,
   MenuItem,
-  SynthMenuComponent,
-  SynthMenuDividerComponent,
-  SynthMenuDividerProps,
-  SynthMenuItemComponent,
-  SynthMenuItemProps,
-  SynthMenuProps,
+  MenuItemComponent,
+  MenuItemComponentProps,
+  MenuItemProps,
+  MenuProps,
 } from './Menu'
 
 export {
   Modal,
   ModalActions,
+  ModalComponent,
+  ModalComponentProps,
   ModalContent,
   ModalHeader,
+  ModalProps,
   ModalTitle,
-  SynthModalActionsComponent,
-  SynthModalActionsProps,
-  SynthModalComponent,
-  SynthModalContentComponent,
-  SynthModalContentProps,
-  SynthModalHeaderComponent,
-  SynthModalHeaderProps,
-  SynthModalProps,
-  SynthModalTitleComponent,
-  SynthModalTitleProps,
+  ModalActionsComponent,
+  ModalActionsComponentProps,
+  ModalActionsProps,
+  ModalContentComponent,
+  ModalContentComponentProps,
+  ModalContentProps,
+  ModalHeaderComponent,
+  ModalHeaderComponentProps,
+  ModalHeaderProps,
+  ModalTitleComponent,
+  ModalTitleComponentProps,
+  ModalTitleProps,
 } from './Modal'
 
 export {
   Popup,
-  SynthPopupComponent,
-  SynthPopupHookOptions,
-  SynthPopupHookState,
-  SynthPopupProps,
+  PopupComponent,
+  PopupComponentProps,
+  PopupHookOptions,
+  PopupHookState,
+  PopupProps,
+  PopupXPosition,
+  PopupYPosition,
   usePopup,
 } from './Popup'
 
 export {
   SearchInput,
-  SynthSearchInputComponent,
-  SynthSearchInputProps,
+  SearchInputComponent,
+  SearchInputComponentProps,
+  SearchInputProps,
 } from './SearchInput'
 
-export { Select, SynthSelectComponent, SynthSelectProps } from './Select'
+export {
+  Select,
+  SelectComponent,
+  SelectComponentProps,
+  SelectProps,
+  setSelectStyles,
+} from './Select'
 
 export {
   Sidebar,
+  SidebarComponent,
+  SidebarComponentProps,
   SidebarLink,
-  SynthSidebarComponent,
-  SynthSidebarLinkComponent,
-  SynthSidebarLinkProps,
-  SynthSidebarProps,
+  SidebarLinkComponent,
+  SidebarLinkComponentProps,
+  SidebarLinkProps,
+  SidebarProps,
 } from './Sidebar'
 
-export { Spacer, SynthSpacerComponent, SynthSpacerProps } from './Spacer'
-export { Tag, SynthTagComponent, SynthTagProps } from './Tag'
+export {
+  Spacer,
+  SpacerComponent,
+  SpacerComponentProps,
+  SpacerProps,
+} from './Spacer'
+
+export { Tag, TagComponent, TagComponentProps, TagProps } from './Tag'
 
 export {
   TagSelect,
-  SynthTagSelectComponent,
-  SynthTagSelectProps,
+  TagSelectComponent,
+  TagSelectComponentProps,
+  TagSelectProps,
 } from './TagSelect'
 
 export {
   Heading,
-  SynthHeadingComponent,
-  SynthHeadingProps,
+  HeadingComponent,
+  HeadingComponentProps,
+  HeadingLevel,
+  HeadingProps,
   Label,
-  SynthLabelComponent,
-  SynthLabelProps,
+  LabelComponent,
+  LabelComponentProps,
+  LabelProps,
   Small,
-  SynthSmallComponent,
-  SynthSmallProps,
+  SmallComponent,
+  SmallComponentProps,
+  SmallProps,
   Status,
-  SynthStatusComponent,
-  SynthStatusProps,
+  StatusComponent,
+  StatusComponentProps,
+  StatusProps,
   Text,
-  SynthIntentInterface,
-  SynthTextComponent,
-  SynthTextProps,
+  TextComponent,
+  TextComponentProps,
+  TextIntent,
+  TextProps,
 } from './Typography'
 
 export {
-  getIntentColor,
   noop,
   ScrollIntoView,
   setBaseStyles,

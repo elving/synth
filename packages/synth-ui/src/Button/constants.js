@@ -1,39 +1,79 @@
 /**
- * @typedef {string} ICON_POSITION_TOP
+ * @typedef {import('@beatgig/synth-ui').ButtonIconPosition} BUTTON_ICON_POSITION_TOP
  * @constant
  * @default
  */
-export const ICON_POSITION_TOP = 'top'
+export const BUTTON_ICON_POSITION_TOP = 'top'
 
 /**
- * @typedef {string} ICON_POSITION_LEFT
+ * @type {import('@beatgig/synth-ui').ButtonIconPosition} BUTTON_ICON_POSITION_LEFT
  * @constant
  * @default
  */
-export const ICON_POSITION_LEFT = 'left'
+export const BUTTON_ICON_POSITION_LEFT = 'left'
 
 /**
- * @typedef {string} ICON_POSITION_RIGHT
+ * @typedef {import('@beatgig/synth-ui').ButtonIconPosition} BUTTON_ICON_POSITION_RIGHT
  * @constant
  * @default
  */
-export const ICON_POSITION_RIGHT = 'right'
+export const BUTTON_ICON_POSITION_RIGHT = 'right'
 
 /**
- * @typedef {string} ICON_POSITION_BOTTOM
+ * @typedef {import('@beatgig/synth-ui').ButtonIconPosition} BUTTON_ICON_POSITION_BOTTOM
  * @constant
  * @default
  */
-export const ICON_POSITION_BOTTOM = 'bottom'
+export const BUTTON_ICON_POSITION_BOTTOM = 'bottom'
 
 /**
- * @typedef {string[]} ICON_POSITIONS
+ * @typedef {import('@beatgig/synth-ui').ButtonIconPosition[]} BUTTON_ICON_POSITIONS
  * @constant
  * @default
  */
-export const ICON_POSITIONS = [
-  ICON_POSITION_TOP,
-  ICON_POSITION_LEFT,
-  ICON_POSITION_RIGHT,
-  ICON_POSITION_BOTTOM,
+export const BUTTON_ICON_POSITIONS = [
+  BUTTON_ICON_POSITION_TOP,
+  BUTTON_ICON_POSITION_LEFT,
+  BUTTON_ICON_POSITION_RIGHT,
+  BUTTON_ICON_POSITION_BOTTOM,
+]
+
+/**
+ * @typedef {import('@beatgig/synth-ui').ButtonIntent} BUTTON_INTENT_NONE
+ * @constant
+ * @default
+ */
+export const BUTTON_INTENT_NONE = 'none'
+
+/**
+ * @typedef {import('@beatgig/synth-ui').ButtonIntent} BUTTON_INTENT_DANGER
+ * @constant
+ * @default
+ */
+export const BUTTON_INTENT_DANGER = 'danger'
+
+/**
+ * @typedef {import('@beatgig/synth-ui').ButtonIntent} BUTTON_INTENT_SUCCESS
+ * @constant
+ * @default
+ */
+export const BUTTON_INTENT_SUCCESS = 'success'
+
+/**
+ * @typedef {import('@beatgig/synth-ui').ButtonIntent} BUTTON_INTENT_HIGHLIGHT
+ * @constant
+ * @default
+ */
+export const BUTTON_INTENT_HIGHLIGHT = 'highlight'
+
+/**
+ * @typedef {import('@beatgig/synth-ui').ButtonIntent[]} BUTTON_INTENTS
+ * @constant
+ * @default
+ */
+export const BUTTON_INTENTS = [
+  BUTTON_INTENT_NONE,
+  BUTTON_INTENT_DANGER,
+  BUTTON_INTENT_SUCCESS,
+  BUTTON_INTENT_HIGHLIGHT,
 ]

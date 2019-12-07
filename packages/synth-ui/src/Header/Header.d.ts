@@ -1,9 +1,7 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface SynthHeaderProps
-  extends SynthReact.SynthComponentProps,
-    React.HTMLAttributes<HTMLDivElement> {
+interface HeaderProps {
   /**
    * The elements you want to display within this component.
    */
@@ -13,14 +11,22 @@ interface SynthHeaderProps
    * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
    */
   className?: string
-  /**
-   * A React `ref` object that will point to the component's DOM element.
-   */
-  ref?: React.Ref<HTMLDivElement>
 }
 
-type SynthHeaderComponent = React.ComponentType<SynthHeaderProps>
-declare const Header: React.ForwardRefExoticComponent<SynthHeaderProps>
+type HeaderComponentProps = React.HTMLAttributes<HTMLDivElement> &
+  React.RefAttributes<HTMLDivElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & HeaderProps
 
-export { SynthHeaderComponent, SynthHeaderProps }
+type HeaderComponent = SynthReact.SynthComponent<
+  HeaderComponentProps,
+  HTMLDivElement
+>
+
+/**
+ * @since 1.0.0
+ */
+declare const Header: HeaderComponent
+
+export { HeaderComponent, HeaderComponentProps, HeaderProps }
 export default Header

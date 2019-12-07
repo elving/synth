@@ -2,12 +2,12 @@ import * as React from 'react'
 import { SynthConsumerProps } from './SynthContext'
 
 interface SynthComponentProps {
-  [key: string]: any
-  as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
-  ref?: React.Ref<any>
   synth?: SynthConsumerProps
-  className?: string
 }
+
+type SynthComponent<Props = {}, Ref = any> = React.ForwardRefExoticComponent<
+  SynthComponentProps & Props & React.RefAttributes<Ref>
+>
 
 /**
  * Higher order component that wraps it's children in the `SynthConsumer`
@@ -25,11 +25,9 @@ interface SynthComponentProps {
  * // Exports the `Button` component wrapped in `SynthConsumer`.
  * export default withSynth(Button)
  */
-declare function withSynth<Props extends {}>(
-  Component: React.ComponentType<Props>,
-): React.ForwardRefExoticComponent<
-  React.PropsWithoutRef<Props & SynthComponentProps> & React.RefAttributes<any>
->
+declare function withSynth<P = {}>(
+  Component: React.ComponentType<P>,
+): SynthComponent<P>
 
-export { SynthComponentProps }
+export { SynthComponent, SynthComponentProps }
 export default withSynth

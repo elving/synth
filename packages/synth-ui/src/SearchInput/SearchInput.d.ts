@@ -1,9 +1,23 @@
 import * as React from 'react'
-import { SynthInputProps } from '../Input'
 
-interface SynthSearchInputProps extends SynthInputProps {}
-type SynthSearchInputComponent = React.ComponentType<SynthSearchInputProps>
-declare const SearchInput: React.ForwardRefExoticComponent<SynthSearchInputProps>
+import { InputProps } from '../Input'
 
-export { SynthSearchInputComponent, SynthSearchInputProps }
+interface SearchInputProps extends InputProps {}
+
+type SearchInputComponentProps = React.InputHTMLAttributes<HTMLInputElement> &
+  React.RefAttributes<HTMLInputElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & SearchInputProps
+
+type SearchInputComponent = SynthReact.SynthComponent<
+  SearchInputComponentProps,
+  HTMLInputElement
+>
+
+/**
+ * @since 1.2.0
+ */
+declare const SearchInput: SearchInputComponent
+
+export { SearchInputComponent, SearchInputComponentProps, SearchInputProps }
 export default SearchInput

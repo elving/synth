@@ -1,11 +1,10 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
-import { SynthIntentInterface } from '../Typography'
 
-interface SynthButtonProps
-  extends SynthIntentInterface,
-    SynthReact.SynthComponentProps,
-    React.ButtonHTMLAttributes<HTMLButtonElement> {
+type ButtonIntent = 'none' | 'danger' | 'success' | 'highlight'
+type ButtonIconPosition = 'top' | 'right' | 'bottom' | 'left'
+
+interface ButtonProps {
   /**
    * The elements you want to display within the button.
    */
@@ -23,23 +22,37 @@ interface SynthButtonProps
   /**
    * The icon's position.
    */
-  iconPosition?: 'top' | 'right' | 'bottom' | 'left'
+  iconPosition?: ButtonIconPosition
+  /**
+   * The button's intent will determine it's text and background color.
+   */
+  intent?: ButtonIntent
   /**
    * Displays the button only using it's outline.
    */
   outline?: boolean
-  /**
-   * A React `ref` object that will point to the button's DOM element.
-   */
-  ref?: React.Ref<HTMLButtonElement>
 }
 
-type SynthButtonComponent = React.ComponentType<SynthButtonProps>
+type ButtonComponentProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
+  React.RefAttributes<HTMLButtonElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & ButtonProps
+
+type ButtonComponent = SynthReact.SynthComponent<
+  ButtonComponentProps,
+  HTMLButtonElement
+>
 
 /**
  * @since 1.0.0
  */
-declare const Button: React.ForwardRefExoticComponent<SynthButtonProps>
+declare const Button: ButtonComponent
 
-export { SynthButtonComponent, SynthButtonProps }
+export {
+  ButtonComponent,
+  ButtonComponentProps,
+  ButtonIconPosition,
+  ButtonIntent,
+  ButtonProps,
+}
 export default Button

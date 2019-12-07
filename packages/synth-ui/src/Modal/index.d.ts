@@ -1,25 +1,34 @@
-export { default as Modal, SynthModalComponent, SynthModalProps } from './Modal'
+export {
+  default as Modal,
+  ModalComponent,
+  ModalComponentProps,
+  ModalProps,
+} from './Modal'
 
 export {
   default as ModalActions,
-  SynthModalActionsComponent,
-  SynthModalActionsProps,
+  ModalActionsComponent,
+  ModalActionsComponentProps,
+  ModalActionsProps,
 } from './ModalActions'
 
 export {
   default as ModalContent,
-  SynthModalContentComponent,
-  SynthModalContentProps,
+  ModalContentComponent,
+  ModalContentComponentProps,
+  ModalContentProps,
 } from './ModalContent'
 
 export {
   default as ModalHeader,
-  SynthModalHeaderComponent,
-  SynthModalHeaderProps,
+  ModalHeaderComponent,
+  ModalHeaderComponentProps,
+  ModalHeaderProps,
 } from './ModalHeader'
 
 export {
   default as ModalTitle,
-  SynthModalTitleComponent,
-  SynthModalTitleProps,
+  ModalTitleComponent,
+  ModalTitleComponentProps,
+  ModalTitleProps,
 } from './ModalTitle'

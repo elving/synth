@@ -1,7 +1,8 @@
 import * as React from 'react'
-import { SynthFormRowProps } from './FormRow'
 
-interface SynthFormFieldProps extends SynthFormRowProps {
+import { FormRowProps } from './FormRow'
+
+interface FormFieldProps extends FormRowProps {
   /**
    * The error message (if any) associated with the form elements displayed on the field.
    */
@@ -15,17 +16,25 @@ interface SynthFormFieldProps extends SynthFormRowProps {
    */
   label?: React.ReactNode
   /**
-   * A React `ref` object that will point to the field's DOM element.
-   */
-  ref?: React.Ref<HTMLDivElement>
-  /**
    * Boolean flag used to determine if you want the form elements of the field to **not** be wrapped by a `label` element.
    */
   withoutLabelWrapper?: boolean
 }
 
-type SynthFormFieldComponent = React.ComponentType<SynthFormFieldProps>
-declare const FormField: React.ForwardRefExoticComponent<SynthFormFieldProps>
+type FormFieldComponentProps = React.HTMLAttributes<HTMLDivElement> &
+  React.RefAttributes<HTMLDivElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & FormFieldProps
 
-export { SynthFormFieldComponent, SynthFormFieldProps }
+type FormFieldComponent = SynthReact.SynthComponent<
+  FormFieldComponentProps,
+  HTMLDivElement
+>
+
+/**
+ * @since 1.0.0
+ */
+declare const FormField: FormFieldComponent
+
+export { FormFieldComponent, FormFieldComponentProps, FormFieldProps }
 export default FormField

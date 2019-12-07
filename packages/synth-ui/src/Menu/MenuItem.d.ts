@@ -1,9 +1,7 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface SynthMenuItemProps
-  extends SynthReact.SynthComponentProps,
-    React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface MenuItemProps {
   /**
    * The elements you want to display within the menu item.
    */
@@ -19,21 +17,26 @@ interface SynthMenuItemProps
    */
   icon?: React.ReactElement
   /**
-   * A React `ref` object that will point to the menu item's DOM element.
-   */
-  ref?: React.Ref<HTMLButtonElement>
-  /**
    * A callback function that is called whenever the user clicks on the
    * menu item.
    */
   onClick?()
 }
 
-type SynthMenuItemComponent = React.ForwardRefExoticComponent<
-  SynthMenuItemProps
+type MenuItemComponentProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
+  React.RefAttributes<HTMLButtonElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & MenuItemProps
+
+type MenuItemComponent = SynthReact.SynthComponent<
+  MenuItemComponentProps,
+  HTMLButtonElement
 >
 
-declare const MenuItem: React.ForwardRefExoticComponent<SynthMenuItemProps>
+/**
+ * @since 1.2.0
+ */
+declare const MenuItem: MenuItemComponent
 
-export { SynthMenuItemComponent, SynthMenuItemProps }
+export { MenuItemComponent, MenuItemComponentProps, MenuItemProps }
 export default MenuItem

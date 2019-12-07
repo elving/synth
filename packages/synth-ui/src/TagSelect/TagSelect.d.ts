@@ -6,9 +6,7 @@ interface Tag {
   value: string
 }
 
-interface SynthTagSelectProps
-  extends SynthReact.SynthComponentProps,
-    React.HTMLAttributes<HTMLDivElement> {
+interface TagSelectProps {
   /**
    * A boolean flag to determine if the <TagSelect> component has the ability to
    * create new tags based on the user's search query.
@@ -41,10 +39,6 @@ interface SynthTagSelectProps
    */
   placeholder?: string
   /**
-   * A React `ref` object that will point to the tag select's DOM element.
-   */
-  ref?: React.Ref<HTMLDivElement>
-  /**
    * A render function used to render the results state whenever there are no
    * results to show.
    */
@@ -60,11 +54,20 @@ interface SynthTagSelectProps
   tags?: Tag[]
 }
 
-type SynthTagSelectComponent = React.ForwardRefExoticComponent<
-  SynthTagSelectProps
+type TagSelectComponentProps = React.HTMLAttributes<HTMLDivElement> &
+  React.RefAttributes<HTMLDivElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & TagSelectProps
+
+type TagSelectComponent = SynthReact.SynthComponent<
+  TagSelectComponentProps,
+  HTMLDivElement
 >
 
-declare const TagSelect: React.ForwardRefExoticComponent<SynthTagSelectProps>
+/**
+ * @since 1.1.0
+ */
+declare const TagSelect: TagSelectComponent
 
-export { SynthTagSelectComponent, SynthTagSelectProps }
+export { TagSelectComponent, TagSelectComponentProps, TagSelectProps }
 export default TagSelect

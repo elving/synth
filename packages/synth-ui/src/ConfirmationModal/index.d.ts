@@ -1,5 +1,6 @@
 export {
   default as ConfirmationModal,
-  SynthConfirmationModalComponent,
-  SynthConfirmationModalProps,
+  ConfirmationModalComponent,
+  ConfirmationModalComponentProps,
+  ConfirmationModalProps,
 } from './ConfirmationModal'

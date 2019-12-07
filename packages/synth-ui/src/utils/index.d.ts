@@ -1,4 +1,3 @@
-export { default as getIntentColor } from './getIntentColor'
 export { default as noop } from './noop'
 
 export {

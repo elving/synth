@@ -11,6 +11,7 @@ import {
 /**
  * Calculates and return the popup's `top` and `left` CSS values.
  * @typedef {object} Props
+ * @property {HTMLElement} container
  * @property {string} x - The popup's x position.
  * @property {string} y - The popup's y position.
  * @property {number|string} xOffset - The popup's x offset value.
@@ -20,6 +21,7 @@ import {
  * @returns {<T>(props: T & Props) => string}
  */
 const setPosition = () => ({
+  container,
   x,
   y,
   xOffset,
@@ -27,80 +29,58 @@ const setPosition = () => ({
   popupRect,
   triggerRect,
 }) => {
-  const triggerRectX = unit(triggerRect.x)
-  const triggerRectY = unit(triggerRect.y)
+  console.log(window.scrollX, triggerRect.x, triggerRect)
+  console.log(window.scrollY, triggerRect.y)
+
+  const triggerRectX = unit(triggerRect.x + window.scrollX)
+  const triggerRectY = unit(triggerRect.y + window.scrollY)
   const xOffsetUnit = unit(xOffset)
   const yOffsetUnit = unit(yOffset)
 
-  const yTop = `top: calc(${triggerRectY} - ${unit(
+  const yTop = `calc(${triggerRectY} - ${unit(
     popupRect.height,
-  )} + ${yOffsetUnit});`
+  )} + ${yOffsetUnit})`
 
-  const yBottom = `top: calc(${triggerRectY} + ${unit(
+  const yBottom = `calc(${triggerRectY} + ${unit(
     triggerRect.height,
-  )} + ${yOffsetUnit});`
+  )} + ${yOffsetUnit})`
 
-  const yCenter = `top: calc(${triggerRectY} + ${unit(
+  const yCenter = `calc(${triggerRectY} + ${unit(
     triggerRect.height / 2 - popupRect.height / 2,
-  )} + ${yOffsetUnit});`
+  )} + ${yOffsetUnit})`
 
-  const xLeft = `left: calc(${triggerRectX} + ${xOffsetUnit});`
+  const xLeft = `calc(${triggerRectX} + ${xOffsetUnit})`
 
-  const xRight = `left: calc(${triggerRectX} + ${unit(
+  const xRight = `calc(${triggerRectX} + ${unit(
     triggerRect.width - popupRect.width,
-  )} + ${xOffsetUnit});`
+  )} + ${xOffsetUnit})`
 
-  const xCenter = `left: calc(${triggerRectX} + ${unit(
+  const xCenter = `calc(${triggerRectX} + ${unit(
     triggerRect.width / 2 - popupRect.width / 2,
-  )} + ${xOffsetUnit});`
+  )} + ${xOffsetUnit})`
 
   if (x === POPUP_POSITION_LEFT && y === POPUP_POSITION_BOTTOM) {
-    return `
-      ${yBottom}
-      ${xLeft}
-    `
+    return `transform: translate3d(${xLeft}, ${yBottom}, 0px);`
   } else if (x === POPUP_POSITION_CENTER && y === POPUP_POSITION_BOTTOM) {
-    return `
-      ${yBottom}
-      ${xCenter}
-    `
+    return `transform: translate3d(${xCenter}, ${yBottom}, 0px);`
   } else if (x === POPUP_POSITION_RIGHT && y === POPUP_POSITION_BOTTOM) {
-    return `
-      ${yBottom}
-      ${xRight}
-    `
+    return `transform: translate3d(${xRight}, ${yBottom}, 0px);`
   } else if (x === POPUP_POSITION_LEFT && y === POPUP_POSITION_TOP) {
-    return `
-      ${yTop}
-      ${xLeft}
-    `
+    return `transform: translate3d(${xLeft}, ${yTop}, 0px);`
   } else if (x === POPUP_POSITION_CENTER && y === POPUP_POSITION_TOP) {
-    return `
-      ${yTop}
-      ${xCenter}
-    `
+    return `transform: translate3d(${xCenter}, ${yTop}, 0px);`
   } else if (x === POPUP_POSITION_RIGHT && y === POPUP_POSITION_TOP) {
-    return `
-      ${yTop}
-      ${xRight}
-    `
+    return `transform: translate3d(${xRight}, ${yTop}, 0px);`
   } else if (x === POPUP_POSITION_LEFT && y === POPUP_POSITION_CENTER) {
-    return `
-      ${yCenter}
-      left: calc(${triggerRectX} - ${unit(popupRect.width)} + ${xOffsetUnit});
-    `
+    return `transform: translate3d(calc(${triggerRectX} - ${unit(
+      popupRect.width,
+    )} + ${xOffsetUnit}), ${yCenter}, 0px);`
   } else if (x === POPUP_POSITION_RIGHT && y === POPUP_POSITION_CENTER) {
-    return `
-      ${yCenter}
-      left: calc(${triggerRectX} + ${unit(triggerRect.width)} + ${unit(
-      xOffset,
-    )});
-    `
+    return `transform: translate3d(calc(${triggerRectX} + ${unit(
+      triggerRect.width,
+    )} + ${unit(xOffset)}), ${yCenter}, 0px);`
   } else {
-    return `
-      ${yBottom}
-      ${xLeft}
-    `
+    return `transform: translate3d(${xLeft}, ${yBottom}, 0px);`
   }
 }
 

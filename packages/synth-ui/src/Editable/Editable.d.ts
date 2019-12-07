@@ -1,13 +1,23 @@
 import * as React from 'react'
-import { SynthInputProps } from '../Input'
 
-interface SynthEditableProps extends SynthInputProps {}
-type SynthEditableComponent = React.ComponentType<SynthEditableProps>
+import { InputProps } from '../Input'
+
+interface EditableProps extends InputProps {}
+
+type EditableComponentProps = React.InputHTMLAttributes<HTMLInputElement> &
+  React.RefAttributes<HTMLInputElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & EditableProps
+
+type EditableComponent = SynthReact.SynthComponent<
+  EditableComponentProps,
+  HTMLInputElement
+>
 
 /**
  * @since 1.1.0
  */
-declare const Editable: React.ForwardRefExoticComponent<SynthEditableProps>
+declare const Editable: EditableComponent
 
-export { SynthEditableComponent, SynthEditableProps }
+export { EditableComponent, EditableComponentProps, EditableProps }
 export default Editable

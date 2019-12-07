@@ -1,11 +1,10 @@
 import { color } from '@beatgig/synth-styled-components'
 
-import { INTENT_HIGHLIGHT, INTENT_NONE } from '../../constants'
-import { getIntentColor } from '../../utils'
+import getIntentColor from './getIntentColor'
 
 /**
  * @typedef {object} Props
- * @property {'none' | 'danger' | 'success' | 'highlight'} intent
+ * @property {import('@beatgig/synth-ui').TextIntent} intent
  * @returns {<T>(props: T & Props) => string}
  */
 const setColor = () => ({ intent, ...props }) =>

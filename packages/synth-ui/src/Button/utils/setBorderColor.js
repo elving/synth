@@ -1,16 +1,16 @@
-import { INTENT_NONE } from '../../constants'
-import { getIntentColor } from '../../utils'
+import { BUTTON_INTENT_NONE } from '../constants'
+import getIntentColor from './getIntentColor'
 
 /**
  * @typedef {object} Props
- * @property {'none' | 'danger' | 'success' | 'highlight'} intent
+ * @property {import('@beatgig/synth-ui').ButtonIntent} intent
  * @property {boolean} outline
  * @property {object} synth
  * @property {(tokenName: string) => string} synth.getValue
  * @returns {<T>(props: T & Props) => string}
  */
 const setBorderColor = () => ({ intent, outline, synth }) => {
-  if (intent !== INTENT_NONE) {
+  if (intent !== BUTTON_INTENT_NONE) {
     return outline
       ? `border-color: ${synth.getValue(getIntentColor(intent, 'control'))};`
       : ''

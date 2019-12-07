@@ -1,11 +1,10 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
-import { SynthIntentInterface } from './Text'
 
-interface SynthStatusProps
-  extends SynthIntentInterface,
-    SynthReact.SynthComponentProps,
-    React.HTMLAttributes<HTMLElement> {
+import { TextProps } from './Text'
+
+//React.HTMLAttributes<HTMLElement>
+interface StatusProps extends TextProps {
   /**
    * The elements you want to display within the small component.
    */
@@ -15,15 +14,22 @@ interface SynthStatusProps
    * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
    */
   className?: string
-  /**
-   * A React `ref` object that will point to the small component's DOM element.
-   */
-  ref?: React.Ref<HTMLElement>
 }
 
-type SynthStatusComponent = React.ForwardRefExoticComponent<SynthStatusProps>
+type StatusComponentProps = React.HTMLAttributes<HTMLElement> &
+  React.RefAttributes<HTMLElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & StatusProps
 
-declare const Status: React.ForwardRefExoticComponent<SynthStatusProps>
+type StatusComponent = SynthReact.SynthComponent<
+  StatusComponentProps,
+  HTMLElement
+>
 
-export { SynthStatusComponent, SynthStatusProps }
+/**
+ * @since 1.2.0
+ */
+declare const Status: StatusComponent
+
+export { StatusComponent, StatusComponentProps, StatusProps }
 export default Status

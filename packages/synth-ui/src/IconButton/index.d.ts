@@ -1,5 +1,6 @@
 export {
   default as IconButton,
-  SynthIconButtonComponent,
-  SynthIconButtonProps,
+  IconButtonComponent,
+  IconButtonComponentProps,
+  IconButtonProps,
 } from './IconButton'

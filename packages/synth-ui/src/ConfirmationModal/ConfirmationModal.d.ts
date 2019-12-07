@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { SynthModalProps } from '../Modal'
+import { ModalProps } from '../Modal'
 
-interface SynthConfirmationModalProps extends SynthModalProps {
+interface ConfirmationModalProps extends ModalProps {
   /**
    * The content used for the modal's cancel button which defaults to "Cancel".
    */
@@ -23,24 +23,38 @@ interface SynthConfirmationModalProps extends SynthModalProps {
   /**
    * An optional function you can provide to render a custom cancel button.
    */
-  renderCancel?(props: { cancelLabel?: string; onCancel?() }): React.ReactNode
+  renderCancel?(props: {
+    cancelLabel?: React.ReactNode
+    onCancel?(event: React.MouseEvent<HTMLButtonElement>)
+  }): React.ReactNode
   /**
    * An optional function you can provide to render a custom confirm button.
    */
   renderConfirm?(props: {
-    confirmLabel?: string
-    onConfirm?()
+    confirmLabel?: React.ReactNode
+    onConfirm?(event: React.MouseEvent<HTMLButtonElement>)
   }): React.ReactNode
 }
 
-type SynthConfirmationModalComponent = React.ComponentType<
-  SynthConfirmationModalProps
+type ConfirmationModalComponentProps = React.HTMLAttributes<HTMLInputElement> &
+  React.RefAttributes<HTMLInputElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & ConfirmationModalProps
+
+type ConfirmationModalComponent = SynthReact.SynthComponent<
+  ConfirmationModalComponentProps,
+  HTMLInputElement
 >
 
 /**
  * @since 1.2.0
  */
-declare const ConfirmationModal: React.ForwardRefExoticComponent<SynthConfirmationModalProps>
+declare const ConfirmationModal: ConfirmationModalComponent
 
-export { SynthConfirmationModalComponent, SynthConfirmationModalProps }
+export {
+  ConfirmationModalComponent,
+  ConfirmationModalComponentProps,
+  ConfirmationModalProps,
+}
+
 export default ConfirmationModal

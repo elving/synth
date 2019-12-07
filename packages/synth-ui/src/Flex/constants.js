@@ -1,173 +1,145 @@
 /**
- * @typedef {string} END
+ * @typedef {import('csstype').ContentPosition} END
  * @constant
  * @default
  */
 export const END = 'end'
 
 /**
- * @typedef {string} LEFT
+ * @typedef {import('csstype').JustifyContentProperty} LEFT
  * @constant
  * @default
  */
 export const LEFT = 'left'
 
 /**
- * @typedef {string} LAST
- * @constant
- * @default
- */
-export const LAST = 'last'
-
-/**
- * @typedef {string} FIRST
- * @constant
- * @default
- */
-export const FIRST = 'first'
-
-/**
- * @typedef {string} RIGHT
+ * @typedef {import('csstype').JustifyContentProperty} RIGHT
  * @constant
  * @default
  */
 export const RIGHT = 'right'
 
 /**
- * @typedef {string} START
+ * @typedef {import('csstype').SelfPosition} START
  * @constant
  * @default
  */
 export const START = 'start'
 
 /**
- * @typedef {string} UNSET
+ * @typedef {import('csstype').Globals} UNSET
  * @constant
  * @default
  */
 export const UNSET = 'unset'
 
 /**
- * @typedef {string} NORMAL
+ * @typedef {import('csstype').AlignItemsProperty | import('csstype').AlignContentProperty | import('csstype').PlaceContentProperty | import('csstype').JustifyContentProperty} NORMAL
  * @constant
  * @default
  */
 export const NORMAL = 'normal'
 
 /**
- * @typedef {string} CENTER
+ * @typedef {import('csstype').ContentPosition} CENTER
  * @constant
  * @default
  */
 export const CENTER = 'center'
 
 /**
- * @typedef {string} INHERIT
+ * @typedef {import('csstype').Globals} INHERIT
  * @constant
  * @default
  */
 export const INHERIT = 'inherit'
 
 /**
- * @typedef {string} INITIAL
+ * @typedef {import('csstype').Globals} INITIAL
  * @constant
  * @default
  */
 export const INITIAL = 'initial'
 
 /**
- * @typedef {string} STRETCH
+ * @typedef {import('csstype').AlignItemsProperty | import('csstype').ContentDistribution} STRETCH
  * @constant
  * @default
  */
 export const STRETCH = 'stretch'
 
 /**
- * @typedef {string} FLEX_END
+ * @typedef {import('csstype').SelfPosition | import('csstype').ContentPosition} FLEX_END
  * @constant
  * @default
  */
 export const FLEX_END = 'flex-end'
 
 /**
- * @typedef {string} SELF_END
+ * @typedef {import('csstype').SelfPosition | import('csstype').ContentPosition} SELF_END
  * @constant
  * @default
  */
 export const SELF_END = 'self-end'
 
 /**
- * @typedef {string} BASELINE
+ * @typedef {import('csstype').AlignContentProperty | import('csstype').AlignItemsProperty | import('csstype').PlaceContentProperty} BASELINE
  * @constant
  * @default
  */
 export const BASELINE = 'baseline'
 
 /**
- * @typedef {string} FLEX_START
+ * @typedef {import('csstype').SelfPosition | import('csstype').ContentPosition} FLEX_START
  * @constant
  * @default
  */
 export const FLEX_START = 'flex-start'
 
 /**
- * @typedef {string} SELF_START
+ * @typedef {import('csstype').SelfPosition | import('csstype').ContentPosition} SELF_START
  * @constant
  * @default
  */
 export const SELF_START = 'self-start'
 
 /**
- * @typedef {string} SAFE_CENTER
- * @constant
- * @default
- */
-export const SAFE_CENTER = 'safe center'
-
-/**
- * @typedef {string} SPACE_AROUND
+ * @typedef {import('csstype').ContentDistribution} SPACE_AROUND
  * @constant
  * @default
  */
 export const SPACE_AROUND = 'space-around'
 
 /**
- * @typedef {string} SPACE_EVENLY
+ * @typedef {import('csstype').ContentDistribution} SPACE_EVENLY
  * @constant
  * @default
  */
 export const SPACE_EVENLY = 'space-evenly'
 
 /**
- * @typedef {string} LAST_BASELINE
+ * @typedef {import('csstype').AlignContentProperty | import('csstype').AlignItemsProperty} LAST_BASELINE
  * @constant
  * @default
  */
 export const LAST_BASELINE = 'last baseline'
 
 /**
- * @typedef {string} UNSAFE_CENTER
- * @constant
- * @default
- */
-export const UNSAFE_CENTER = 'unsafe center'
-
-/**
- * @typedef {string} SPACE_BETWEEN
+ * @typedef {import('csstype').ContentDistribution} SPACE_BETWEEN
  * @constant
  * @default
  */
 export const SPACE_BETWEEN = 'space-between'
 
 /**
- * @typedef {string} FIRST_BASELINE
+ * @typedef {import('csstype').AlignContentProperty | import('csstype').AlignItemsProperty} FIRST_BASELINE
  * @constant
  * @default
  */
 export const FIRST_BASELINE = 'first baseline'
 
 /**
- * @typedef {string[]} ALIGN_ITEMS
+ * @typedef {import('csstype').AlignItemsProperty[]} ALIGN_ITEMS
  * @constant
  * @default
  * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/align-items#Syntax}
@@ -194,8 +166,6 @@ export const ALIGN_ITEMS = [
    * Baseline alignment
    */
   BASELINE,
-  SAFE_CENTER,
-  UNSAFE_CENTER,
   LAST_BASELINE,
   FIRST_BASELINE,
 
@@ -208,7 +178,7 @@ export const ALIGN_ITEMS = [
 ]
 
 /**
- * @typedef {string[]} ALIGN_CONTENT
+ * @typedef {import('csstype').AlignContentProperty[]} ALIGN_CONTENT
  * @constant
  * @default
  * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/align-content#Syntax}
@@ -244,12 +214,6 @@ export const ALIGN_CONTENT = [
   SPACE_BETWEEN,
 
   /**
-   * Overflow alignment
-   */
-  SAFE_CENTER,
-  UNSAFE_CENTER,
-
-  /**
    * Global values
    */
   UNSET,
@@ -258,7 +222,7 @@ export const ALIGN_CONTENT = [
 ]
 
 /**
- * @typedef {string[]} JUSTIFY_CONTENT
+ * @typedef {import('csstype').JustifyContentProperty[]} JUSTIFY_CONTENT
  * @constant
  * @default
  * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#Syntax}
@@ -289,12 +253,6 @@ export const JUSTIFY_CONTENT = [
   SPACE_BETWEEN,
 
   /**
-   * Overflow alignment
-   */
-  SAFE_CENTER,
-  UNSAFE_CENTER,
-
-  /**
    * Global values
    */
   UNSET,
@@ -303,7 +261,7 @@ export const JUSTIFY_CONTENT = [
 ]
 
 /**
- * @typedef {string[]} PLACE_CONTENT
+ * @typedef {import('csstype').PlaceContentProperty[]} PLACE_CONTENT
  * @constant
  * @default
  * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/place-content#Syntax}
@@ -327,8 +285,8 @@ export const PLACE_CONTENT = [
    * Baseline alignment
    */
   `${BASELINE} ${CENTER}`,
-  `${LAST} ${BASELINE} ${RIGHT}`,
-  `${FIRST} ${BASELINE} ${SPACE_EVENLY}`,
+  `last ${BASELINE} ${RIGHT}`,
+  `first ${BASELINE} ${SPACE_EVENLY}`,
 
   /**
    * Distributed alignment
@@ -347,7 +305,7 @@ export const PLACE_CONTENT = [
 ]
 
 /**
- * @typedef {string[]} POSITIONAL_ALIGNMENT
+ * @typedef {ALIGN_ITEMS[] & ALIGN_CONTENT[] & PLACE_CONTENT[] & JUSTIFY_CONTENT[]} POSITIONAL_ALIGNMENT
  * @constant
  * @default
  */

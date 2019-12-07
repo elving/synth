@@ -1,9 +1,7 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface SynthSidebarProps
-  extends SynthReact.SynthComponentProps,
-    React.HTMLAttributes<HTMLDivElement> {
+interface SidebarProps {
   /**
    * The elements you want to display within the sidebar.
    */
@@ -13,14 +11,22 @@ interface SynthSidebarProps
    * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
    */
   className?: string
-  /**
-   * A React `ref` object that will point to the sidebar's DOM element.
-   */
-  ref?: React.Ref<HTMLDivElement>
 }
 
-type SynthSidebarComponent = React.ComponentType<SynthSidebarProps>
-declare const Sidebar: React.ForwardRefExoticComponent<SynthSidebarProps>
+type SidebarComponentProps = React.HTMLAttributes<HTMLDivElement> &
+  React.RefAttributes<HTMLDivElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & SidebarProps
 
-export { SynthSidebarComponent, SynthSidebarProps }
+type SidebarComponent = SynthReact.SynthComponent<
+  SidebarComponentProps,
+  HTMLDivElement
+>
+
+/**
+ * @since 1.0.0
+ */
+declare const Sidebar: SidebarComponent
+
+export { SidebarComponent, SidebarComponentProps, SidebarProps }
 export default Sidebar

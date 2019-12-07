@@ -1,15 +1,15 @@
 import { color } from '@beatgig/synth-styled-components'
 
-import { INTENT_NONE } from '../../constants'
-import { getIntentColor } from '../../utils'
+import { BUTTON_INTENT_NONE } from '../../Button/constants'
+import { getIntentColor } from '../../Button/utils'
 
 /**
  * @typedef {object} Props
- * @property {'none' | 'danger' | 'success' | 'highlight'} intent
+ * @property {import('@beatgig/synth-ui').ButtonIntent} intent
  * @returns {<T>(props: T & Props) => string}
  */
 const setColor = () => ({ intent, ...props }) => {
-  if (intent !== INTENT_NONE) {
+  if (intent !== BUTTON_INTENT_NONE) {
     return color(getIntentColor(intent, 'control'))(props)
   } else {
     return color()(props)

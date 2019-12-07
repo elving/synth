@@ -1,11 +1,11 @@
 import { backgroundColor } from '@beatgig/synth-styled-components'
 
-import { getIntentColor } from '../../utils'
+import getIntentColor from './getIntentColor'
 
 /**
  * @typedef {object} Props
  * @property {boolean} outline
- * @property {'none' | 'danger' | 'success' | 'highlight'} intent
+ * @property {import('@beatgig/synth-ui').ButtonIntent} intent
  * @returns {<T>(props: T & Props) => string}
  */
 const setBackgroundColor = () => ({ outline, intent, ...props }) => {

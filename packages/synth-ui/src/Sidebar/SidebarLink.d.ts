@@ -1,9 +1,7 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface SynthSidebarLinkProps
-  extends SynthReact.SynthComponentProps,
-    React.AnchorHTMLAttributes<HTMLAnchorElement> {
+interface SidebarLinkProps {
   /**
    * The elements you want to display within the button.
    */
@@ -18,14 +16,22 @@ interface SynthSidebarLinkProps
    * link's content.
    */
   icon?: React.ReactElement
-  /**
-   * A React `ref` object that will point to the link's DOM element.
-   */
-  ref?: React.Ref<HTMLAnchorElement>
 }
 
-type SynthSidebarLinkComponent = React.ComponentType<SynthSidebarLinkProps>
-declare const SidebarLink: React.ForwardRefExoticComponent<SynthSidebarLinkProps>
+type SidebarLinkComponentProps = React.AnchorHTMLAttributes<HTMLAnchorElement> &
+  React.RefAttributes<HTMLAnchorElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & SidebarLinkProps
 
-export { SynthSidebarLinkComponent, SynthSidebarLinkProps }
+type SidebarLinkComponent = SynthReact.SynthComponent<
+  SidebarLinkComponentProps,
+  HTMLAnchorElement
+>
+
+/**
+ * @since 1.0.0
+ */
+declare const SidebarLink: SidebarLinkComponent
+
+export { SidebarLinkComponent, SidebarLinkComponentProps, SidebarLinkProps }
 export default SidebarLink

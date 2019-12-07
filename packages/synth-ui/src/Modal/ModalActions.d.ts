@@ -1,9 +1,7 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface SynthModalActionsProps
-  extends SynthReact.SynthComponentProps,
-    React.HTMLAttributes<HTMLDivElement> {
+interface ModalActionsProps {
   /**
    * The elements you want to display within this component.
    */
@@ -13,17 +11,22 @@ interface SynthModalActionsProps
    * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
    */
   className?: string
-  /**
-   * A React `ref` object that will point to the component's DOM element.
-   */
-  ref?: React.Ref<HTMLDivElement>
 }
 
-type SynthModalActionsComponent = React.ForwardRefExoticComponent<
-  SynthModalActionsProps
+type ModalActionsComponentProps = React.HTMLAttributes<HTMLDivElement> &
+  React.RefAttributes<HTMLDivElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & ModalActionsProps
+
+type ModalActionsComponent = SynthReact.SynthComponent<
+  ModalActionsComponentProps,
+  HTMLDivElement
 >
 
-declare const ModalActions: React.ForwardRefExoticComponent<SynthModalActionsProps>
+/**
+ * @since 1.2.0
+ */
+declare const ModalActions: ModalActionsComponent
 
-export { SynthModalActionsComponent, SynthModalActionsProps }
+export { ModalActionsComponent, ModalActionsComponentProps, ModalActionsProps }
 export default ModalActions

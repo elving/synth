@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import { isNil } from '@beatgig/is'
 import { withSynth } from '@beatgig/synth-react'
@@ -19,9 +19,9 @@ import { Text } from '../Typography'
 import { setBaseStyles } from '../utils'
 
 /**
- * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<'a'>}
+ * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<'a', import('@beatgig/synth-ui').SidebarLinkProps>}
  */
-const Link = styled.a`
+const StyledSidebarLink = styled.a`
   ${setBaseStyles()}
   ${backgroundColor('@Shark')}
   ${borderRadius()}
@@ -46,27 +46,46 @@ const Link = styled.a`
   }
 `
 
-const SidebarLink = ({
-  children = null,
-  className = '',
-  icon = null,
-  synth,
-}) => {
-  const hasIcon = !isNil(icon)
+const SidebarLink = forwardRef(
+  /**
+   * @param {import('@beatgig/synth-ui').SidebarLinkProps & import('@beatgig/synth-react').SynthComponentProps} props
+   */
+  ({ children = null, className = '', icon = null, synth, ...props }, ref) => {
+    const hasIcon = !isNil(icon)
 
-  return (
-    <Link className={className} synth={synth}>
-      {hasIcon ? icon : null}
-      {hasIcon ? <Spacer inline left scale={1} /> : null}
-      <Text hasIcon={icon != undefined}>{children}</Text>
-    </Link>
-  )
-}
+    return (
+      <StyledSidebarLink {...props} className={className} synth={synth}>
+        {hasIcon ? icon : null}
+        {hasIcon ? <Spacer inline left scale={1} /> : null}
+        <Text>{children}</Text>
+      </StyledSidebarLink>
+    )
+  },
+)
 
 SidebarLink.propTypes = {
+  /**
+   * The elements you want to display within the button.
+   */
   children: PropTypes.node,
+  /**
+   * Required to properly extend styled-components.
+   * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
+   */
   className: PropTypes.string,
+  /**
+   * An optional icon component that can be rendered along side the
+   * link's content.
+   */
   icon: PropTypes.node,
 }
+
+SidebarLink.defaultProps = {
+  children: null,
+  className: '',
+  icon: null,
+}
+
+SidebarLink.displayName = 'SidebarLink'
 
 export default withSynth(SidebarLink)

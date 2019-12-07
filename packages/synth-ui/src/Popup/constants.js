@@ -1,40 +1,40 @@
 /**
- * @typedef {string} POPUP_POSITION_TOP
+ * @typedef {import('@beatgig/synth-ui').PopupYPosition} POPUP_POSITION_TOP
  * @constant
  * @default
  */
 export const POPUP_POSITION_TOP = 'top'
 
 /**
- * @typedef {string} POPUP_POSITION_LEFT
+ * @typedef {import('@beatgig/synth-ui').PopupXPosition} POPUP_POSITION_LEFT
  * @constant
  * @default
  */
 export const POPUP_POSITION_LEFT = 'left'
 
 /**
- * @typedef {string} POPUP_POSITION_RIGHT
+ * @typedef {import('@beatgig/synth-ui').PopupXPosition} POPUP_POSITION_RIGHT
  * @constant
  * @default
  */
 export const POPUP_POSITION_RIGHT = 'right'
 
 /**
- * @typedef {string} POPUP_POSITION_CENTER
+ * @typedef {import('@beatgig/synth-ui').PopupXPosition | import('@beatgig/synth-ui').PopupYPosition} POPUP_POSITION_CENTER
  * @constant
  * @default
  */
 export const POPUP_POSITION_CENTER = 'center'
 
 /**
- * @typedef {string} POPUP_POSITION_BOTTOM
+ * @typedef {import('@beatgig/synth-ui').PopupYPosition} POPUP_POSITION_BOTTOM
  * @constant
  * @default
  */
 export const POPUP_POSITION_BOTTOM = 'bottom'
 
 /**
- * @typedef {string[]} POPUP_POSITIONS
+ * @typedef {import('@beatgig/synth-ui').PopupYPosition[] & import('@beatgig/synth-ui').PopupXPosition[]} POPUP_POSITIONS
  * @constant
  * @default
  */
@@ -47,7 +47,7 @@ export const POPUP_POSITIONS = [
 ]
 
 /**
- * @typedef {string[]} POPUP_POSITIONS_X
+ * @typedef {import('@beatgig/synth-ui').PopupXPosition[]} POPUP_POSITIONS_X
  * @constant
  * @default
  */
@@ -58,7 +58,7 @@ export const POPUP_POSITIONS_X = [
 ]
 
 /**
- * @typedef {string[]} POPUP_POSITIONS_Y
+ * @typedef {import('@beatgig/synth-ui').PopupYPosition[]} POPUP_POSITIONS_Y
  * @constant
  * @default
  */

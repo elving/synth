@@ -1,9 +1,10 @@
 import * as React from 'react'
-import { SynthCardComponent } from '../Card'
-import { SynthModalComponent } from '../Modal'
-import { SynthPopupComponent } from './Popup'
 
-interface SynthPopupHookOptions {
+import { CardComponent } from '../Card'
+import { ModalComponent } from '../Modal'
+import { PopupComponent } from './Popup'
+
+interface PopupHookOptions {
   /**
    * Flag that determines if the popup is visible or not.
    */
@@ -27,7 +28,7 @@ interface SynthPopupHookOptions {
   onToggle?()
 }
 
-interface SynthPopupHookState {
+interface PopupHookState {
   /**
    * Function used to close the popup.
    */
@@ -43,9 +44,7 @@ interface SynthPopupHookState {
   /**
    * React ref pointing to the popup DOM element.
    */
-  popupRef: React.Ref<
-    SynthCardComponent | SynthModalComponent | SynthPopupComponent
-  >
+  popupRef: React.Ref<React.DOMElement>
   /**
    * Props to be passed on to the popup component.
    */
@@ -57,10 +56,10 @@ interface SynthPopupHookState {
   /**
    * React ref pointing to the trigger DOM element.
    */
-  triggerRef: React.Ref<HTMLElement>
+  triggerRef: React.Ref<React.DOMElement>
 }
 
-declare const usePopup: (options: SynthPopupHookOptions) => SynthPopupHookState
+declare const usePopup: (options?: PopupHookOptions) => PopupHookState
 
-export { SynthPopupHookOptions, SynthPopupHookState }
+export { PopupHookOptions, PopupHookState }
 export default usePopup

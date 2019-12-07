@@ -3,14 +3,22 @@ import * as styled from 'styled-components'
 import { SynthConsumerProps } from '@beatgig/synth-react'
 
 interface SynthStyledComponentProps {
-  [key: string]: any
   synth?: SynthConsumerProps
   className?: string
 }
 
 declare type SynthStyledComponent<
-  T extends keyof JSX.IntrinsicElements | React.ComponentType<any>
-> = styled.StyledComponent<T, any, SynthStyledComponentProps, never>
+  T extends
+    | keyof JSX.IntrinsicElements
+    | React.ComponentType<P>
+    | React.RefForwardingComponent<any, P>,
+  P = {}
+> = styled.StyledComponent<
+  T,
+  any,
+  P & SynthStyledComponentProps & React.ComponentPropsWithRef<T>,
+  never
+>
 
 export { default as backgroundColor } from './backgroundColor'
 export { default as border } from './border'

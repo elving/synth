@@ -1,5 +1,6 @@
 export {
   default as Checkbox,
-  SynthCheckboxComponent,
-  SynthCheckboxProps,
+  CheckboxComponent,
+  CheckboxComponentProps,
+  CheckboxProps,
 } from './Checkbox'

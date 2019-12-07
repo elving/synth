@@ -1,5 +1,6 @@
 export {
   default as Spacer,
-  SynthSpacerComponent,
-  SynthSpacerProps,
+  SpacerComponent,
+  SpacerComponentProps,
+  SpacerProps,
 } from './Spacer'

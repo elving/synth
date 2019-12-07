@@ -1,5 +1,6 @@
 export {
   default as Avatar,
-  SynthAvatarComponent,
-  SynthAvatarProps,
+  AvatarComponent,
+  AvatarProps,
+  AvatarComponentProps,
 } from './Avatar'

@@ -1,7 +1,14 @@
-export { default as Popup, SynthPopupProps, SynthPopupComponent } from './Popup'
+export {
+  default as Popup,
+  PopupComponent,
+  PopupComponentProps,
+  PopupProps,
+  PopupXPosition,
+  PopupYPosition,
+} from './Popup'
 
 export {
   default as usePopup,
-  SynthPopupHookOptions,
-  SynthPopupHookState,
+  PopupHookOptions,
+  PopupHookState,
 } from './usePopup'

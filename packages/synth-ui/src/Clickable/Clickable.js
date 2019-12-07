@@ -1,13 +1,14 @@
-import PropTypes from 'prop-types'
+import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import { withSynth } from '@beatgig/synth-react'
 
 import { Button } from '../Button'
 
 import { setColor } from './utils'
-import { ICON_POSITIONS } from '../Button/constants'
-import { INTENTS } from '../constants'
 
+/**
+ * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('@beatgig/synth-ui').ButtonComponent>}
+ */
 const StyledClickable = styled(Button)`
   &,
   &:hover,
@@ -19,15 +20,19 @@ const StyledClickable = styled(Button)`
   }
 `
 
-const Clickable = withSynth(StyledClickable)
+const Clickable = forwardRef(
+  /**
+   * @param {import('@beatgig/synth-ui').ClickableProps & import('@beatgig/synth-react').SynthComponentProps} props
+   */
+  ({ children = null, className = '', synth, ...props }, ref) => (
+    <StyledClickable {...props} className={className} synth={synth} ref={ref}>
+      {children}
+    </StyledClickable>
+  ),
+)
 
-Clickable.propTypes = {
-  ...Clickable.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  icon: PropTypes.node,
-  iconPosition: PropTypes.oneOf(ICON_POSITIONS),
-  intent: PropTypes.oneOf(INTENTS),
-}
+Clickable.propTypes = Button.propTypes
+Clickable.defaultProps = Button.defaultProps
+Clickable.displayName = 'Clickable'
 
-export default Clickable
+export default withSynth(Clickable)

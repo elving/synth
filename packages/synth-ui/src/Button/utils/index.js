@@ -1,3 +1,4 @@
+export { default as getIntentColor } from './getIntentColor'
 export { default as iconToBottom } from './iconToBottom'
 export { default as iconToLeft } from './iconToLeft'
 export { default as iconToRight } from './iconToRight'

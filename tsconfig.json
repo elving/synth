@@ -23,6 +23,6 @@
     "node_modules",
     "./packages/**/tests",
     "./packages/**/dist",
-    "./packages/**/docs"
+    "./packages/**/docs/*.stories.mdx"
   ]
 }

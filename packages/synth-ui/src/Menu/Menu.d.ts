@@ -1,9 +1,7 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface SynthMenuProps
-  extends SynthReact.SynthComponentProps,
-    React.HTMLAttributes<HTMLDivElement> {
+interface MenuProps {
   /**
    * The elements you want to display within the menu.
    */
@@ -13,15 +11,22 @@ interface SynthMenuProps
    * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
    */
   className?: string
-  /**
-   * A React `ref` object that will point to the menu's DOM element.
-   */
-  ref?: React.Ref<HTMLDivElement>
 }
 
-type SynthMenuComponent = React.ForwardRefExoticComponent<SynthMenuProps>
+type MenuComponentProps = React.HTMLAttributes<HTMLDivElement> &
+  React.RefAttributes<HTMLDivElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & MenuProps
 
-declare const Menu: React.ForwardRefExoticComponent<SynthMenuProps>
+type MenuComponent = SynthReact.SynthComponent<
+  MenuComponentProps,
+  HTMLDivElement
+>
 
-export { SynthMenuComponent, SynthMenuProps }
+/**
+ * @since 1.2.0
+ */
+declare const Menu: MenuComponent
+
+export { MenuComponent, MenuComponentProps, MenuProps }
 export default Menu

@@ -1,22 +1,28 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface SynthInputProps
-  extends SynthReact.SynthComponentProps,
-    React.InputHTMLAttributes<HTMLInputElement> {
+interface InputProps {
   /**
    * Required to properly extend styled-components.
    * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
    */
   className?: string
-  /**
-   * A React `ref` object that will point to the input's DOM element.
-   */
-  ref?: React.Ref<HTMLInputElement>
 }
 
-type SynthInputComponent = React.ForwardRefExoticComponent<SynthInputProps>
-declare const Input: React.ForwardRefExoticComponent<SynthInputProps>
+type InputComponentProps = React.InputHTMLAttributes<HTMLInputElement> &
+  React.RefAttributes<HTMLInputElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & InputProps
 
-export { SynthInputComponent, SynthInputProps }
+type InputComponent = SynthReact.SynthComponent<
+  InputComponentProps,
+  HTMLInputElement
+>
+
+/**
+ * @since 1.0.0
+ */
+declare const Input: InputComponent
+
+export { InputComponent, InputComponentProps, InputProps }
 export default Input

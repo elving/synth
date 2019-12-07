@@ -1,11 +1,13 @@
 export {
   default as FormField,
-  SynthFormFieldComponent,
-  SynthFormFieldProps,
+  FormFieldComponent,
+  FormFieldComponentProps,
+  FormFieldProps,
 } from './FormField'
 
 export {
   default as FormRow,
-  SynthFormRowComponent,
-  SynthFormRowProps,
+  FormRowComponent,
+  FormRowComponentProps,
+  FormRowProps,
 } from './FormRow'

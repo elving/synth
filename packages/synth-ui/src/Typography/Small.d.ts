@@ -1,11 +1,9 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
-import { SynthIntentInterface } from './Text'
 
-interface SynthSmallProps
-  extends SynthIntentInterface,
-    SynthReact.SynthComponentProps,
-    React.HTMLAttributes<HTMLElement> {
+import { TextProps } from './Text'
+
+interface SmallProps extends TextProps {
   /**
    * The elements you want to display within the small component.
    */
@@ -15,15 +13,22 @@ interface SynthSmallProps
    * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
    */
   className?: string
-  /**
-   * A React `ref` object that will point to the small component's DOM element.
-   */
-  ref?: React.Ref<HTMLElement>
 }
 
-type SynthSmallComponent = React.ForwardRefExoticComponent<SynthSmallProps>
+type SmallComponentProps = React.HTMLAttributes<HTMLElement> &
+  React.RefAttributes<HTMLElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & SmallProps
 
-declare const Small: React.ForwardRefExoticComponent<SynthSmallProps>
+type SmallComponent = SynthReact.SynthComponent<
+  SmallComponentProps,
+  HTMLElement
+>
 
-export { SynthSmallComponent, SynthSmallProps }
+/**
+ * @since 1.2.0
+ */
+declare const Small: SmallComponent
+
+export { SmallComponent, SmallComponentProps, SmallProps }
 export default Small

@@ -1,6 +1,7 @@
 export {
   default as Select,
+  SelectComponent,
+  SelectComponentProps,
+  SelectProps,
   setSelectStyles,
-  SynthSelectComponent,
-  SynthSelectProps,
 } from './Select'

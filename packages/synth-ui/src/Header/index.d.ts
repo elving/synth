@@ -1,11 +1,13 @@
 export {
   default as Header,
-  SynthHeaderComponent,
-  SynthHeaderProps,
+  HeaderComponent,
+  HeaderComponentProps,
+  HeaderProps,
 } from './Header'
 
 export {
   default as HeaderLink,
-  SynthHeaderLinkComponent,
-  SynthHeaderLinkProps,
+  HeaderLinkComponent,
+  HeaderLinkComponentProps,
+  HeaderLinkProps,
 } from './HeaderLink'

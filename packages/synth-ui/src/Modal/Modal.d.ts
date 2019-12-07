@@ -1,9 +1,9 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface SynthModalProps
-  extends SynthReact.SynthComponentProps,
-    React.HTMLAttributes<HTMLDivElement> {
+import { PopupProps } from '../Popup'
+
+interface ModalProps extends PopupProps {
   /**
    * The elements you want to display within the modal.
    */
@@ -28,14 +28,22 @@ interface SynthModalProps
    * overlay background.
    */
   onOverlayClick?()
-  /**
-   * A React `ref` object that will point to the modal's DOM element.
-   */
-  ref?: React.Ref<HTMLDivElement>
 }
 
-type SynthModalComponent = React.ForwardRefExoticComponent<SynthModalProps>
-declare const Modal: React.ForwardRefExoticComponent<SynthModalProps>
+type ModalComponentProps = React.HTMLAttributes<HTMLDivElement> &
+  React.RefAttributes<HTMLDivElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & ModalProps
 
-export { SynthModalComponent, SynthModalProps }
+type ModalComponent = SynthReact.SynthComponent<
+  ModalComponentProps,
+  HTMLDivElement
+>
+
+/**
+ * @since 1.2.0
+ */
+declare const Modal: ModalComponent
+
+export { ModalComponent, ModalComponentProps, ModalProps }
 export default Modal

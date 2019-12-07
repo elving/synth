@@ -1,1 +1,6 @@
-export { default as Card, SynthCardComponent, SynthCardProps } from './Card'
+export {
+  default as Card,
+  CardComponent,
+  CardComponentProps,
+  CardProps,
+} from './Card'

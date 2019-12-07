@@ -1,7 +1,8 @@
-import { useOnClickOutside, useRect } from '@beatgig/hooks'
+import { useOnClickOutside } from '@beatgig/hooks'
 import { useLayoutEffect, useCallback, useRef, useState } from 'react'
 
 import { noop } from '../utils'
+import { getRect } from './utils'
 
 const usePopup = (options = {}) => {
   const {
@@ -14,24 +15,39 @@ const usePopup = (options = {}) => {
 
   const popupRef = useRef(null)
   const triggerRef = useRef(null)
-  const triggerRect = useRect(triggerRef)
-  const [isOpen, setOpenState] = useState(isOpenByDefault)
-  const [popupRect, setPopupRect] = useState({})
+
+  const [state, setState] = useState({
+    isOpen: isOpenByDefault,
+    popupRect: getRect(),
+    triggerRect: getRect(),
+  })
 
   const open = useCallback(() => {
     onOpen()
-    setOpenState(true)
-  }, [onOpen, setOpenState])
+
+    setState((prevState) => ({
+      ...prevState,
+      isOpen: true,
+    }))
+  }, [onOpen, setState])
 
   const close = useCallback(() => {
     onClose()
-    setOpenState(false)
-  }, [onClose, setOpenState])
+
+    setState((prevState) => ({
+      ...prevState,
+      isOpen: false,
+    }))
+  }, [onClose, setState])
 
   const toggle = useCallback(() => {
     onToggle()
-    setOpenState((prevState) => !prevState)
-  }, [onToggle, setOpenState])
+
+    setState((prevState) => ({
+      ...prevState,
+      isOpen: !prevState.isOpen,
+    }))
+  }, [onToggle, setState])
 
   const clickOutsideCallback = useCallback(() => {
     close()
@@ -44,21 +60,24 @@ const usePopup = (options = {}) => {
    * We don't use the `useRect` hook for the popup element because it is not
    * rendered by the time the hook tries to get it's DOMRect object. In this
    * case, we have to run a useLayoutEffect that checks when the popup is both
-   * opened and rendered to get it's DOMRect object and pass it to the
-   * `ControlledPopup` component so it can position itself correctly.
+   * opened and rendered to get it's DOMRect object and return it.
    */
   useLayoutEffect(() => {
-    if (isOpen && popupRef.current) {
-      setPopupRect(popupRef.current.getBoundingClientRect())
+    if (state.isOpen && popupRef.current && triggerRef.current) {
+      setState((prevState) => ({
+        ...prevState,
+        popupRect: popupRef.current.getBoundingClientRect(),
+        triggerRect: triggerRef.current.getBoundingClientRect(),
+      }))
     }
-  }, [isOpen])
+  }, [state.isOpen])
 
   return {
     close,
-    isOpen,
+    isOpen: state.isOpen,
     open,
     popupRef,
-    props: { popupRect, triggerRect },
+    props: state,
     toggle,
     triggerRef,
   }

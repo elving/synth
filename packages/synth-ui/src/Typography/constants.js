@@ -1,33 +1,33 @@
 /**
- * @typedef {string} INTENT_NONE
+ * @typedef {import('@beatgig/synth-ui').TextIntent} INTENT_NONE
  * @constant
  * @default
  */
 export const INTENT_NONE = 'none'
 
 /**
- * @typedef {string} INTENT_DANGER
+ * @typedef {import('@beatgig/synth-ui').TextIntent} INTENT_DANGER
  * @constant
  * @default
  */
 export const INTENT_DANGER = 'danger'
 
 /**
- * @typedef {string} INTENT_SUCCESS
+ * @typedef {import('@beatgig/synth-ui').TextIntent} INTENT_SUCCESS
  * @constant
  * @default
  */
 export const INTENT_SUCCESS = 'success'
 
 /**
- * @typedef {string} INTENT_HIGHLIGHT
+ * @typedef {import('@beatgig/synth-ui').TextIntent} INTENT_HIGHLIGHT
  * @constant
  * @default
  */
 export const INTENT_HIGHLIGHT = 'highlight'
 
 /**
- * @typedef {string[]} INTENTS
+ * @typedef {import('@beatgig/synth-ui').TextIntent[]} INTENTS
  * @constant
  * @default
  */

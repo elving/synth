@@ -1,1 +1,6 @@
-export { default as Flex, SynthFlexComponent, SynthFlexProps } from './Flex'
+export {
+  default as Flex,
+  FlexComponent,
+  FlexProps,
+  FlexComponentProps,
+} from './Flex'

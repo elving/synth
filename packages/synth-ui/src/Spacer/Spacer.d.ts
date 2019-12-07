@@ -1,9 +1,7 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface SynthSpacerProps
-  extends SynthReact.SynthComponentProps,
-    React.HTMLAttributes<HTMLDivElement> {
+interface SpacerProps {
   /**
    * Required to properly extend styled-components.
    * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
@@ -25,10 +23,6 @@ interface SynthSpacerProps
    */
   left?: boolean
   /**
-   * A React `ref` object that will point to the spacer's DOM element.
-   */
-  ref?: React.Ref<HTMLDivElement>
-  /**
    * A boolean flag to determine if the space will be applied to the right
    * of the spacer element.
    */
@@ -44,8 +38,20 @@ interface SynthSpacerProps
   top?: boolean
 }
 
-type SynthSpacerComponent = React.ForwardRefExoticComponent<SynthSpacerProps>
-declare const Spacer: React.ForwardRefExoticComponent<SynthSpacerProps>
+type SpacerComponentProps = React.HTMLAttributes<HTMLDivElement> &
+  React.RefAttributes<HTMLDivElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & SpacerProps
 
-export { SynthSpacerComponent, SynthSpacerProps }
+type SpacerComponent = SynthReact.SynthComponent<
+  SpacerComponentProps,
+  HTMLDivElement
+>
+
+/**
+ * @since 1.0.0
+ */
+declare const Spacer: SpacerComponent
+
+export { SpacerComponent, SpacerComponentProps, SpacerProps }
 export default Spacer

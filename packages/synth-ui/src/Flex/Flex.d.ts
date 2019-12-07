@@ -1,9 +1,8 @@
+import * as CSS from 'csstype'
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface SynthFlexProps
-  extends SynthReact.SynthComponentProps,
-    React.HTMLAttributes<HTMLDivElement> {
+interface FlexProps {
   /**
    * The elements you want to display within the flex component.
    */
@@ -26,11 +25,11 @@ interface SynthFlexProps
   /**
    * The value to be assigned to the `flex` CSS property.
    */
-  flex?: number | string
+  flex?: CSS.FlexProperty
   /**
    * The value to be assigned to the `flex-grow` CSS property.
    */
-  grow?: number | string
+  grow?: CSS.GlobalsNumber
   /**
    * A boolean flag to determine what the value of the `flex-wrap` CSS property
    * will be, if `true`, then the `flex-wrap` CSS property will be `wrap`.
@@ -39,11 +38,11 @@ interface SynthFlexProps
   /**
    * The value to be assigned to the `flex-basis` CSS property.
    */
-  basis?: number | string
+  basis?: CSS.FlexBasisProperty
   /**
    * The value to be assigned to the `flex-shrink` CSS property.
    */
-  shrink?: number | string
+  shrink?: CSS.GlobalsNumber
   /**
    * A boolean flag to determine what the value of the `flex-wrap` CSS property
    * will be, if `true`, then the `flex-wrap` CSS property will be `nowrap`.
@@ -78,24 +77,7 @@ interface SynthFlexProps
   /**
    * The value to be assigned to the `align-items` CSS property.
    */
-  alignItems?:
-    | 'normal'
-    | 'stretch'
-    | 'center'
-    | 'start'
-    | 'end'
-    | 'flex-start'
-    | 'flex-end'
-    | 'self-start'
-    | 'self-end'
-    | 'baseline'
-    | 'first baseline'
-    | 'last baseline'
-    | 'safe center'
-    | 'unsafe center'
-    | 'inherit'
-    | 'initial'
-    | 'unset'
+  alignItems?: CSS.AlignItemsProperty
   /**
    * A boolean flag to determine what the value of the `flex-direction` CSS property
    * will be, if `true`, then the `flex-direction` CSS property will be `row-reverse`.
@@ -109,44 +91,11 @@ interface SynthFlexProps
   /**
    * The value to be assigned to the `align-content` CSS property.
    */
-  alignContent?:
-    | 'center'
-    | 'start'
-    | 'end'
-    | 'flex-start'
-    | 'flex-end'
-    | 'normal'
-    | 'baseline'
-    | 'first baseline'
-    | 'last baseline'
-    | 'space-between'
-    | 'space-around'
-    | 'space-evenly'
-    | 'stretch'
-    | 'safe center'
-    | 'unsafe center'
-    | 'inherit'
-    | 'initial'
-    | 'unset'
+  alignContent?: CSS.AlignContentProperty
   /**
    * The value to be assigned to the `place-content` CSS property.
    */
-  placeContent?:
-    | 'center start'
-    | 'start center'
-    | 'end left'
-    | 'flex-start center'
-    | 'flex-end center'
-    | 'baseline center'
-    | 'first baseline space-evenly'
-    | 'last baseline right'
-    | 'space-between space-evenly'
-    | 'space-around space-evenly'
-    | 'space-evenly stretch'
-    | 'stretch space-evenly'
-    | 'inherit'
-    | 'initial'
-    | 'unset'
+  placeContent?: CSS.PlaceContentProperty
   /**
    * A boolean flag to determine what the value of the `flex-direction` CSS property
    * will be, if `true`, then the `flex-direction` CSS property will be `column-reverse`.
@@ -155,36 +104,24 @@ interface SynthFlexProps
   /**
    * The value to be assigned to the `justify-content` CSS property.
    */
-  justifyContent?:
-    | 'center'
-    | 'start'
-    | 'end'
-    | 'flex-start'
-    | 'flex-end'
-    | 'left'
-    | 'right'
-    | 'normal'
-    | 'space-between'
-    | 'space-around'
-    | 'space-evenly'
-    | 'stretch'
-    | 'safe center'
-    | 'unsafe center'
-    | 'inherit'
-    | 'initial'
-    | 'unset'
-  /**
-   * A React `ref` object that will point to the flex component's DOM element.
-   */
-  ref?: React.Ref<HTMLDivElement>
+  justifyContent?: CSS.JustifyContentProperty
 }
 
-type SynthFlexComponent = React.ComponentType<SynthFlexProps>
+type FlexComponentProps = React.HTMLAttributes<HTMLDivElement> &
+  React.RefAttributes<HTMLDivElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & FlexProps
+
+type FlexComponent = SynthReact.SynthComponent<
+  FlexComponentProps,
+  HTMLDivElement
+>
 
 /**
  * @since 1.0.0
  */
-declare const Flex: React.ForwardRefExoticComponent<SynthFlexProps>
+declare const Flex: FlexComponent
 
-export { SynthFlexComponent, SynthFlexProps }
+export { FlexComponent, FlexProps, FlexComponentProps }
+
 export default Flex

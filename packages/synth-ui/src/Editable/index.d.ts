@@ -1,5 +1,6 @@
 export {
   default as Editable,
-  SynthEditableComponent,
-  SynthEditableProps,
+  EditableComponent,
+  EditableComponentProps,
+  EditableProps,
 } from './Editable'

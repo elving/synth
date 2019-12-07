@@ -1,13 +1,20 @@
-export { default as Menu, SynthMenuComponent, SynthMenuProps } from './Menu'
+export {
+  default as Menu,
+  MenuComponent,
+  MenuComponentProps,
+  MenuProps,
+} from './Menu'
 
 export {
   default as MenuDivider,
-  SynthMenuDividerComponent,
-  SynthMenuDividerProps,
+  MenuDividerComponent,
+  MenuDividerComponentProps,
+  MenuDividerProps,
 } from './MenuDivider'
 
 export {
   default as MenuItem,
-  SynthMenuItemComponent,
-  SynthMenuItemProps,
+  MenuItemComponent,
+  MenuItemComponentProps,
+  MenuItemProps,
 } from './MenuItem'

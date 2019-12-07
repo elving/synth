@@ -1,9 +1,9 @@
-import { INTENT_NONE } from '../../constants'
-import { getIntentColor } from '../../utils'
+import { BUTTON_INTENT_NONE } from '../constants'
+import getIntentColor from './getIntentColor'
 
 /**
  * @typedef {object} Props
- * @property {'none' | 'danger' | 'success' | 'highlight'} intent
+ * @property {import('@beatgig/synth-ui').ButtonIntent} intent
  * @property {boolean} outline
  * @property {object} synth
  * @property {(tokenName: string) => string} synth.getValue
@@ -11,7 +11,7 @@ import { getIntentColor } from '../../utils'
  */
 const setBackgroundColorHover = () => ({ intent, outline, synth }) => {
   const color =
-    intent !== INTENT_NONE
+    intent !== BUTTON_INTENT_NONE
       ? synth.getValue(
           `${getIntentColor(intent, 'control')}.${outline ? 0 : 1}`,
         )

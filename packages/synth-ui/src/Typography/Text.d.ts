@@ -1,17 +1,10 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface SynthIntentInterface {
-  /**
-   * The component's intent will determine it's text and background color.
-   */
-  intent?: 'none' | 'danger' | 'success' | 'highlight'
-}
+type TextIntent = 'none' | 'danger' | 'success' | 'highlight'
 
-interface SynthTextProps
-  extends SynthIntentInterface,
-    SynthReact.SynthComponentProps,
-    React.HTMLAttributes<HTMLSpanElement> {
+//React.HTMLAttributes<HTMLSpanElement>
+interface TextProps {
   /**
    * The elements you want to display within the text component.
    */
@@ -22,14 +15,29 @@ interface SynthTextProps
    */
   className?: string
   /**
-   * A React `ref` object that will point to the text component's DOM element.
+   * The intent will determine the text and background color.
    */
-  ref?: React.Ref<HTMLSpanElement>
+  intent?: TextIntent
+  /**
+   * A scale index from the `fontSizes` synth token.
+   */
+  scale?: number
 }
 
-type SynthTextComponent = React.ForwardRefExoticComponent<SynthTextProps>
+type TextComponentProps = React.HTMLAttributes<HTMLSpanElement> &
+  React.RefAttributes<HTMLSpanElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & TextProps
 
-declare const Text: React.ForwardRefExoticComponent<SynthTextProps>
+type TextComponent = SynthReact.SynthComponent<
+  TextComponentProps,
+  HTMLSpanElement
+>
 
-export { SynthIntentInterface, SynthTextComponent, SynthTextProps }
+/**
+ * @since 1.2.0
+ */
+declare const Text: TextComponent
+
+export { TextComponent, TextComponentProps, TextIntent, TextProps }
 export default Text

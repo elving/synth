@@ -1,9 +1,9 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface SynthModalTitleProps
-  extends SynthReact.SynthComponentProps,
-    React.HTMLAttributes<HTMLHeadingElement> {
+import { HeadingProps } from '../Typography'
+
+interface ModalTitleProps extends HeadingProps {
   /**
    * The elements you want to display within heading.
    */
@@ -13,17 +13,22 @@ interface SynthModalTitleProps
    * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
    */
   className?: string
-  /**
-   * A React `ref` object that will point to the heading's DOM element.
-   */
-  ref?: React.Ref<HTMLHeadingElement>
 }
 
-type SynthModalTitleComponent = React.ForwardRefExoticComponent<
-  SynthModalTitleProps
+type ModalTitleComponentProps = React.HTMLAttributes<HTMLHeadingElement> &
+  React.RefAttributes<HTMLHeadingElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & ModalTitleProps
+
+type ModalTitleComponent = SynthReact.SynthComponent<
+  ModalTitleComponentProps,
+  HTMLHeadingElement
 >
 
-declare const ModalTitle: React.ForwardRefExoticComponent<SynthModalTitleProps>
+/**
+ * @since 1.2.0
+ */
+declare const ModalTitle: ModalTitleComponent
 
-export { SynthModalTitleComponent, SynthModalTitleProps }
+export { ModalTitleComponent, ModalTitleComponentProps, ModalTitleProps }
 export default ModalTitle

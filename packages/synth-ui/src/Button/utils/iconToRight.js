@@ -1,9 +1,9 @@
-import { ICON_POSITION_RIGHT } from '../constants'
+import { BUTTON_ICON_POSITION_RIGHT } from '../constants'
 
 /**
- * @param {string} position
+ * @param {import('@beatgig/synth-ui').ButtonIconPosition} position
  * @returns {boolean}
  */
-const iconToRight = (position) => position === ICON_POSITION_RIGHT
+const iconToRight = (position) => position === BUTTON_ICON_POSITION_RIGHT
 
 export default iconToRight

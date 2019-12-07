@@ -1,9 +1,9 @@
-import { ICON_POSITION_TOP } from '../constants'
+import { BUTTON_ICON_POSITION_TOP } from '../constants'
 
 /**
- * @param {string} position
+ * @param {import('@beatgig/synth-ui').ButtonIconPosition} position
  * @returns {boolean}
  */
-const iconToTop = (position) => position === ICON_POSITION_TOP
+const iconToTop = (position) => position === BUTTON_ICON_POSITION_TOP
 
 export default iconToTop

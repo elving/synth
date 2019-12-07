@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 import { withSynth } from '@beatgig/synth-react'
 
@@ -45,9 +47,35 @@ const setSelectStyles = () => css`
   }
 `
 
-const Select = styled.select`
+/**
+ * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<'select', import('@beatgig/synth-ui').SelectProps>}
+ */
+const StyledSelect = styled.select`
   ${setSelectStyles()}
 `
+
+const Select = forwardRef(
+  /**
+   * @param {import('@beatgig/synth-ui').SelectProps & import('@beatgig/synth-react').SynthComponentProps} props
+   */
+  ({ className = '', synth, ...props }, ref) => (
+    <StyledSelect {...props} className={className} synth={synth} ref={ref} />
+  ),
+)
+
+Select.propTypes = {
+  /**
+   * Required to properly extend styled-components.
+   * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
+   */
+  className: PropTypes.string,
+}
+
+Select.defaultProps = {
+  className: '',
+}
+
+Select.displayName = 'Select'
 
 export { setSelectStyles }
 export default withSynth(Select)

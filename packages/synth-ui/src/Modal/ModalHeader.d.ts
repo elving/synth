@@ -1,9 +1,7 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface SynthModalHeaderProps
-  extends SynthReact.SynthComponentProps,
-    React.HTMLAttributes<HTMLDivElement> {
+interface ModalHeaderProps {
   /**
    * The elements you want to display within modal's header.
    */
@@ -23,17 +21,22 @@ interface SynthModalHeaderProps
    * close button.
    */
   onCloseClick?()
-  /**
-   * A React `ref` object that will point to the modal's header DOM element.
-   */
-  ref?: React.Ref<HTMLDivElement>
 }
 
-type SynthModalHeaderComponent = React.ForwardRefExoticComponent<
-  SynthModalHeaderProps
+type ModalHeaderComponentProps = React.HTMLAttributes<HTMLDivElement> &
+  React.RefAttributes<HTMLDivElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & ModalHeaderProps
+
+type ModalHeaderComponent = SynthReact.SynthComponent<
+  ModalHeaderComponentProps,
+  HTMLDivElement
 >
 
-declare const ModalHeader: React.ForwardRefExoticComponent<SynthModalHeaderProps>
+/**
+ * @since 1.2.0
+ */
+declare const ModalHeader: ModalHeaderComponent
 
-export { SynthModalHeaderComponent, SynthModalHeaderProps }
+export { ModalHeaderComponent, ModalHeaderComponentProps, ModalHeaderProps }
 export default ModalHeader

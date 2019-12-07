@@ -1,11 +1,13 @@
 export {
   default as FullLogo,
-  SynthFullLogoComponent,
-  SynthFullLogoProps,
+  FullLogoComponent,
+  FullLogoComponentProps,
+  FullLogoProps,
 } from './FullLogo'
 
 export {
   default as MiniLogo,
-  SynthMiniLogoComponent,
-  SynthMiniLogoProps,
+  MiniLogoComponent,
+  MiniLogoComponentProps,
+  MiniLogoProps,
 } from './MiniLogo'

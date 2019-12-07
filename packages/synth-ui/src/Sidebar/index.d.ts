@@ -1,11 +1,13 @@
 export {
   default as Sidebar,
-  SynthSidebarComponent,
-  SynthSidebarProps,
+  SidebarComponent,
+  SidebarComponentProps,
+  SidebarProps,
 } from './Sidebar'
 
 export {
   default as SidebarLink,
-  SynthSidebarLinkComponent,
-  SynthSidebarLinkProps,
+  SidebarLinkComponent,
+  SidebarLinkComponentProps,
+  SidebarLinkProps,
 } from './SidebarLink'

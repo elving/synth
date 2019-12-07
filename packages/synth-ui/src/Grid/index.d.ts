@@ -1,7 +1,13 @@
-export { default as Grid, SynthGridComponent, SynthGridProps } from './Grid'
+export {
+  default as Grid,
+  GridComponent,
+  GridComponentProps,
+  GridProps,
+} from './Grid'
 
 export {
   default as GridItem,
-  SynthGridItemComponent,
-  SynthGridItemProps,
+  GridItemComponent,
+  GridItemComponentProps,
+  GridItemProps,
 } from './GridItem'

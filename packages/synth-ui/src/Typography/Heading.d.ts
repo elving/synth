@@ -1,11 +1,11 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
-import { SynthIntentInterface } from './Text'
 
-interface SynthHeadingProps
-  extends SynthIntentInterface,
-    SynthReact.SynthComponentProps,
-    React.HTMLAttributes<HTMLHeadingElement> {
+import { TextProps } from './Text'
+
+type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+
+interface HeadingProps extends Omit<TextProps, 'scale'> {
   /**
    * The elements you want to display within the heading component.
    */
@@ -18,16 +18,23 @@ interface SynthHeadingProps
   /**
    * Sets the element's heading level (h1, h2, etc.) and it's font-size accordingly
    */
-  level?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
-  /**
-   * A React `ref` object that will point to the heading component's DOM element.
-   */
-  ref?: React.Ref<HTMLHeadingElement>
+  level?: HeadingLevel
 }
 
-type SynthHeadingComponent = React.ForwardRefExoticComponent<SynthHeadingProps>
+type HeadingComponentProps = React.HTMLAttributes<HTMLHeadingElement> &
+  React.RefAttributes<HTMLHeadingElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & HeadingProps
 
-declare const Heading: React.ForwardRefExoticComponent<SynthHeadingProps>
+type HeadingComponent = SynthReact.SynthComponent<
+  HeadingComponentProps,
+  HTMLHeadingElement
+>
 
-export { SynthHeadingComponent, SynthHeadingProps }
+/**
+ * @since 1.2.0
+ */
+declare const Heading: HeadingComponent
+
+export { HeadingComponent, HeadingComponentProps, HeadingLevel, HeadingProps }
 export default Heading

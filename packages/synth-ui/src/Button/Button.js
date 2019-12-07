@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import { isNil } from '@beatgig/is'
 import { withSynth } from '@beatgig/synth-react'
@@ -12,10 +12,14 @@ import {
 } from '@beatgig/synth-styled-components'
 
 import { Spacer } from '../Spacer'
-import { setBaseStyles, withForwardedRef } from '../utils'
+import { setBaseStyles } from '../utils'
 
-import { INTENT_NONE, INTENTS } from '../constants'
-import { ICON_POSITION_LEFT, ICON_POSITIONS } from './constants'
+import {
+  BUTTON_ICON_POSITION_LEFT,
+  BUTTON_ICON_POSITIONS,
+  BUTTON_INTENT_NONE,
+  BUTTON_INTENTS,
+} from './constants'
 
 import {
   iconToBottom,
@@ -35,6 +39,9 @@ import {
   setPointerEvents,
 } from './utils'
 
+/**
+ * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<'button', import('@beatgig/synth-ui').ButtonProps>}
+ */
 const StyledButton = styled.button.attrs(() => ({
   type: 'button',
 }))`
@@ -77,54 +84,94 @@ const StyledButton = styled.button.attrs(() => ({
   }
 `
 
-const SynthButton = withSynth(StyledButton)
+const Button = forwardRef(
+  /**
+   * @param {import('@beatgig/synth-ui').ButtonProps & import('@beatgig/synth-react').SynthComponentProps} props
+   */
+  (
+    {
+      children = null,
+      className = '',
+      icon = null,
+      iconPosition = BUTTON_ICON_POSITION_LEFT,
+      intent = BUTTON_INTENT_NONE,
+      synth,
+      ...props
+    },
+    ref,
+  ) => {
+    const hasIcon = !isNil(icon)
+    const hasContent = !isNil(children)
 
-const Button = ({
-  children = null,
-  className = '',
-  icon = null,
-  iconPosition = ICON_POSITION_LEFT,
-  intent = INTENT_NONE,
-  ref,
-  ...props
-}) => {
-  const hasIcon = !isNil(icon)
-  const hasContent = !isNil(children)
-
-  return (
-    <SynthButton
-      {...props}
-      className={className}
-      iconPosition={iconPosition}
-      intent={intent}
-      ref={ref}
-    >
-      {iconToLeft(iconPosition) || iconToTop(iconPosition) ? icon : null}
-      {hasIcon && hasContent && iconToLeft(iconPosition) ? (
-        <Spacer inline scale={1} right />
-      ) : null}
-      {hasIcon && hasContent && iconToTop(iconPosition) ? (
-        <Spacer inline scale={1} bottom />
-      ) : null}
-      {children}
-      {hasIcon && hasContent && iconToRight(iconPosition) ? (
-        <Spacer inline scale={1} left />
-      ) : null}
-      {hasIcon && hasContent && iconToBottom(iconPosition) ? (
-        <Spacer inline scale={1} top />
-      ) : null}
-      {iconToRight(iconPosition) || iconToBottom(iconPosition) ? icon : null}
-    </SynthButton>
-  )
-}
+    return (
+      <StyledButton
+        {...props}
+        className={className}
+        iconPosition={iconPosition}
+        intent={intent}
+        synth={synth}
+        ref={ref}
+      >
+        {iconToLeft(iconPosition) || iconToTop(iconPosition) ? icon : null}
+        {hasIcon && hasContent && iconToLeft(iconPosition) ? (
+          <Spacer inline scale={1} right />
+        ) : null}
+        {hasIcon && hasContent && iconToTop(iconPosition) ? (
+          <Spacer inline scale={1} bottom />
+        ) : null}
+        {children}
+        {hasIcon && hasContent && iconToRight(iconPosition) ? (
+          <Spacer inline scale={1} left />
+        ) : null}
+        {hasIcon && hasContent && iconToBottom(iconPosition) ? (
+          <Spacer inline scale={1} top />
+        ) : null}
+        {iconToRight(iconPosition) || iconToBottom(iconPosition) ? icon : null}
+      </StyledButton>
+    )
+  },
+)
 
 Button.propTypes = {
+  /**
+   * The elements you want to display within the button.
+   */
   children: PropTypes.node,
+  /**
+   * Required to properly extend styled-components.
+   * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
+   */
   className: PropTypes.string,
+  /**
+   * An optional icon component that can be rendered along side the
+   * button's content.
+   */
   icon: PropTypes.element,
-  iconPosition: PropTypes.oneOf(ICON_POSITIONS),
-  intent: PropTypes.oneOf(INTENTS),
+  /**
+   * The icon's position.
+   */
+  iconPosition: PropTypes.oneOf(BUTTON_ICON_POSITIONS),
+  /**
+   * The button's intent will determine it's text and background color.
+   */
+  intent: PropTypes.oneOf(BUTTON_INTENTS),
+  /**
+   * Displays the button only using it's outline.
+   */
   outline: PropTypes.bool,
 }
 
-export default withForwardedRef(Button)
+Button.defaultProps = {
+  children: null,
+  className: '',
+  icon: null,
+  // eslint-disable-next-line prettier/prettier
+  iconPosition: /** @type {import('@beatgig/synth-ui').ButtonIconPosition} */ (BUTTON_ICON_POSITION_LEFT),
+  // eslint-disable-next-line prettier/prettier
+  intent: /** @type {import('@beatgig/synth-ui').ButtonIntent} */ (BUTTON_INTENT_NONE),
+  outline: false,
+}
+
+Button.displayName = 'Button'
+
+export default withSynth(Button)

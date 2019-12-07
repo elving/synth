@@ -1,5 +1,6 @@
 export {
   default as TagSelect,
-  SynthTagSelectComponent,
-  SynthTagSelectProps,
+  TagSelectComponent,
+  TagSelectComponentProps,
+  TagSelectProps,
 } from './TagSelect'

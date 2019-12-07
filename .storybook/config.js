@@ -1,7 +1,7 @@
 import React from 'react'
+import styled, { createGlobalStyle } from 'styled-components'
 import { renderToString } from 'react-dom/server'
 import { addDecorator, addParameters, configure } from '@storybook/react'
-import { createGlobalStyle } from 'styled-components'
 import { themes } from '@storybook/theming'
 
 import { BaseStyles, Flex, FullLogo } from '../packages/synth-ui/src'
@@ -148,12 +148,16 @@ const BaseStylesOverride = createGlobalStyle`
   }
 `
 
+const StoryContainer = styled(Flex)`
+  position: relative;
+`
+
 addDecorator((story) => (
-  <Flex center full>
+  <StoryContainer center full>
     <BaseStyles />
     <BaseStylesOverride />
     {story()}
-  </Flex>
+  </StoryContainer>
 ))
 
 configure(require.context('../packages', true, /\.stories\.(js|mdx)$/), module)

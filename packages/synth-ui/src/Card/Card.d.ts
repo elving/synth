@@ -1,9 +1,7 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface SynthCardProps
-  extends SynthReact.SynthComponentProps,
-    React.HTMLAttributes<HTMLDivElement> {
+interface CardProps {
   /**
    * The elements you want to display within the card.
    */
@@ -13,18 +11,22 @@ interface SynthCardProps
    * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
    */
   className?: string
-  /**
-   * A React `ref` object that will point to the card's DOM element.
-   */
-  ref?: React.Ref<HTMLDivElement>
 }
 
-type SynthCardComponent = React.ComponentType<SynthCardProps>
+type CardComponentProps = React.HTMLAttributes<HTMLDivElement> &
+  React.RefAttributes<HTMLDivElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & CardProps
+
+type CardComponent = SynthReact.SynthComponent<
+  CardComponentProps,
+  HTMLDivElement
+>
 
 /**
  * @since 1.0.0
  */
-declare const Card: React.ForwardRefExoticComponent<SynthCardProps>
+declare const Card: CardComponent
 
-export { SynthCardComponent, SynthCardProps }
+export { CardComponent, CardComponentProps, CardProps }
 export default Card

@@ -1,9 +1,7 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface SynthTagProps
-  extends SynthReact.SynthComponentProps,
-    React.HTMLAttributes<HTMLElement> {
+interface TagProps {
   /**
    * The elements you want to display within the tag.
    */
@@ -13,15 +11,19 @@ interface SynthTagProps
    * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
    */
   className?: string
-  /**
-   * A React `ref` object that will point to the tag's DOM element.
-   */
-  ref?: React.Ref<HTMLElement>
 }
 
-type SynthTagComponent = React.ForwardRefExoticComponent<SynthTagProps>
+type TagComponentProps = React.HTMLAttributes<HTMLElement> &
+  React.RefAttributes<HTMLElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & TagProps
 
-declare const Tag: React.ForwardRefExoticComponent<SynthTagProps>
+type TagComponent = SynthReact.SynthComponent<TagComponentProps, HTMLElement>
 
-export { SynthTagComponent, SynthTagProps }
+/**
+ * @since 1.1.0
+ */
+declare const Tag: TagComponent
+
+export { TagComponent, TagComponentProps, TagProps }
 export default Tag

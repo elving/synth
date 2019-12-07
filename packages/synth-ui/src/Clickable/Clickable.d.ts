@@ -1,13 +1,23 @@
 import * as React from 'react'
-import { SynthButtonProps } from '../Button'
 
-interface SynthClickableProps extends SynthButtonProps {}
-type SynthClickableComponent = React.ComponentType<SynthClickableProps>
+import { ButtonProps } from '../Button'
+
+interface ClickableProps extends ButtonProps {}
+
+type ClickableComponentProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
+  React.RefAttributes<HTMLButtonElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & ClickableProps
+
+type ClickableComponent = SynthReact.SynthComponent<
+  ClickableComponentProps,
+  HTMLButtonElement
+>
 
 /**
  * @since 1.0.0
  */
-declare const Clickable: React.ForwardRefExoticComponent<SynthClickableProps>
+declare const Clickable: ClickableComponent
 
-export { SynthClickableComponent, SynthClickableProps }
+export { ClickableComponent, ClickableComponentProps, ClickableProps }
 export default Clickable

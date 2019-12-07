@@ -3,7 +3,7 @@ import iconToBottom from './iconToBottom'
 
 /**
  * @typedef {object} Props
- * @property {string} iconPosition
+ * @property {import('@beatgig/synth-ui').ButtonIconPosition} iconPosition
  * @returns {<T>(props: T & Props) => string}
  */
 const setFlexDirection = () => ({ iconPosition }) =>

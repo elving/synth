@@ -1,30 +1,36 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface SynthAvatarProps
-  extends SynthReact.SynthComponentProps,
-    React.ImgHTMLAttributes<HTMLImageElement> {
+interface AvatarProps {
   /**
    * Required to properly extend styled-components.
    * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
    */
   className?: string
   /**
-   * A React `ref` object that will point to the card's DOM element.
-   */
-  ref?: React.Ref<HTMLImageElement>
-  /**
    * A scale index from the `avatars` synth token.
    */
   scale?: number
+  /**
+   * Url pointing to the user's avatar.
+   */
+  src: string
 }
 
-type SynthAvatarComponent = React.ComponentType<SynthAvatarProps>
+type AvatarComponentProps = React.ImgHTMLAttributes<HTMLImageElement> &
+  React.RefAttributes<HTMLImageElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & AvatarProps
+
+type AvatarComponent = SynthReact.SynthComponent<
+  AvatarComponentProps,
+  HTMLImageElement
+>
 
 /**
  * @since 1.0.0
  */
-declare const Avatar: React.ForwardRefExoticComponent<SynthAvatarProps>
+declare const Avatar: AvatarComponent
 
-export { SynthAvatarComponent, SynthAvatarProps }
+export { AvatarComponent, AvatarProps, AvatarComponentProps }
 export default Avatar

@@ -1,5 +1,8 @@
 export {
   default as Button,
-  SynthButtonComponent,
-  SynthButtonProps,
+  ButtonComponent,
+  ButtonComponentProps,
+  ButtonIconPosition,
+  ButtonIntent,
+  ButtonProps,
 } from './Button'

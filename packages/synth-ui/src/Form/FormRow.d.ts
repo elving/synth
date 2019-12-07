@@ -1,15 +1,14 @@
 import * as React from 'react'
+import * as styled from 'styled-components'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface SynthFormRowProps
-  extends SynthReact.SynthComponentProps,
-    React.HTMLAttributes<HTMLDivElement> {
+interface FormRowProps {
   /**
    * Boolean flag to determine if the elements in the row should be centered.
    */
   centered?: boolean
   /**
-   * The elements you want to display within this component.
+   * The elements you want to display within the form row.
    */
   children?: React.ReactNode
   /**
@@ -25,14 +24,22 @@ interface SynthFormRowProps
    * Boolean flag to determine if the each element(s) in the row should be displayed inline.
    */
   inline?: boolean
-  /**
-   * A React `ref` object that will point to the component's DOM element.
-   */
-  ref?: React.Ref<HTMLDivElement>
 }
 
-type SynthFormRowComponent = React.ComponentType<SynthFormRowProps>
-declare const FormRow: React.ForwardRefExoticComponent<SynthFormRowProps>
+type FormRowComponentProps = React.HTMLAttributes<HTMLDivElement> &
+  React.RefAttributes<HTMLDivElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & FormRowProps
 
-export { SynthFormRowComponent, SynthFormRowProps }
+type FormRowComponent = SynthReact.SynthComponent<
+  FormRowComponentProps,
+  HTMLDivElement
+>
+
+/**
+ * @since 1.0.0
+ */
+declare const FormRow: FormRowComponent
+
+export { FormRowComponent, FormRowComponentProps, FormRowProps }
 export default FormRow

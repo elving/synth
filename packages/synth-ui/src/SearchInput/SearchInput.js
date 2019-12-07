@@ -1,4 +1,5 @@
-import React from 'react'
+import PropTypes from 'prop-types'
+import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import { withSynth } from '@beatgig/synth-react'
 
@@ -20,7 +21,7 @@ const SearchInputContainer = styled.label`
 `
 
 /**
- * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('react').ComponentType<import('@beatgig/synth-ui').SynthSearchIconProps>>}
+ * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('@beatgig/synth-ui').SearchIconComponent>}
  */
 const StyledSearchIcon = styled(SearchIcon)`
   ${setIconFill()}
@@ -31,7 +32,7 @@ const StyledSearchIcon = styled(SearchIcon)`
 `
 
 /**
- * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('react').ComponentType<import('@beatgig/synth-ui').SynthInputProps>>}
+ * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('@beatgig/synth-ui').InputComponent>}
  */
 const StyledInput = styled(Input).attrs(() => ({
   type: 'search',
@@ -53,11 +54,20 @@ const StyledInput = styled(Input).attrs(() => ({
   }
 `
 
-const SearchInput = ({ synth, ...props }) => (
-  <SearchInputContainer>
-    <StyledInput {...props} synth={synth} />
-    <StyledSearchIcon synth={synth} />
-  </SearchInputContainer>
+const SearchInput = forwardRef(
+  /**
+   * @param {import('@beatgig/synth-ui').SearchInputProps & import('@beatgig/synth-react').SynthComponentProps} props
+   */
+  ({ className = '', synth, ...props }, ref) => (
+    <SearchInputContainer>
+      <StyledInput {...props} className={className} synth={synth} ref={ref} />
+      <StyledSearchIcon synth={synth} />
+    </SearchInputContainer>
+  ),
 )
+
+SearchInput.propTypes = Input.propTypes
+SearchInput.defaultProps = Input.defaultProps
+SearchInput.displayName = 'SearchInput'
 
 export default withSynth(SearchInput)

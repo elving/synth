@@ -1,9 +1,10 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface SynthPopupProps
-  extends SynthReact.SynthComponentProps,
-    React.HTMLAttributes<HTMLDivElement> {
+type PopupXPosition = 'left' | 'right' | 'center'
+type PopupYPosition = 'top' | 'bottom' | 'center'
+
+interface PopupProps {
   /**
    * The element in which you want to render the popup; the default
    * is `document.getElementById('root')`.
@@ -22,10 +23,6 @@ interface SynthPopupProps
    * The popup element's DOMRect object.
    */
   popupRect?: DOMRect
-  /**
-   * A React `ref` object that will point to the popup's DOM element.
-   */
-  ref?: React.Ref<HTMLDivElement>
   /**
    * A boolean flag to determine if the popup should be rendered next to it's
    * trigger as opposed to rendering it on the specified `container`.
@@ -46,7 +43,7 @@ interface SynthPopupProps
   /**
    * X position of the popup.
    */
-  x?: 'left' | 'top' | 'center'
+  x?: PopupXPosition
   /**
    * Offset for the popup's x position.
    */
@@ -54,16 +51,34 @@ interface SynthPopupProps
   /**
    * Y position of the popup.
    */
-  y?: 'top' | 'bottom' | 'center'
+  y?: PopupYPosition
   /**
    * Offset for the popup's y position.
    */
   yOffset?: number | string
 }
 
-type SynthPopupComponent = React.ForwardRefExoticComponent<SynthPopupProps>
+type PopupComponentProps = React.HTMLAttributes<HTMLDivElement> &
+  React.RefAttributes<HTMLDivElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & PopupProps
 
-declare const Popup: React.ForwardRefExoticComponent<SynthPopupProps>
+type PopupComponent = SynthReact.SynthComponent<
+  PopupComponentProps,
+  HTMLDivElement
+>
 
-export { SynthPopupProps, SynthPopupComponent }
+/**
+ * @since 1.0.0
+ */
+declare const Popup: PopupComponent
+
+export {
+  PopupComponent,
+  PopupComponentProps,
+  PopupProps,
+  PopupXPosition,
+  PopupYPosition,
+}
+
 export default Popup

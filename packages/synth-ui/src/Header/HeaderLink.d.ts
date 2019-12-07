@@ -1,9 +1,7 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface SynthHeaderLinkProps
-  extends SynthReact.SynthComponentProps,
-    React.AnchorHTMLAttributes<HTMLAnchorElement> {
+interface HeaderLinkProps {
   /**
    * The elements you want to display within this component.
    */
@@ -13,14 +11,22 @@ interface SynthHeaderLinkProps
    * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
    */
   className?: string
-  /**
-   * A React `ref` object that will point to the component's DOM element.
-   */
-  ref?: React.Ref<HTMLAnchorElement>
 }
 
-type SynthHeaderLinkComponent = React.ComponentType<SynthHeaderLinkProps>
-declare const HeaderLink: React.ForwardRefExoticComponent<SynthHeaderLinkProps>
+type HeaderLinkComponentProps = React.AnchorHTMLAttributes<HTMLAnchorElement> &
+  React.RefAttributes<HTMLAnchorElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & HeaderLinkProps
 
-export { SynthHeaderLinkComponent, SynthHeaderLinkProps }
+type HeaderLinkComponent = SynthReact.SynthComponent<
+  HeaderLinkComponentProps,
+  HTMLAnchorElement
+>
+
+/**
+ * @since 1.0.0
+ */
+declare const HeaderLink: HeaderLinkComponent
+
+export { HeaderLinkComponent, HeaderLinkComponentProps, HeaderLinkProps }
 export default HeaderLink

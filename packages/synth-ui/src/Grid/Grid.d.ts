@@ -1,12 +1,11 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
+
 import * as GridItem from './GridItem'
 
-interface SynthGridProps
-  extends SynthReact.SynthComponentProps,
-    React.HTMLAttributes<HTMLDivElement> {
+interface GridProps {
   /**
-   * The elements you want to display within this component.
+   * The elements you want to display within the grid.
    */
   children?: React.ReactNode
   /**
@@ -18,14 +17,22 @@ interface SynthGridProps
    * The number of columns you want to display
    */
   columns?: number
-  /**
-   * A React `ref` object that will point to the component's DOM element.
-   */
-  ref?: React.Ref<HTMLDivElement>
 }
 
-type SynthGridComponent = React.ComponentType<SynthGridProps>
-declare const Grid: React.ForwardRefExoticComponent<SynthGridProps>
+type GridComponentProps = React.HTMLAttributes<HTMLDivElement> &
+  React.RefAttributes<HTMLDivElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & GridProps
 
-export { SynthGridComponent, SynthGridProps }
+type GridComponent = SynthReact.SynthComponent<
+  GridComponentProps,
+  HTMLDivElement
+>
+
+/**
+ * @since 1.2.0
+ */
+declare const Grid: GridComponent
+
+export { GridComponent, GridComponentProps, GridProps }
 export default Grid

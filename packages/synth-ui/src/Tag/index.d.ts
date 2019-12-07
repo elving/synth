@@ -1,1 +1,6 @@
-export { default as Tag, SynthTagComponent, SynthTagProps } from './Tag'
+export {
+  default as Tag,
+  TagComponent,
+  TagComponentProps,
+  TagProps,
+} from './Tag'

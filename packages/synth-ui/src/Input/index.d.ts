@@ -1,1 +1,6 @@
-export { default as Input, SynthInputComponent, SynthInputProps } from './Input'
+export {
+  default as Input,
+  InputComponent,
+  InputComponentProps,
+  InputProps,
+} from './Input'

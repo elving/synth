@@ -1,5 +1,6 @@
 export {
   default as Clickable,
-  SynthClickableComponent,
-  SynthClickableProps,
+  ClickableComponent,
+  ClickableComponentProps,
+  ClickableProps,
 } from './Clickable'

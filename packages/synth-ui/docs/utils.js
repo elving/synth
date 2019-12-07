@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useRef } from 'react'
 import styled from 'styled-components'
 
-import { Button, Flex, Popup, usePopup } from '../src'
+import { Avatar, Button, Flex, Popup, usePopup } from '../src'
 
 const Box = styled(Flex)`
   background-color: ${({ bg }) => bg || 'rgba(0, 0, 0, 0.15)'};
@@ -25,29 +25,37 @@ const CardWrapper = styled.div`
 `
 
 const StyledPopup = styled(Popup)`
+  padding: 15px;
   width: 320px;
 `
 
-const PopupWithHookInner = (props = {}) => {
-  const { isOpen, open, popupRef, props: popupProps, triggerRef } = usePopup(
+const PopupWithHook = (props) => {
+  const { isOpen, popupRef, props: popupProps, toggle, triggerRef } = usePopup(
     props,
   )
 
+  const imgRef = useRef()
+
   return (
     <Fragment>
-      <Button ref={triggerRef} onClick={open}>
-        Open Popup
+      <Avatar scale={1} src="" ref={imgRef} />
+
+      <Button ref={triggerRef} onClick={toggle}>
+        {props.triggerLabel}
       </Button>
 
       {isOpen ? (
-        <StyledPopup {...props} {...popupProps} ref={popupRef}>
+        <StyledPopup
+          {...props}
+          {...popupProps}
+          container={document.body}
+          ref={popupRef}
+        >
           Popup Content
         </StyledPopup>
       ) : null}
     </Fragment>
   )
 }
-
-const PopupWithHook = (props) => <PopupWithHookInner {...props} />
 
 export { Box, CardWrapper, PopupWrapper, PopupWithHook }

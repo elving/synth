@@ -1,11 +1,9 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
-import { SynthIntentInterface } from './Text'
 
-interface SynthLabelProps
-  extends SynthIntentInterface,
-    SynthReact.SynthComponentProps,
-    React.HTMLAttributes<HTMLLabelElement> {
+import { TextProps } from './Text'
+
+interface LabelProps extends TextProps {
   /**
    * The elements you want to display within the label component.
    */
@@ -15,15 +13,22 @@ interface SynthLabelProps
    * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
    */
   className?: string
-  /**
-   * A React `ref` object that will point to the label component's DOM element.
-   */
-  ref?: React.Ref<HTMLLabelElement>
 }
 
-type SynthLabelComponent = React.ForwardRefExoticComponent<SynthLabelProps>
+type LabelComponentProps = React.HTMLAttributes<HTMLLabelElement> &
+  React.RefAttributes<HTMLLabelElement> & {
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+  } & LabelProps
 
-declare const Label: React.ForwardRefExoticComponent<SynthLabelProps>
+type LabelComponent = SynthReact.SynthComponent<
+  LabelComponentProps,
+  HTMLLabelElement
+>
 
-export { SynthLabelComponent, SynthLabelProps }
+/**
+ * @since 1.2.0
+ */
+declare const Label: LabelComponent
+
+export { LabelComponent, LabelComponentProps, LabelProps }
 export default Label

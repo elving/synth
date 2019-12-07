@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { Fragment } from 'react'
+import React, { Fragment, forwardRef } from 'react'
 import styled from 'styled-components'
 import { withSynth } from '@beatgig/synth-react'
 
@@ -18,7 +18,7 @@ import { Text } from '../Typography'
 import { setIconFill, setIconSize } from './utils'
 
 /**
- * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<'label'>}
+ * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<'label', import('@beatgig/synth-ui').CheckboxProps>}
  */
 const Label = styled.label`
   ${fontSize('@fontSizes')}
@@ -33,7 +33,7 @@ const Label = styled.label`
 `
 
 /**
- * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<'div'>}
+ * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<'div', import('@beatgig/synth-ui').CheckboxProps>}
  */
 const IconContainer = styled.div`
   ${border('input')}
@@ -51,7 +51,7 @@ const IconContainer = styled.div`
 `
 
 /**
- * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('react').ComponentType<import('@beatgig/synth-ui').SynthCheckIconProps>>}
+ * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('@beatgig/synth-ui').CheckIconComponent>}
  */
 const Icon = styled(CheckIcon)`
   ${setIconFill()}
@@ -61,7 +61,7 @@ const Icon = styled(CheckIcon)`
 `
 
 /**
- * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<'input'>}
+ * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<'input', import('@beatgig/synth-ui').CheckboxComponentProps>}
  */
 const Input = styled.input.attrs(() => ({
   type: 'checkbox',
@@ -80,38 +80,54 @@ const Input = styled.input.attrs(() => ({
   }
 `
 
-const Checkbox = ({
-  className = '',
-  label,
-  ref,
-  synth,
-  withoutLabelWrapper,
-  ...props
-}) => {
-  const render = () => (
-    <Fragment>
-      <Input {...props} ref={ref} synth={synth} />
-      <IconContainer synth={synth}>
-        <Icon synth={synth} />
-      </IconContainer>
-      {label ? <Spacer left inline scale={1} /> : null}
-      {label ? <Text scale={1}>{label}</Text> : null}
-    </Fragment>
-  )
+const Checkbox = forwardRef(
+  /**
+   * @param {import('@beatgig/synth-ui').CheckboxProps & import('@beatgig/synth-react').SynthComponentProps} props
+   */
+  ({ className = '', label, synth, withoutLabelWrapper, ...props }, ref) => {
+    const render = () => (
+      <Fragment>
+        <Input {...props} ref={ref} synth={synth} />
+        <IconContainer synth={synth}>
+          <Icon synth={synth} />
+        </IconContainer>
+        {label ? <Spacer left inline scale={1} /> : null}
+        {label ? <Text scale={1}>{label}</Text> : null}
+      </Fragment>
+    )
 
-  return withoutLabelWrapper ? (
-    render()
-  ) : (
-    <Label className={className} synth={synth}>
-      {render()}
-    </Label>
-  )
-}
+    return withoutLabelWrapper ? (
+      render()
+    ) : (
+      <Label className={className} synth={synth}>
+        {render()}
+      </Label>
+    )
+  },
+)
 
 Checkbox.propTypes = {
+  /**
+   * Required to properly extend styled-components.
+   * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
+   */
   className: PropTypes.string,
+  /**
+   * Used for displaying text along with the checkbox input.
+   */
   label: PropTypes.string,
+  /**
+   * Boolean flag to determine if the checkbox should **not** be wrapper around a `label` element.
+   */
   withoutLabelWrapper: PropTypes.bool,
 }
+
+Checkbox.defaultProps = {
+  className: '',
+  label: '',
+  withoutLabelWrapper: false,
+}
+
+Checkbox.displayName = 'Checkbox'
 
 export default withSynth(Checkbox)

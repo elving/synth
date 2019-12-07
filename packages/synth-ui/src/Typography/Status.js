@@ -1,5 +1,7 @@
-import { withSynth } from '@beatgig/synth-react'
+import PropTypes from 'prop-types'
+import React, { forwardRef } from 'react'
 import styled from 'styled-components'
+import { withSynth } from '@beatgig/synth-react'
 
 import {
   color,
@@ -10,6 +12,9 @@ import {
 
 import Text from './Text'
 
+/**
+ * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('@beatgig/synth-ui').TextComponent>}
+ */
 const StyledStatus = styled(Text)`
   ${color('status')}
   ${fontSize('status')}
@@ -17,11 +22,36 @@ const StyledStatus = styled(Text)`
   ${textTransform('status')}
 `
 
-const Status = withSynth(StyledStatus)
+const Status = forwardRef(
+  /**
+   * @param {import('@beatgig/synth-ui').StatusProps & import('@beatgig/synth-react').SynthComponentProps} props
+   */
+  ({ children = null, className = '', synth, ...props }, ref) => (
+    <StyledStatus {...props} className={className} synth={synth} ref={ref}>
+      {children}
+    </StyledStatus>
+  ),
+)
 
 Status.propTypes = {
-  ...Status.propTypes,
   ...Text.propTypes,
+  /**
+   * The elements you want to display within the Status component.
+   */
+  children: PropTypes.node,
+  /**
+   * Required to properly extend styled-components.
+   * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
+   */
+  className: PropTypes.string,
 }
 
-export default Status
+Status.defaultProps = {
+  ...Text.defaultProps,
+  children: null,
+  className: '',
+}
+
+Status.displayName = 'Status'
+
+export default withSynth(Status)

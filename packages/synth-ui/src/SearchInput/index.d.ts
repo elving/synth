@@ -1,5 +1,6 @@
 export {
   default as SearchInput,
-  SynthSearchInputComponent,
-  SynthSearchInputProps,
+  SearchInputComponent,
+  SearchInputComponentProps,
+  SearchInputProps,
 } from './SearchInput'
