@@ -1,0 +1,24 @@
+import { Fragment } from 'react'
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { Select } from '../src'
+
+<Meta title="synth-ui|Select" component={Select} />
+
+# Select
+
+The `<Select>` component gives users the ability to make a single selection.
+
+<Preview withToolbar>
+  <Story name="intro">
+    <Select>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </Select>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Select} />
