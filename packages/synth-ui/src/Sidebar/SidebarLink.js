@@ -57,7 +57,7 @@ const SidebarLink = forwardRef(
       <StyledSidebarLink {...props} className={className} synth={synth}>
         {hasIcon ? icon : null}
         {hasIcon ? <Spacer inline left scale={1} /> : null}
-        <Text>{children}</Text>
+        <Text scale={2}>{children}</Text>
       </StyledSidebarLink>
     )
   },

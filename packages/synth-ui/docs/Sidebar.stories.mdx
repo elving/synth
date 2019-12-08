@@ -1,0 +1,31 @@
+import { Fragment } from 'react'
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { AdminIcon, ArtistIcon, InboxIcon, Sidebar, SidebarLink } from '../src'
+
+<Meta title="synth-ui|Sidebar" component={Sidebar} />
+
+# Sidebar
+
+The `<Sidebar>` and `<SidebarLink>` components are used to display a sidebar navigation.
+
+<Preview withToolbar>
+  <Story name="intro">
+    <Sidebar>
+      <SidebarLink icon={<AdminIcon height={26} width="auto" />}>
+        Admin
+      </SidebarLink>
+      <SidebarLink icon={<ArtistIcon height={26} width="auto" />}>
+        Discovery
+      </SidebarLink>
+      <SidebarLink icon={<InboxIcon height={26} width="auto" />}>
+        Bookings
+      </SidebarLink>
+    </Sidebar>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Sidebar} />
+<Props of={SidebarLink} />
