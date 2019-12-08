@@ -17,12 +17,12 @@ const setBackground = () => ({ synth }) => {
     ),
   )
 
-  const padding = synth.getValue('space:padding:control')
+  const [, padding] = synth.getUnit('space:padding:control').split(' ')
 
   return `
     background-image: url('data:image/svg+xml;base64,${iconSVG}');
     background-size: auto ${synth.getUnit('@icons.5')};
-    background-position: calc(100% - ${padding[1]}px) center;
+    background-position: calc(100% - ${padding} / 2) center;
   `
 }
 
