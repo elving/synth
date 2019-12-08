@@ -71,6 +71,11 @@ const BaseStylesOverride = createGlobalStyle`
       padding: 1px 2px 2px !important;
     }
 
+    .simplebar-content code {
+      background-color: transparent !important;
+      border-color: transparent !important;
+    }
+
     .sbdocs-content {
       max-width: 1024px;
     }
