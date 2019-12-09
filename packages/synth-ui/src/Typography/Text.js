@@ -19,8 +19,14 @@ const Text = forwardRef(
   /**
    * @param {import('@beatgig/synth-ui').TextProps & import('@beatgig/synth-react').SynthComponentProps} props
    */
-  ({ children = null, className = '', synth, ...props }, ref) => (
-    <StyledText {...props} className={className} synth={synth} ref={ref}>
+  ({ children = null, className = '', scale = 2, synth, ...props }, ref) => (
+    <StyledText
+      {...props}
+      className={className}
+      scale={scale}
+      synth={synth}
+      ref={ref}
+    >
       {children}
     </StyledText>
   ),
@@ -51,7 +57,7 @@ Text.defaultProps = {
   className: '',
   // eslint-disable-next-line prettier/prettier
   intent: /** @type {import('@beatgig/synth-ui').TextIntent} */ (INTENT_NONE),
-  scale: 0,
+  scale: 2,
 }
 
 Text.displayName = 'Text'
