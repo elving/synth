@@ -1,3 +1,4 @@
+import faker from 'faker'
 import React, { Fragment, useRef } from 'react'
 import styled from 'styled-components'
 
@@ -58,4 +59,40 @@ const PopupWithHook = (props) => {
   )
 }
 
-export { Box, CardWrapper, PopupWrapper, PopupWithHook }
+const tagsUsernames = [
+  faker.internet.userName(),
+  faker.internet.userName(),
+  faker.internet.userName(),
+  faker.internet.userName(),
+  faker.internet.userName(),
+  faker.internet.userName(),
+]
+
+const tags = [
+  {
+    value: tagsUsernames[0],
+    label: tagsUsernames[0],
+  },
+  {
+    value: tagsUsernames[1],
+    label: tagsUsernames[1],
+  },
+  {
+    value: tagsUsernames[2],
+    label: tagsUsernames[2],
+  },
+  {
+    value: tagsUsernames[3],
+    label: tagsUsernames[3],
+  },
+  {
+    value: tagsUsernames[4],
+    label: tagsUsernames[4],
+  },
+  {
+    value: tagsUsernames[5],
+    label: tagsUsernames[5],
+  },
+]
+
+export { Box, CardWrapper, PopupWrapper, PopupWithHook, tags }
