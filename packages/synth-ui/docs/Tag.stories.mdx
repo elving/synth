@@ -1,0 +1,28 @@
+import { Fragment } from 'react'
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { CheckIcon, Spacer, Tag } from '../src'
+
+<Meta title="synth-ui|Tag" component={Tag} />
+
+# Tag
+
+The `<Tag>` component is used to highlight text.
+
+<Preview withToolbar>
+  <Story name="intro">
+    <Fragment>
+      <Tag>#tag</Tag>
+      <Spacer inline scale={3} />
+      <Tag>
+        <CheckIcon />
+        <Spacer inline right />
+        Complex Tag
+      </Tag>
+    </Fragment>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Tag} />
