@@ -1,0 +1,54 @@
+import { Fragment } from 'react'
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { CheckIcon, Flex, Spacer, Text } from '../src'
+
+<Meta title="synth-ui|Spacer" component={Spacer} />
+
+# Spacer
+
+The `<Spacer>` component creates spacing around other components.
+
+<Preview withToolbar>
+  <Story name="intro">
+    <div>
+      <Spacer bottom />
+      <Text>Spacer 0</Text>
+      <Spacer bottom scale={1} />
+      <Text>Spacer 1</Text>
+      <Spacer bottom scale={2} />
+      <Text>Spacer 2</Text>
+      <Spacer bottom scale={3} />
+      <Text>Spacer 3</Text>
+      <Spacer bottom scale={4} />
+      <Text>Spacer 4</Text>
+      <Spacer bottom scale={5} />
+      <Text>Spacer 5</Text>
+    </div>
+  </Story>
+</Preview>
+
+You can also create horizontal spacing by using the `inline` property.
+
+<Preview withToolbar>
+  <Story name="inline">
+    <div>
+      <Spacer inline right />
+      <Text>Spacer 0</Text>
+      <Spacer inline right scale={1} />
+      <Text>Spacer 1</Text>
+      <Spacer inline right scale={2} />
+      <Text>Spacer 2</Text>
+      <Spacer inline right scale={3} />
+      <Text>Spacer 3</Text>
+      <Spacer inline right scale={4} />
+      <Text>Spacer 4</Text>
+      <Spacer inline right scale={5} />
+      <Text>Spacer 5</Text>
+    </div>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Spacer} />
