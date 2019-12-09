@@ -39,6 +39,14 @@ interface TagSelectProps {
    */
   placeholder?: string
   /**
+   * Options to be passed to the `usePopup` hook used for rendering the options popup.
+   */
+  popupOptions: {}
+  /**
+   * Props to be passed to the `<Popup>` component used for rendering the options popup.
+   */
+  popupProps: {}
+  /**
    * A render function used to render the results state whenever there are no
    * results to show.
    */

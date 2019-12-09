@@ -279,9 +279,11 @@ const TagSelect = forwardRef(
       className = '',
       defaultSelected = [],
       groupAfter = 2,
-      onTagsUpdated = noop,
       onTagCreated = noop,
+      onTagsUpdated = noop,
       placeholder = '',
+      popupOptions = {},
+      popupProps = {},
       renderEmptyResults = defaultEmptyResults,
       single = false,
       synth,
@@ -335,9 +337,10 @@ const TagSelect = forwardRef(
       isOpen,
       open,
       popupRef,
-      props: popupProps,
+      props: popupHookProps,
       triggerRef,
     } = usePopup({
+      ...popupOptions,
       onClose: () => {
         blur()
         dispatch({ type: ACTION_CLEAR_ACTIVE_TAG })
@@ -500,6 +503,7 @@ const TagSelect = forwardRef(
         {isOpen && (
           <Popup
             {...popupProps}
+            {...popupHookProps}
             ref={popupRef}
             useTriggerWidth
             yOffset={synth.getValue('@spacing.1')}
@@ -613,6 +617,14 @@ TagSelect.propTypes = {
    */
   placeholder: PropTypes.string,
   /**
+   * Options to be passed to the `usePopup` hook used for rendering the options popup.
+   */
+  popupOptions: PropTypes.object,
+  /**
+   * Props to be passed to the `<Popup>` component used for rendering the options popup.
+   */
+  popupProps: PropTypes.object,
+  /**
    * A render function used to render the results state whenever there are no
    * results to show.
    */
@@ -641,6 +653,8 @@ TagSelect.defaultProps = {
   onTagsUpdated: noop,
   onTagCreated: noop,
   placeholder: '',
+  popupOptions: {},
+  popupProps: {},
   renderEmptyResults: defaultEmptyResults,
   single: false,
   tags: [],
