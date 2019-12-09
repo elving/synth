@@ -29,7 +29,8 @@ const StyledMenuItem = styled.button`
   cursor: pointer;
   outline: 0 none;
   align-items: center;
-  display: flex;  
+  display: flex;
+  flex-shrink: 0;
   width: 100%;
   line-height: 1.35;
   text-align: left;

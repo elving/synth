@@ -29,11 +29,11 @@ interface TagSelectProps {
    * A callback function that is called whenever tags get either selected or
    * removed
    */
-  onUpdate?(selectedTags: Tag[])
+  onTagsUpdated?(selectedTags: Tag[])
   /**
    * A callback function that is called whenever a tag is created.
    */
-  onCreate?(tag: Tag)
+  onTagCreated?(tag: Tag)
   /**
    * Provides a placeholder text for the search input.
    */

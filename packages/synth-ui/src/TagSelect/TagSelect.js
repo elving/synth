@@ -17,6 +17,7 @@ import { Checkbox } from '../Checkbox'
 import { Clickable } from '../Clickable'
 import { CloseIcon } from '../Icons'
 import { Editable } from '../Editable'
+import { Flex } from '../Flex'
 import { Menu, MenuDivider, MenuItem } from '../Menu'
 import { Spacer } from '../Spacer'
 import { Status } from '../Typography'
@@ -30,7 +31,6 @@ import { setSelectStyles } from '../Select'
 import {
   setTagsContainerActiveBorder,
   setTagsContainerBorder,
-  setTagsContainerPadding,
   shouldHideCreateOption,
   tagIsSelected,
 } from './utils'
@@ -72,13 +72,29 @@ const SelectContainer = styled.div`
  */
 const TagsContainer = styled.div`
   ${setTagsContainerBorder()}
-  ${setTagsContainerPadding()}
   align-items: center;
   display: flex;
-  overflow: hidden;
+  overflow-x: hidden;
+  width: 100%;
+
+  & > *:not(:first-child) {
+    flex: 1;
+  }
 
   &.active {
     ${setTagsContainerActiveBorder()}
+  }
+`
+
+const TagsInnerContainer = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    height: 0px;
   }
 `
 
@@ -87,8 +103,13 @@ const TagsContainer = styled.div`
  */
 const StyledEditable = styled(Editable)`
   cursor: pointer;
-  width: 100%;
+  min-width: 15%;
   padding: 0;
+  width: 100%;
+
+  &.active {
+    min-width: 50%;
+  }
 `
 
 /**
@@ -153,7 +174,7 @@ const SearchInput = forwardRef(
 )
 
 const TagSelectionRemove = styled(Clickable)`
-  border-right-width: 0;
+  border-width: 0;
   padding: 0;
 `
 
@@ -226,6 +247,7 @@ const TagOption = ({
 }
 
 const ClearButton = styled(Clickable)`
+  border: 0 none;
   padding: 0;
 `
 
@@ -245,21 +267,23 @@ const TagListState = styled.div`
   width: 100%;
 `
 
-const TagSelect =
+const defaultEmptyResults = () => <Status>No results found...</Status>
+
+const TagSelect = forwardRef(
   /**
    * @param {import('@beatgig/synth-ui').TagSelectProps & import('@beatgig/synth-react').SynthComponentProps} props
    */
   (
     {
-      canCreateTags,
+      canCreateTags = false,
       className = '',
       defaultSelected = [],
       groupAfter = 2,
-      onUpdate = noop,
-      onCreate = noop,
+      onTagsUpdated = noop,
+      onTagCreated = noop,
       placeholder = '',
-      renderEmptyResults = () => <Status>No results found...</Status>,
-      single,
+      renderEmptyResults = defaultEmptyResults,
+      single = false,
       synth,
       tags = [],
     },
@@ -285,10 +309,10 @@ const TagSelect =
         state.createdTags.length &&
         state.createdTags.length > prevState.createdTags.length
       ) {
-        onCreate(last(state.createdTags))
-        onUpdate(state.selectedTags)
+        onTagCreated(last(state.createdTags))
+        onTagsUpdated(state.selectedTags)
       } else if (state.selectedTags.length !== prevState.selectedTags.length) {
-        onUpdate(state.selectedTags)
+        onTagsUpdated(state.selectedTags)
       }
     }
 
@@ -319,6 +343,7 @@ const TagSelect =
         dispatch({ type: ACTION_CLEAR_ACTIVE_TAG })
       },
     })
+
     const removeTag = useCallback(
       (tag) => {
         dispatch({
@@ -360,9 +385,7 @@ const TagSelect =
     }, [])
 
     const onInputEnter = useCallback(() => {
-      if (state.activeTag !== -1) {
-        dispatch({ type: ACTION_TOGGLE_ACTIVE_TAG })
-      } else if (
+      if (
         canCreateTags &&
         state.filter &&
         !shouldHideCreateOption(state.filteredTags, state.filter)
@@ -374,8 +397,10 @@ const TagSelect =
           },
           type: ACTION_CREATE_TAG,
         })
+      } else {
+        dispatch({ type: ACTION_TOGGLE_ACTIVE_TAG })
       }
-    }, [canCreateTags, state.activeTag, state.filter, state.filteredTags])
+    }, [canCreateTags, state.filter, state.filteredTags])
 
     const setNextActiveTag = useCallback(() => {
       dispatch({ type: ACTION_SET_NEXT_ACTIVE_TAG })
@@ -398,40 +423,55 @@ const TagSelect =
           synth={synth}
         >
           <TagsContainer className={isOpen ? 'active' : ''} synth={synth}>
-            {state.ungroupedSelectedTags.map((selectedTag, index) => (
-              <Fragment key={`selection--${selectedTag.value}`}>
-                {index !== 0 && <Spacer inline left scale={1} />}
-                {single ? (
-                  <SearchInput
-                    value={state.filter || selectedTag.label}
-                    onChange={filterTags}
-                    onDelete={removeLastTag}
-                    onEnter={onInputEnter}
-                    onEscape={close}
-                    onFocus={open}
-                    onNavigateDown={setNextActiveTag}
-                    onNavigateUp={setPrevActiveTag}
-                    placeholder={placeholder}
-                    ref={inputRef}
-                  />
-                ) : (
-                  <TagSelection tag={selectedTag} onClickClose={removeTag} />
-                )}
-              </Fragment>
-            ))}
+            {/** 
+              <TagsInnerContainer> is needed here in order to be able to make justify-content: flex-end; 
+              work with horizontal scrolling. However, this doesn't work on Firefox even though the issue
+              was reported over 5 years ago: https://bugzilla.mozilla.org/show_bug.cgi?id=1042151.
 
-            {state.groupedSelectedTags.length > 0 && (
-              <Fragment>
-                <Spacer inline left scale={1} />
-                <Tag>{state.groupedSelectedTags.length}+</Tag>
-              </Fragment>
-            )}
+              @TODO - Look to solve this by scrolling the container "manually" on a `useLayoutEffect` effect?
+            */}
+            <TagsInnerContainer>
+              <Flex alignItems="center" justifyContent="flex-end" fullWidth>
+                {state.ungroupedSelectedTags.map((selectedTag, index) => (
+                  <Fragment key={`selection--${selectedTag.value}`}>
+                    {index !== 0 && <Spacer inline left scale={1} />}
+                    {single ? (
+                      <SearchInput
+                        className={isOpen ? 'active' : ''}
+                        onChange={filterTags}
+                        onDelete={removeLastTag}
+                        onEnter={onInputEnter}
+                        onEscape={close}
+                        onFocus={open}
+                        onNavigateDown={setNextActiveTag}
+                        onNavigateUp={setPrevActiveTag}
+                        placeholder={placeholder}
+                        ref={inputRef}
+                        value={state.filter || selectedTag.label}
+                      />
+                    ) : (
+                      <TagSelection
+                        tag={selectedTag}
+                        onClickClose={removeTag}
+                      />
+                    )}
+                  </Fragment>
+                ))}
+
+                {state.groupedSelectedTags.length > 0 && (
+                  <Fragment>
+                    <Spacer inline left scale={1} />
+                    <Tag>{state.groupedSelectedTags.length}+</Tag>
+                  </Fragment>
+                )}
+              </Flex>
+            </TagsInnerContainer>
 
             {state.hasTagsSelected && <Spacer inline left scale={1} />}
 
             {single && state.hasTagsSelected ? null : (
               <SearchInput
-                value={state.filter}
+                className={isOpen ? 'active' : ''}
                 onChange={filterTags}
                 onDelete={removeLastTag}
                 onEnter={onInputEnter}
@@ -441,13 +481,18 @@ const TagSelect =
                 onNavigateUp={setPrevActiveTag}
                 placeholder={placeholder}
                 ref={inputRef}
+                value={state.filter}
               />
             )}
 
             {state.hasTagsSelected && (
-              <ClearButton onClick={clearSelectedTags}>
-                <CloseIcon scale={1} />
-              </ClearButton>
+              <Fragment>
+                <Spacer inline left scale={1} />
+                <ClearButton onClick={clearSelectedTags}>
+                  <CloseIcon scale={1} />
+                </ClearButton>
+                <Spacer inline left scale={2} />
+              </Fragment>
             )}
           </TagsContainer>
         </SelectContainer>
@@ -527,23 +572,59 @@ const TagSelect =
         )}
       </Container>
     )
-  }
+  },
+)
 
 TagSelect.propTypes = {
+  /**
+   * A boolean flag to determine if the <TagSelect> component has the ability to
+   * create new tags based on the user's search query.
+   */
   canCreateTags: PropTypes.bool,
+  /**
+   * Required to properly extend styled-components.
+   * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
+   */
   className: PropTypes.string,
+  /**
+   * The tags that will be selected by default, if any.
+   */
   defaultSelected: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,
       value: PropTypes.string,
     }),
   ),
+  /**
+   * A number that indicates how many selected tags will be visible.
+   */
   groupAfter: PropTypes.number,
-  onUpdate: PropTypes.func,
-  onCreate: PropTypes.func,
+  /**
+   * A callback function that is called whenever tags get either selected or
+   * removed
+   */
+  onTagsUpdated: PropTypes.func,
+  /**
+   * A callback function that is called whenever a tag is created.
+   */
+  onTagCreated: PropTypes.func,
+  /**
+   * Provides a placeholder text for the search input.
+   */
   placeholder: PropTypes.string,
+  /**
+   * A render function used to render the results state whenever there are no
+   * results to show.
+   */
   renderEmptyResults: PropTypes.func,
+  /**
+   * A boolean flag to determine if the <TagSelect> component can only have
+   * one selected tag at a time.
+   */
   single: PropTypes.bool,
+  /**
+   * The tags that can be selected by the user.
+   */
   tags: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,
@@ -551,5 +632,20 @@ TagSelect.propTypes = {
     }),
   ),
 }
+
+TagSelect.defaultProps = {
+  canCreateTags: false,
+  className: '',
+  defaultSelected: [],
+  groupAfter: 2,
+  onTagsUpdated: noop,
+  onTagCreated: noop,
+  placeholder: '',
+  renderEmptyResults: defaultEmptyResults,
+  single: false,
+  tags: [],
+}
+
+TagSelect.displayName = 'TagSelect'
 
 export default withSynth(TagSelect)

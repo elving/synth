@@ -66,7 +66,7 @@ Spacer.defaultProps = {
   className: '',
   inline: false,
   left: false,
-  right: true,
+  right: false,
   scale: 0,
   top: false,
 }

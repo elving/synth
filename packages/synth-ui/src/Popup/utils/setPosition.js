@@ -29,9 +29,6 @@ const setPosition = () => ({
   popupRect,
   triggerRect,
 }) => {
-  console.log(window.scrollX, triggerRect.x, triggerRect)
-  console.log(window.scrollY, triggerRect.y)
-
   const triggerRectX = unit(triggerRect.x + window.scrollX)
   const triggerRectY = unit(triggerRect.y + window.scrollY)
   const xOffsetUnit = unit(xOffset)

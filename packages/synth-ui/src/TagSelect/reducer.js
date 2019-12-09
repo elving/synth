@@ -1,3 +1,4 @@
+import { isNil } from '@beatgig/is'
 import { filterByKey, last } from '@beatgig/array'
 
 import {
@@ -222,7 +223,7 @@ const reducer = (state, action) => {
 
     case ACTION_SET_NEXT_ACTIVE_TAG: {
       const lastTagIndex = state.filteredTags.length - 1
-      const nextActiveTag = state.activeTag + 1
+      const nextActiveTag = lastTagIndex < 0 ? 0 : state.activeTag + 1
 
       return {
         ...state,
@@ -232,7 +233,7 @@ const reducer = (state, action) => {
 
     case ACTION_SET_PREV_ACTIVE_TAG: {
       const lastTagIndex = state.filteredTags.length - 1
-      const nextActiveTag = state.activeTag - 1
+      const nextActiveTag = lastTagIndex < 0 ? 0 : state.activeTag - 1
 
       return {
         ...state,
@@ -249,6 +250,11 @@ const reducer = (state, action) => {
 
     case ACTION_TOGGLE_ACTIVE_TAG: {
       const tag = state.filteredTags[state.activeTag]
+
+      if (isNil(tag)) {
+        return state
+      }
+
       const selectedTags = state.single
         ? toggleSingleTag(state.selectedTags, tag)
         : toggleTag(state.selectedTags, tag)
