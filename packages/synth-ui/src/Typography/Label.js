@@ -11,10 +11,10 @@ import Text from './Text'
  */
 const StyledLabel = styled(Text)`
   ${fontWeight('control')}
+  cursor: pointer;
   line-height: 1.25;
-  cursor: default;
-  align-self: center;
   display: flex;
+  position: relative;
 `
 
 const Label = forwardRef(

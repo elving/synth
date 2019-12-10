@@ -1,0 +1,27 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { Checkbox, Label, Spacer } from '../src'
+
+<Meta title="synth-ui|Typography/Label" component={Label} />
+
+# Label
+
+The `<Label>` component is used to display form labels.
+
+<Preview withToolbar>
+  <Story name="intro">
+    <div>
+      <Label>This is a label</Label>
+      <Spacer bottom scale={2} />
+      <Label>
+        <Checkbox />
+        <Spacer inline right scale={1} />
+        Click this label to check the checkbox
+      </Label>
+    </div>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Label} />
