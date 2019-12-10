@@ -23,8 +23,6 @@ const getCSSDeclaration = (tokens, tokenName) => {
   const { category, property, name } = getTokenParts(tokenName)
   const tokenValue = getTokenValue(tokens, tokenName)
 
-  console.log(name, isGlobalToken(name))
-
   if (isGlobalToken(tokenName)) {
     return tokenValue
   }
