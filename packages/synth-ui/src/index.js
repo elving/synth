@@ -43,6 +43,6 @@ export { Sidebar, SidebarLink } from './Sidebar'
 export { Spacer } from './Spacer'
 export { Tag } from './Tag'
 export { TagSelect } from './TagSelect'
-export { Heading, Label, Small, Status, Text } from './Typography'
+export { Heading, Label, Paragraph, Small, Status, Text } from './Typography'
 
 export { setBaseStyles, noop, ScrollIntoView, withForwardedRef } from './utils'

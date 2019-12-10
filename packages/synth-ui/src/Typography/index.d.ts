@@ -14,6 +14,14 @@ export {
 } from './Label'
 
 export {
+  default as Paragraph,
+  ParagraphComponent,
+  ParagraphComponentProps,
+  ParagraphIntent,
+  ParagraphProps,
+} from './Paragraph'
+
+export {
   default as Small,
   SmallComponent,
   SmallComponentProps,
