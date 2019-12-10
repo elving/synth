@@ -34,7 +34,7 @@ export const tokens = {
      */
     headings: [18, 22, 26, 30, 34, 38],
     fontSizes: [12, 14, 16, 18, 20, 22, 24, 26],
-    fontWeights: [400, 500, 600, 700],
+    fontWeights: [300, 400, 500, 600, 700],
   },
 
   color: {
@@ -119,6 +119,7 @@ export const tokens = {
     margin: {
       formRow: [0, 0, '@spacing.1'],
       heading: [0, 0, '@spacing.2'],
+      paragraph: '0 0 @spacing.2',
     },
 
     padding: {
