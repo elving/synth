@@ -52,19 +52,32 @@
   },
   "scripts": {
     "bootstrap": "rm -rf ./node_modules && lerna bootstrap --use-workspaces",
-    "build": "rm -rf ./packages/**/dist && concurrently --names 'commonjs,esm' 'yarn build:commonjs' 'yarn build:esm'",
     "build:commonjs": "lerna exec --parallel -- BABEL_ENV=commonjs babel --root-mode upward src --out-dir dist/commonjs --ignore tests,docs --source-maps inline",
     "build:esm": "lerna exec --parallel -- BABEL_ENV=esm babel --root-mode upward src --out-dir dist/esm --ignore tests,docs --source-maps inline",
     "build:watch": "rm -rf ./packages/**/dist && concurrently --names 'commonjs,esm' 'yarn build:commonjs -w' 'yarn build:esm -w'",
+    "build": "rm -rf ./packages/**/dist && concurrently --names 'commonjs,esm' 'yarn build:commonjs' 'yarn build:esm'",
     "coverage": "yarn build && jest --coverage",
     "dev": "yarn build && start-storybook -p 5555",
-    "publish": "lerna publish --conventional-commits",
-    "prepublishOnly": "yarn build",
-    "test": "yarn build && jest",
+    "docs": "build-storybook --docs -c .storybook -o ./docs && git add . && git commit -m \"chore(release): docs\"",
     "lint:eslint": "lerna exec --parallel -- eslint . -c ./.eslintrc --ext .js,mdx",
     "lint:tsc": "lerna exec --parallel -- tsc -p ./tsconfig.json",
     "lint": "yarn lint:eslint && yarn lint:tsc",
-    "docs": "build-storybook -c .storybook -o ./docs"
+    "prepublishOnly": "yarn build && yarn docs",
+    "publish": "lerna publish --conventional-commits -m \"chore(release): publish %s\"",
+    "test": "yarn build && jest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "packages/**/*.{js}": [
+      "lerna exec --parallel -- eslint . -c ./.eslintrc --ext .js,mdx --fix",
+      "lerna exec --parallel -- prettier --write",
+      "lerna exec --parallel -- tsc -p ./tsconfig.json",
+      "git add"
+    ]
   },
   "sideEffects": false
 }
