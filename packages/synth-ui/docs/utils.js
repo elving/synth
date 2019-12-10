@@ -2,7 +2,7 @@ import faker from 'faker'
 import React, { Fragment, useRef } from 'react'
 import styled from 'styled-components'
 
-import { Avatar, Button, Flex, Popup, usePopup } from '../src'
+import { Button, Flex, Popup, usePopup } from '../src'
 
 const Box = styled(Flex)`
   background-color: ${({ bg }) => bg || 'rgba(0, 0, 0, 0.15)'};
@@ -39,8 +39,6 @@ const PopupWithHook = (props) => {
 
   return (
     <Fragment>
-      <Avatar scale={1} src="" ref={imgRef} />
-
       <Button ref={triggerRef} onClick={toggle}>
         {props.triggerLabel}
       </Button>

@@ -1,11 +1,13 @@
-import React from 'react'
-import styled, { createGlobalStyle } from 'styled-components'
-import { renderToString } from 'react-dom/server'
+import React, { Fragment } from 'react'
+import ReactDOM from 'react-dom'
+import styled from 'styled-components'
 import { addDecorator, addParameters, configure } from '@storybook/react'
+import { renderToString } from 'react-dom/server'
 import { themes } from '@storybook/theming'
 
+import StylesOverride from './styles'
 import { BaseStyles, Flex, FullLogo } from '../packages/synth-ui/src'
-import { getTokenValue, unit } from '../packages/synth-core/src'
+import { getTokenValue } from '../packages/synth-core/src'
 import { tokens } from '../packages/synth-tokens/src'
 
 const colorNames = [
@@ -48,121 +50,22 @@ addParameters({
   },
 })
 
-const BaseStylesOverride = createGlobalStyle`
-  body, html {
-    background-color: transparent;
-  }
-
-  body, html, #root {
-    height: 100%;
-    width: 100%;
-  }
-
-  .sbdocs {
-    code {
-      background-color: rgba(255, 255, 255, 0.055) !important;
-      border: 1px solid rgba(255,255,255,.035) !important;
-      border-radius: ${unit(
-        getTokenValue(tokens, 'size:radius:base'),
-      )} !important;
-      color: rgba(255, 255, 255, 0.75) !important;
-      font-family: "Operator Mono", "Fira Code Retina", "Fira Code", FiraCode-Retina, "Andale Mono", "Lucida Console", Consolas, Monaco, monospace !important;
-      font-size: 85% !important;
-      padding: 1px 2px 2px !important;
-    }
-
-    .simplebar-content code {
-      background-color: transparent !important;
-      border-color: transparent !important;
-    }
-
-    .sbdocs-content {
-      max-width: 1024px;
-    }
-
-    .sbdocs-h2 {
-      color: #fff;
-      border: 0 none;
-      margin: 35px 0;
-      padding: 0;
-    }
-
-    .sbdocs-p {
-      font-size: ${getTokenValue(tokens, 'typography:size:text')}px;
-
-      a {
-        color: ${getTokenValue(tokens, '@BeatGig')};
-        font-size: ${getTokenValue(tokens, 'typography:size:text')}px;
-        text-decoration: underline;
-      }
-    }
-
-    .sbdocs-table {
-      width: 100% !important;
-
-      thead tr, thead th, tbody tr, tbody td {
-        border: 0 none !important;
-      }
-
-      thead tr {
-        border-bottom: 1px solid ${getTokenValue(tokens, '@Shark')} !important;
-      }
-
-      th {
-        color: ${getTokenValue(tokens, '@Oslo')} !important;
-      }
-      
-      tr {
-        background-color: transparent !important;
-
-        &:nth-child(even) {
-          background-color: rgba(0, 0, 0, 0.15) !important;
-        }
-
-        td {
-          &:first-child {
-            border-top-left-radius: ${unit(
-              getTokenValue(tokens, 'size:radius:base'),
-            )} !important;
-            border-bottom-left-radius: ${unit(
-              getTokenValue(tokens, 'size:radius:base'),
-            )} !important;
-          }
-
-          &:last-child {
-            border-top-right-radius: ${unit(
-              getTokenValue(tokens, 'size:radius:base'),
-            )} !important;
-            border-bottom-right-radius: ${unit(
-              getTokenValue(tokens, 'size:radius:base'),
-            )} !important;
-          }        
-        }
-      }
-
-      th, td {
-        border-left: 0 none !important;
-        border-right: 0 none !important;
-        padding: 10px !important;
-      }
-    }
-
-    [data-simplebar="init"] + div {
-      background-color: transparent !important;
-    }
-  }
-`
-
 const StoryContainer = styled(Flex)`
   position: relative;
 `
 
 addDecorator((story) => (
   <StoryContainer center full>
-    <BaseStyles />
-    <BaseStylesOverride />
     {story()}
   </StoryContainer>
 ))
+
+ReactDOM.render(
+  <Fragment>
+    <BaseStyles />
+    <StylesOverride />
+  </Fragment>,
+  document.getElementById('root'),
+)
 
 configure(require.context('../packages', true, /\.stories\.(js|mdx)$/), module)

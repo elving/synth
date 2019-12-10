@@ -245,12 +245,12 @@ import styled from 'styled-components'
 import { withSynth } from '@beatgig/synth-react'
 import { fontSize, fontWeight } from '@beatgig/synth-styled-components'
 
-const Text = styled.p`  
+const Text = styled.p\`  
   /** font-size: 16px; */
   ${fontSize('@normalSize')}
   /** font-weight: 16; */
   ${fontWeight('@normalSize')}
-`
+\`
 
 export default withSynth(Text)
 ```
@@ -275,10 +275,10 @@ import styled from 'styled-components'
 import { withSynth } from '@beatgig/synth-react'
 import { padding } from '@beatgig/synth-styled-components'
 
-const Button = styled.button`
+const Button = styled.button\`
   /** padding: 10px 5%; */
   ${padding('primaryButton')}
-`
+\`
 
 export default withSynth(Button)
 ```
@@ -337,12 +337,12 @@ import styled from 'styled-components'
 import { withSynth } from '@beatgig/synth-react'
 import { color, fontSize } from '@beatgig/synth-styled-components'
 
-const Text = styled.p`  
+const Text = styled.p\`  
   /** color: #454545; */
   ${color()}
   /** font-size: 14px; */
   ${fontSize()}
-`
+\`
 
 export default withSynth(Text)
 ```
