@@ -1,0 +1,77 @@
+import LinkTo from '@storybook/addon-links/react'
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import {
+  Button,
+  CheckIcon,
+  Modal,
+  ModalActions,
+  ModalContent,
+  ModalHeader,
+  ModalTitle,
+  Text,
+} from '../src'
+
+import { PopupWrapper } from './utils'
+
+<Meta title="synth-ui|Popups/Modal" component={Modal} />
+
+# Modal
+
+The `<Modal>` component is a variant of the `<Popup>` component that displays a full screen popup that requires the user's interaction.
+
+<Preview>
+  <Story name="intro">
+    <PopupWrapper>
+      <Modal renderInPlace>
+        <Text>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </Text>
+      </Modal>
+    </PopupWrapper>
+  </Story>
+</Preview>
+
+## Props
+
+_Inherits from `SynthPopupProps`_
+
+| Name                | Description                                                                                                                                   | Type                        | Default    |
+| :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------- | :--------- |
+| children            | The elements you want to display within the modal.                                                                                            | `React.ReactNode`           | `null`     |
+| className           | Required to properly extend styled-components.                                                                                                | `string`                    | `''`       |
+| close               | A function used to close the modal when clicking on it's overlay background. This function will generally be provided by the `usePopup` hook. | `function`                  | `() => {}` |
+| closeOnOverlayClick | A boolean flag to determine if the modal should be closed when clicking on it's overlay background.                                           | `boolean`                   | `false`    |
+| onOverlayClick      | A callback function that is called whenever the user clicks on the modal's overlay background.                                                | `function`                  | `() => {}` |
+| ref                 | A React `ref` object that will point to the modal's DOM element.                                                                              | `React.Ref<HTMLDivElement>` | `null`     |
+
+## Parts of a Modal
+
+A modal is composed of a header, the content and some times a footer. Here's a list of all available modal components you can use to build different types of modals:
+
+- `<ModalHeader>`
+- `<ModalTitle>`
+- `<ModalContent>`
+- `<ModalActions>`
+
+<Preview>
+  <Story name="modal-parts">
+    <PopupWrapper>
+      <Modal renderInPlace>
+        <ModalHeader>
+          <ModalTitle>Modal Title</ModalTitle>
+        </ModalHeader>
+        <ModalContent>
+          <Text>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Text>
+        </ModalContent>
+        <ModalActions>
+          <Button icon={<CheckIcon />} iconPosition="right">Ok</Button>
+        </ModalActions>
+      </Modal>
+    </PopupWrapper>
+  </Story>
+</Preview>

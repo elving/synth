@@ -1,28 +1,37 @@
-/**
- * Validates that the given value is a valid Synth token declaration.
- *
- * @since 1.0.0
- * @param {object} tokens
- * @returns {boolean}
- * @example
- *
- * isTokenDeclaration({
- *   color: {
- *     background: {
- *       button: 'red',
- *     },
- *   },
- * })
- * // => true
- *
- * isTokenDeclaration('size:maxWidth')
- * // => false
- *
- * isTokenDeclaration({})
- * // => false
- *
- */
-export const isTokenDeclaration = (tokens) =>
-  tokens &&
-  Object.prototype.toString.call(tokens) === '[object Object]' &&
-  Object.keys(tokens).length > 0
+import { isObject, isEmptyObject } from '@beatgig/is'
+
+import {
+  TOKEN_CATEGORIES,
+  TOKEN_CATEGORY_GLOBAL,
+  VALID_DECLARATION_KEYS,
+} from './constants'
+
+const isTokenDeclaration = (tokens) => {
+  if (!tokens || !isObject(tokens) || isEmptyObject(tokens)) {
+    return false
+  }
+
+  let isValid = true
+
+  for (const category in tokens) {
+    if (!TOKEN_CATEGORIES.includes(category) || !isObject(tokens[category])) {
+      isValid = false
+      break
+    }
+
+    if (category === TOKEN_CATEGORY_GLOBAL) {
+      continue
+    }
+
+    for (const property in tokens[category]) {
+      if (!VALID_DECLARATION_KEYS[category].includes(property)) {
+        isValid = false
+        break
+      }
+    }
+  }
+
+  return isValid
+}
+
+export default isTokenDeclaration

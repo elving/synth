@@ -1,0 +1,44 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { Checkbox } from '../src'
+
+<Meta title="synth-ui|Forms/Checkbox" component={Checkbox} />
+
+# Checkbox
+
+Use the `<Checkbox>` component for making selections.
+
+<Preview>
+  <Story name="intro">
+    <Checkbox />
+  </Story>
+</Preview>
+
+## Props
+
+| Name                | Description                                                                                   | Type                          | Default |
+| :------------------ | :-------------------------------------------------------------------------------------------- | :---------------------------- | :------ |
+| className           | Required to properly extend styled-components.                                                | `string`                      | `''`    |
+| label               | Used for displaying text along with the checkbox input.                                       | `string`                      | `''`    |
+| ref                 | A React `ref` object that will point to the input's DOM element.                              | `React.Ref<HTMLInputElement>` | `null`  |
+| withoutLabelWrapper | Boolean flag to determine if the checkbox should **not** be wrapper around a `label` element. | `boolean`                     | `false` |
+
+## Variants
+
+You can also display a label alongside the checkbox.
+
+<Preview withToolbar>
+  <Story name="label">
+    <Checkbox label="Clicking this will toggle the checkbox" />
+  </Story>
+</Preview>
+
+If you need to display a checkbox with a label, but don't want them wrapped around a `<label>` element, you can use the `withoutLabelWrapper`.
+
+<Preview withToolbar>
+  <Story name="withoutLabelWrapper">
+    <Checkbox
+      label="Clicking this will not toggle the checkbox"
+      withoutLabelWrapper
+    />
+  </Story>
+</Preview>

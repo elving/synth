@@ -1,87 +1,34 @@
 import { isTokenDeclaration } from '@beatgig/synth-core'
 
-import { backgroundColor } from './backgroundColor'
-import { border } from './border'
-import { borderRadius } from './borderRadius'
-import { bottom } from './bottom'
-import { boxShadow } from './boxShadow'
-import { color } from './color'
-import { fontFamily } from './fontFamily'
-import { fontSize } from './fontSize'
-import { fontWeight } from './fontWeight'
-import { height } from './height'
-import { left } from './left'
-import { letterSpacing } from './letterSpacing'
-import { lineHeight } from './lineHeight'
-import { margin } from './margin'
-import { maxHeight } from './maxHeight'
-import { maxWidth } from './maxWidth'
-import { minHeight } from './minHeight'
-import { minWidth } from './minWidth'
-import { opacity } from './opacity'
-import { outline } from './outline'
-import { padding } from './padding'
-import { right } from './right'
-import { textDecoration } from './textDecoration'
-import { textTransform } from './textTransform'
-import { top } from './top'
-import { width } from './width'
-import { zIndex } from './zIndex'
+import backgroundColor from './backgroundColor'
+import border from './border'
+import borderRadius from './borderRadius'
+import bottom from './bottom'
+import boxShadow from './boxShadow'
+import color from './color'
+import fontFamily from './fontFamily'
+import fontSize from './fontSize'
+import fontWeight from './fontWeight'
+import height from './height'
+import left from './left'
+import letterSpacing from './letterSpacing'
+import lineHeight from './lineHeight'
+import margin from './margin'
+import maxHeight from './maxHeight'
+import maxWidth from './maxWidth'
+import minHeight from './minHeight'
+import minWidth from './minWidth'
+import opacity from './opacity'
+import outline from './outline'
+import padding from './padding'
+import right from './right'
+import textDecoration from './textDecoration'
+import textTransform from './textTransform'
+import top from './top'
+import width from './width'
+import zIndex from './zIndex'
 
-/**
- * @typedef {object} CSSBindings
- * @property {function(string): string} backgroundColor
- * @property {function(string): string} border
- * @property {function(string): string} borderRadius
- * @property {function(string): string} bottom
- * @property {function(string): string} boxShadow
- * @property {function(string): string} color
- * @property {function(string): string} fontFamily
- * @property {function(string): string} fontSize
- * @property {function(string): string} fontWeight
- * @property {function(string): string} height
- * @property {function(string): string} left
- * @property {function(string): string} letterSpacing
- * @property {function(string): string} lineHeight
- * @property {function(string): string} margin
- * @property {function(string): string} maxHeight
- * @property {function(string): string} maxWidth
- * @property {function(string): string} minHeight
- * @property {function(string): string} minWidth
- * @property {function(string): string} opacity
- * @property {function(string): string} outline
- * @property {function(string): string} padding
- * @property {function(string): string} right
- * @property {function(string): string} textDecoration
- * @property {function(string): string} textTransform
- * @property {function(string): string} top
- * @property {function(string): string} width
- * @property {function(string): string} zIndex
- */
-
-/**
- * Returns an object containing all CSS helper functions with the given
- * `tokens` already passed as the first argument.
- *
- * @since 1.0.0
- * @param {object} tokens
- * @returns {CSSBindings}
- * @example
- *
- * import { withTokens } from '@beatgig/synth-css'
- *
- * const cssHelpers = withTokens({
- *   color: {
- *     background: {
- *       button: 'red',
- *     },
- *   },
- * })
- *
- * cssHelpers.backgroundColor('button')
- * // => background-color: 'red';
- */
-export const withTokens = (tokens) => {
+const withTokens = (tokens) => {
   if (!isTokenDeclaration(tokens)) {
     throw new TypeError(
       'Invalid param `tokens` supplied, expected a valid Synth token declaration.',
@@ -89,193 +36,34 @@ export const withTokens = (tokens) => {
   }
 
   return {
-    backgroundColor:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => backgroundColor(tokens, tokenName),
-
-    border:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => border(tokens, tokenName),
-
-    borderRadius:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => borderRadius(tokens, tokenName),
-
-    bottom:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => bottom(tokens, tokenName),
-
-    boxShadow:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => boxShadow(tokens, tokenName),
-
-    color:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => color(tokens, tokenName),
-
-    fontFamily:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => fontFamily(tokens, tokenName),
-
-    fontSize:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => fontSize(tokens, tokenName),
-
-    fontWeight:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => fontWeight(tokens, tokenName),
-
-    height:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => height(tokens, tokenName),
-
-    left:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => left(tokens, tokenName),
-
-    letterSpacing:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => letterSpacing(tokens, tokenName),
-
-    lineHeight:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => lineHeight(tokens, tokenName),
-
-    margin:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => margin(tokens, tokenName),
-
-    maxHeight:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => maxHeight(tokens, tokenName),
-
-    maxWidth:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => maxWidth(tokens, tokenName),
-
-    minHeight:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => minHeight(tokens, tokenName),
-
-    minWidth:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => minWidth(tokens, tokenName),
-
-    opacity:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => opacity(tokens, tokenName),
-
-    outline:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => outline(tokens, tokenName),
-
-    padding:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => padding(tokens, tokenName),
-
-    right:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => right(tokens, tokenName),
-
-    textDecoration:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => textDecoration(tokens, tokenName),
-
-    textTransform:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => textTransform(tokens, tokenName),
-
-    top:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => top(tokens, tokenName),
-
-    width:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => width(tokens, tokenName),
-
-    zIndex:
-      /**
-       * @param {string} tokenName
-       * @returns {string}
-       */
-      (tokenName) => zIndex(tokens, tokenName),
+    backgroundColor: (tokenName) => backgroundColor(tokens, tokenName),
+    border: (tokenName) => border(tokens, tokenName),
+    borderRadius: (tokenName) => borderRadius(tokens, tokenName),
+    bottom: (tokenName) => bottom(tokens, tokenName),
+    boxShadow: (tokenName) => boxShadow(tokens, tokenName),
+    color: (tokenName) => color(tokens, tokenName),
+    fontFamily: (tokenName) => fontFamily(tokens, tokenName),
+    fontSize: (tokenName) => fontSize(tokens, tokenName),
+    fontWeight: (tokenName) => fontWeight(tokens, tokenName),
+    height: (tokenName) => height(tokens, tokenName),
+    left: (tokenName) => left(tokens, tokenName),
+    letterSpacing: (tokenName) => letterSpacing(tokens, tokenName),
+    lineHeight: (tokenName) => lineHeight(tokens, tokenName),
+    margin: (tokenName) => margin(tokens, tokenName),
+    maxHeight: (tokenName) => maxHeight(tokens, tokenName),
+    maxWidth: (tokenName) => maxWidth(tokens, tokenName),
+    minHeight: (tokenName) => minHeight(tokens, tokenName),
+    minWidth: (tokenName) => minWidth(tokens, tokenName),
+    opacity: (tokenName) => opacity(tokens, tokenName),
+    outline: (tokenName) => outline(tokens, tokenName),
+    padding: (tokenName) => padding(tokens, tokenName),
+    right: (tokenName) => right(tokens, tokenName),
+    textDecoration: (tokenName) => textDecoration(tokens, tokenName),
+    textTransform: (tokenName) => textTransform(tokens, tokenName),
+    top: (tokenName) => top(tokens, tokenName),
+    width: (tokenName) => width(tokens, tokenName),
+    zIndex: (tokenName) => zIndex(tokens, tokenName),
   }
 }
+
+export default withTokens

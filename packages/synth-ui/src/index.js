@@ -1,11 +1,17 @@
 export { Avatar } from './Avatar'
-export { Button, Clickable } from './Button'
+export { BaseStyles } from './BaseStyles'
+export { Button } from './Button'
 export { Card } from './Card'
 export { Checkbox } from './Checkbox'
+export { Clickable } from './Clickable'
+export { ConfirmationModal } from './ConfirmationModal'
+export { Editable } from './Editable'
 export { Flex } from './Flex'
 export { FormRow, FormField } from './Form'
+export { Grid, GridItem } from './Grid'
 export { Header, HeaderLink } from './Header'
 export { Icon } from './Icon'
+export { IconButton } from './IconButton'
 
 export {
   AdminIcon,
@@ -18,15 +24,25 @@ export {
   SearchIcon,
 } from './Icons'
 
-export { baseStyles, noop, ScrollIntoView } from './utils'
-export { Editable, Input, SearchInput } from './Input'
-export { Error, Heading, Label, Small, Status, Text } from './Typography'
+export { Input } from './Input'
 export { FullLogo, MiniLogo } from './Logo'
-export { GlobalStyles } from './GlobalStyles'
+export { Menu, MenuDivider, MenuItem } from './Menu'
+
+export {
+  Modal,
+  ModalActions,
+  ModalContent,
+  ModalHeader,
+  ModalTitle,
+} from './Modal'
+
 export { Popup, usePopup } from './Popup'
-export { PopupMenu, PopupMenuDivider, PopupMenuItem } from './PopupMenu'
-export { Select } from './Select'
+export { SearchInput } from './SearchInput'
+export { Select, setSelectStyles } from './Select'
 export { Sidebar, SidebarLink } from './Sidebar'
 export { Spacer } from './Spacer'
 export { Tag } from './Tag'
 export { TagSelect } from './TagSelect'
+export { Heading, Label, Paragraph, Small, Status, Text } from './Typography'
+
+export { setBaseStyles, noop, ScrollIntoView, withForwardedRef } from './utils'

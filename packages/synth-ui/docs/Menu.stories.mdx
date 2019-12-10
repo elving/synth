@@ -1,0 +1,90 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { PopupWrapper } from './utils'
+import { CheckIcon, CloseIcon, LogoutIcon, Menu, MenuDivider, MenuItem, Popup } from '../src'
+
+<Meta title="synth-ui|Menu" component={Menu} />
+
+# Menu
+
+The `<Menu>` component along with it's children components provides the building blocks for menus.
+
+<Preview>
+  <Story name="intro">
+    <PopupWrapper>
+      <Popup renderInPlace>
+        <Menu>
+          <MenuItem>Menu Item 1</MenuItem>
+          <MenuItem>Menu Item 2</MenuItem>
+          <MenuDivider />
+          <MenuItem icon={<LogoutIcon />}>Menu Item 3</MenuItem>
+        </Menu>
+      </Popup>
+    </PopupWrapper>
+  </Story>
+</Preview>
+
+## Props
+
+| Name      | Description                                                                      | Type                           | Default |
+| :-------- | :------------------------------------------------------------------------------- | :----------------------------- | :------ |
+| className | Required to properly extend styled-components.                                   | `string`                       | `''`    |
+| children  | The elements you want to display within the menu.                                | `React.ReactNode`              | `null`  |
+| ref       | A React `ref` object that will point to the menu's DOM element.                  | `React.Ref<HTMLDivElement>`    | `null`  |
+
+## MenuDivider
+
+The `<MenuDivider>` displays a divider line that can be used to divide groups of menu items.
+
+<Preview>
+  <Story name="divider">
+    <PopupWrapper>
+      <Popup renderInPlace>
+        <Menu>
+          <MenuItem>Menu Item 1</MenuItem>
+          <MenuDivider />
+          <MenuItem>Menu Item 2</MenuItem>
+          <MenuDivider />
+          <MenuItem>Menu Item 3</MenuItem>
+          <MenuItem>Menu Item 4</MenuItem>
+        </Menu>
+      </Popup>
+    </PopupWrapper>
+  </Story>
+</Preview>
+
+## Props
+
+| Name      | Description                                                                      | Type                           | Default |
+| :-------- | :------------------------------------------------------------------------------- | :----------------------------- | :------ |
+| className | Required to properly extend styled-components.                                   | `string`                       | `''`    |
+| ref       | A React `ref` object that will point to the menu divider's DOM element.          | `React.Ref<HTMLHRElement>`     | `null`  |
+
+## MenuItem
+
+The `<MenuItem>` represents an actionable item within the menu. An `icon` property is available to display an optional icon tp the left side of the menu item's content.
+
+<Preview>
+  <Story name="item">
+    <PopupWrapper>
+      <Popup renderInPlace>
+        <Menu>
+          <MenuItem>Menu Item 1</MenuItem>
+          <MenuItem icon={<CheckIcon />}>Menu Item 2</MenuItem>
+          <MenuItem icon={<CloseIcon />}>Menu Item 3</MenuItem>
+          <MenuItem icon={<LogoutIcon />}>Menu Item 4</MenuItem>
+        </Menu>
+      </Popup>
+    </PopupWrapper>
+  </Story>
+</Preview>
+
+## Props
+
+| Name      | Description                                                                         | Type                           | Default    |
+| :-------- | :---------------------------------------------------------------------------------- | :----------------------------- | :--------- |
+| className | Required to properly extend styled-components.                                      | `string`                       | `''`       |
+| children  | The elements you want to display within the menu item.                              | `React.ReactNode`              | `null`     |
+| icon      | An optional icon component that can be rendered along side the menu item's content. | React.ReactElement             | `null`     |
+| ref       | A React `ref` object that will point to the menu item's DOM element.                | `React.Ref<HTMLButtonElement>` | `null`     |
+| onClick   | A callback function that is called whenever the user clicks on the menu item.       | `function`                     | `() => {}` |

@@ -1,0 +1,104 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { Button, Flex, Spacer, SearchIcon } from '../src'
+
+<Meta title="synth-ui|Forms/Button" component={Button} />
+
+# Button
+
+Use buttons to give users the ability to trigger actions.
+
+<Preview withToolbar>
+  <Story name="default">
+    <Button>Button</Button>
+  </Story>
+</Preview>
+
+## Props
+
+| Name  | Description                                   | Type     | Default |
+| :---- | :-------------------------------------------- | :------- | :------ |
+| children | The elements you want to display within the button. | `React.ReactNode` | `null` |
+| className | Required to properly extend styled-components.| `string` | `''` |  
+| icon | An optional icon component that can be rendered along side the button's content. | `React.ReactElement` | `null`|
+| iconPosition | The icon's position. | `'top'` \| `'right'` \| `'bottom'` \| `'left'` | `'left'` |
+|intent| The component's intent will determine it's text and background color. | `'none'` \| `'danger'` \| `'success'` \| `'highlight'` | `none` |
+| outline| Displays the button only using it's outline. | `boolean` | `false`|
+| ref | A React `ref` object that will point to the button's DOM element. | `React.Ref<HTMLButtonElement>` | `null`|
+
+## Intent
+
+The `intent` property provides button with more context related to the action(s) they can trigger.
+
+<Preview withToolbar>
+  <Story name="with intent">
+    <Flex alignItems="center">
+      <Button intent="none">None</Button>
+      <Spacer right scale={2} />
+      <Button intent="danger">Danger</Button>
+      <Spacer right scale={2} />
+      <Button intent="success">Success</Button>
+      <Spacer right scale={2} />
+      <Button intent="highlight">Highlight</Button>
+    </Flex>
+  </Story>
+</Preview>
+
+## Secondary Actions
+
+Using the `outline` property will give you the option to render a variant of the button that will only show the outline of the button. Use this button for secondary actions.
+
+<Preview withToolbar>
+  <Story name="outline">
+    <Flex alignItems="center">
+      <Button intent="none" outline>
+        None
+      </Button>
+      <Spacer right scale={2} />
+      <Button intent="danger" outline>
+        Danger
+      </Button>
+      <Spacer right scale={2} />
+      <Button intent="success" outline>
+        Success
+      </Button>
+      <Spacer right scale={2} />
+      <Button intent="highlight" outline>
+        Highlight
+      </Button>
+    </Flex>
+  </Story>
+</Preview>
+
+## States
+
+Use the `disabled` property to conditionally disable the button if necessary.
+
+<Preview withToolbar>
+  <Story name="disabled">
+    <Button disabled>Disabled Button</Button>
+  </Story>
+</Preview>
+
+## Displaying Icons
+
+Buttons can contain a combination of a label and an icon; The `icon` property gives you the ability to pass in an icon component to be rendered with the button's text. The `iconPosition` property will let you specifiy the positioning of the icon.
+
+<Preview withToolbar>
+  <Story name="with icon">
+    <Flex alignItems="center">
+      <Button icon={<SearchIcon />}>Search Button</Button>
+      <Spacer right scale={2} />
+      <Button icon={<SearchIcon />} iconPosition="right">
+        Search Button
+      </Button>
+      <Spacer right scale={2} />
+      <Button icon={<SearchIcon />} iconPosition="top">
+        Search Button
+      </Button>      
+      <Spacer right scale={2} />
+      <Button icon={<SearchIcon />} iconPosition="bottom">
+        Search Button
+      </Button>
+    </Flex>
+  </Story>
+</Preview>

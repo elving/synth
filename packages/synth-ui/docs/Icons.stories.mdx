@@ -1,0 +1,62 @@
+import { Fragment } from 'react'
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import {
+  AdminIcon,
+  ArtistIcon,
+  CheckIcon,
+  ChevronDownIcon,
+  CloseIcon,
+  Icon,
+  InboxIcon,
+  LogoutIcon,
+  SearchIcon,
+  Spacer,
+} from '../src'
+
+<Meta title="synth-ui|Icons" component={Icon} />
+
+# Icon
+
+The `<Icon>` component is used to build different icon components.
+
+<Preview>
+  <Story name="intro">
+    <SearchIcon scale={5} />
+  </Story>
+</Preview>
+
+## Props
+
+| Name      | Description                                                       | Type                           | Default |
+| :-------- | :---------------------------------------------------------------- | :----------------------------- | :------ |
+| className | Required to properly extend styled-components.                    | `string`                       | `''`    |
+| children  | The icon's markup.                                                | `React.ReactNode`              | `null`  |
+| ref       | A React `ref` object that will point to the button's DOM element. | `React.Ref<HTMLButtonElement>` | `null`  |
+| scale     | A scale index from the `icons` synth token.                       | `number`                       | `0`     |
+
+## Icons
+
+We currently use the open sourced icons from [Google Material Design](https://material.io/resources/icons).
+
+<Preview withToolbar>
+  <Story name="icons">
+    <Fragment>
+      <AdminIcon scale={3} />
+      <Spacer inline right scale={3} />
+      <ArtistIcon scale={3} />
+      <Spacer inline right scale={3} />
+      <CheckIcon scale={3} />
+      <Spacer inline right scale={3} />
+      <ChevronDownIcon scale={3} />
+      <Spacer inline right scale={3} />
+      <CloseIcon scale={3} />
+      <Spacer inline right scale={3} />
+      <InboxIcon scale={3} />
+      <Spacer inline right scale={3} />
+      <LogoutIcon scale={3} />
+      <Spacer inline right scale={3} />
+      <SearchIcon scale={3} />
+    </Fragment>
+  </Story>
+</Preview>

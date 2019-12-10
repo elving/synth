@@ -2,18 +2,19 @@
   "name": "@beatgig/synth-css",
   "version": "1.0.1",
   "description": "CSS bindings for Synth.",
-  "author": "Elving Rodriguez <elving.pr@gmail.com>",
+  "author": "BeatGig Engineering <engineering@beatgig.com>",
   "homepage": "",
   "license": "ISC",
   "main": "dist/commonjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
     "dist/commonjs",
-    "dist/esm"
+    "dist/esm",
+    "src"
   ],
   "directories": {
     "lib": "src",
-    "test": "__tests__"
+    "test": "tests"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
@@ -21,5 +22,6 @@
   "sideEffects": false,
   "dependencies": {
     "@beatgig/synth-core": "^1.0.1"
-  }
+  },
+  "types": "src/index.d.ts"
 }

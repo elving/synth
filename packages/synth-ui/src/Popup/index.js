@@ -1,2 +1,2 @@
-export { default as Popup } from './src/Popup'
-export { default as usePopup } from './src/usePopup'
+export { default as Popup } from './Popup'
+export { default as usePopup } from './usePopup'

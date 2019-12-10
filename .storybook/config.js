@@ -1,39 +1,26 @@
+import React, { Fragment } from 'react'
+import ReactDOM from 'react-dom'
+import styled from 'styled-components'
 import { addDecorator, addParameters, configure } from '@storybook/react'
-import { createGlobalStyle } from 'styled-components'
-import { Fragment } from 'react'
-import React from 'react'
+import { renderToString } from 'react-dom/server'
+import { themes } from '@storybook/theming'
 
-import { getTokenValue } from '../packages/synth-core'
-import { tokens } from '../packages/synth-tokens'
-
-const files = require.context('../packages', true, /.story.js$/)
-
-const GlobalStyles = createGlobalStyle`
-  body, html {
-    padding: 0;
-    margin: 0;
-  }
-`
-
-const loadStories = () => {
-  addDecorator((story) => (
-    <Fragment>
-      <GlobalStyles />
-      {story()}
-    </Fragment>
-  ))
-
-  files.keys().forEach((filename) => files(filename))
-}
+import StylesOverride from './styles'
+import { BaseStyles, Flex, FullLogo } from '../packages/synth-ui/src'
+import { getTokenValue } from '../packages/synth-core/src'
+import { tokens } from '../packages/synth-tokens/src'
 
 const colorNames = [
   'Porcelain',
   'Thunder',
   'BalticSea',
   'Shark',
+  'Tuna',
   'Mako',
   'Abbey',
   'ShuttleGray',
+  'Stone',
+  'Oslo',
 ]
 
 addParameters({
@@ -44,4 +31,41 @@ addParameters({
   })),
 })
 
-configure(loadStories, module)
+addParameters({
+  options: {
+    theme: {
+      ...themes.dark,
+      brandTitle: 'Synth',
+      brandUrl: 'https://beatgig.com',
+      brandImage: `data:image/svg+xml;base64,${btoa(
+        renderToString(<FullLogo height={30} width="100%" />),
+      )}`,
+      appBg: getTokenValue(tokens, '@Shark'),
+      appContentBg: getTokenValue(tokens, '@Thunder'),
+      colorSecondary: getTokenValue(tokens, '@Tuna'),
+      barBg: getTokenValue(tokens, '@BalticSea'),
+      barTextColor: getTokenValue(tokens, '@Oslo'),
+      barSelectedColor: getTokenValue(tokens, '@BeatGig'),
+    },
+  },
+})
+
+const StoryContainer = styled(Flex)`
+  position: relative;
+`
+
+addDecorator((story) => (
+  <StoryContainer center full>
+    {story()}
+  </StoryContainer>
+))
+
+ReactDOM.render(
+  <Fragment>
+    <BaseStyles />
+    <StylesOverride />
+  </Fragment>,
+  document.getElementById('root'),
+)
+
+configure(require.context('../packages', true, /\.stories\.(js|mdx)$/), module)

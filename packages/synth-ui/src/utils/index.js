@@ -1,4 +1,5 @@
-export { default as baseStyles } from './baseStyles'
+export { default as setBaseStyles } from './setBaseStyles'
 export { default as noop } from './noop'
 export { default as ScrollIntoView } from './ScrollIntoView'
-export { fromProps } from './fromProps'
+export { default as styleProp } from './styleProp'
+export { default as withForwardedRef } from './withForwardedRef'

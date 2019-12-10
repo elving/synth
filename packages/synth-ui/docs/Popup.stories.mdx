@@ -1,0 +1,193 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { Flex, Grid, GridItem, Popup } from '../src'
+import { Box, PopupWithHook, PopupWrapper } from './utils'
+
+<Meta title="synth-ui|Popups/Popup" component={Popup} />
+
+# Popup
+
+The `<Popup>` is a variant of the `<Card>` component used to display contextual information upon a user's interaction (hover, click, etc.).
+
+<Preview>
+  <Story name="intro">
+    <Box bg="transparent" height="100px">
+      <Popup renderInPlace>
+        <Text>A popup</Text>
+      </Popup>
+    </Box>
+  </Story>
+</Preview>
+
+## Props
+
+| Name                | Description                                                                                                                                   | Type                        | Default    |
+| :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------- | :--------- |
+| children            | The elements you want to display within the modal.                                                                                            | `React.ReactNode`           | `null`     |
+| className           | Required to properly extend styled-components.                                                                                                | `string`                    | `''`       |
+| close               | A function used to close the modal when clicking on it's overlay background. This function will generally be provided by the `usePopup` hook. | `function`                  | `() => {}` |
+| closeOnOverlayClick | A boolean flag to determine if the modal should be closed when clicking on it's overlay background.                                           | `boolean`                   | `false`    |
+| onOverlayClick      | A callback function that is called whenever the user clicks on the modal's overlay background.                                                | `function`                  | `() => {}` |
+| ref                 | A React `ref` object that will point to the modal's DOM element.                                                                              | `React.Ref<HTMLDivElement>` | `null`     |
+
+## Positioning with the `usePopup` Hook
+
+The `usePopup` hook is used to position a `<Popup>` component around a specific component:
+
+### Hook Options
+
+| Name            | Description                                                                                           | Type       | Default    |
+| :-------------- | :---------------------------------------------------------------------------------------------------- | :--------- | :--------- |
+| isOpenByDefault | Flag that determines if the popup is visible or not.                                                  | `boolean`  | `false`    |
+| onClickOutside  | Callback function that gets called whenever the user clicks outside of the popup **and** it's target. | `function` | `() => {}` |
+| onClose         | Callback function that gets called whenever the popup is closed.                                      | `function` | `() => {}` |
+| onToggle        | Callback function that gets called whenever the popup is toggled.                                     | `function` | `() => {}` |
+
+### Hook Return Value
+
+| Name       | Description                                                 | Type                                                                          |
+| :--------- | :---------------------------------------------------------- | :---------------------------------------------------------------------------- |
+| close      | Function used to close the popup.                           | `function`                                                                    |
+| isOpen     | Boolean flag to determine whether or not the popup is open. | `boolean`                                                                     |
+| open       | Function used to open the popup.                            | `function`                                                                    |
+| popupRef   | React ref pointing to the popup DOM element.                | `React.Ref<SynthCardComponent \| SynthModalComponent \| SynthPopupComponent>` |
+| props      | Props to be passed on to the popup component.               | `object`                                                                      |
+| toggle     | Function used to toggle the popup.                          | `function`                                                                    |
+| triggerRef | React ref pointing to the trigger DOM element.              | `React.Ref<any>`                                                              |
+
+### Available Popup Positions
+
+<Preview>
+  <Story name="positions">
+    <Grid columns={3}>
+      <GridItem>
+        <Flex full center>
+          <PopupWithHook x="left" y="bottom" triggerLabel="left-bottom" />
+        </Flex>
+      </GridItem>
+      <GridItem>
+        <Flex full center>
+          <PopupWithHook
+            x="left"
+            xOffset={-10}
+            y="bottom"
+            yOffset={10}
+            triggerLabel="left-bottom with offset"
+          />
+        </Flex>
+      </GridItem>
+      <GridItem>
+        <Flex full center>
+          <PopupWithHook x="center" y="bottom" triggerLabel="center-bottom" />
+        </Flex>
+      </GridItem>
+      <GridItem>
+        <Flex full center>
+          <PopupWithHook
+            x="center"
+            xOffset="-30px"
+            y="bottom"
+            yOffset={5}
+            triggerLabel="center-bottom with offset"
+          />
+        </Flex>
+      </GridItem>
+      <GridItem>
+        <Flex full center>
+          <PopupWithHook x="right" y="bottom" triggerLabel="right-bottom" />
+        </Flex>
+      </GridItem>
+      <GridItem>
+        <Flex full center>
+          <PopupWithHook
+            x="right"
+            xOffset={-30}
+            y="bottom"
+            yOffset={10}
+            triggerLabel="right-bottom with offset"
+          />
+        </Flex>
+      </GridItem>
+      <GridItem>
+        <Flex full center>
+          <PopupWithHook x="left" y="top" triggerLabel="left-top" />
+        </Flex>
+      </GridItem>
+      <GridItem>
+        <Flex full center>
+          <PopupWithHook
+            x="left"
+            xOffset={-30}
+            y="top"
+            yOffset="-5%"
+            triggerLabel="left-top with offset"
+          />
+        </Flex>
+      </GridItem>
+      <GridItem>
+        <Flex full center>
+          <PopupWithHook x="center" y="top" triggerLabel="center-top" />
+        </Flex>
+      </GridItem>
+      <GridItem>
+        <Flex full center>
+          <PopupWithHook
+            x="center"
+            xOffset={-10}
+            y="top"
+            yOffset={15}
+            triggerLabel="center-top with offset"
+          />
+        </Flex>
+      </GridItem>
+      <GridItem>
+        <Flex full center>
+          <PopupWithHook x="right" y="top" triggerLabel="right-top" />
+        </Flex>
+      </GridItem>
+      <GridItem>
+        <Flex full center>
+          <PopupWithHook
+            x="right"
+            xOffset={10}
+            y="top"
+            yOffset={10}
+            triggerLabel="right-top with offset"
+          />
+        </Flex>
+      </GridItem>
+      <GridItem>
+        <Flex full center>
+          <PopupWithHook x="left" y="center" triggerLabel="left-center" />
+        </Flex>
+      </GridItem>
+      <GridItem>
+        <Flex full center>
+          <PopupWithHook
+            x="left"
+            xOffset={-5}
+            y="center"
+            yOffset={-5}
+            triggerLabel="left-center with offset"
+          />
+        </Flex>
+      </GridItem>
+      <GridItem>
+        <Flex full center>
+          <PopupWithHook x="right" y="center" triggerLabel="right-center" />
+        </Flex>
+      </GridItem>
+      <GridItem>
+        <Flex full center>
+          <PopupWithHook
+            x="right"
+            xOffset={-10}
+            y="center"
+            yOffset={-15}
+            triggerLabel="right-center with offset"
+          />
+        </Flex>
+      </GridItem>
+    </Grid>
+  </Story>
+</Preview>

@@ -1,0 +1,123 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { Grid, GridItem } from '../src'
+import { Box } from './utils'
+
+<Meta title="synth-ui|Layout/Grid" component={Grid} />
+
+# Grid
+
+The `<Grid>` component lays out `<GridItem>` components in columns of equal horizontal space.
+
+<Preview>
+  <Story name="intro">
+    <div style={{ maxWidth: 480, width: '100%' }}>
+      <Grid columns={4}>
+        <GridItem>
+          <Box bg="Silver" width="100%">
+            First
+          </Box>
+        </GridItem>
+        <GridItem>
+          <Box bg="DarkGrey" width="100%">
+            Second
+          </Box>
+        </GridItem>
+        <GridItem>
+          <Box bg="Grey" width="100%">
+            Third
+          </Box>
+        </GridItem>
+        <GridItem>
+          <Box bg="DimGrey" width="100%">
+            Fourth
+          </Box>
+        </GridItem>
+      </Grid>
+      <Grid columns={3}>
+        <GridItem>
+          <Box bg="Silver" width="100%">
+            First
+          </Box>
+        </GridItem>
+        <GridItem>
+          <Box bg="DarkGrey" width="100%">
+            Second
+          </Box>
+        </GridItem>
+        <GridItem>
+          <Box bg="Grey" width="100%">
+            Third
+          </Box>
+        </GridItem>
+      </Grid>
+      <Grid columns={2}>
+        <GridItem>
+          <Box bg="Silver" width="100%">
+            First
+          </Box>
+        </GridItem>
+        <GridItem>
+          <Box bg="DarkGrey" width="100%">
+            Second
+          </Box>
+        </GridItem>
+      </Grid>
+      <Grid columns={1}>
+        <GridItem>
+          <Box bg="Silver" width="100%">
+            First
+          </Box>
+        </GridItem>
+      </Grid>
+    </div>
+  </Story>
+</Preview>
+
+## Props
+
+| Name      | Description                                                                      | Type                           | Default |
+| :-------- | :------------------------------------------------------------------------------- | :----------------------------- | :------ |
+| children  | The elements you want to display within this component.                          | `React.ReactNode`              | `null`  |
+| className | Required to properly extend styled-components.                                   | `string`                       | `''`    |
+| columns   | The number of columns you want to display                                        | `number`                       | `0`     |
+| icon      | An optional icon component that can be rendered along side the button's content. | `React.ReactElement`           | `null`  |
+| ref       | A React `ref` object that will point to the button's DOM element.                | `React.Ref<HTMLButtonElement>` | `null`  |
+
+## Grid Item Wrapping
+
+You can control how `<GridItem>` wrap around by changing the `columns` property on their parent `<Grid>` component.
+
+<Preview>
+  <Story name="columns">
+    <div style={{ maxWidth: 480, width: '100%' }}>
+      <Grid columns={2}>
+        <GridItem>
+          <Box bg="Silver" width="100%">
+            First
+          </Box>
+        </GridItem>
+        <GridItem>
+          <Box bg="DarkGrey" width="100%">
+            Second
+          </Box>
+        </GridItem>
+        <GridItem>
+          <Box bg="Grey" width="100%">
+            Third
+          </Box>
+        </GridItem>
+        <GridItem>
+          <Box bg="DimGrey" width="100%">
+            Fourth
+          </Box>
+        </GridItem>
+        <GridItem>
+          <Box bg="Silver" width="100%">
+            Fifth
+          </Box>
+        </GridItem>
+      </Grid>
+    </div>
+  </Story>
+</Preview>

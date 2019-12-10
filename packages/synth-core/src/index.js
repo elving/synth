@@ -1,12 +1,12 @@
-export { getCSSDeclaration } from './getCSSDeclaration'
-export { getCSSProperty } from './getCSSProperty'
-export { getTokenParts } from './getTokenParts'
-export { getTokenValue } from './getTokenValue'
-export { isGlobalToken } from './isGlobalToken'
-export { isTokenDeclaration } from './isTokenDeclaration'
-export { isTokenName } from './isTokenName'
-export { isTokenType } from './isTokenType'
-export { unit } from './unit'
+export { default as getCSSDeclaration } from './getCSSDeclaration'
+export { default as getCSSProperty } from './getCSSProperty'
+export { default as getTokenParts } from './getTokenParts'
+export { default as getTokenValue } from './getTokenValue'
+export { default as isGlobalToken } from './isGlobalToken'
+export { default as isTokenDeclaration } from './isTokenDeclaration'
+export { default as isTokenName } from './isTokenName'
+export { default as isTokenType } from './isTokenType'
+export { default as unit } from './unit'
 
 export {
   TOKEN_CATEGORIES,

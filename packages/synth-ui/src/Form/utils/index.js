@@ -1,0 +1,6 @@
+export { default as setAlignItems } from './setAlignItems'
+export { default as setChildMargin } from './setChildMargin'
+export { default as setChildWidth } from './setChildWidth'
+export { default as setFlexDirection } from './setFlexDirection'
+export { default as setJustifyContent } from './setJustifyContent'
+export { default as setTextAlign } from './setTextAlign'

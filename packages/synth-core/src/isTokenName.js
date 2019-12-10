@@ -1,31 +1,10 @@
-import { isGlobalToken } from './isGlobalToken'
-import { isTokenType } from './isTokenType'
+import { isString } from '@beatgig/is'
 
-/**
- * Validates that the given value is a valid Synth token name.
- *
- * @since 1.0.0
- * @param {string} tokenName
- * @returns {boolean}
- * @example
- *
- * isTokenName('color:text:button')
- * // => true
- *
- * isTokenName('color:text:button:hover')
- * // => true
- *
- * isTokenName('@lightGrey')
- * // => true
- *
- * isTokenName('hello:world:button')
- * // => false
- *
- * isTokenName('hello')
- * // => false
- */
-export const isTokenName = (tokenName) => {
-  if (typeof tokenName !== 'string') {
+import isGlobalToken from './isGlobalToken'
+import isTokenType from './isTokenType'
+
+const isTokenName = (tokenName) => {
+  if (!isString(tokenName)) {
     return false
   }
 
@@ -37,7 +16,7 @@ export const isTokenName = (tokenName) => {
     return false
   }
 
-  const [category, property, name] = tokenName.split(':')
-
-  return name != undefined
+  return true
 }
+
+export default isTokenName

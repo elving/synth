@@ -1,0 +1,11 @@
+# dependencies
+/node_modules
+
+# testing
+packages/**/tests
+
+# build
+packages/**/dist
+
+# generated
+packages/**/docs

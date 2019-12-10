@@ -1,0 +1,37 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { Box } from './utils'
+import { Input, Spacer } from '../src'
+
+<Meta title="synth-ui|Forms/Input" component={Input} />
+
+# Input
+
+The `<Input>` component allows users to enter, select, and search for text on forms and other interactive scenarios.
+
+<Preview withToolbar>
+  <Story name="intro">
+    <Input placeholder="email@example.com..." />
+  </Story>
+</Preview>
+
+## Props
+
+| Name      | Description                                                      | Type                          | Default |
+| :-------- | :--------------------------------------------------------------- | :---------------------------- | :------ |
+| className | Required to properly extend styled-components.                   | `string`                      | `''`    |
+| ref       | A React `ref` object that will point to the input's DOM element. | `React.Ref<HTMLInputElement>` | `null`  |
+
+## States
+
+The `<Input>` component supports multiple states to give users more context as to what is currently happening.
+
+<Preview withToolbar>
+  <Story name="states">
+    <div>
+      <Input hasError placeholder="error" />
+      <Spacer bottom scale={2} />
+      <Input disabled placeholder="disabled" />
+    </div>
+  </Story>
+</Preview>

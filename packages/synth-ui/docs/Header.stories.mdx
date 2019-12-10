@@ -1,0 +1,40 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import {
+  Avatar,
+  Button,
+  ChevronDownIcon,
+  Clickable,
+  Flex,
+  Header,
+  HeaderLink,
+  LogoutIcon,
+  MiniLogo,
+  SearchInput,
+  Spacer,
+} from '../src'
+
+<Meta title="synth-ui|Header" component={Header} />
+
+# Header
+
+The `<Header>` component along with it's children components provides the building block for top navigation headers.
+
+<Preview>
+  <Story name="intro">
+    <Header>
+      <Flex alignItems="center">
+        <MiniLogo height={40} />
+        <Spacer inline right scale={5} />
+        <HeaderLink href="#">Artists</HeaderLink>
+        <Spacer inline right scale={3} />
+        <HeaderLink href="#">Genres</HeaderLink>
+      </Flex>
+      <Flex alignItems="center">
+        <SearchInput />
+        <Spacer inline right scale={3} />
+        <Avatar scale={1} src="https://i.pravatar.cc/40" />
+      </Flex>
+    </Header>
+  </Story>
+</Preview>

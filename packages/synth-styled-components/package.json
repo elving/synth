@@ -2,21 +2,29 @@
   "name": "@beatgig/synth-styled-components",
   "version": "1.0.1",
   "description": "styled-components bindings for Synth",
-  "author": "Elving Rodriguez <elving.pr@gmail.com>",
+  "author": "BeatGig Engineering <engineering@beatgig.com>",
   "homepage": "",
   "license": "ISC",
   "main": "dist/commonjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
     "dist/commonjs",
-    "dist/esm"
+    "dist/esm",
+    "src"
   ],
+  "peerDependencies": {
+    "@beatgig/synth-react": "^1.0.2",
+    "react-dom": "^16.0.0",
+    "react": "^16.0.0",
+    "styled-components": "^4.4.1"
+  },
   "directories": {
     "lib": "src",
-    "test": "__tests__"
+    "test": "tests"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "types": "src/index.d.ts"
 }

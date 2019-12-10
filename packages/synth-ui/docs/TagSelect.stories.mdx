@@ -1,0 +1,110 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { tags } from './utils'
+import { FormRow, TagSelect } from '../src'
+
+<Meta title="synth-ui|Forms/TagSelect" component={TagSelect} />
+
+# TagSelect
+
+The `<TagSelect>` component is used to highlight text.
+
+<Preview withToolbar>
+  <Story name="intro">
+    <div style={{ width: '100%', maxWidth: 380 }}>
+      <FormRow fullWidth>
+        <TagSelect tags={tags} popupProps={{ container: document.body }} />
+      </FormRow>
+    </div>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={TagSelect} />
+
+Use the `placeholder` property to supply a Placeholder text to the search input.
+
+<Preview withToolbar>
+  <Story name="placeholder">
+    <div style={{ width: '100%', maxWidth: 380 }}>
+      <FormRow fullWidth>  
+        <TagSelect 
+          placeholder="Select some tags..." 
+          popupProps={{ container: document.body }} 
+          tags={tags} 
+        />
+      </FormRow>
+    </div>        
+  </Story>
+</Preview>
+
+To populate pre-selected tags, pass in a array of tags via the `defaultSelected` property.
+
+<Preview withToolbar>
+  <Story name="defaultSelected">
+    <div style={{ width: '100%', maxWidth: 380 }}>
+      <FormRow fullWidth>    
+        <TagSelect 
+          defaultSelected={[tags[1], tags[3], tags[4]]} 
+          popupProps={{ container: document.body }}
+          tags={tags} 
+        />
+      </FormRow>
+    </div>              
+  </Story>
+</Preview>
+
+You can give users the ability to create their own values by using the `canCreateTags` property.
+
+<Preview withToolbar>
+  <Story name="canCreateTags">
+    <div style={{ width: '100%', maxWidth: 380 }}>
+      <FormRow fullWidth>      
+        <TagSelect 
+          canCreateTags 
+          placeholder="Select some tags..." 
+          popupProps={{ container: document.body }}
+          tags={tags} 
+        />
+      </FormRow>
+    </div>              
+  </Story>
+</Preview>
+
+Use the `single` property to only allow **one** value to be selected at a time.
+
+<Preview withToolbar>
+  <Story name="single">
+    <div style={{ width: '100%', maxWidth: 380 }}>
+      <FormRow fullWidth>        
+        <TagSelect
+          canCreateTags
+          placeholder="Select some tags..."
+          popupProps={{ container: document.body }}
+          single
+          tags={tags}
+        />
+      </FormRow>
+    </div>                      
+  </Story>
+</Preview>
+
+You can listen to events whenever a tag is selected, removed or created by using the `onTagCreated` and `onTagsUpdated` properties.
+
+<Preview withToolbar>
+  <Story name="events">
+    <div style={{ width: '100%', maxWidth: 380 }}>
+      <FormRow fullWidth>          
+        <TagSelect
+          canCreateTags
+          onTagCreated={(tag) => console.log('onTagCreated', tag)}
+          onTagsUpdated={(tags) => console.log('onTagsUpdated', tags)}
+          placeholder="Select some tags..."
+          popupProps={{ container: document.body }}
+          tags={tags}
+        />
+      </FormRow>
+    </div>              
+  </Story>
+</Preview>
