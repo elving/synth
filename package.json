@@ -51,7 +51,8 @@
     "typescript": "^3.7.3"
   },
   "scripts": {
-    "bootstrap": "rm -rf ./node_modules && yarn && lerna bootstrap --use-workspaces",
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "bootstrap:ci": "lerna bootstrap --use-workspaces --ci --force-local",
     "build:commonjs": "lerna exec --parallel -- BABEL_ENV=commonjs babel --root-mode upward src --out-dir dist/commonjs --ignore tests,docs --source-maps inline",
     "build:esm": "lerna exec --parallel -- BABEL_ENV=esm babel --root-mode upward src --out-dir dist/esm --ignore tests,docs --source-maps inline",
     "build:watch": "rm -rf ./packages/**/dist && concurrently --names 'commonjs,esm' 'yarn build:commonjs -w' 'yarn build:esm -w'",
