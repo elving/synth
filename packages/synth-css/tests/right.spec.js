@@ -18,4 +18,8 @@ describe('right', () => {
     expect(right(tokens, 'card_close_button')).toEqual('right: 15px;')
     expect(right(tokens, 'card_close_button:disabled')).toEqual('right: 25px;')
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => right({}, 'card_close_button:disabled')).toThrow()
+  })
 })

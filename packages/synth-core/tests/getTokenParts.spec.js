@@ -15,6 +15,13 @@ describe('getTokenParts', () => {
       name: 'button',
       property: 'background',
     })
+
+    expect(getTokenParts('@globalName')).toEqual({
+      category: 'global',
+      modifier: 'default',
+      name: 'globalName',
+      property: '',
+    })
   })
 
   test('throws error when given an invalid token name', () => {

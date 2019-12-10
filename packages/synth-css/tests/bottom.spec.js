@@ -20,4 +20,8 @@ describe('bottom', () => {
       'bottom: 25px;',
     )
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => bottom({}, 'card_close_button:disabled')).toThrow()
+  })
 })

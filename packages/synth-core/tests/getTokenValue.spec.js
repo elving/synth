@@ -43,6 +43,7 @@ const tokens = {
   space: {
     padding: {
       primary_button: '5 @mediumSpace',
+      secondaryBtn: ['5px', '@mediumSpace'],
     },
   },
 
@@ -97,11 +98,22 @@ describe('getTokenValue', () => {
   })
 
   test('gets array token value', () => {
+    expect(getTokenValue(tokens, 'space:padding:secondaryBtn')).toEqual(
+      '5px 15',
+    )
+  })
+
+  test('gets interpolation token value', () => {
     expect(getTokenValue(tokens, '@fontSizes')).toEqual(12)
     expect(getTokenValue(tokens, '@fontSizes.2')).toEqual(16)
     expect(getTokenValue(tokens, 'space:padding:primary_button')).toEqual(
       '5 15',
     )
+  })
+
+  test("returns an empty string if it doesn't find any token values", () => {
+    expect(getTokenValue(tokens, '@nope')).toEqual('')
+    expect(getTokenValue(tokens, 'space:padding:nope')).toEqual('')
   })
 
   test('throws error when given an invalid token declarations object', () => {

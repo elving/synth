@@ -21,4 +21,8 @@ describe('minHeight', () => {
       'min-height: 100%;',
     )
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => minHeight({}, 'primaryButton:hover')).toThrow()
+  })
 })

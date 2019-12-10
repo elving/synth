@@ -24,4 +24,8 @@ describe('textTransform', () => {
       'text-transform: uppercase;',
     )
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => textTransform({}, 'menuLink:hover')).toThrow()
+  })
 })

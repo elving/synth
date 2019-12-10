@@ -44,4 +44,8 @@ describe('border', () => {
       'border-width: 2px; border-style: solid; border-color: #111;',
     )
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => border({}, 'default_button')).toThrow()
+  })
 })

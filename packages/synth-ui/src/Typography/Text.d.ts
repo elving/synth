@@ -27,6 +27,7 @@ interface TextProps {
 type TextComponentProps = React.HTMLAttributes<HTMLSpanElement> &
   React.RefAttributes<HTMLSpanElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & TextProps
 
 type TextComponent = SynthReact.SynthComponent<

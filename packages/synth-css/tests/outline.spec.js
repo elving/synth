@@ -53,4 +53,8 @@ describe('outline', () => {
       'outline-width: 3px; outline-style: solid; outline-color: #222; outline-offset: 3px;',
     )
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => outline({}, 'modalInput:focus')).toThrow()
+  })
 })

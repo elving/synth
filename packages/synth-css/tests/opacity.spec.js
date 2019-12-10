@@ -18,4 +18,8 @@ describe('opacity', () => {
     expect(opacity(tokens, 'form_button')).toEqual('opacity: 1;')
     expect(opacity(tokens, 'form_button:disabled')).toEqual('opacity: 0.5;')
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => opacity({}, 'form_button')).toThrow()
+  })
 })

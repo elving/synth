@@ -24,4 +24,8 @@ describe('boxShadow', () => {
       'box-shadow: 0 0 3px #333;',
     )
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => boxShadow({}, 'textInput:focus')).toThrow()
+  })
 })

@@ -18,4 +18,8 @@ describe('padding', () => {
     expect(padding(tokens, 'primaryButton')).toEqual('padding: 10px 15px;')
     expect(padding(tokens, 'primaryButton:hover')).toEqual('padding: 15%;')
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => padding({}, 'primaryButton:hover')).toThrow()
+  })
 })

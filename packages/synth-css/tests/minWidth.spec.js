@@ -18,4 +18,8 @@ describe('minWidth', () => {
     expect(minWidth(tokens, 'primaryButton')).toEqual('min-width: 120px;')
     expect(minWidth(tokens, 'primaryButton:hover')).toEqual('min-width: 100%;')
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => minWidth({}, 'primaryButton:hover')).toThrow()
+  })
 })

@@ -16,9 +16,7 @@ const isTokenName = (tokenName) => {
     return false
   }
 
-  const [category, property, name] = tokenName.split(':')
-
-  return name != undefined
+  return true
 }
 
 export default isTokenName

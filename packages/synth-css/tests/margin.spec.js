@@ -18,4 +18,8 @@ describe('margin', () => {
     expect(margin(tokens, 'primaryButton')).toEqual('margin: 10%;')
     expect(margin(tokens, 'primaryButton:hover')).toEqual('margin: 25%;')
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => margin({}, 'primaryButton:hover')).toThrow()
+  })
 })

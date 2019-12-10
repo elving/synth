@@ -18,4 +18,8 @@ describe('height', () => {
     expect(height(tokens, 'button')).toEqual('height: 100%;')
     expect(height(tokens, 'button:hover')).toEqual('height: 120%;')
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => height({}, 'button')).toThrow()
+  })
 })

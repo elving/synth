@@ -15,14 +15,14 @@ interface ParagraphProps extends TextProps {
   className?: string
 }
 
-type ParagraphComponentProps = React.HTMLAttributes<HTMLElement> &
-  React.RefAttributes<HTMLElement> & {
+type ParagraphComponentProps = React.HTMLAttributes<HTMLParagraphElement> &
+  React.RefAttributes<HTMLParagraphElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & ParagraphProps
 
 type ParagraphComponent = SynthReact.SynthComponent<
   ParagraphComponentProps,
-  HTMLElement
+  HTMLParagraphElement
 >
 
 /**

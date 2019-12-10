@@ -7,7 +7,10 @@ describe('isTokenName', () => {
   })
 
   test('returns false if the given value is not a valid token name', () => {
-    expect(isTokenName('color:text')).toBeFalsy()
+    expect(isTokenName(null)).toBeFalsy()
+    expect(isTokenName(undefined)).toBeFalsy()
+    expect(isTokenName([])).toBeFalsy()
+    expect(isTokenName({})).toBeFalsy()
     expect(isTokenName('hello:world:button')).toBeFalsy()
     expect(isTokenName('hello')).toBeFalsy()
   })

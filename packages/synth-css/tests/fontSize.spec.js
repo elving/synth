@@ -21,4 +21,8 @@ describe('fontFamily', () => {
       'font-family: arial;',
     )
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => fontFamily({}, 'text_field:disabled')).toThrow()
+  })
 })

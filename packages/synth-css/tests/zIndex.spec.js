@@ -18,4 +18,8 @@ describe('zIndex', () => {
     expect(zIndex(tokens, 'card_close_button')).toEqual('z-index: 1;')
     expect(zIndex(tokens, 'card_close_button:hover')).toEqual('z-index: 5;')
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => zIndex({}, 'card_close_button')).toThrow()
+  })
 })

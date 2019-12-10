@@ -18,4 +18,8 @@ describe('width', () => {
     expect(width(tokens, 'primaryButton')).toEqual('width: 120px;')
     expect(width(tokens, 'primaryButton:hover')).toEqual('width: 100%;')
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => width({}, 'primaryButton')).toThrow()
+  })
 })

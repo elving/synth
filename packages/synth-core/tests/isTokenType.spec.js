@@ -7,6 +7,10 @@ describe('isTokenType', () => {
   })
 
   test('returns false if the given value is not a valid token type', () => {
+    expect(isTokenType(undefined)).toBeFalsy()
+    expect(isTokenType(null)).toBeFalsy()
+    expect(isTokenType({})).toBeFalsy()
+    expect(isTokenType([])).toBeFalsy()
     expect(isTokenType('hello:world')).toBeFalsy()
     expect(isTokenType('hello')).toBeFalsy()
   })

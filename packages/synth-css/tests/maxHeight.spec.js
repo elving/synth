@@ -21,4 +21,8 @@ describe('maxHeight', () => {
       'max-height: 100%;',
     )
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => maxHeight({}, 'primaryButton:hover')).toThrow()
+  })
 })

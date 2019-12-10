@@ -18,4 +18,8 @@ describe('maxWidth', () => {
     expect(maxWidth(tokens, 'primaryButton')).toEqual('max-width: 120px;')
     expect(maxWidth(tokens, 'primaryButton:hover')).toEqual('max-width: 100%;')
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => maxWidth({}, 'primaryButton:hover')).toThrow()
+  })
 })

@@ -21,11 +21,13 @@ const getCSSDeclaration = (tokens, tokenName) => {
   }
 
   const { category, property, name } = getTokenParts(tokenName)
+  const tokenValue = getTokenValue(tokens, tokenName)
 
-  const tokenValue = getTokenValue(
-    tokens,
-    isGlobalToken(name) ? name : tokenName,
-  )
+  console.log(name, isGlobalToken(name))
+
+  if (isGlobalToken(tokenName)) {
+    return tokenValue
+  }
 
   return `${getCSSProperty(`${category}:${property}`)}: ${
     TOKEN_PROPERTY_CSS_LENGTH.includes(property)

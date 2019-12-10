@@ -24,4 +24,8 @@ describe('backgroundColor', () => {
       'background-color: #111;',
     )
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => backgroundColor({}, 'primaryButton:hover')).toThrow()
+  })
 })

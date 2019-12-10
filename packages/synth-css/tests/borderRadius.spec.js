@@ -24,4 +24,8 @@ describe('borderRadius', () => {
       'border-radius: 0px;',
     )
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => borderRadius({}, 'primary_button:disabled')).toThrow()
+  })
 })

@@ -18,4 +18,8 @@ describe('top', () => {
     expect(top(tokens, 'card_close_button')).toEqual('top: 15px;')
     expect(top(tokens, 'card_close_button:disabled')).toEqual('top: 25px;')
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => top({}, 'card_close_button')).toThrow()
+  })
 })

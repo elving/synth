@@ -21,4 +21,8 @@ describe('lineHeight', () => {
       'line-height: 1.65;',
     )
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => lineHeight({}, 'menu_link:disabled')).toThrow()
+  })
 })

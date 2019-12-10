@@ -24,4 +24,8 @@ describe('textDecoration', () => {
       'text-decoration: underline;',
     )
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => textDecoration({}, 'menu_link:hover')).toThrow()
+  })
 })

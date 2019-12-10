@@ -21,4 +21,8 @@ describe('letterSpacing', () => {
       'letter-spacing: 4px;',
     )
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => letterSpacing({}, 'menuLink')).toThrow()
+  })
 })

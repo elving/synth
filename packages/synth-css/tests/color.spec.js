@@ -18,4 +18,8 @@ describe('color', () => {
     expect(color(tokens, 'caption')).toEqual('color: #333;')
     expect(color(tokens, 'caption:hover')).toEqual('color: #555;')
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => color({}, 'caption:hover')).toThrow()
+  })
 })

@@ -18,4 +18,8 @@ describe('left', () => {
     expect(left(tokens, 'card_close_button')).toEqual('left: 15px;')
     expect(left(tokens, 'card_close_button:disabled')).toEqual('left: 25px;')
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => left({}, 'card_close_button')).toThrow()
+  })
 })

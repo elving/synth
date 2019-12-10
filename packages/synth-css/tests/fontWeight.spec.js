@@ -18,4 +18,8 @@ describe('fontWeight', () => {
     expect(fontWeight(tokens, 'menuLink')).toEqual('font-weight: 300;')
     expect(fontWeight(tokens, 'menuLink:hover')).toEqual('font-weight: 600;')
   })
+
+  test('fails if given an invalid token declaration', () => {
+    expect(() => fontWeight({}, 'menuLink:hover')).toThrow()
+  })
 })
