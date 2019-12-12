@@ -1,6 +1,6 @@
 {
   "name": "@beatgig/synth-styled-components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "styled-components bindings for Synth",
   "author": "BeatGig Engineering <engineering@beatgig.com>",
   "homepage": "",
@@ -14,8 +14,8 @@
   ],
   "peerDependencies": {
     "@beatgig/synth-react": "^1.0.2",
-    "react-dom": "^16.0.0",
     "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "styled-components": "^4.4.1"
   },
   "directories": {
