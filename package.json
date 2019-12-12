@@ -64,7 +64,7 @@
     "lint:tsc": "lerna exec --parallel -- tsc -p ./tsconfig.json",
     "lint": "yarn lint:eslint && yarn lint:tsc",
     "prepublishOnly": "yarn build && yarn docs",
-    "publish": "lerna publish --conventional-commits -m \"chore(release): publish %s\"",
+    "lerna:publish": "lerna publish --conventional-commits -m \"chore(release): publish %s\"",
     "test": "yarn build && jest"
   },
   "husky": {
