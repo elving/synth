@@ -48,7 +48,7 @@ const Flex = forwardRef(
    * @param {import('@beatgig/synth-ui').FlexProps & import('@beatgig/synth-react').SynthComponentProps} props
    */
   ({ className = '', synth, ...props }, ref) => (
-    <StyledFlex {...props} synth={synth} ref={ref} />
+    <StyledFlex {...props} className={className} synth={synth} ref={ref} />
   ),
 )
 
