@@ -42,6 +42,6 @@ import { SynthTokenDeclaration } from './isTokenDeclaration'
 declare function getTokenValue(
   tokens: SynthTokenDeclaration,
   tokenName: string,
-): string
+): string | number | string[] | number[]
 
 export default getTokenValue
