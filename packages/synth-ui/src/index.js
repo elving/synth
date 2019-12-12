@@ -1,6 +1,7 @@
 export { Avatar } from './Avatar'
 export { BaseStyles } from './BaseStyles'
 export { Button } from './Button'
+export { Box } from './Box'
 export { Card } from './Card'
 export { Checkbox } from './Checkbox'
 export { Clickable } from './Clickable'

@@ -16,6 +16,7 @@ export {
   ButtonProps,
 } from './Button'
 
+export { Box, BoxComponent, BoxProps, BoxComponentProps } from './Box'
 export { Card, CardComponent, CardComponentProps, CardProps } from './Card'
 
 export {

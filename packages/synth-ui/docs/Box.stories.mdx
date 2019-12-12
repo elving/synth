@@ -1,0 +1,29 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { Box } from '../src'
+
+import ArtistVertical from './assets/images/artist-vertical.jpg'
+import ArtistHorizontal from './assets/images/artist-horizontal.jpg'
+
+<Meta title="synth-ui|Layout/Box" component={Box} />
+
+# Box
+
+The `<Box>` component is a layout primitive used to display a container that supports CSS box model properties.
+
+<Preview withToolbar>
+  <Story name="intro">
+    <Box 
+      height={100} 
+      padding="@spacing.3" 
+      style={{ background: 'rgba(255, 255, 255, 0.15)' }}
+      width={260} 
+    >
+      260 x 100
+    </Box>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Box} />
