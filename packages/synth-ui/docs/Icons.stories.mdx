@@ -7,11 +7,16 @@ import {
   CheckIcon,
   ChevronDownIcon,
   CloseIcon,
+  Grid,
+  GridItem,
   Icon,
   InboxIcon,
   LogoutIcon,
   SearchIcon,
   Spacer,
+  StarEmptyIcon,
+  StarFullIcon,
+  StarHalfIcon,
 } from '../src'
 
 <Meta title="synth-ui|Icons" component={Icon} />
@@ -41,22 +46,40 @@ We currently use the open sourced icons from [Google Material Design](https://ma
 
 <Preview withToolbar>
   <Story name="icons">
-    <Fragment>
-      <AdminIcon scale={3} />
-      <Spacer inline right scale={3} />
-      <ArtistIcon scale={3} />
-      <Spacer inline right scale={3} />
-      <CheckIcon scale={3} />
-      <Spacer inline right scale={3} />
-      <ChevronDownIcon scale={3} />
-      <Spacer inline right scale={3} />
-      <CloseIcon scale={3} />
-      <Spacer inline right scale={3} />
-      <InboxIcon scale={3} />
-      <Spacer inline right scale={3} />
-      <LogoutIcon scale={3} />
-      <Spacer inline right scale={3} />
-      <SearchIcon scale={3} />
-    </Fragment>
+    <Grid columns={10}>
+      <GridItem center>
+        <AdminIcon scale={3} />
+      </GridItem>
+      <GridItem center>
+        <ArtistIcon scale={3} />
+      </GridItem>
+      <GridItem center>
+        <CheckIcon scale={3} />
+      </GridItem>
+      <GridItem center>
+        <ChevronDownIcon scale={3} />
+      </GridItem>
+      <GridItem center>
+        <CloseIcon scale={3} />
+      </GridItem>
+      <GridItem center>
+        <InboxIcon scale={3} />
+      </GridItem>
+      <GridItem center>
+        <LogoutIcon scale={3} />
+      </GridItem>
+      <GridItem center>
+        <SearchIcon scale={3} />
+      </GridItem>
+      <GridItem center>
+        <StarEmptyIcon scale={3} />
+      </GridItem>
+      <GridItem center>
+        <StarHalfIcon scale={3} />
+      </GridItem>
+      <GridItem center>
+        <StarFullIcon scale={3} />
+      </GridItem>
+    </Grid>
   </Story>
 </Preview>

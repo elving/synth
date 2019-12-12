@@ -1,0 +1,101 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { Flex, Rating } from '../src'
+
+<Meta title="synth-ui|Rating" component={Rating} />
+
+# Rating
+
+The `<Rating>` component is used to display a rating as a star-based system.
+
+<Preview withToolbar>
+  <Story name="intro">
+    <Flex column>
+      <Rating rating={1} />
+      <Rating rating={1.8} />
+      <Rating rating={2} />
+      <Rating rating={2.15} />
+      <Rating rating={3} />
+      <Rating rating={3.5} />
+      <Rating rating={4} />
+      <Rating rating={4.32} />
+      <Rating rating={5} />
+    </Flex>
+  </Story>
+</Preview>
+
+Ratings can be display with their rating count.
+
+<Preview withToolbar>
+  <Story name="withRating">
+    <Flex column>
+      <Rating rating={1} withRating />
+      <Rating rating={1.8} withRating />
+      <Rating rating={2} withRating />
+      <Rating rating={2.15} withRating />
+      <Rating rating={3} withRating />
+      <Rating rating={3.5} withRating />
+      <Rating rating={4} withRating />
+      <Rating rating={4.32} withRating />
+      <Rating rating={5} withRating />
+    </Flex>
+  </Story>
+</Preview>
+
+Ratings can be display with their total reviews count.
+
+<Preview withToolbar>
+  <Story name="withTotal">
+    <Flex column>
+      <Rating rating={1} total={1} withTotal />
+      <Rating rating={1.8} total={23} withTotal />
+      <Rating rating={2} total={325} withTotal />
+      <Rating rating={2.15} total={9999} withTotal />
+      <Rating rating={3} total={6} withTotal />
+      <Rating rating={3.5} total={29} withTotal />
+      <Rating rating={4} total={311} withTotal />
+      <Rating rating={4.32} total={87} withTotal />
+      <Rating rating={5} total={1002} withTotal />
+    </Flex>
+  </Story>
+</Preview>
+
+They can also be displayed with both.
+
+<Preview withToolbar>
+  <Story name="withTotal + withRating">
+    <Flex column>
+      <Rating rating={1} total={1} withTotal withRating />
+      <Rating rating={1.8} total={23} withTotal withRating />
+      <Rating rating={2} total={325} withTotal withRating />
+      <Rating rating={2.15} total={9999} withTotal withRating />
+      <Rating rating={3} total={6} withTotal withRating />
+      <Rating rating={3.5} total={29} withTotal withRating />
+      <Rating rating={4} total={311} withTotal withRating />
+      <Rating rating={4.32} total={87} withTotal withRating />
+      <Rating rating={5} total={1002} withTotal withRating />
+    </Flex>
+  </Story>
+</Preview>
+
+The icon's size can be adjusted via the `scale` prop, which uses the `icons` global token.
+
+<Preview withToolbar>
+  <Story name="scale">
+    <Flex column>
+      <Rating scale={4} rating={1} total={1} withTotal withRating />
+      <Rating scale={1} rating={1.8} total={23} withTotal withRating />
+      <Rating scale={2} rating={2} total={325} withTotal withRating />
+      <Rating scale={3} rating={2.15} total={9999} withTotal withRating />
+      <Rating scale={5} rating={3} total={6} withTotal withRating />
+      <Rating scale={4} rating={3.5} total={29} withTotal withRating />
+      <Rating scale={3} rating={4} total={311} withTotal withRating />
+      <Rating scale={1} rating={4.32} total={87} withTotal withRating />
+      <Rating scale={2} rating={5} total={1002} withTotal withRating />
+    </Flex>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Rating} />

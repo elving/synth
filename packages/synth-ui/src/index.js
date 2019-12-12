@@ -24,6 +24,9 @@ export {
   InboxIcon,
   LogoutIcon,
   SearchIcon,
+  StarEmptyIcon,
+  StarHalfIcon,
+  StarFullIcon,
 } from './Icons'
 
 export { Input } from './Input'
@@ -39,6 +42,7 @@ export {
 } from './Modal'
 
 export { Popup, usePopup } from './Popup'
+export { Rating } from './Rating'
 export { SearchInput } from './SearchInput'
 export { Select, setSelectStyles } from './Select'
 export { Sidebar, SidebarLink } from './Sidebar'

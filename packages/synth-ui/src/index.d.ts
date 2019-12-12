@@ -131,6 +131,18 @@ export {
   SearchIconComponent,
   SearchIconComponentProps,
   SearchIconProps,
+  StarEmptyIcon,
+  StarEmptyIconComponent,
+  StarEmptyIconComponentProps,
+  StarEmptyIconProps,
+  StarHalfIcon,
+  StarHalfIconComponent,
+  StarHalfIconComponentProps,
+  StarHalfIconProps,
+  StarFullIcon,
+  StarFullIconComponent,
+  StarFullIconComponentProps,
+  StarFullIconProps,
 } from './Icons'
 
 export { Input, InputComponent, InputComponentProps, InputProps } from './Input'
@@ -195,6 +207,13 @@ export {
   PopupYPosition,
   usePopup,
 } from './Popup'
+
+export {
+  Rating,
+  RatingComponent,
+  RatingProps,
+  RatingComponentProps,
+} from './Rating'
 
 export {
   SearchInput,
