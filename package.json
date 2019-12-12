@@ -52,7 +52,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap --use-workspaces",
-    "bootstrap:ci": "lerna bootstrap --use-workspaces --ci --force-local",
+    "bootstrap:ci": "lerna bootstrap --force-local && lerna exec --parallel --bail=false yarn unlink && lerna exec --parallel yarn link",
     "build:commonjs": "lerna exec --parallel -- BABEL_ENV=commonjs babel --root-mode upward src --out-dir dist/commonjs --ignore tests,docs --source-maps inline",
     "build:esm": "lerna exec --parallel -- BABEL_ENV=esm babel --root-mode upward src --out-dir dist/esm --ignore tests,docs --source-maps inline",
     "build:watch": "rm -rf ./packages/**/dist && concurrently --names 'commonjs,esm' 'yarn build:commonjs -w' 'yarn build:esm -w'",

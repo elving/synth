@@ -26,7 +26,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install Dependencies
-        run: yarn && lerna bootstrap --force-local && lerna exec --parallel --bail=false yarn unlink && lerna exec --parallel yarn link
+        run: yarn && yarn bootstrap:ci
 
       - name: Build Packages
         run: yarn build
