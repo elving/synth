@@ -1,4 +1,11 @@
 export {
+  AspectRatio,
+  AspectRatioComponent,
+  AspectRatioProps,
+  AspectRatioComponentProps,
+} from './AspectRatio'
+
+export {
   Avatar,
   AvatarComponent,
   AvatarProps,

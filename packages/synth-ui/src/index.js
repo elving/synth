@@ -1,3 +1,4 @@
+export { AspectRatio } from './AspectRatio'
 export { Avatar } from './Avatar'
 export { BaseStyles } from './BaseStyles'
 export { Button } from './Button'

@@ -4,6 +4,9 @@ import styled from 'styled-components'
 
 import { Button, Flex, Popup, usePopup } from '../src'
 
+import ArtistVertical from './assets/images/artist-vertical.jpg'
+import ArtistHorizontal from './assets/images/artist-horizontal.jpg'
+
 const Box = styled(Flex)`
   background-color: ${({ bg }) => bg || 'rgba(0, 0, 0, 0.15)'};
   height: ${({ height }) => height || 'inherit'};
@@ -93,4 +96,34 @@ const tags = [
   },
 ]
 
-export { Box, CardWrapper, PopupWrapper, PopupWithHook, tags }
+const CoverVerticalImage = () => (
+  <div
+    style={{
+      backgroundImage: `url(${ArtistVertical})`,
+      backgroundPosition: 'center center',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+    }}
+  />
+)
+
+const CoverHorizontalImage = () => (
+  <div
+    style={{
+      backgroundImage: `url(${ArtistHorizontal})`,
+      backgroundPosition: 'center center',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+    }}
+  />
+)
+
+export {
+  Box,
+  CardWrapper,
+  CoverHorizontalImage,
+  CoverVerticalImage,
+  PopupWithHook,
+  PopupWrapper,
+  tags,
+}
