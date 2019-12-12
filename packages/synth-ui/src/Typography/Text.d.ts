@@ -1,6 +1,9 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
+/**
+ * @TODO add 'supplemental' or 'meta' to render grey text for descriptions, hints, subtitles, ect.
+ */
 type TextIntent = 'none' | 'danger' | 'success' | 'highlight'
 
 //React.HTMLAttributes<HTMLSpanElement>
