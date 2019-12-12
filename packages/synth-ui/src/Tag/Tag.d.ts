@@ -21,7 +21,7 @@ type TagComponentProps = React.HTMLAttributes<HTMLElement> &
 type TagComponent = SynthReact.SynthComponent<TagComponentProps, HTMLElement>
 
 /**
- * @since 1.1.0
+ * @since 1.2.0
  */
 declare const Tag: TagComponent
 

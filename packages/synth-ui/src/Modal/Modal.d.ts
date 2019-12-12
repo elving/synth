@@ -41,7 +41,7 @@ type ModalComponent = SynthReact.SynthComponent<
 >
 
 /**
- * @since 1.2.0
+ * @since 1.3.0
  */
 declare const Modal: ModalComponent
 
