@@ -59,7 +59,7 @@
     "build": "rm -rf ./packages/**/dist && concurrently --names 'commonjs,esm' 'yarn build:commonjs' 'yarn build:esm'",
     "coverage": "yarn build && jest --coverage",
     "dev": "yarn build && start-storybook -p 5555",
-    "docs": "build-storybook --docs -c .storybook -o ./docs && git add . && git commit -m \"chore(release): docs\"",
+    "docs": "build-storybook --docs -c .storybook -o ./docs && git add ./docs && git commit -m \"chore(release): docs\"",
     "lint:eslint": "lerna exec --parallel -- eslint . -c ./.eslintrc --ext .js,mdx",
     "lint:tsc": "lerna exec --parallel -- tsc -p ./tsconfig.json",
     "lint": "yarn lint:eslint && yarn lint:tsc",
