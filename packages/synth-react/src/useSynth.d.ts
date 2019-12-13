@@ -3,7 +3,7 @@ import { SynthConsumerProps } from './SynthContext'
 
 /**
  * React hook that will return all the synth tokens and helper functions.
- * @since 1.2.0
+ * @since 1.3.0
  * @example
  * const Button ({ label }) => {
  *   const synth = useSynth()

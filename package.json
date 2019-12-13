@@ -36,12 +36,14 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react-hooks": "^2.3.0",
     "faker": "^4.1.0",
+    "husky": "^3.1.0",
     "jest": "^24.8.0",
     "jest-haste-map": "^24.8.1",
     "jest-resolve": "^24.8.0",
     "jest-styled-components": "^6.3.4",
     "jsdoc-to-markdown": "^5.0.3",
     "lerna": "^3.19.0",
+    "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -51,21 +53,22 @@
     "typescript": "^3.7.3"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap --use-workspaces",
-    "bootstrap:ci": "lerna bootstrap --use-workspaces --ci --force-local",
+    "bootstrap": "lerna bootstrap",
+    "bootstrap:ci": "lerna bootstrap --ci",
     "build:commonjs": "lerna exec --parallel -- BABEL_ENV=commonjs babel --root-mode upward src --out-dir dist/commonjs --ignore tests,docs --source-maps inline",
     "build:esm": "lerna exec --parallel -- BABEL_ENV=esm babel --root-mode upward src --out-dir dist/esm --ignore tests,docs --source-maps inline",
     "build:watch": "rm -rf ./packages/**/dist && concurrently --names 'commonjs,esm' 'yarn build:commonjs -w' 'yarn build:esm -w'",
     "build": "rm -rf ./packages/**/dist && concurrently --names 'commonjs,esm' 'yarn build:commonjs' 'yarn build:esm'",
     "coverage": "yarn build && jest --coverage",
     "dev": "yarn build && start-storybook -p 5555",
-    "docs": "build-storybook --docs -c .storybook -o ./docs && git add . && git commit -m \"chore(release): docs\"",
+    "docs": "build-storybook --docs -c .storybook -o ./docs && git add ./docs && git commit -m 'chore(release): docs'",
     "lint:eslint": "lerna exec --parallel -- eslint . -c ./.eslintrc --ext .js,mdx",
-    "lint:tsc": "lerna exec --parallel -- tsc -p ./tsconfig.json",
-    "lint": "yarn lint:eslint && yarn lint:tsc",
+    "lint:types": "lerna exec --parallel -- tsc -p ./tsconfig.json",
+    "lint": "yarn lint:eslint && yarn lint:types",
     "prepublishOnly": "yarn build && yarn docs",
-    "publish": "lerna publish --conventional-commits -m \"chore(release): publish %s\"",
-    "test": "yarn build && jest"
+    "lerna:publish": "lerna publish --conventional-commits -m 'chore(release): publish'",
+    "test": "jest",
+    "test:ci": "jest --ci --silent"
   },
   "husky": {
     "hooks": {
@@ -76,7 +79,6 @@
     "packages/**/*.{js}": [
       "lerna exec --parallel -- eslint . -c ./.eslintrc --ext .js,mdx --fix",
       "lerna exec --parallel -- prettier --write",
-      "lerna exec --parallel -- tsc -p ./tsconfig.json",
       "git add"
     ]
   },

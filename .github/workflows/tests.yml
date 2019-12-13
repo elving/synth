@@ -18,15 +18,11 @@ jobs:
         with:
           node-version: '13.x'
 
-      - uses: actions/cache@v1
-        with:
-          path: ~/.cache/yarn
-          key: ${{ runner.os }}-yarn-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
       - name: Install Dependencies
-        run: yarn && yarn bootstrap:ci
+        run: yarn
+
+      - name: Setup Yarn Workspace
+        run: yarn bootstrap:ci
 
       - name: Build Packages
         run: yarn build
@@ -37,6 +33,6 @@ jobs:
           CI: true
 
       - name: Run Tests
-        run: yarn test
+        run: yarn test:ci
         env:
           CI: true
