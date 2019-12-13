@@ -33,6 +33,6 @@ jobs:
           CI: true
 
       - name: Run Tests
-        run: yarn test
+        run: yarn test:ci
         env:
           CI: true

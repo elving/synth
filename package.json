@@ -63,11 +63,12 @@
     "dev": "yarn build && start-storybook -p 5555",
     "docs": "build-storybook --docs -c .storybook -o ./docs && git add ./docs && git commit -m 'chore(release): docs'",
     "lint:eslint": "lerna exec --parallel -- eslint . -c ./.eslintrc --ext .js,mdx",
-    "lint:types": "lerna exec --parallel -- tsc -p ./tsconfig.json --extendedDiagnostics",
+    "lint:types": "lerna exec --parallel -- tsc -p ./tsconfig.json",
     "lint": "yarn lint:eslint && yarn lint:types",
     "prepublishOnly": "yarn build && yarn docs",
     "lerna:publish": "lerna publish --conventional-commits -m 'chore(release): publish'",
-    "test": "jest"
+    "test": "jest",
+    "test:ci": "jest --ci --silent"
   },
   "husky": {
     "hooks": {
