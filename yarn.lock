@@ -5323,10 +5323,15 @@ cssstyle@^1.0.0:
   dependencies:
     cssom "0.3.x"
 
-csstype@^2.2.0, csstype@^2.5.7, csstype@^2.6.7:
+csstype@^2.2.0, csstype@^2.5.7:
   version "2.6.7"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.7.tgz#20b0024c20b6718f4eda3853a1f5a1cce7f5e4a5"
   integrity sha512-9Mcn9sFbGBAdmimWb2gLVDtFJzeKtDGIr76TUqmjZrw9LFXBMSU70lcs+C0/7fyCd6iBDqmksUcCOUIkisPHsQ==
+
+csstype@^2.6.8:
+  version "2.6.8"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.8.tgz#0fb6fc2417ffd2816a418c9336da74d7f07db431"
+  integrity sha512-msVS9qTuMT5zwAGCVm4mxfrZ18BNc6Csd0oJAtiFMZ1FAx1CCvy2+5MDmYoix63LM/6NDbNtodCiGYGmFgO0dA==
 
 currently-unhandled@^0.4.1:
   version "0.4.1"
@@ -6047,9 +6052,9 @@ eslint-config-prettier@^6.7.0:
     get-stdin "^6.0.0"
 
 eslint-mdx@^1.6.3:
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/eslint-mdx/-/eslint-mdx-1.6.3.tgz#f70a94d52c39aca0de93ee03fa1b09d744ff7056"
-  integrity sha512-KGGZmOMufSdfXQWdEdmVr+V4g58DnROY7SKtBSmndhT/2vVjg/9hZSasyB/Ov32SqsAY6QJGDAR87qUxersV9A==
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/eslint-mdx/-/eslint-mdx-1.6.4.tgz#987b765bccc2d5911f7ba2a1edc4d65c7b8ced6d"
+  integrity sha512-6IWeQS1fDSITGNhiBFlQdNJWb2V+nEoXI3JvacwdeiWQXc+ovBIAJPfspe9WAgDjIuatBEPNC5TRDMV7iHa1pg==
   dependencies:
     espree "^6.1.2"
     remark-mdx "^1.5.1"
@@ -6062,7 +6067,7 @@ eslint-plugin-eslint-plugin@^2.1.0:
   resolved "https://registry.yarnpkg.com/eslint-plugin-eslint-plugin/-/eslint-plugin-eslint-plugin-2.1.0.tgz#a7a00f15a886957d855feacaafee264f039e62d5"
   integrity sha512-kT3A/ZJftt28gbl/Cv04qezb/NQ1dwYIbi8lyf806XMxkus7DvOVCLIfTXMrorp322Pnoez7+zabXH29tADIDg==
 
-eslint-plugin-mdx@^1.6.3:
+eslint-plugin-mdx@1.6.3:
   version "1.6.3"
   resolved "https://registry.yarnpkg.com/eslint-plugin-mdx/-/eslint-plugin-mdx-1.6.3.tgz#fdecf82bfcae0a3bf1eaa41b606e0228ad8f0efd"
   integrity sha512-ohCRzsEyoQz4XLM2DEfCd3yJos94wdfL10NpZUxO00YEoAD728+LY5pjSDkGg+5jmUVzv13RBPHtSZ8aAC3gLQ==
@@ -6079,10 +6084,10 @@ eslint-plugin-mdx@^1.6.3:
   optionalDependencies:
     rebass "^4.0.7"
 
-eslint-plugin-prettier@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-3.1.1.tgz#507b8562410d02a03f0ddc949c616f877852f2ba"
-  integrity sha512-A+TZuHZ0KU0cnn56/9mfR7/KjUJ9QNVXUhwvRFSR7PGPe0zQR6PTkmyqg1AtUUEOzTqeRsUwyKFh0oVZKVCrtA==
+eslint-plugin-prettier@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-3.1.2.tgz#432e5a667666ab84ce72f945c72f77d996a5c9ba"
+  integrity sha512-GlolCC9y3XZfv3RQfwGew7NnuFDKsfI4lbvRK+PIIo23SFH+LemGs4cKwzAaRa+Mdb+lQO/STaIayno8T5sJJA==
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
@@ -7341,7 +7346,7 @@ he@^1.1.0, he@^1.2.0:
   resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
 
-highlight.js@^9.16.2:
+highlight.js@^9.17.1:
   version "9.17.1"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.17.1.tgz#14a4eded23fd314b05886758bb906e39dd627f9a"
   integrity sha512-TA2/doAur5Ol8+iM3Ov7qy3jYcr/QiJ2eDTdRF4dfbjG7AaaB99J5G+zSl11ljbl6cIcahgPY6SKb3sC3EJ0fw==
@@ -13626,31 +13631,31 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typedoc-default-themes@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/typedoc-default-themes/-/typedoc-default-themes-0.6.1.tgz#e2e471188983df995f4f9df49f713044fced6802"
-  integrity sha512-z5AWKqQDz7igl9WkUuafx8cEm4MPVQGMpbWE+3lwVOaq+U4UoLKBMnpFQWh/4fqQ3bGysXpOstMxy2OOzHezyw==
+typedoc-default-themes@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/typedoc-default-themes/-/typedoc-default-themes-0.6.2.tgz#b36d8910987a40e5a80353b88e178c6ffa78f24b"
+  integrity sha512-+O+1aHjVIpDLsbkIDkZSNu+kutqmg7WdzahT+4KwBC/95mUgAb0xkbwdPpEJEpRX0ov1UJoCmvEPb1/VHxnTuw==
   dependencies:
     backbone "^1.4.0"
     jquery "^3.4.1"
     lunr "^2.3.8"
     underscore "^1.9.1"
 
-typedoc@^0.15.4:
-  version "0.15.4"
-  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.15.4.tgz#23f2c1e2be41af879c0f1358aeb76cd4d39d9aeb"
-  integrity sha512-XzrV8sM44j4nXGSKt99VOkFCPGLUH9DHGGvcgZJbvqdSG7/iR3HztNjpsLyTu1nybZLLjcClLRuWJDO3icXzYA==
+typedoc@^0.15.5:
+  version "0.15.5"
+  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.15.5.tgz#1dd2a15ed0caf284c2be674794a2a8b74e0f2383"
+  integrity sha512-AKXLtOUCLRlSTyfXQHYp3LFPy6RiFLnxnKS5z1jwQsYXmCPbHWuhmfgS264Es2hPMZjzvHqk/ZQDzCBpb49u6w==
   dependencies:
     "@types/minimatch" "3.0.3"
     fs-extra "^8.1.0"
     handlebars "^4.5.3"
-    highlight.js "^9.16.2"
+    highlight.js "^9.17.1"
     lodash "^4.17.15"
     marked "^0.7.0"
     minimatch "^3.0.0"
     progress "^2.0.3"
     shelljs "^0.8.3"
-    typedoc-default-themes "^0.6.1"
+    typedoc-default-themes "^0.6.2"
     typescript "3.7.x"
 
 typescript@3.7.x, typescript@^3.7.3:
