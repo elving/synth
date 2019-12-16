@@ -1,5 +1,3 @@
-import { isNumeric } from '@beatgig/is'
-
 import getCSSProperty from './getCSSProperty'
 import getTokenParts from './getTokenParts'
 import getTokenValue from './getTokenValue'
