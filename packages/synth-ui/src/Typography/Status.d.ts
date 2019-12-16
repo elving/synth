@@ -1,10 +1,7 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-import { TextProps } from './Text'
-
-//React.HTMLAttributes<HTMLElement>
-interface StatusProps extends TextProps {
+interface StatusProps extends SynthReact.TextProps {
   /**
    * The elements you want to display within the small component.
    */

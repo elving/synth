@@ -1,6 +1,7 @@
 import * as CSS from 'csstype'
 import * as React from 'react'
-import * as SynthReact from '@beatgig/synth-react'
+
+import { SynthComponent } from '../../withSynth'
 
 interface BoxProps {
   /**
@@ -12,6 +13,10 @@ interface BoxProps {
    * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
    */
   className?: string
+  /**
+   * The value to be assigned to the `border` CSS property.
+   */
+  border?: CSS.BorderProperty<string | number>
   /**
    * The value to be assigned to the `height` CSS property.
    */
@@ -44,6 +49,11 @@ interface BoxProps {
    * The value to be assigned to the `width` CSS property.
    */
   width?: CSS.WidthProperty<string | number>
+  /**
+   * A boolean flag to determine if the component should *not* include `base`
+   * token values as defaults.
+   */
+  withoutDefaults?: boolean
 }
 
 type BoxComponentProps = React.HTMLAttributes<HTMLDivElement> &
@@ -51,10 +61,10 @@ type BoxComponentProps = React.HTMLAttributes<HTMLDivElement> &
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & BoxProps
 
-type BoxComponent = SynthReact.SynthComponent<BoxComponentProps, HTMLDivElement>
+type BoxComponent = SynthComponent<BoxComponentProps, HTMLDivElement>
 
 /**
- * @since 1.3.0
+ * @since 1.1.0
  */
 declare const Box: BoxComponent
 

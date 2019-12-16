@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import { isNil } from '@beatgig/is'
-import { withSynth } from '@beatgig/synth-react'
+import { Text, withSynth } from '@beatgig/synth-react'
 
 import {
   backgroundColor,
@@ -14,7 +14,6 @@ import {
 } from '@beatgig/synth-styled-components'
 
 import { Spacer } from '../Spacer'
-import { Text } from '../Typography'
 
 import { setBaseStyles } from '../utils'
 
@@ -57,7 +56,7 @@ const SidebarLink = forwardRef(
       <StyledSidebarLink {...props} className={className} synth={synth}>
         {hasIcon ? icon : null}
         {hasIcon ? <Spacer inline left scale={1} /> : null}
-        <Text scale={2}>{children}</Text>
+        <Text size="@fontSizes.2">{children}</Text>
       </StyledSidebarLink>
     )
   },
@@ -77,7 +76,7 @@ SidebarLink.propTypes = {
    * An optional icon component that can be rendered along side the
    * link's content.
    */
-  icon: PropTypes.node,
+  icon: PropTypes.element,
 }
 
 SidebarLink.defaultProps = {

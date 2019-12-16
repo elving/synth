@@ -23,7 +23,6 @@ export {
   ButtonProps,
 } from './Button'
 
-export { Box, BoxComponent, BoxProps, BoxComponentProps } from './Box'
 export { Card, CardComponent, CardComponentProps, CardProps } from './Card'
 
 export {
@@ -200,6 +199,7 @@ export {
   Popup,
   PopupComponent,
   PopupComponentProps,
+  PopupDOMRect,
   PopupHookOptions,
   PopupHookState,
   PopupProps,
@@ -280,11 +280,6 @@ export {
   StatusComponent,
   StatusComponentProps,
   StatusProps,
-  Text,
-  TextComponent,
-  TextComponentProps,
-  TextIntent,
-  TextProps,
 } from './Typography'
 
 export {

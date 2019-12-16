@@ -1,4 +1,15 @@
 export {
+  Box,
+  BoxComponent,
+  BoxComponentProps,
+  BoxProps,
+  Text,
+  TextComponent,
+  TextComponentProps,
+  TextProps,
+} from './Primitives'
+
+export {
   SynthConsumer,
   SynthProvider,
   SynthConsumerProps,

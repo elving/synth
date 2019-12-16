@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Fragment, forwardRef } from 'react'
 import styled from 'styled-components'
-import { withSynth } from '@beatgig/synth-react'
+import { Text, withSynth } from '@beatgig/synth-react'
 
 import {
   backgroundColor,
@@ -12,7 +12,7 @@ import {
 
 import { CheckIcon } from '../Icons'
 import { Spacer } from '../Spacer'
-import { Label, Text } from '../Typography'
+import { Label } from '../Typography'
 
 import { setIconFill, setIconSize } from './utils'
 
@@ -76,7 +76,7 @@ const Checkbox = forwardRef(
           <Icon synth={synth} />
         </IconContainer>
         {label ? <Spacer left inline scale={1} /> : null}
-        {label ? <Text scale={1}>{label}</Text> : null}
+        {label ? <Text size="@fontSizes.1">{label}</Text> : null}
       </Fragment>
     )
 

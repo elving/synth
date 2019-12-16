@@ -1,13 +1,12 @@
 import PropTypes from 'prop-types'
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
-
-import { Box } from '../Box'
+import { Box } from '@beatgig/synth-react'
 
 import { styleProp } from '../utils'
 
 /**
- * @type {import('styled-components').StyledComponent<import('@beatgig/synth-ui').BoxComponent, any, import('@beatgig/synth-ui').AspectRatioProps, never>}
+ * @type {import('styled-components').StyledComponent<import('@beatgig/synth-react').BoxComponent, any, import('@beatgig/synth-ui').AspectRatioProps, never>}
  */
 const StyledAspectRatio = styled(Box)`
   position: relative;

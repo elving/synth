@@ -1,11 +1,9 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-import { BoxProps } from '../Box'
-
 type AspectRatios = '1:2' | '1:1' | '4:3' | '3:2' | '8:5' | '16:9' | '2:1'
 
-interface AspectRatioProps extends BoxProps {
+interface AspectRatioProps extends SynthReact.BoxProps {
   /**
    * The element you want to scale according to the given `ratio` property.
    */

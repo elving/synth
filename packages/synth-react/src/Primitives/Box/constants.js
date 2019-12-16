@@ -4,6 +4,14 @@
  * @default
  * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model}
  */
+export const BOX_PROPERTY_BORDER = 'border'
+
+/**
+ * @typedef {string}
+ * @constant
+ * @default
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model}
+ */
 export const BOX_PROPERTY_HEIGHT = 'height'
 
 /**
