@@ -60,7 +60,8 @@
     "build:watch": "rm -rf ./packages/**/dist && concurrently --names 'commonjs,esm' 'yarn build:commonjs -w' 'yarn build:esm -w'",
     "build": "rm -rf ./packages/**/dist && concurrently --names 'commonjs,esm' 'yarn build:commonjs' 'yarn build:esm'",
     "coverage": "yarn build && jest --coverage",
-    "dev": "yarn build && start-storybook -p 5555",
+    "dev": "concurrently --names 'build,storybook' 'yarn build:watch' 'start-storybook -p 5555'",
+    "storybook:start": "start-storybook -p 5555",
     "docs": "build-storybook --docs -c .storybook -o ./docs && git add ./docs && git commit -m 'chore(release): docs'",
     "lint:eslint": "lerna exec --parallel -- eslint . -c ./.eslintrc --ext .js,mdx",
     "lint:types": "lerna exec --parallel -- tsc -p ./tsconfig.json",
@@ -79,6 +80,7 @@
     "packages/**/*.{js}": [
       "lerna exec --parallel -- eslint . -c ./.eslintrc --ext .js,mdx --fix",
       "lerna exec --parallel -- prettier --write",
+      "lerna exec --parallel -- tsc -p ./tsconfig.json",
       "git add"
     ]
   },
