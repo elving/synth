@@ -150,11 +150,15 @@ Button.propTypes = {
   /**
    * The icon's position.
    */
-  iconPosition: PropTypes.oneOf(BUTTON_ICON_POSITIONS),
+  iconPosition: PropTypes.oneOf(
+    /** @type {import('@beatgig/synth-ui').ButtonIconPosition[]} */ (BUTTON_ICON_POSITIONS),
+  ),
   /**
    * The button's intent will determine it's text and background color.
    */
-  intent: PropTypes.oneOf(BUTTON_INTENTS),
+  intent: PropTypes.oneOf(
+    /** @type {import('@beatgig/synth-ui').ButtonIntent[]} */ (BUTTON_INTENTS),
+  ),
   /**
    * Displays the button only using it's outline.
    */
@@ -165,9 +169,7 @@ Button.defaultProps = {
   children: null,
   className: '',
   icon: null,
-  // eslint-disable-next-line prettier/prettier
   iconPosition: /** @type {import('@beatgig/synth-ui').ButtonIconPosition} */ (BUTTON_ICON_POSITION_LEFT),
-  // eslint-disable-next-line prettier/prettier
   intent: /** @type {import('@beatgig/synth-ui').ButtonIntent} */ (BUTTON_INTENT_NONE),
   outline: false,
 }

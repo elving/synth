@@ -90,7 +90,7 @@ MenuItem.propTypes = {
    * An optional icon component that can be rendered along side the
    * menu item's content.
    */
-  icon: PropTypes.node,
+  icon: PropTypes.element,
   /**
    * A callback function that is called whenever the user clicks on the
    * menu item.
