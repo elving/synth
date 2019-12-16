@@ -22,7 +22,6 @@
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
     "@types/styled-components": "^4.4.1",
-    "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
@@ -75,14 +74,6 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "lint-staged": {
-    "packages/**/*.{js}": [
-      "lerna exec --parallel -- eslint . -c ./.eslintrc --ext .js,mdx --fix",
-      "lerna exec --parallel -- prettier --write",
-      "lerna exec --parallel -- tsc -p ./tsconfig.json",
-      "git add"
-    ]
   },
   "sideEffects": false
 }
