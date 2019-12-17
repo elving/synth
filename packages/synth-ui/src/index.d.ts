@@ -1,4 +1,11 @@
 export {
+  ArtistCard,
+  ArtistCardComponent,
+  ArtistCardProps,
+  ArtistCardComponentProps,
+} from './ArtistCard'
+
+export {
   AspectRatio,
   AspectRatioComponent,
   AspectRatioProps,

@@ -1,3 +1,4 @@
+export { ArtistCard } from './ArtistCard'
 export { AspectRatio } from './AspectRatio'
 export { Avatar } from './Avatar'
 export { Background } from './Background'

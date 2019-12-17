@@ -1,0 +1,85 @@
+import { Box } from '@beatgig/synth-react'
+import { Fragment } from 'react'
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { ArtistCard } from '../src'
+
+import avatarVertical from './assets/images/artist-vertical.jpg'
+import avatarHorizontal from './assets/images/artist-horizontal.jpg'
+
+<Meta title="synth-ui|ArtistCard" component={ArtistCard} />
+
+# ArtistCard
+
+The `<ArtistCard>` component is used to render artist cards.
+
+<Preview withToolbar>
+  <Story name="intro">
+    <Fragment>
+      <Box margin={15} width="calc(20% - 15px)">
+        <ArtistCard
+          artist={{
+            avatar: avatarVertical,
+            genres: [
+              {
+                id: '02lsmxs',
+                name: 'Proggesive Rock',
+              },
+              {
+                id: 'x92os5a',
+                name: 'Melodic Metalcore',
+              },
+            ],
+            id: 'os312sk',
+            rating: 2,
+            stageName: 'The Rock Group',
+          }}
+        />
+      </Box>
+      <Box margin={15} width="calc(30% - 15px)">
+        <ArtistCard
+          artist={{
+            avatar: avatarHorizontal,
+            genres: [
+              {
+                id: '02lsmxs',
+                name: 'EDM',
+              },
+              {
+                id: 'x92os5a',
+                name: 'Ambient',
+              },
+            ],
+            id: 'os312sk',
+            rating: 4.12,
+            stageName: 'DJ Fake',
+          }}
+        />
+      </Box>
+      <Box margin={15} width="calc(55% - 15px)">
+        <ArtistCard
+          artist={{
+            avatar: avatarVertical,
+            genres: [
+              {
+                id: '02lsmxs',
+                name: 'Rap',
+              },
+              {
+                id: 'x92os5a',
+                name: 'Trap',
+              },
+            ],
+            id: 'os312sk',
+            rating: 1.25,
+            stageName: 'MonsterJamz Promax',
+          }}
+        />
+      </Box>
+    </Fragment>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={ArtistCard} />
