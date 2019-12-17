@@ -24,7 +24,7 @@ const Rating = forwardRef(
     {
       className = '',
       rating = 0,
-      scale = 2,
+      scale = 1,
       synth,
       total = 0,
       withRating = false,
@@ -125,7 +125,7 @@ Rating.defaultProps = {
   children: null,
   className: '',
   rating: 0,
-  scale: 2,
+  scale: 1,
   total: 0,
   withRating: false,
   withTotal: false,
