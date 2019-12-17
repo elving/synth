@@ -13,6 +13,8 @@ const StyledSpacer = styled.div`
   ${setBaseStyles()}
   ${setDisplay()}
   ${setMargin()}
+  font-size: 1px;
+  line-height: 1px;
 `
 
 const Spacer = forwardRef(
@@ -20,7 +22,9 @@ const Spacer = forwardRef(
    * @param {import('@beatgig/synth-ui').SpacerProps & import('@beatgig/synth-react').SynthComponentProps} props
    */
   ({ className = '', synth, ...props }, ref) => (
-    <StyledSpacer {...props} className={className} synth={synth} ref={ref} />
+    <StyledSpacer {...props} className={className} synth={synth} ref={ref}>
+      &#8203;
+    </StyledSpacer>
   ),
 )
 
