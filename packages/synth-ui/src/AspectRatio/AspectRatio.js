@@ -42,6 +42,7 @@ const AspectRatio = forwardRef(
 )
 
 AspectRatio.propTypes = {
+  ...Box.propTypes,
   /**
    * The element you want to scale according to the given `ratio` property.
    */
@@ -58,6 +59,7 @@ AspectRatio.propTypes = {
 }
 
 AspectRatio.defaultProps = {
+  ...Box.defaultProps,
   children: null,
   className: '',
   ratio: '1/1',
