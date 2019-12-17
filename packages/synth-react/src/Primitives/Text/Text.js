@@ -25,20 +25,17 @@ const Text = forwardRef(
       ...props
     },
     ref,
-  ) => {
-    console.log('primitive', props)
-    return (
-      <StyledText
-        {...props}
-        className={className}
-        ref={ref}
-        synth={synth}
-        withoutDefaults={withoutDefaults}
-      >
-        {children}
-      </StyledText>
-    )
-  },
+  ) => (
+    <StyledText
+      {...props}
+      className={className}
+      ref={ref}
+      synth={synth}
+      withoutDefaults={withoutDefaults}
+    >
+      {children}
+    </StyledText>
+  ),
 )
 
 Text.propTypes = {
