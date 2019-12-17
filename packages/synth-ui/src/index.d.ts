@@ -12,6 +12,13 @@ export {
   AvatarComponentProps,
 } from './Avatar'
 
+export {
+  Background,
+  BackgroundComponent,
+  BackgroundComponentProps,
+  BackgroundProps,
+} from './Background'
+
 export { BaseStyles } from './BaseStyles'
 
 export {
