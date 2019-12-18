@@ -1,6 +1,6 @@
 # Synth
 
-Synth is a design system toolset that let's you build UI components based on design tokens.
+Synth is a toolkit for creating and managing design systems with design tokens.
 
 ## Getting Started
 
