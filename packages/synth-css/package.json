@@ -1,6 +1,6 @@
 {
   "name": "@beatgig/synth-css",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CSS bindings for Synth.",
   "author": "BeatGig Engineering <engineering@beatgig.com>",
   "homepage": "",
@@ -21,7 +21,7 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@beatgig/synth-core": "^1.0.2"
+    "@beatgig/synth-core": "^1.1.0"
   },
   "types": "src/index.d.ts"
 }

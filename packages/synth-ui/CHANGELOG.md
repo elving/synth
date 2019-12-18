@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/beatgig/synth/compare/@beatgig/synth-ui@1.3.0...@beatgig/synth-ui@1.4.0) (2019-12-18)
+
+
+### Bug Fixes
+
+* add Icon component folder ([01ccbd4](https://github.com/beatgig/synth/commit/01ccbd4b8e4da04d7cbc624f7d03e59aa26b4c5b))
+* pass className prop to inner Flex component ([b33ebcc](https://github.com/beatgig/synth/commit/b33ebcc7b5805f84bb8e4a194db48ca7334587b1))
+* synth-ui CHANGELOG.md formatting ([c96910a](https://github.com/beatgig/synth/commit/c96910ac0e057b6211422e4ec2231ad3c677e793))
+
+
+### Features
+
+* add `<ArtistCard>` component and docs ([e3307c5](https://github.com/beatgig/synth/commit/e3307c5c36c18be6cf531cf7d9a3d35087b7621b))
+* add `<Background>` component and docs ([9073443](https://github.com/beatgig/synth/commit/9073443b2d6bcce568079d7783fe556e5682a3b8))
+* add <AspectRatio> component and docs ([3ba457a](https://github.com/beatgig/synth/commit/3ba457adbbc8250106b9fbb03869b46c75f85588))
+* add <Box> component and docs ([f119602](https://github.com/beatgig/synth/commit/f119602707d6bb4b7afe48030dd33e3d4285a1a7))
+* add <Rating> component and docs ([34beb10](https://github.com/beatgig/synth/commit/34beb1021f373fbe971c11903f61e6f04bd0af9c))
+* add new `<Box>` and `<Text>` primitive components ([46699cc](https://github.com/beatgig/synth/commit/46699ccbe3d310cc3f6ad4a966bb35307a1729ee))
+* make <GridItem> extend <Flex> ([e2234d2](https://github.com/beatgig/synth/commit/e2234d2468043bf74a88519a5030e92dadd8cf38))
+* remove `<Artist>` component ([18791da](https://github.com/beatgig/synth/commit/18791da0e16634b2bc1cbd14ea72664f4c458063))
+
+
+
+
+
 # [1.3.0](https://github.com/beatgig/synth/compare/@beatgig/synth-ui@1.2.0...@beatgig/synth-ui@1.3.0) (2019-12-12)
 
 

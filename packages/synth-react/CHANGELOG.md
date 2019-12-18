@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/beatgig/synth/compare/@beatgig/synth-react@1.0.3...@beatgig/synth-react@1.1.0) (2019-12-18)
+
+
+### Features
+
+* add new `<Box>` and `<Text>` primitive components ([46699cc](https://github.com/beatgig/synth/commit/46699ccbe3d310cc3f6ad4a966bb35307a1729ee))
+
+
+
+
+
 ## [1.0.3](https://github.com/beatgig/synth/compare/@beatgig/synth-react@1.0.2...@beatgig/synth-react@1.0.3) (2019-12-12)
 
 
