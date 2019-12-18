@@ -56,7 +56,7 @@ type BackgroundComponent = SynthReact.SynthComponent<
 >
 
 /**
- * @since 1.x.x
+ * @since 1.4.0
  */
 declare const Background: BackgroundComponent
 
