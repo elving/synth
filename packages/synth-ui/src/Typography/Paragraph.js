@@ -2,12 +2,10 @@ import PropTypes from 'prop-types'
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import { margin } from '@beatgig/synth-styled-components'
-import { withSynth } from '@beatgig/synth-react'
-
-import Text from './Text'
+import { Text, withSynth } from '@beatgig/synth-react'
 
 /**
- * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('@beatgig/synth-ui').TextComponent>}
+ * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('@beatgig/synth-react').TextComponent>}
  */
 const StyledParagraph = styled(Text)`
   ${margin('paragraph')}

@@ -594,7 +594,7 @@ TagSelect.propTypes = {
    * The tags that will be selected by default, if any.
    */
   defaultSelected: PropTypes.arrayOf(
-    PropTypes.shape({
+    PropTypes.exact({
       label: PropTypes.string,
       value: PropTypes.string,
     }),
@@ -638,7 +638,7 @@ TagSelect.propTypes = {
    * The tags that can be selected by the user.
    */
   tags: PropTypes.arrayOf(
-    PropTypes.shape({
+    PropTypes.exact({
       label: PropTypes.string,
       value: PropTypes.string,
     }),

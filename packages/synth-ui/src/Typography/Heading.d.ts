@@ -1,11 +1,9 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-import { TextProps } from './Text'
-
 type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
-interface HeadingProps extends Omit<TextProps, 'scale'> {
+interface HeadingProps extends SynthReact.TextProps {
   /**
    * The elements you want to display within the heading component.
    */
@@ -19,6 +17,10 @@ interface HeadingProps extends Omit<TextProps, 'scale'> {
    * Sets the element's heading level (h1, h2, etc.) and it's font-size accordingly
    */
   level?: HeadingLevel
+  /**
+   * A boolean flag to determine if the heading should be displayed *without* any margin.
+   */
+  withoutMargin?: boolean
 }
 
 type HeadingComponentProps = React.HTMLAttributes<HTMLHeadingElement> &

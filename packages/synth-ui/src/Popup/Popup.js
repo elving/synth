@@ -105,15 +105,15 @@ Popup.propTypes = {
   /**
    * The popup element's DOMRect object.
    */
-  popupRect: PropTypes.shape({
-    x: PropTypes.number,
-    y: PropTypes.number,
-    top: PropTypes.number,
-    left: PropTypes.number,
-    right: PropTypes.number,
-    width: PropTypes.number,
-    height: PropTypes.number,
-    bottom: PropTypes.number,
+  popupRect: PropTypes.exact({
+    x: PropTypes.number.isRequired,
+    y: PropTypes.number.isRequired,
+    top: PropTypes.number.isRequired,
+    left: PropTypes.number.isRequired,
+    right: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+    bottom: PropTypes.number.isRequired,
   }),
   /**
    * A boolean flag to determine if the popup should be rendered next to it's
@@ -123,15 +123,15 @@ Popup.propTypes = {
   /**
    * The trigger element's DOMRect object.
    */
-  triggerRect: PropTypes.shape({
-    x: PropTypes.number,
-    y: PropTypes.number,
-    top: PropTypes.number,
-    left: PropTypes.number,
-    right: PropTypes.number,
-    width: PropTypes.number,
-    height: PropTypes.number,
-    bottom: PropTypes.number,
+  triggerRect: PropTypes.exact({
+    x: PropTypes.number.isRequired,
+    y: PropTypes.number.isRequired,
+    top: PropTypes.number.isRequired,
+    left: PropTypes.number.isRequired,
+    right: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+    bottom: PropTypes.number.isRequired,
   }),
   /**
    * If true, the popup's height will match it's target's height.
@@ -144,7 +144,9 @@ Popup.propTypes = {
   /**
    * X position of the popup.
    */
-  x: PropTypes.oneOf(POPUP_POSITIONS_X),
+  x: PropTypes.oneOf(
+    /** @type {import('@beatgig/synth-ui').PopupXPosition[]} */ (POPUP_POSITIONS_X),
+  ),
   /**
    * Offset for the popup's x position.
    */
@@ -152,7 +154,9 @@ Popup.propTypes = {
   /**
    * Y position of the popup.
    */
-  y: PropTypes.oneOf(POPUP_POSITIONS_Y),
+  y: PropTypes.oneOf(
+    /** @type {import('@beatgig/synth-ui').PopupYPosition[]} */ (POPUP_POSITIONS_Y),
+  ),
   /**
    * Offset for the popup's y position.
    */

@@ -2,6 +2,7 @@ export {
   default as Popup,
   PopupComponent,
   PopupComponentProps,
+  PopupDOMRect,
   PopupProps,
   PopupXPosition,
   PopupYPosition,

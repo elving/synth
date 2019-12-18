@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
-import { withSynth } from '@beatgig/synth-react'
+import { Box, withSynth } from '@beatgig/synth-react'
 
 import { setBaseStyles } from '../utils'
 
@@ -24,9 +24,9 @@ import {
 } from './utils'
 
 /**
- * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<'div', import('@beatgig/synth-ui').FlexProps>}
+ * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('@beatgig/synth-react').BoxComponent, import('@beatgig/synth-ui').FlexProps>}
  */
-const StyledFlex = styled.div`
+const StyledFlex = styled(Box)`
   ${setBaseStyles()}
   ${setDisplay()}
   ${setFull()}
@@ -48,7 +48,7 @@ const Flex = forwardRef(
    * @param {import('@beatgig/synth-ui').FlexProps & import('@beatgig/synth-react').SynthComponentProps} props
    */
   ({ className = '', synth, ...props }, ref) => (
-    <StyledFlex {...props} synth={synth} ref={ref} />
+    <StyledFlex {...props} className={className} synth={synth} ref={ref} />
   ),
 )
 
@@ -75,7 +75,18 @@ Flex.propTypes = {
   /**
    * The value to be assigned to the `flex-grow` CSS property.
    */
-  grow: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  grow: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.oneOf(
+      /** @type {import('csstype').GlobalsNumber[]} */ ([
+        '-moz-initial',
+        'inherit',
+        'initial',
+        'revert',
+        'unset',
+      ]),
+    ),
+  ]),
   /**
    * A boolean flag to determine what the value of the `flex-wrap` CSS property
    * will be, if `true`, then the `flex-wrap` CSS property will be `wrap`.
@@ -88,7 +99,18 @@ Flex.propTypes = {
   /**
    * The value to be assigned to the `flex-shrink` CSS property.
    */
-  shrink: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  shrink: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.oneOf(
+      /** @type {import('csstype').GlobalsNumber[]} */ ([
+        '-moz-initial',
+        'inherit',
+        'initial',
+        'revert',
+        'unset',
+      ]),
+    ),
+  ]),
   /**
    * A boolean flag to determine what the value of the `flex-wrap` CSS property
    * will be, if `true`, then the `flex-wrap` CSS property will be `nowrap`.

@@ -4,6 +4,17 @@ import * as SynthReact from '@beatgig/synth-react'
 type PopupXPosition = 'left' | 'right' | 'center'
 type PopupYPosition = 'top' | 'bottom' | 'center'
 
+type PopupDOMRect = {
+  x: number
+  y: number
+  top: number
+  left: number
+  right: number
+  width: number
+  height: number
+  bottom: number
+}
+
 interface PopupProps {
   /**
    * The element in which you want to render the popup; the default
@@ -22,7 +33,7 @@ interface PopupProps {
   /**
    * The popup element's DOMRect object.
    */
-  popupRect?: DOMRect
+  popupRect?: PopupDOMRect | DOMRect
   /**
    * A boolean flag to determine if the popup should be rendered next to it's
    * trigger as opposed to rendering it on the specified `container`.
@@ -31,7 +42,7 @@ interface PopupProps {
   /**
    * The trigger element's DOMRect object.
    */
-  triggerRect?: object
+  triggerRect?: PopupDOMRect | DOMRect
   /**
    * If true, the popup's height will match it's target's height.
    */
@@ -76,6 +87,7 @@ declare const Popup: PopupComponent
 export {
   PopupComponent,
   PopupComponentProps,
+  PopupDOMRect,
   PopupProps,
   PopupXPosition,
   PopupYPosition,

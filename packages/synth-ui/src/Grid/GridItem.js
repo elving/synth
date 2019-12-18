@@ -3,19 +3,21 @@ import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import { withSynth } from '@beatgig/synth-react'
 
+import { Flex } from '../Flex'
+
 import { setBaseStyles, styleProp } from '../utils'
 import { getGridItemSpacing, setGridItemWidth } from './utils'
 
 /**
- * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<'div', import('@beatgig/synth-ui').GridItemProps>}
+ * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('@beatgig/synth-ui').FlexComponent, import('@beatgig/synth-ui').GridItemProps>}
  */
-const StyledGridItem = styled.div`
+const StyledGridItem = styled(Flex).attrs(() => ({
+  shrink: 0,
+}))`
   ${setBaseStyles()}
   ${setGridItemWidth()}
   margin-right: ${getGridItemSpacing()};
   margin-bottom: ${getGridItemSpacing()};
-  display: flex;
-  flex-shrink: 0;
 
   :nth-child(${styleProp('columnSize')}n) {
     margin-right: 0;

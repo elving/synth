@@ -53,3 +53,24 @@ export {
   SearchIconComponentProps,
   SearchIconProps,
 } from './SearchIcon'
+
+export {
+  default as StarEmptyIcon,
+  StarEmptyIconComponent,
+  StarEmptyIconComponentProps,
+  StarEmptyIconProps,
+} from './StarEmptyIcon'
+
+export {
+  default as StarHalfIcon,
+  StarHalfIconComponent,
+  StarHalfIconComponentProps,
+  StarHalfIconProps,
+} from './StarHalfIcon'
+
+export {
+  default as StarFullIcon,
+  StarFullIconComponent,
+  StarFullIconComponentProps,
+  StarFullIconProps,
+} from './StarFullIcon'

@@ -4,4 +4,8 @@ A description of the work you did.
 
 ## Changes
 
-Run `git log --pretty=format:"* %s (%h)" <FIRST COMMIT>...HEAD`
+_Run the following command and then paste the result here:_
+
+```bash
+git log --right-only --cherry-pick --format="* %s (%h)" <ORIGIN_BRANCH>...<NEW_BRANCH> | pbcopy
+```

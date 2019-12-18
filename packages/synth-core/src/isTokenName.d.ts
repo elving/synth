@@ -12,7 +12,7 @@
  * // => true
  *
  * isTokenName('color:text')
- * // => false
+ * // => true
  *
  * isTokenName('hello:world:button')
  * // => false

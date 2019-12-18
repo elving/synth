@@ -25,15 +25,27 @@ describe('getCSSDeclaration', () => {
     expect(getCSSDeclaration(tokens, 'color:background:button')).toEqual(
       'background-color: red;',
     )
+
     expect(getCSSDeclaration(tokens, 'space:padding:button')).toEqual(
       'padding: 10px;',
     )
+
     expect(getCSSDeclaration(tokens, 'space:padding:link')).toEqual(
       'padding: 2px 8px;',
     )
+
     expect(getCSSDeclaration(tokens, 'color:background:link')).toEqual(
       'background-color: green;',
     )
+
+    expect(getCSSDeclaration(tokens, 'color:background:@night')).toEqual(
+      'background-color: #121212;',
+    )
+
+    expect(getCSSDeclaration(tokens, 'space:margin:10')).toEqual(
+      'margin: 10px;',
+    )
+
     expect(getCSSDeclaration(tokens, '@night')).toEqual('#121212')
   })
 

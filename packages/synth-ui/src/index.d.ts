@@ -1,9 +1,30 @@
 export {
+  ArtistCard,
+  ArtistCardComponent,
+  ArtistCardProps,
+  ArtistCardComponentProps,
+} from './ArtistCard'
+
+export {
+  AspectRatio,
+  AspectRatioComponent,
+  AspectRatioProps,
+  AspectRatioComponentProps,
+} from './AspectRatio'
+
+export {
   Avatar,
   AvatarComponent,
   AvatarProps,
   AvatarComponentProps,
 } from './Avatar'
+
+export {
+  Background,
+  BackgroundComponent,
+  BackgroundComponentProps,
+  BackgroundProps,
+} from './Background'
 
 export { BaseStyles } from './BaseStyles'
 
@@ -123,6 +144,18 @@ export {
   SearchIconComponent,
   SearchIconComponentProps,
   SearchIconProps,
+  StarEmptyIcon,
+  StarEmptyIconComponent,
+  StarEmptyIconComponentProps,
+  StarEmptyIconProps,
+  StarHalfIcon,
+  StarHalfIconComponent,
+  StarHalfIconComponentProps,
+  StarHalfIconProps,
+  StarFullIcon,
+  StarFullIconComponent,
+  StarFullIconComponentProps,
+  StarFullIconProps,
 } from './Icons'
 
 export { Input, InputComponent, InputComponentProps, InputProps } from './Input'
@@ -180,6 +213,7 @@ export {
   Popup,
   PopupComponent,
   PopupComponentProps,
+  PopupDOMRect,
   PopupHookOptions,
   PopupHookState,
   PopupProps,
@@ -187,6 +221,13 @@ export {
   PopupYPosition,
   usePopup,
 } from './Popup'
+
+export {
+  Rating,
+  RatingComponent,
+  RatingProps,
+  RatingComponentProps,
+} from './Rating'
 
 export {
   SearchInput,
@@ -253,11 +294,6 @@ export {
   StatusComponent,
   StatusComponentProps,
   StatusProps,
-  Text,
-  TextComponent,
-  TextComponentProps,
-  TextIntent,
-  TextProps,
 } from './Typography'
 
 export {

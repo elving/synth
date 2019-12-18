@@ -1,9 +1,7 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-import { TextProps } from './Text'
-
-interface SmallProps extends TextProps {
+interface SmallProps extends SynthReact.TextProps {
   /**
    * The elements you want to display within the small component.
    */

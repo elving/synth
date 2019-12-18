@@ -1,0 +1,36 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { Box } from '../src'
+
+<Meta title="synth-react|Primitives/Box" component={Box} />
+
+# Box
+
+The `<Box>` component is a layout primitive used to display a container that supports CSS box model properties.
+
+<Preview withToolbar>
+  <Story name="intro">
+    <Box
+      height={100} 
+      padding="@spacing.3" 
+      style={{ background: 'rgba(255, 255, 255, 0.15)' }}
+      width={260} 
+    >
+      260 x 100
+    </Box>
+  </Story>
+</Preview>
+
+You can use the `<Box>` primitive without the default values from your tokens by passing the `withoutDefaults` prop.
+
+<Preview withToolbar>
+  <Story name="withoutDefaults">
+    <Box style={{ background: 'rgba(255, 255, 255, 0.15)' }} withoutDefaults>
+      With no defaults
+    </Box>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Box} />

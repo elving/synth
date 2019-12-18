@@ -1,4 +1,7 @@
+export { ArtistCard } from './ArtistCard'
+export { AspectRatio } from './AspectRatio'
 export { Avatar } from './Avatar'
+export { Background } from './Background'
 export { BaseStyles } from './BaseStyles'
 export { Button } from './Button'
 export { Card } from './Card'
@@ -22,6 +25,9 @@ export {
   InboxIcon,
   LogoutIcon,
   SearchIcon,
+  StarEmptyIcon,
+  StarHalfIcon,
+  StarFullIcon,
 } from './Icons'
 
 export { Input } from './Input'
@@ -37,12 +43,13 @@ export {
 } from './Modal'
 
 export { Popup, usePopup } from './Popup'
+export { Rating } from './Rating'
 export { SearchInput } from './SearchInput'
 export { Select, setSelectStyles } from './Select'
 export { Sidebar, SidebarLink } from './Sidebar'
 export { Spacer } from './Spacer'
 export { Tag } from './Tag'
 export { TagSelect } from './TagSelect'
-export { Heading, Label, Paragraph, Small, Status, Text } from './Typography'
+export { Heading, Label, Paragraph, Small, Status } from './Typography'
 
 export { setBaseStyles, noop, ScrollIntoView, withForwardedRef } from './utils'

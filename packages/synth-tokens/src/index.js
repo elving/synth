@@ -84,6 +84,7 @@ export const tokens = {
 
     text: {
       base: '@Porcelain',
+      meta: '@Oslo',
       status: '@Oslo',
     },
   },
@@ -145,6 +146,7 @@ export const tokens = {
     },
 
     shadow: {
+      subtle: '0 0 @spacing.1 rgba(0, 0, 0, 0.25)',
       avatar: '0 0 0 1px @Oslo',
       outlineControl: '0 0 0 1px inset @ShuttleGray',
     },
@@ -186,6 +188,7 @@ export const tokens = {
 
     lineHeight: {
       base: 1.5,
+      small: 1.25,
       heading: 1.2,
     },
 
