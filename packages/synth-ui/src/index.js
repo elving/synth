@@ -18,6 +18,8 @@ export { IconButton } from './IconButton'
 
 export {
   AdminIcon,
+  ArrowLeftIcon,
+  ArrowRightIcon,
   ArtistIcon,
   CheckIcon,
   ChevronDownIcon,
@@ -26,8 +28,8 @@ export {
   LogoutIcon,
   SearchIcon,
   StarEmptyIcon,
-  StarHalfIcon,
   StarFullIcon,
+  StarHalfIcon,
 } from './Icons'
 
 export { Input } from './Input'
