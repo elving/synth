@@ -34,7 +34,6 @@ const ArtistCard = forwardRef(
       <StyledBackground
         image={artist.avatar}
         position="center center"
-        ratio=".85"
         repeat="no-repeat"
         size="cover"
         synth={synth}
