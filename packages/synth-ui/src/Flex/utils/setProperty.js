@@ -1,3 +1,5 @@
+import { isNil } from '@beatgig/is'
+
 import { POSITIONAL_ALIGNMENT } from '../constants'
 
 /**
@@ -35,7 +37,7 @@ const setProperty = (propName, cssPropName) => (props) => {
     return ''
   }
 
-  return propValue ? `${cssPropName || propName}: ${propValue}` : ''
+  return !isNil(propValue) ? `${cssPropName || propName}: ${propValue};` : ''
 }
 
 export default setProperty

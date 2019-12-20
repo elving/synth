@@ -28,19 +28,19 @@ import {
  */
 const StyledFlex = styled(Box)`
   ${setBaseStyles()}
+  ${setProperty('flex')}
+  ${setProperty('grow', 'flex-grow')}
+  ${setProperty('basis', 'flex-basis')}
+  ${setProperty('shrink', 'flex-shrink')}
+  ${setProperty('alignItems', 'align-items')}
+  ${setProperty('alignContent', 'align-content')}
+  ${setProperty('placeContent', 'place-content')}
+  ${setProperty('justifyContent', 'justify-content')}
   ${setDisplay()}
   ${setFull()}
   ${setWrap()}
   ${setCenter()}
-  ${setDirection()}
-  ${setProperty('flex')};
-  ${setProperty('grow', 'flex-grow')};
-  ${setProperty('basis', 'flex-basis')};
-  ${setProperty('shrink', 'flex-shrink')};
-  ${setProperty('alignItems', 'align-items')};
-  ${setProperty('alignContent', 'align-content')};
-  ${setProperty('placeContent', 'place-content')};
-  ${setProperty('justifyContent', 'justify-content')};
+  ${setDirection()}  
 `
 
 const Flex = forwardRef(
@@ -53,6 +53,7 @@ const Flex = forwardRef(
 )
 
 Flex.propTypes = {
+  ...Box.propTypes,
   /**
    * Required to properly extend styled-components.
    * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
@@ -128,6 +129,16 @@ Flex.propTypes = {
    */
   center: PropTypes.bool,
   /**
+   * A boolean flag to determine if the `children` of the flex component should be
+   * horizontally centered.
+   */
+  centerX: PropTypes.bool,
+  /**
+   * A boolean flag to determine if the `children` of the flex component should be
+   * vertically centered.
+   */
+  centerY: PropTypes.bool,
+  /**
    * A boolean flag to determine what the value of the `flex-direction` CSS property
    * will be, if `true`, then the `flex-direction` CSS property will be `column`.
    */
@@ -176,6 +187,7 @@ Flex.propTypes = {
 }
 
 Flex.defaultProps = {
+  ...Box.defaultProps,
   className: '',
   row: false,
   full: false,
@@ -187,6 +199,8 @@ Flex.defaultProps = {
   nowrap: false,
   inline: false,
   center: false,
+  centerX: false,
+  centerY: false,
   column: false,
   fullWidth: false,
   fullHeight: false,
