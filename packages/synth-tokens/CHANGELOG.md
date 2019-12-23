@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/beatgig/synth/compare/@beatgig/synth-tokens@1.2.1...@beatgig/synth-tokens@1.2.2) (2019-12-23)
+
+**Note:** Version bump only for package @beatgig/synth-tokens
+
+
+
+
+
 ## [1.2.1](https://github.com/beatgig/synth/compare/@beatgig/synth-tokens@1.2.0...@beatgig/synth-tokens@1.2.1) (2019-12-18)
 
 **Note:** Version bump only for package @beatgig/synth-tokens

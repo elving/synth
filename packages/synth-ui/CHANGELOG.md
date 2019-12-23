@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/beatgig/synth/compare/@beatgig/synth-ui@1.4.0...@beatgig/synth-ui@1.5.0) (2019-12-23)
+
+
+### Bug Fixes
+
+* make `<Popup>` compatible with SSR ([a53d98a](https://github.com/beatgig/synth/commit/a53d98a3deabb52054a9e333bb516aef223bd5c9))
+
+
+### Features
+
+* add `<ArrowLeftIcon>` and `<ArrowRightIcon>` components ([9e37e15](https://github.com/beatgig/synth/commit/9e37e15e6d418839792bb7297104b1008222774b))
+* add `<Slider>` component and docs ([c3a4fc7](https://github.com/beatgig/synth/commit/c3a4fc729ee84c47bf54cd59dae2fd39784fe48f))
+* add centerX and centerY props to `<Flex>` component ([89b5468](https://github.com/beatgig/synth/commit/89b54689d65e896141bc9564116b56e9a4561c6f))
+* add withoutPadding prop to `<Clickable>` component ([8e3c447](https://github.com/beatgig/synth/commit/8e3c4479a63b1d233e15cde55be4ea7eb157878d))
+* change `<ArtistCard>` image aspect ratio ([4167669](https://github.com/beatgig/synth/commit/41676699aa1ac1178d5992581d5824f34b340ccb))
+* change reducer init function name ([227a27e](https://github.com/beatgig/synth/commit/227a27e4a627e4ca12b2408427892240cce50db4))
+* change sizing strategy for the `<Icon>` component ([395d621](https://github.com/beatgig/synth/commit/395d621e97ee0b9da485ad68e7e1e82fcf61a243))
+
+
+
+
+
 # [1.4.0](https://github.com/beatgig/synth/compare/@beatgig/synth-ui@1.3.0...@beatgig/synth-ui@1.4.0) (2019-12-18)
 
 

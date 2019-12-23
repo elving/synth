@@ -1,6 +1,6 @@
 {
   "name": "@beatgig/synth-ui",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "UI component library built on React and styled-components and powered by Synth design tokens",
   "author": "BeatGig Engineering <engineering@beatgig.com>",
   "homepage": "",
@@ -25,8 +25,8 @@
     "@beatgig/function": "^1.0.2",
     "@beatgig/hooks": "^1.1.6",
     "@beatgig/is": "^1.2.0",
-    "@beatgig/synth-core": "^1.1.0",
-    "@beatgig/synth-react": "^1.1.0",
+    "@beatgig/synth-core": "^1.1.1",
+    "@beatgig/synth-react": "^1.1.1",
     "@beatgig/synth-styled-components": "^1.0.2",
     "scroll-behavior-polyfill": "^2.0.13",
     "styled-components": "^4.4.1"
