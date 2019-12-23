@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
+import { isBrowser } from '@beatgig/is'
 import { backgroundColor, border } from '@beatgig/synth-styled-components'
 import { createPortal } from 'react-dom'
 import { withSynth } from '@beatgig/synth-react'
@@ -15,6 +16,8 @@ import {
   POPUP_POSITIONS_X,
   POPUP_POSITIONS_Y,
 } from './constants'
+
+const SafeHTMLElement = isBrowser() ? window.HTMLElement : {}
 
 /**
  * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('@beatgig/synth-ui').CardComponent, import('@beatgig/synth-ui').PopupComponentProps>}
@@ -92,7 +95,10 @@ Popup.propTypes = {
    * The element in which you want to render the popup; the default
    * is `document.getElementById('root')`.
    */
-  container: PropTypes.instanceOf(HTMLElement),
+  container: PropTypes.instanceOf(
+    // @ts-ignore
+    SafeHTMLElement,
+  ),
   /**
    * The elements you want to display within the popup.
    */
@@ -172,10 +178,8 @@ Popup.defaultProps = {
   triggerRect: getRect(),
   useTriggerHeight: false,
   useTriggerWidth: false,
-  // eslint-disable-next-line prettier/prettier
   x: /** @type {import('@beatgig/synth-ui').PopupXPosition} */ (POPUP_POSITION_LEFT),
   xOffset: 0,
-  // eslint-disable-next-line prettier/prettier
   y: /** @type {import('@beatgig/synth-ui').PopupYPosition} */ (POPUP_POSITION_BOTTOM),
   yOffset: 0,
 }
