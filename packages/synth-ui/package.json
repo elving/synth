@@ -21,13 +21,14 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@beatgig/array": "^1.0.1",
+    "@beatgig/array": "^1.1.0",
     "@beatgig/function": "^1.0.2",
-    "@beatgig/hooks": "^1.1.4",
-    "@beatgig/is": "^1.1.0",
+    "@beatgig/hooks": "^1.1.6",
+    "@beatgig/is": "^1.2.0",
     "@beatgig/synth-core": "^1.1.0",
     "@beatgig/synth-react": "^1.1.0",
     "@beatgig/synth-styled-components": "^1.0.2",
+    "scroll-behavior-polyfill": "^2.0.13",
     "styled-components": "^4.4.1"
   },
   "peerDependencies": {
