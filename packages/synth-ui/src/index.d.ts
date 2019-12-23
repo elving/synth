@@ -264,6 +264,13 @@ export {
 } from './Sidebar'
 
 export {
+  Slider,
+  SliderComponent,
+  SliderComponentProps,
+  SliderProps,
+} from './Slider'
+
+export {
   Spacer,
   SpacerComponent,
   SpacerComponentProps,

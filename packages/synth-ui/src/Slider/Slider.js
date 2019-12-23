@@ -1,14 +1,16 @@
-// @ts-nocheck
 import PropTypes from 'prop-types'
-import React, { Children, useRef, useState, useReducer } from 'react'
+import React, { Children, forwardRef, useRef, useState } from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
+import { borderRadius } from '@beatgig/synth-styled-components'
+import { last } from '@beatgig/array'
+import { useElementOnScreen } from '@beatgig/hooks'
+import { withSynth } from '@beatgig/synth-react'
 
 import { ArrowLeftIcon, ArrowRightIcon } from '../Icons'
 import { Clickable } from '../Clickable'
 import { Flex } from '../Flex'
 
-import { initReducer, reducer } from './reducer'
-import { ACTION_ENABLE, ACTION_SHOW_NEXT, ACTION_SHOW_PREV } from './actions'
+import { styleProp } from '../utils'
 
 const PreventSwipeNavigation = createGlobalStyle`
   body, html {
@@ -19,280 +21,247 @@ const PreventSwipeNavigation = createGlobalStyle`
 /**
  * @type {import('@beatgig/synth-ui').FlexComponent}
  */
-const Items = styled(Flex)`
-  z-index: 1;
-  overflow: visible;
+const Container = styled(Flex)`
   position: relative;
-  transform: translate3d(
-    -${({ itemsToShow, firstPosition }) => (100 / itemsToShow) * (firstPosition - 1)}%,
-    0,
-    0
-  );
-  transition: ${({ speed, easing }) => `transform ${speed}ms ${easing}`};
+`
 
-  > * {
-    width: calc(100% / ${({ itemsToShow }) => itemsToShow});
+/**
+ * @type {import('@beatgig/synth-ui').ClickableComponent}
+ */
+const NavBtn = styled(Clickable)`
+  border: 0 none;
+  height: 100%;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+
+  :disabled {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`
+
+/**
+ * @type {import('@beatgig/synth-ui').ClickableComponent}
+ */
+const PrevBtn = styled(NavBtn)`
+  background: rgba(0, 0, 0, 0.25);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  left: 0;
+
+  :disabled {
+    left: -100%;
+  }
+`
+
+/**
+ * @type {import('@beatgig/synth-ui').ClickableComponent}
+ */
+const NextBtn = styled(NavBtn)`
+  background: rgba(0, 0, 0, 0.25);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+  right: 0;
+
+  :disabled {
+    right: -100%;
   }
 `
 
 /**
  * @type {import('@beatgig/synth-ui').FlexComponent}
  */
-const ItemsWrapper = styled(Flex)`
-  overflow-x: scroll;
-  overflow-x: ${({ isEnabled }) => ((isEnabled ? 'scroll' : 'hidden'))};
-  overflow-y: visible;
+const Item = styled(Flex)`
+  margin-right: ${({ synth }) => synth.getUnit('@spacing.2')};
 `
 
-const Slider = ({ speed, easing, children, itemsToShow }) => {
-  const lastDeltaX = useRef(0)
-  const lastScrollLeft = useRef(0)
-  const scrollDisabled = useRef(false)
-  const [isHovering, setHoveringState] = useState(false)
+/**
+ * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('@beatgig/synth-ui').FlexComponent, import('@beatgig/synth-ui').SliderProps>}
+ */
+const Items = styled(Flex)`
+  position: relative;
+  z-index: 5;
 
-  const [state, dispatch] = useReducer(
-    reducer,
-    {
-      firstPosition: 1,
-      totalItems: Children.count(children),
-      itemsToShow,
-    },
-    initReducer,
-  )
-
-  const enable = () => {
-    lastScrollLeft.current = 0
-    scrollDisabled.current = false
-    dispatch({ type: ACTION_ENABLE })
+  > * {
+    width: calc(100% / ${styleProp('itemsToShow')});
   }
+`
 
-  const showNext = () => dispatch({ type: ACTION_SHOW_NEXT })
-  const showPrev = () => dispatch({ type: ACTION_SHOW_PREV })
-  const handleMouseEnter = () => setHoveringState(true)
-  const handleMouseLeave = () => setHoveringState(false)
+const Sizer = styled.div`
+  left: -1000em;
+  position: absolute;
+  top: -1000em;
+  width: calc(100% / ${styleProp('itemsToShow')});
+`
 
-  const handleWheel = (event) => {
-    console.log(event.deltaX)
-    if (event.deltaX > 2) {
-      lastDeltaX.current = event.deltaX
-      console.log('b')
-      // showNext()
-    } else if (event.deltaX < -2) {
-      lastDeltaX.current = event.deltaX
-      console.log('c')
-      // showPrev()
-    }
+/**
+ * @type {import('@beatgig/synth-ui').FlexComponent}
+ */
+const ItemsWrapper = styled(Flex)`
+  ${borderRadius()}
+  -ms-overflow-style: none;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  will-change: scroll-position;
+
+  &::-webkit-scrollbar {
+    height: 0px;
   }
+`
 
-  const handleScroll = (event) => {
-    console.log(event.target.scrollLeft)
-    if (scrollDisabled.current) {
-      event.preventDefault()
-      return false
+const Slider = forwardRef(
+  /**
+   * @param {import('@beatgig/synth-ui').SliderProps & import('@beatgig/synth-react').SynthComponentProps} props
+   */
+  ({ className = '', children = null, itemsToShow = 1, synth }, ref) => {
+    const $container = useRef(null)
+    const $firstItem = useRef(null)
+    const $lastItem = useRef(null)
+    const $sizer = useRef(null)
+    const totalItems = Children.count(children)
+    const [isHovering, setHoveringState] = useState(false)
+
+    const { isVisible: nextBtnDisabled } = useElementOnScreen($lastItem, {
+      root: $container.current,
+      threshold: 1.0,
+    })
+
+    const { isVisible: prevBtnDisabled } = useElementOnScreen($firstItem, {
+      root: $container.current,
+      threshold: 1.0,
+    })
+
+    const getItems = () =>
+      $container.current
+        ? Array.from($container.current.children[0].children).slice(1)
+        : []
+
+    const getFirstItemPosition = () =>
+      $container.current && $sizer.current
+        ? Math.round($container.current.scrollLeft / $sizer.current.offsetWidth)
+        : 0
+
+    const showNext = () => {
+      const $items = getItems()
+
+      const $nextItem =
+        $items[getFirstItemPosition() + itemsToShow] || last($items)
+
+      if ($nextItem) {
+        $nextItem.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'start',
+        })
+      }
     }
 
-    if (event.target.scrollLeft > lastScrollLeft.current) {
-      scrollDisabled.current = true
-      lastScrollLeft.current = 0
-      console.log('right 1')
-      showNext()
-    } else if (event.target.scrollLeft < lastScrollLeft.current) {
-      scrollDisabled.current = true
-      lastScrollLeft.current = 0
-      console.log('left 2')
-      showPrev()
+    const showPrev = () => {
+      const $items = getItems()
+      const $nextItem =
+        $items[getFirstItemPosition() - itemsToShow] || $items[0]
+
+      if ($nextItem) {
+        $nextItem.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'start',
+        })
+      }
     }
 
-    lastScrollLeft.current = event.target.scrollLeft
-  }
+    const handleEnter = () => setHoveringState(true)
+    const handleLeave = () => setHoveringState(false)
 
-  return (
-    <Flex centerY fullWidth justifyContent="space-between">
-      {isHovering && <PreventSwipeNavigation />}
+    return (
+      <Container centerY fullWidth justifyContent="space-between" ref={ref}>
+        {isHovering && <PreventSwipeNavigation />}
 
-      {state.itemsToShow < state.totalItems && (
-        <Clickable
-          icon={<ArrowLeftIcon scale={5} />}
-          disabled={!state.isEnabled || !state.canShowPrev}
-          onClick={state.isEnabled && state.canShowPrev ? showPrev : undefined}
-          withoutPadding
-        />
-      )}
+        {totalItems > itemsToShow && (
+          <PrevBtn
+            icon={<ArrowLeftIcon scale={5} />}
+            disabled={prevBtnDisabled}
+            onClick={showPrev}
+          />
+        )}
 
-      <ItemsWrapper
-        center
-        fullWidth
-        isEnabled={!scrollDisabled.current}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        onScroll={handleScroll}
-        onTouchStart={() => {
-          console.log('onTouchStart')
-        }}
-        onTouchEnd={() => {
-          console.log('onTouchEnd')
-        }}
-      >
-        <Items
-          centerY
-          easing={easing}
-          firstPosition={state.firstPosition}
-          full
-          itemsToShow={state.itemsToShow}
-          onTransitionEnd={enable}
-          speed={speed}
+        <ItemsWrapper
+          center
+          fullWidth
+          onMouseEnter={handleEnter}
+          onMouseLeave={handleLeave}
+          onTouchEnd={handleLeave}
+          onTouchStart={handleEnter}
+          ref={$container}
+          synth={synth}
         >
-          {Children.map(children, (child, index) => (
-            <Flex key={`slider-${index}`} padding="@spacing.2" shrink={0}>
-              {child}
-            </Flex>
-          ))}
-        </Items>
-      </ItemsWrapper>
+          <Items itemsToShow={itemsToShow} full>
+            <Sizer ref={$sizer} />
+            {Children.map(children, (child, index) => (
+              <Item
+                shrink={0}
+                synth={synth}
+                ref={
+                  index === 0
+                    ? $firstItem
+                    : index + 1 === totalItems
+                    ? $lastItem
+                    : null
+                }
+              >
+                {child}
+              </Item>
+            ))}
+          </Items>
+        </ItemsWrapper>
 
-      {state.itemsToShow < state.totalItems && (
-        <Clickable
-          icon={<ArrowRightIcon scale={5} />}
-          disabled={!state.isEnabled || !state.canShowNext}
-          onClick={state.isEnabled && state.canShowNext ? showNext : undefined}
-          withoutPadding
-        />
-      )}
-    </Flex>
-  )
-}
+        {totalItems > itemsToShow && (
+          <NextBtn
+            icon={<ArrowRightIcon scale={5} />}
+            disabled={nextBtnDisabled}
+            onClick={showNext}
+          />
+        )}
+      </Container>
+    )
+  },
+)
 
 Slider.propTypes = {
   /**
-   * @type {number} The speed of the item transition in milliseconds.
-   */
-  speed: PropTypes.number,
-
-  /**
-   * @type {Number|string} The amount of padding each item will have in order
-   * to separate them.
-   * @example "50%"
-   * @example 10 // Will be converted to "10px"
-   */
-  gutter: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-
-  /**
-   * @type {number} The easing function for the item transition.
-   */
-  easing: PropTypes.string,
-
-  /**
-   * @type {*} The items to be displayed.
+   * The elements you want to display within this slider component.
    */
   children: PropTypes.node,
-
   /**
-   * @type {string} Prefix used to generate the `key` prop when rendering
-   * the item clones.
+   * Required to properly extend styled-components.
+   * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
    */
-  keyPrefix: PropTypes.string.isRequired,
-
+  className: PropTypes.string,
   /**
-   * @type {number} The amount of items to display at the same time.
+   * The number of items you want to be visible.
    */
   itemsToShow: PropTypes.number,
 }
 
 Slider.defaultProps = {
-  speed: 300,
-  gutter: 0,
-  easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
   children: null,
+  className: '',
   itemsToShow: 1,
 }
 
-export default Slider
+Slider.displayName = 'Slider'
 
-// import PropTypes from 'prop-types'
-// import styled from 'styled-components'
-// import React, { forwardRef } from 'react'
-// import { borderRadius, boxShadow } from '@beatgig/synth-styled-components'
-// import { Text, withSynth } from '@beatgig/synth-react'
-
-// import { Background } from '../Background'
-// import { Flex } from '../Flex'
-// import { Heading } from '../Typography'
-// import { Rating } from '../Rating'
-// import { Spacer } from '../Spacer'
-
-// /**
-//  * @type {import('@beatgig/synth-ui').BackgroundComponent}
-//  */
-// const StyledBackground = styled(Background)`
-//   ${borderRadius()}
-//   ${boxShadow('subtle')}
-// `
-
-// /**
-//  * @type {import('@beatgig/synth-ui').FlexComponent}
-//  */
-// const Content = styled(Flex)`
-//   text-align: center;
-// `
-
-// const ArtistCard = forwardRef(
-//   /**
-//    * @param {import('@beatgig/synth-ui').ArtistCardProps & import('@beatgig/synth-react').SynthComponentProps} props
-//    */
-//   ({ className = '', artist, synth }, ref) => (
-//     <Flex column className={className} fullWidth ref={ref}>
-//       <StyledBackground
-//         image={artist.avatar}
-//         position="center center"
-//         ratio=".85"
-//         repeat="no-repeat"
-//         size="cover"
-//         synth={synth}
-//         width="100%"
-//       />
-//       <Spacer scale={1} bottom />
-//       <Content center column fullWidth>
-//         <Heading level="h5" weight="@fontWeights" withoutMargin>
-//           {artist.stageName}
-//         </Heading>
-//         <Spacer bottom />
-//         <Text color="meta">
-//           {artist.genres.map(({ name }) => name).join(', ')}
-//         </Text>
-//         <Spacer bottom />
-//         <Rating scale={1} rating={artist.rating} />
-//       </Content>
-//     </Flex>
-//   ),
-// )
-
-// ArtistCard.propTypes = {
-//   /**
-//    * Required to properly extend styled-components.
-//    * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
-//    */
-//   className: PropTypes.string,
-//   /**
-//    * The artist object holding their information to be displayed.
-//    */
-//   artist: PropTypes.exact({
-//     avatar: PropTypes.string,
-//     genres: PropTypes.arrayOf(
-//       PropTypes.exact({
-//         id: PropTypes.string,
-//         name: PropTypes.string,
-//       }),
-//     ),
-//     id: PropTypes.string,
-//     rating: PropTypes.number,
-//     stageName: PropTypes.string,
-//   }),
-// }
-
-// ArtistCard.defaultProps = {
-//   className: '',
-// }
-
-// ArtistCard.displayName = 'ArtistCard'
-
-// export default withSynth(ArtistCard)
+export default withSynth(Slider)

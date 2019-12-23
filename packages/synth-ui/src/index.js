@@ -1,3 +1,5 @@
+import 'scroll-behavior-polyfill'
+
 export { ArtistCard } from './ArtistCard'
 export { AspectRatio } from './AspectRatio'
 export { Avatar } from './Avatar'
