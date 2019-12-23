@@ -116,6 +116,14 @@ export {
   AdminIconComponent,
   AdminIconComponentProps,
   AdminIconProps,
+  ArrowLeftIcon,
+  ArrowLeftIconComponent,
+  ArrowLeftIconComponentProps,
+  ArrowLeftIconProps,
+  ArrowRightIcon,
+  ArrowRightIconComponent,
+  ArrowRightIconComponentProps,
+  ArrowRightIconProps,
   ArtistIcon,
   ArtistIconComponent,
   ArtistIconComponentProps,
@@ -148,14 +156,14 @@ export {
   StarEmptyIconComponent,
   StarEmptyIconComponentProps,
   StarEmptyIconProps,
-  StarHalfIcon,
-  StarHalfIconComponent,
-  StarHalfIconComponentProps,
-  StarHalfIconProps,
   StarFullIcon,
   StarFullIconComponent,
   StarFullIconComponentProps,
   StarFullIconProps,
+  StarHalfIcon,
+  StarHalfIconComponent,
+  StarHalfIconComponentProps,
+  StarHalfIconProps,
 } from './Icons'
 
 export { Input, InputComponent, InputComponentProps, InputProps } from './Input'
@@ -254,6 +262,13 @@ export {
   SidebarLinkProps,
   SidebarProps,
 } from './Sidebar'
+
+export {
+  Slider,
+  SliderComponent,
+  SliderComponentProps,
+  SliderProps,
+} from './Slider'
 
 export {
   Spacer,

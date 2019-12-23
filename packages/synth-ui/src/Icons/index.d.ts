@@ -6,6 +6,20 @@ export {
 } from './AdminIcon'
 
 export {
+  default as ArrowLeftIcon,
+  ArrowLeftIconComponent,
+  ArrowLeftIconComponentProps,
+  ArrowLeftIconProps,
+} from './ArrowLeftIcon'
+
+export {
+  default as ArrowRightIcon,
+  ArrowRightIconComponent,
+  ArrowRightIconComponentProps,
+  ArrowRightIconProps,
+} from './ArrowRightIcon'
+
+export {
   default as ArtistIcon,
   ArtistIconComponent,
   ArtistIconComponentProps,

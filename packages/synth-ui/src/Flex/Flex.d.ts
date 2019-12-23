@@ -2,7 +2,7 @@ import * as CSS from 'csstype'
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface FlexProps {
+interface FlexProps extends SynthReact.BoxProps {
   /**
    * The elements you want to display within the flex component.
    */
@@ -59,6 +59,16 @@ interface FlexProps {
    * CSS properties will be `center`.
    */
   center?: boolean
+  /**
+   * A boolean flag to determine if the `children` of the flex component should be
+   * horizontally centered.
+   */
+  centerX?: boolean
+  /**
+   * A boolean flag to determine if the `children` of the flex component should be
+   * vertically centered.
+   */
+  centerY?: boolean
   /**
    * A boolean flag to determine what the value of the `flex-direction` CSS property
    * will be, if `true`, then the `flex-direction` CSS property will be `column`.

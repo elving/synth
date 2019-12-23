@@ -52,7 +52,7 @@ import {
  * @param {{ defaultSelected: array, groupAfter: number, single: boolean, tags: array }} options
  * @returns {State}
  */
-export const init = ({
+export const initReducer = ({
   defaultSelected = [],
   groupAfter = 0,
   single = false,

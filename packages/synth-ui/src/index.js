@@ -1,3 +1,5 @@
+import 'scroll-behavior-polyfill'
+
 export { ArtistCard } from './ArtistCard'
 export { AspectRatio } from './AspectRatio'
 export { Avatar } from './Avatar'
@@ -18,6 +20,8 @@ export { IconButton } from './IconButton'
 
 export {
   AdminIcon,
+  ArrowLeftIcon,
+  ArrowRightIcon,
   ArtistIcon,
   CheckIcon,
   ChevronDownIcon,
@@ -26,8 +30,8 @@ export {
   LogoutIcon,
   SearchIcon,
   StarEmptyIcon,
-  StarHalfIcon,
   StarFullIcon,
+  StarHalfIcon,
 } from './Icons'
 
 export { Input } from './Input'
@@ -47,6 +51,7 @@ export { Rating } from './Rating'
 export { SearchInput } from './SearchInput'
 export { Select, setSelectStyles } from './Select'
 export { Sidebar, SidebarLink } from './Sidebar'
+export { Slider } from './Slider'
 export { Spacer } from './Spacer'
 export { Tag } from './Tag'
 export { TagSelect } from './TagSelect'

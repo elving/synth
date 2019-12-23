@@ -75,3 +75,17 @@ Clickables can contain a combination of a label and an icon; The `icon` property
     </Flex>
   </Story>
 </Preview>
+
+You can also display a `<Clickable>` component without any padding by passing the `withoutPadding` property.
+
+Clickables can contain a combination of a label and an icon; The `icon` property gives you the ability to pass in an icon component to be rendered with the button's text. The `iconPosition` property will let you specifiy the positioning of the icon.
+
+<Preview withToolbar>
+  <Story name="withoutPadding">
+    <Flex alignItems="center">
+      <Clickable icon={<SearchIcon />} withoutPadding />
+      <Clickable icon={<SearchIcon />} withoutPadding />
+      <Clickable icon={<SearchIcon />} withoutPadding />
+    </Flex>
+  </Story>
+</Preview>

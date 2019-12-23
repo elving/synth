@@ -25,35 +25,58 @@ const Content = styled(Flex)`
   text-align: center;
 `
 
+/**
+ * @type {import('@beatgig/synth-ui').HeadingComponent}
+ */
+const StageName = styled(Heading)`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+`
+
+/**
+ * @type {import('@beatgig/synth-react').TextComponent}
+ */
+const Genres = styled(Text)`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+`
+
 const ArtistCard = forwardRef(
   /**
    * @param {import('@beatgig/synth-ui').ArtistCardProps & import('@beatgig/synth-react').SynthComponentProps} props
    */
-  ({ className = '', artist, synth }, ref) => (
-    <Flex column className={className} fullWidth ref={ref}>
-      <StyledBackground
-        image={artist.avatar}
-        position="center center"
-        ratio=".85"
-        repeat="no-repeat"
-        size="cover"
-        synth={synth}
-        width="100%"
-      />
-      <Spacer scale={1} bottom />
-      <Content center column fullWidth>
-        <Heading level="h5" weight="@fontWeights" withoutMargin>
-          {artist.stageName}
-        </Heading>
-        <Spacer bottom />
-        <Text color="meta">
-          {artist.genres.map(({ name }) => name).join(', ')}
-        </Text>
-        <Spacer bottom />
-        <Rating scale={1} rating={artist.rating} />
-      </Content>
-    </Flex>
-  ),
+  ({ className = '', artist, synth }, ref) => {
+    const genres = artist.genres.map(({ name }) => name).join(', ')
+
+    return (
+      <Flex column className={className} fullWidth ref={ref}>
+        <StyledBackground
+          image={artist.avatar}
+          position="center center"
+          repeat="no-repeat"
+          size="cover"
+          synth={synth}
+          width="100%"
+        />
+        <Spacer scale={1} bottom />
+        <Content center column fullWidth>
+          <StageName level="h6" weight="@fontWeights" withoutMargin>
+            {artist.stageName}
+          </StageName>
+          <Spacer bottom />
+          <Genres color="meta" title={genres}>
+            {genres}
+          </Genres>
+          <Spacer bottom />
+          <Rating scale={1} rating={artist.rating} />
+        </Content>
+      </Flex>
+    )
+  },
 )
 
 ArtistCard.propTypes = {

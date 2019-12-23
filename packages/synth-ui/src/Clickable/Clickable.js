@@ -1,10 +1,11 @@
+import PropTypes from 'prop-types'
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import { withSynth } from '@beatgig/synth-react'
 
 import { Button } from '../Button'
 
-import { setColor } from './utils'
+import { setColor, setPadding } from './utils'
 
 /**
  * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('@beatgig/synth-ui').ButtonComponent>}
@@ -15,6 +16,7 @@ const StyledClickable = styled(Button)`
   &:active,
   &:focus {
     ${setColor()}
+    ${setPadding()}
     background-color: transparent;
     border-color: transparent;
   }
@@ -31,8 +33,19 @@ const Clickable = forwardRef(
   ),
 )
 
-Clickable.propTypes = Button.propTypes
-Clickable.defaultProps = Button.defaultProps
+Clickable.propTypes = {
+  ...Button.propTypes,
+  /**
+   * A boolean flag to determine if the button should **not** have any padding.
+   */
+  withoutPadding: PropTypes.bool,
+}
+
+Clickable.defaultProps = {
+  ...Button.defaultProps,
+  withoutPadding: false,
+}
+
 Clickable.displayName = 'Clickable'
 
 export default withSynth(Clickable)

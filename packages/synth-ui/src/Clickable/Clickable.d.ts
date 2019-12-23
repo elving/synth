@@ -2,7 +2,12 @@ import * as React from 'react'
 
 import { ButtonProps } from '../Button'
 
-interface ClickableProps extends ButtonProps {}
+interface ClickableProps extends ButtonProps {
+  /**
+   * A boolean flag to determine if the button should **not** have any padding.
+   */
+  withoutPadding?: boolean
+}
 
 type ClickableComponentProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   React.RefAttributes<HTMLButtonElement> & {

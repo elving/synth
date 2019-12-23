@@ -1,0 +1,32 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { artists } from './utils'
+import { ArtistCard, Slider, Spacer } from '../src'
+
+<Meta title="synth-ui|Slider" component={Slider} />
+
+# Slider
+
+The `<Slider>` component displays a slidable list of items.
+
+<Preview withToolbar>
+  <Story name="intro">
+    <div style={{ width: '100%' }}>
+      <Slider itemsToShow={4}>
+        {artists.slice(0, 5).map((artist) => (
+          <ArtistCard key={`slider-${artist.id}`} artist={artist} />
+        ))}
+      </Slider>
+      <Spacer bottom scale={3} />
+      <Slider itemsToShow={3}>
+        {artists.map((artist) => (
+          <ArtistCard key={`slider-${artist.id}`} artist={artist} />
+        ))}
+      </Slider>
+    </div>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Slider} />

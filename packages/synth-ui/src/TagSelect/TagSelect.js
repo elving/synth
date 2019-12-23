@@ -24,7 +24,7 @@ import { Status } from '../Typography'
 import { Tag } from '../Tag'
 import { Popup, usePopup } from '../Popup'
 
-import { init, reducer } from './reducer'
+import { initReducer, reducer } from './reducer'
 import { noop, ScrollIntoView } from '../utils'
 import { setSelectStyles } from '../Select'
 
@@ -301,7 +301,7 @@ const TagSelect = forwardRef(
         single,
         tags,
       },
-      init,
+      initReducer,
     )
 
     const prevState = usePreviousValue(state)
