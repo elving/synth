@@ -29,11 +29,12 @@
     "@beatgig/synth-react": "^1.1.1",
     "@beatgig/synth-styled-components": "^1.0.2",
     "scroll-behavior-polyfill": "^2.0.13",
-    "styled-components": "^4.4.1"
+    "styled-components": "^5.0.0"
   },
   "peerDependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
-  "types": "src/index.d.ts"
+  "types": "src/index.d.ts",
+  "gitHead": "7ceb7d339f10d3b319ae572092f28cc18bb5dd86"
 }
