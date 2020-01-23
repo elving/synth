@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/beatgig/synth/compare/@beatgig/synth-ui@1.5.0...@beatgig/synth-ui@1.5.1) (2020-01-23)
+
+
+### Bug Fixes
+
+* prevent SSR issues when referencing document ([48eef3e](https://github.com/beatgig/synth/commit/48eef3e8ca4183914f7c262cb87187fc87f075c9))
+
+
+
+
+
 # [1.5.0](https://github.com/beatgig/synth/compare/@beatgig/synth-ui@1.4.0...@beatgig/synth-ui@1.5.0) (2019-12-23)
 
 
