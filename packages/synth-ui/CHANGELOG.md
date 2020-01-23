@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.3](https://github.com/beatgig/synth/compare/@beatgig/synth-ui@1.5.2...@beatgig/synth-ui@1.5.3) (2020-01-23)
+
+
+### Bug Fixes
+
+* remove hardcoded type for Input component ([c54a492](https://github.com/beatgig/synth/commit/c54a492dd436bd644dfee6727d3975c96046d706))
+
+
+
+
+
 ## [1.5.2](https://github.com/beatgig/synth/compare/@beatgig/synth-ui@1.5.1...@beatgig/synth-ui@1.5.2) (2020-01-23)
 
 **Note:** Version bump only for package @beatgig/synth-ui
