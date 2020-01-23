@@ -7,6 +7,10 @@ interface InputProps {
    * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
    */
   className?: string
+  /**
+   * A string indicating which input type the <input> element represents.
+   */
+  type?: string
 }
 
 type InputComponentProps = React.InputHTMLAttributes<HTMLInputElement> &

@@ -17,9 +17,7 @@ import { setBorderColor, setBorderColorFocus } from './utils'
 /**
  * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<'input', import('@beatgig/synth-ui').InputProps>}
  */
-const StyledInput = styled.input.attrs(() => ({
-  type: 'text',
-}))`
+const StyledInput = styled.input`
   ${setBaseStyles()}
   ${backgroundColor('input')}
   ${border('input')}
@@ -54,8 +52,14 @@ const Input = forwardRef(
   /**
    * @param {import('@beatgig/synth-ui').InputProps & import('@beatgig/synth-react').SynthComponentProps} props
    */
-  ({ className = '', synth, ...props }, ref) => (
-    <StyledInput {...props} className={className} synth={synth} ref={ref} />
+  ({ className = '', synth, type = 'text', ...props }, ref) => (
+    <StyledInput
+      {...props}
+      className={className}
+      ref={ref}
+      synth={synth}
+      type={type}
+    />
   ),
 )
 
@@ -65,10 +69,15 @@ Input.propTypes = {
    * @see {@link https://www.styled-components.com/docs/api#caveat-with-classname}
    */
   className: PropTypes.string,
+  /**
+   * A string indicating which input type the <input> element represents.
+   */
+  type: PropTypes.string,
 }
 
 Input.defaultProps = {
   className: '',
+  type: 'text',
 }
 
 Input.displayName = 'Input'
