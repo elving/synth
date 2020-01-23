@@ -17,7 +17,8 @@ import {
   POPUP_POSITIONS_Y,
 } from './constants'
 
-const SafeHTMLElement = isBrowser() ? window.HTMLElement : {}
+const ssrContainer = isBrowser() ? document?.getElementById('root') : null
+const ssrHTMLElement = isBrowser() ? window?.HTMLElement : {}
 
 /**
  * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('@beatgig/synth-ui').CardComponent, import('@beatgig/synth-ui').PopupComponentProps>}
@@ -97,7 +98,7 @@ Popup.propTypes = {
    */
   container: PropTypes.instanceOf(
     // @ts-ignore
-    SafeHTMLElement,
+    ssrHTMLElement,
   ),
   /**
    * The elements you want to display within the popup.
@@ -172,7 +173,7 @@ Popup.propTypes = {
 Popup.defaultProps = {
   children: null,
   className: '',
-  container: document.getElementById('root'),
+  container: ssrContainer,
   popupRect: getRect(),
   renderInPlace: false,
   triggerRect: getRect(),
