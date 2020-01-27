@@ -46,7 +46,7 @@ const Rating = forwardRef(
             return (
               <Fragment>
                 <StarEmptyIcon
-                  fill={synth.getValue('@BeatGig')}
+                  fill={synth.getValue('color:@BeatGig.1')}
                   scale={scale}
                 />
                 <Spacer inline right />
@@ -57,7 +57,10 @@ const Rating = forwardRef(
           case RATING_STAR_HALF: {
             return (
               <Fragment>
-                <StarHalfIcon fill={synth.getValue('@BeatGig')} scale={scale} />
+                <StarHalfIcon
+                  fill={synth.getValue('color:@BeatGig.1')}
+                  scale={scale}
+                />
                 <Spacer inline right />
               </Fragment>
             )
@@ -66,7 +69,10 @@ const Rating = forwardRef(
           case RATING_STAR_FULL: {
             return (
               <Fragment>
-                <StarFullIcon fill={synth.getValue('@BeatGig')} scale={scale} />
+                <StarFullIcon
+                  fill={synth.getValue('color:@BeatGig.1')}
+                  scale={scale}
+                />
                 <Spacer inline right />
               </Fragment>
             )
@@ -76,7 +82,7 @@ const Rating = forwardRef(
             return (
               <Fragment>
                 <StarEmptyIcon
-                  fill={synth.getValue('@BeatGig')}
+                  fill={synth.getValue('color:@BeatGig.1')}
                   scale={scale}
                 />
                 <Spacer inline right />

@@ -35,7 +35,7 @@ const FormField = forwardRef(
          */
         (child) => cloneElement(child, { hasError: !!error }),
       )}
-      {error && <Small color="@Error">{error}</Small>}
+      {error && <Small color="@Error.1">{error}</Small>}
     </FormRow>
   ),
 )

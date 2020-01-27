@@ -13,7 +13,9 @@ const setBackgroundColorHover = () => ({ intent, outline, synth }) => {
   const color =
     intent !== BUTTON_INTENT_NONE
       ? synth.getValue(
-          `${getIntentColor(intent, 'control')}.${outline ? 0 : 1}`,
+          `color:${getIntentColor(intent, 'control').split('.')[0]}.${
+            outline ? 1 : 2
+          }`,
         )
       : synth.getValue(`color:background:control${!outline ? ':hover' : ''}`)
 

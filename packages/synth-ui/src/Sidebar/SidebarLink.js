@@ -27,7 +27,7 @@ const StyledSidebarLink = styled.a`
   ${fontSize('text')}
   ${fontWeight('control')}
   ${margin('formRow')}
-  ${padding('@spacing.2')}
+  ${padding('@spacing.3')}
   cursor: pointer;
   text-decoration: none;
   align-items: center;
@@ -55,8 +55,8 @@ const SidebarLink = forwardRef(
     return (
       <StyledSidebarLink {...props} className={className} synth={synth}>
         {hasIcon ? icon : null}
-        {hasIcon ? <Spacer inline left scale={1} /> : null}
-        <Text size="@fontSizes.2">{children}</Text>
+        {hasIcon ? <Spacer inline left scale={2} /> : null}
+        <Text size="@fontSizes.3">{children}</Text>
       </StyledSidebarLink>
     )
   },

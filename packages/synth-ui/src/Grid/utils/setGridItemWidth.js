@@ -8,7 +8,7 @@
  * @returns {<T>(props: T & Props) => string}
  */
 const getGridItemWidth = () => ({ columnSize, synth }) => {
-  const spacing = synth.getUnit('@spacing.2')
+  const spacing = synth.getUnit('space:@spacing.3')
   return `width: calc(100% / ${columnSize} - (${spacing} - ${spacing} / ${columnSize}));`
 }
 

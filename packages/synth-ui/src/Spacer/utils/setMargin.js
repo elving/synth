@@ -7,9 +7,9 @@ import { POSITIONS } from '../constants'
  * @property {(tokenName: string) => string} synth.getUnit
  * @returns {<T>(props: T & Props) => string}
  */
-const setMargin = () => ({ scale = 0, synth, ...props }) => {
+const setMargin = () => ({ scale = 1, synth, ...props }) => {
   let css = ''
-  const margin = synth.getUnit(`@spacing.${scale}`)
+  const margin = synth.getUnit(`space:@spacing.${scale}`)
 
   Object.keys(props).forEach((key) => {
     if (POSITIONS.includes(key) && props[key]) {

@@ -62,9 +62,9 @@ const ArtistCard = forwardRef(
           synth={synth}
           width="100%"
         />
-        <Spacer scale={1} bottom />
+        <Spacer scale={2} bottom />
         <Content center column fullWidth>
-          <StageName level="h6" weight="@fontWeights" withoutMargin>
+          <StageName level="h6" weight="@fontWeights.1" withoutMargin>
             {artist.stageName}
           </StageName>
           <Spacer bottom />
@@ -72,7 +72,7 @@ const ArtistCard = forwardRef(
             {genres}
           </Genres>
           <Spacer bottom />
-          <Rating scale={1} rating={artist.rating} />
+          <Rating scale={2} rating={artist.rating} />
         </Content>
       </Flex>
     )

@@ -7,6 +7,7 @@ import { withSynth } from '@beatgig/synth-react'
 import {
   border,
   borderRadius,
+  fontSize,
   fontWeight,
   padding,
 } from '@beatgig/synth-styled-components'
@@ -48,6 +49,7 @@ const StyledButton = styled.button.attrs(() => ({
   ${setBaseStyles()}
   ${border('control')}
   ${borderRadius()}
+  ${fontSize('control')}
   ${fontWeight('control')}
   ${padding('control')}
   ${setBackgroundColor()}

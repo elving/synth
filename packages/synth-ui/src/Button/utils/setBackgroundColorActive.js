@@ -11,7 +11,7 @@ import getIntentColor from './getIntentColor'
 const setBackgroundColorActive = () => ({ intent, synth }) => {
   const color =
     intent !== BUTTON_INTENT_NONE
-      ? synth.getValue(getIntentColor(intent, 'control'))
+      ? synth.getValue(`color:${getIntentColor(intent, 'control')}`)
       : synth.getValue('color:background:control:active')
 
   return `background-color: ${color};`

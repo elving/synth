@@ -1,4 +1,4 @@
-import { unit } from '@beatgig/synth-core'
+import { unit } from '../../utils'
 
 import {
   POPUP_POSITION_BOTTOM,

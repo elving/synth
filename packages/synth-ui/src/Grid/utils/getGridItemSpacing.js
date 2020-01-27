@@ -5,6 +5,7 @@
  * @property {(tokenName: string) => string} synth.getUnit
  * @returns {<T>(props: T & Props) => string}
  */
-const getGridItemSpacing = () => ({ synth }) => synth.getUnit('@spacing.2')
+const getGridItemSpacing = () => ({ synth }) =>
+  synth.getUnit('space:@spacing.3')
 
 export default getGridItemSpacing

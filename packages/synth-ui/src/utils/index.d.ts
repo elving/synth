@@ -1,4 +1,5 @@
 export { default as noop } from './noop'
+export { default as unit } from './unit'
 
 export {
   default as ScrollIntoView,

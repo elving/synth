@@ -1,4 +1,4 @@
-import { unit } from '@beatgig/synth-core'
+import { unit } from '../../utils'
 
 /**
  * Sets the popup's `height` and `width`.

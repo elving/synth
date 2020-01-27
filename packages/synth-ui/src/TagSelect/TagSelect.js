@@ -77,21 +77,18 @@ const TagsContainer = styled.div`
   overflow-x: hidden;
   width: 100%;
 
-  & > *:not(:first-child) {
-    flex: 1;
-  }
-
   &.active {
     ${setTagsContainerActiveBorder()}
   }
 `
 
 const TagsInnerContainer = styled.div`
+  -ms-overflow-style: none;
   display: flex;
   flex-direction: row-reverse;
+  max-width: 55%;
   overflow-x: scroll;
   scrollbar-width: none;
-  -ms-overflow-style: none;
 
   &::-webkit-scrollbar {
     height: 0px;
@@ -103,13 +100,10 @@ const TagsInnerContainer = styled.div`
  */
 const StyledEditable = styled(Editable)`
   cursor: pointer;
+  flex: 1;
   min-width: 15%;
   padding: 0;
   width: 100%;
-
-  &.active {
-    min-width: 50%;
-  }
 `
 
 /**
@@ -173,6 +167,10 @@ const SearchInput = forwardRef(
   ),
 )
 
+const SelectedTag = styled(Tag)`
+  flex-shrink: 0;
+`
+
 const TagSelectionRemove = styled(Clickable)`
   border-width: 0;
   padding: 0;
@@ -186,7 +184,7 @@ const TagSelectionRemove = styled(Clickable)`
  * @returns {React.ReactElement<import('@beatgig/synth-ui').TagProps>}
  */
 const TagSelection = ({ className = '', onClickClose = noop, tag }) => (
-  <Tag className={className}>
+  <SelectedTag className={className}>
     {tag.label}
     <TagSelectionRemove
       onClick={(event) => {
@@ -194,9 +192,9 @@ const TagSelection = ({ className = '', onClickClose = noop, tag }) => (
         onClickClose(tag)
       }}
     >
-      <CloseIcon scale={0} />
+      <CloseIcon scale={1} />
     </TagSelectionRemove>
-  </Tag>
+  </SelectedTag>
 )
 
 /**
@@ -434,43 +432,45 @@ const TagSelect = forwardRef(
               @TODO - Look to solve this by scrolling the container "manually" on a `useLayoutEffect` effect?
             */}
             <TagsInnerContainer>
-              <Flex alignItems="center" justifyContent="flex-end" fullWidth>
-                {state.ungroupedSelectedTags.map((selectedTag, index) => (
-                  <Fragment key={`selection--${selectedTag.value}`}>
-                    {index !== 0 && <Spacer inline left scale={1} />}
-                    {single ? (
-                      <SearchInput
-                        className={isOpen ? 'active' : ''}
-                        onChange={filterTags}
-                        onDelete={removeLastTag}
-                        onEnter={onInputEnter}
-                        onEscape={close}
-                        onFocus={open}
-                        onNavigateDown={setNextActiveTag}
-                        onNavigateUp={setPrevActiveTag}
-                        placeholder={placeholder}
-                        ref={inputRef}
-                        value={state.filter || selectedTag.label}
-                      />
-                    ) : (
-                      <TagSelection
-                        tag={selectedTag}
-                        onClickClose={removeTag}
-                      />
-                    )}
-                  </Fragment>
-                ))}
+              {state.hasTagsSelected && (
+                <Flex alignItems="center" justifyContent="flex-end" fullWidth>
+                  {state.ungroupedSelectedTags.map((selectedTag, index) => (
+                    <Fragment key={`selection--${selectedTag.value}`}>
+                      {index !== 0 && <Spacer inline left scale={1} />}
+                      {single ? (
+                        <SearchInput
+                          className={isOpen ? 'active' : ''}
+                          onChange={filterTags}
+                          onDelete={removeLastTag}
+                          onEnter={onInputEnter}
+                          onEscape={close}
+                          onFocus={open}
+                          onNavigateDown={setNextActiveTag}
+                          onNavigateUp={setPrevActiveTag}
+                          placeholder={placeholder}
+                          ref={inputRef}
+                          value={state.filter || selectedTag.label}
+                        />
+                      ) : (
+                        <TagSelection
+                          tag={selectedTag}
+                          onClickClose={removeTag}
+                        />
+                      )}
+                    </Fragment>
+                  ))}
 
-                {state.groupedSelectedTags.length > 0 && (
-                  <Fragment>
-                    <Spacer inline left scale={1} />
-                    <Tag>{state.groupedSelectedTags.length}+</Tag>
-                  </Fragment>
-                )}
-              </Flex>
+                  {state.groupedSelectedTags.length > 0 && (
+                    <Fragment>
+                      <Spacer inline left scale={1} />
+                      <Tag>{state.groupedSelectedTags.length}+</Tag>
+                    </Fragment>
+                  )}
+                </Flex>
+              )}
             </TagsInnerContainer>
 
-            {state.hasTagsSelected && <Spacer inline left scale={1} />}
+            {state.hasTagsSelected && <Spacer inline left scale={2} />}
 
             {single && state.hasTagsSelected ? null : (
               <SearchInput
@@ -490,11 +490,11 @@ const TagSelect = forwardRef(
 
             {state.hasTagsSelected && (
               <Fragment>
-                <Spacer inline left scale={1} />
-                <ClearButton onClick={clearSelectedTags}>
-                  <CloseIcon scale={1} />
-                </ClearButton>
                 <Spacer inline left scale={2} />
+                <ClearButton onClick={clearSelectedTags}>
+                  <CloseIcon scale={2} />
+                </ClearButton>
+                <Spacer inline left scale={3} />
               </Fragment>
             )}
           </TagsContainer>
@@ -506,7 +506,7 @@ const TagSelect = forwardRef(
             {...popupHookProps}
             ref={popupRef}
             useTriggerWidth
-            yOffset={synth.getValue('@spacing.1')}
+            yOffset={synth.getValue('space:@spacing.2')}
           >
             <TagList>
               {!state.filter &&

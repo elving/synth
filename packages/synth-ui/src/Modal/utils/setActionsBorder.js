@@ -5,7 +5,7 @@
  * @returns {<T>(props: T & Props) => string}
  */
 const setActionsBorder = () => ({ synth }) => `
-  border-top: 1px solid ${synth.getValue('@Mako')};
+  border-top: 1px solid ${synth.getValue('color:@Mako')};
 `
 
 export default setActionsBorder

@@ -51,7 +51,7 @@ const ConfirmationModal = forwardRef(
       {children}
       <ModalActions>
         {renderCancel({ cancelLabel, onCancel })}
-        <Spacer inline left scale={2} />
+        <Spacer inline left scale={3} />
         {renderConfirm({ confirmLabel, onConfirm })}
       </ModalActions>
     </Modal>

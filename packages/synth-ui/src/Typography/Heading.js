@@ -2,7 +2,6 @@ import PropTypes from 'prop-types'
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import { Text, withSynth } from '@beatgig/synth-react'
-import { lineHeight } from '@beatgig/synth-styled-components'
 
 import { setHeadingFontSize, setHeadingMargin } from './utils'
 

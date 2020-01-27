@@ -12,7 +12,7 @@ import { setBaseStyles } from '../utils'
 const StyledSidebar = styled.div`
   ${setBaseStyles()}
   ${backgroundColor('@Shark')}
-  ${padding('@spacing.2')}
+  ${padding('@spacing.3')}
   display: flex;
   flex-direction: column;
   max-width: 280px;  

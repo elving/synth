@@ -12,7 +12,7 @@ import { BUTTON_INTENT_HIGHLIGHT } from '../constants'
  */
 const setColorHover = () => ({ intent, outline, synth }) =>
   intent === BUTTON_INTENT_HIGHLIGHT && outline
-    ? `color: ${synth.getValue('@BalticSea')};`
+    ? `color: ${synth.getValue('color:@BalticSea')};`
     : color()({ synth })
 
 export default setColorHover

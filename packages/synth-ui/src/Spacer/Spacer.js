@@ -71,7 +71,7 @@ Spacer.defaultProps = {
   inline: false,
   left: false,
   right: false,
-  scale: 0,
+  scale: 1,
   top: false,
 }
 

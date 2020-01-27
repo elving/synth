@@ -22,7 +22,7 @@ import { setIconFill, setIconSize } from './utils'
 const IconContainer = styled.div`
   ${border('input')}
   ${borderRadius()}
-  ${padding('@spacing')}
+  ${padding('@spacing.1')}
   align-items: center;
   display: inline-flex;
   justify-content: center;
@@ -75,8 +75,8 @@ const Checkbox = forwardRef(
         <IconContainer synth={synth}>
           <Icon synth={synth} />
         </IconContainer>
-        {label ? <Spacer left inline scale={1} /> : null}
-        {label ? <Text size="@fontSizes.1">{label}</Text> : null}
+        {label ? <Spacer left inline scale={2} /> : null}
+        {label ? <Text size="@fontSizes.2">{label}</Text> : null}
       </Fragment>
     )
 

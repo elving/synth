@@ -7,7 +7,9 @@
  */
 const setBorderColor = () => ({ hasError, synth }) => `
   border-color: ${
-    hasError ? synth.getValue('@Error') : synth.getValue('color:border:input')
+    hasError
+      ? synth.getValue('color:@Error.1')
+      : synth.getValue('color:border:input')
   };
 `
 

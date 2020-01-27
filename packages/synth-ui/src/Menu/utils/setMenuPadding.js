@@ -5,7 +5,7 @@
  * @returns {<T>(props: T & Props) => string}
  */
 const setMenuPadding = () => ({ synth }) => `
-  padding: ${synth.getUnit('@spacing.1')} 0;
+  padding: ${synth.getUnit('space:@spacing.2')} 0;
 `
 
 export default setMenuPadding
