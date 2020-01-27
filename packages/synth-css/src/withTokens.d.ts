@@ -1,4 +1,4 @@
-import { SynthTokenDeclaration } from '@beatgig/synth-core'
+import * as SynthCore from '@beatgig/synth-core'
 
 interface SynthCSSBindings {
   backgroundColor(tokenName?: string): string
@@ -35,8 +35,6 @@ interface SynthCSSBindings {
  * `tokens` already passed as the first argument.
  * @since 1.0.0
  * @example
- * import { withTokens } from '@beatgig/synth-css'
- *
  * const cssHelpers = withTokens({
  *   color: {
  *     background: {
@@ -44,11 +42,17 @@ interface SynthCSSBindings {
  *     },
  *   },
  * })
- *
  * cssHelpers.backgroundColor('button')
+ *
  * // => background-color: 'red';
  */
-declare function withTokens(tokens: SynthTokenDeclaration): SynthCSSBindings
+declare function withTokens(
+  tokens: SynthCore.SynthTokenConfiguration,
+): {
+  [key: string]: (
+    tokenName: string,
+  ) => (tokens: SynthCore.SynthTokenConfiguration, tokenName: string) => string
+}
 
 export { SynthCSSBindings }
 export default withTokens
