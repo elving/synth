@@ -1,0 +1,456 @@
+<Meta title="synth-core|Token Configuration" />
+
+# Getting Started
+
+Synth is a toolkit for creating and managing design systems. It provides a consistent structure for your design tokens and tooling for using them on multiple environments.
+
+## Defining a token configuration
+
+A Synth token configuration is where you define your design tokens, it's a collection of key-value pairs that define values for common design concepts.
+
+### Categories and properties
+
+We use the concept of "categories" to group tokens related to the same concept,e.g., color, space, etc. Within these categories we use concept of "properties" to specify the purpose of our tokens.
+
+#### Color
+
+Describes color-specific properties for elements, text and effects.
+
+##### Properties
+
+- background
+- border
+- shadow
+- text
+
+##### Example
+
+```JSON
+{
+  "color": {
+    "background": {
+      "button": "#e5e5e5"
+    },
+    "border": {
+      "button": "#d5d5d5"
+    },
+    "shadow": {
+      "content": "rgba(0, 0, 0, 0.15)"
+    },
+    "text": {
+      "heading": "#454545"
+    }
+  }
+}
+```
+
+#### Motion
+
+Describes values related to animations and transitions that can be applied to elements, text and effects.
+
+##### Properties
+
+- delay
+- duration
+- effect
+
+##### Example
+
+```JSON
+{
+  "motion": {
+    "delay": {
+      "slow": "0.5s"
+    },
+    "duration": {
+      "fast": "0.25s",
+      "slow": "1500ms"
+    },
+    "effect": {
+      "fast": "ease-in-out",
+      "slow": "linear"
+    }
+  }
+}
+```
+
+#### Position
+
+Describes values related to the positioning and alignment of elements, text and effects.
+
+##### Properties
+
+- bottom
+- index
+- left
+- right
+- text
+- shadow
+- top
+
+##### Example
+
+```JSON
+{
+  "position": {
+    "bottom": {
+      "popup": 15,
+      "toast_notification": "5%"
+    },
+    "index": {
+      "popup": 5,
+      "toast_notification": 10
+    },
+    "left": {
+      "popup": 15,
+      "toast_notification": "5%"
+    },
+    "right": {
+      "popup": 15,
+      "toast_notification": "5%"
+    },
+    "text": {
+      "button": "center"
+    },
+    "shadow": {
+      "button": [0, 1]
+    },
+    "top": {
+      "popup": 15,
+      "toast_notification": "5%"
+    },
+  }
+}
+```
+
+#### Size
+
+Describes size-specific values that affect the dimmensions of elements, text and effects.
+
+##### Properties
+
+- border
+- height
+- maxHeight
+- maxWidth
+- minHeight
+- minWidth
+- radius
+- shadow
+- text
+- width
+
+##### Example
+
+```JSON
+{
+  "size": {
+    "border": {
+      "button": 1,
+      "input": 2
+    },
+    "height": {
+      "sidebarIcon": 22
+    },
+    "maxHeight": {
+      "usersList": 200
+    },
+    "maxWidth": {
+      "sm": 320,
+      "md": 720,
+    },
+    "minHeight": {
+      "emptyState": 120
+    },
+    "minWidth": {
+      "emptyState": 120
+    },
+    "radius": {
+      "button": 3
+    },
+    "shadow": {
+      "button": 10
+    },
+    "text": {
+      "description": 13,
+      "heading": 24
+    },
+    "width": {
+      "fullWidth": "100%"
+    }
+  }
+}
+```
+
+#### Space
+
+Describes spacing-specific values that alter the space between elements and around text.
+
+##### Properties
+
+- margin
+- padding
+
+##### Example
+
+```JSON
+{
+  "space": {
+    "margin": {
+      "paragraph": [0, 0, 15]
+    },
+    "padding": {
+      "button": [12, 6]
+    }
+  }
+}
+```
+
+#### Style
+
+Describes values related to style variants that can be applied to elements and text.
+
+##### Properties
+
+- border
+- opacity
+- text
+
+##### Example
+
+```JSON
+{
+  "style": {
+    "border": {
+      "button": "solid"
+    },
+    "text": {
+      "emphasis": "italic"
+    }
+  }
+}
+```
+
+#### Typography
+
+Describes typography-related values that only apply to text.
+
+##### Properties
+
+- decoration
+- font
+- lineHeight
+- spacing
+- transform
+- weight
+
+##### Example
+
+```JSON
+{
+  "typography": {
+    "decoration": {
+      "link": "underline"
+    },
+    "font": {
+      "code": "monaco, monospace"
+    },
+    "lineHeight": {
+      "copy": 1.55
+    },
+    "spacing": {
+      "lead": 2
+    },
+    "transform": {
+      "heading": "uppercase"
+    },
+    "weight": {
+      "heading": 300
+    }
+  }
+}
+```
+
+### Token names
+
+In order to define tokens tht belong to a specific category and property, you'll need to provide a token name. The terminology and format of the token names is up to you; You can name your tokens using component-based conventions, e.g., `modal`, `textInput` or you can go the utility-based route, e.g., `sm`, `primary`, you can also choose any formatting you want, like "snake_case" or "camelCase":
+
+```JSON
+{
+  "color":{
+    "background": {
+      "primary": "#007ace",
+      "text_input": "#fafafa"
+    }
+  },
+  "space": {
+    "padding": {
+      "sm": 2,
+      "signupButton": [4, 12]
+    }
+  },
+  "position": {
+    "top": {
+      "modal": "25%"
+    }
+  }
+}
+```
+
+### Token values
+
+You can assign 4 different types of values to your design tokens:
+
+#### Strings
+
+String values can be used for unit-based values (e.g., `"10.5em"`) and other non-numeric values (e.g., `"#454545"`).
+
+```JSON
+{
+  "color": {
+    "text": {
+      "link": "#0172CB"
+    }
+  },
+  "space": {
+    "margin": {
+      "lg": "5em"
+    }
+  }
+}
+```
+
+#### Numbers
+
+Use numbers for unitless values, e.g., `1.5`. You can also use numbers for absolute length values like `px` for CSS or `dp` for Android.
+
+```JSON
+{
+  "size": {
+    "maxWidth": {
+      "desktop": 1024
+    }
+  },
+  "typography": {
+    "lineHeight": {
+      "heading": 1.45
+    }
+  }
+}
+```
+
+#### Arrays
+
+Arrays are useful for assigning two or more values to the same token; These values could be numbers or strings. They can also be used to define reusable scales of values (more on this later).
+
+```JSON
+{
+  "space": {
+    "padding": {
+      "button": [12, 6]
+    }
+  }
+}
+```
+
+#### Metadata object
+
+A metadata object is an object that will contain a `value` key which stores your token's value along side other information that describes your token. When using a metadata object as a token's value it is required for the object to have a `value` key but every other key in the object is up to you. Use this object to provide as much information as you can about your tokens.
+
+```JSON
+{
+  "color": {
+    "background": {
+      "primary": {
+        "description": "Use this color for important or main actions.",
+        "release": "1.2.0",
+        "value": "#0172CB"
+      }
+    }
+  }
+}
+```
+
+### Token states
+
+You can define how your token values are altered by different states by passing a state object:
+
+```JSON
+{
+  "color": {
+    "background": {
+      "button": {
+        "default": "#0172CB",
+        "hover": {
+          "description": "Use this color for the hover state of primary action buttons.",
+          "value": "#005AA3"
+        }
+      }
+    }
+  }
+}
+```
+
+A state object is basically a collection of key-value pairs where each key describes a state and the value will store the token's value for each defined state. If you are going to be defining different states for your tokens, it's required that you have a `default` state defined so that whenever you omit the state when retriving the token, the default state will be returned (more on this later).
+
+#### States
+
+- active
+- default
+- disabled
+- focus
+- hover
+
+### Token aliases
+
+Token aliases are a way for you to reuse the same value on multiple components. They act as a global variable but are scoped to categories in order to avoid naming collisions and make it easier to colocate.
+
+In order to use a token alias as another token's value you have to prefix the alias name with an "@" symbol, e.g., `@aliasName`.
+
+```JSON
+{
+  "space": {
+    "aliases": {
+      "sm": 4,
+      "md": 8
+    },
+    "padding": {
+      "button": ["@md", "@sm"],
+      "iconButton": "@sm"
+    }
+  }
+}
+```
+
+Token aliases are defined under the `aliases` property of any given category. They work exactly the same as all your other tokens, so their values can also be a string, number, array or a metadata object:
+
+```JSON
+ {
+  "color": {
+    "aliases": {
+      "primary": {
+        "description": "These colors are used for primary action buttons.",
+        "release": "1.0.0",
+        "value": ["#0172CB", "#005AA3", "#004680"]
+      },
+      "contrast": "rgba(255, 255, 255, 0.25)"
+    },
+    "background": {
+      "primaryButton": {
+        "default": "@primary.1",
+        "hover": "@primary.2",
+        "active": "@primary.3",
+      },
+      "iconButton": {
+        "description": "Icon buttons should blend with their container's background.",
+        "value": "@contrast"
+      }
+    }
+  }
+}
+```
+
+If the value of the token alias is an array, you can select a specific element from the array by using dot notation, e.g., `@aliasArray.1`. Unlike arrays in [most programming languages](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Accessing_array_elements), array values on a Synth token configuration are not zero-indexed so in order to access the first element of an array you use `1` instead of `0`. This is deliberate, as it provides a better user experience when defining and managing your tokens, specially to non-devs.
+
+- accessing tokens
+  - special base tokens per property

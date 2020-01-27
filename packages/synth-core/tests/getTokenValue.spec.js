@@ -1,126 +1,139 @@
+import { TOKENS } from './mocks'
 import getTokenValue from '../src/getTokenValue'
 
-const tokens = {
-  global: {
-    fontSizes: [12, 14, 16, 18, 20, 22],
-    mediumSpace: 15,
-    primaryBlue: '#1976D2',
-  },
-
-  color: {
-    background: {
-      primary_button: '@primaryBlue',
-    },
-
-    text: {
-      menuLink: {
-        default: '#0000E0',
-        hover: '#0000D0',
-      },
-    },
-  },
-
-  position: {
-    right: {
-      notification: 15,
-    },
-
-    top: {
-      notification: 15,
-    },
-  },
-
-  size: {
-    radius: {
-      primary_button: 6,
-    },
-
-    maxWidth: {
-      userCard: 480,
-    },
-  },
-
-  space: {
-    padding: {
-      primary_button: '5 @mediumSpace',
-      secondaryBtn: ['5px', '@mediumSpace'],
-    },
-  },
-
-  style: {
-    opacity: {
-      primary_button: {
-        disabled: 0.5,
-      },
-    },
-
-    shadow: {
-      input: '0 1px 10px @primaryBlue',
-      userCard: '0 0 15px rgba(0, 0, 0, 0.5)',
-    },
-  },
-
-  typography: {
-    size: {
-      base: '@fontSizes',
-      menuLink: '@fontSizes.1',
-    },
-
-    decoration: {
-      menuLink: {
-        hover: 'underline',
-      },
-    },
-  },
-}
-
 describe('getTokenValue', () => {
-  test('gets default token value', () => {
-    expect(getTokenValue(tokens, 'color:background:primary_button')).toEqual(
-      '#1976D2',
+  test('gets token value from basic token', () => {
+    expect(getTokenValue(TOKENS, 'size:maxWidth:smContainer')).toEqual(200)
+  })
+
+  test('gets token value from basic token with transform', () => {
+    expect(
+      getTokenValue(
+        TOKENS,
+        'size:maxWidth:smContainer',
+        (value) => `${value}px`,
+      ),
+    ).toEqual('200px')
+  })
+
+  test('gets token value from metadata', () => {
+    expect(getTokenValue(TOKENS, 'size:maxWidth:mdContainer')).toEqual(400)
+  })
+
+  test('gets token value from metadata with transform', () => {
+    expect(
+      getTokenValue(
+        TOKENS,
+        'size:maxWidth:mdContainer',
+        (value) => `${value}%`,
+      ),
+    ).toEqual('400%')
+  })
+
+  test('gets token value from state', () => {
+    expect(getTokenValue(TOKENS, 'color:text:link:disabled')).toEqual(
+      'rgba(255, 255, 255, 0.75)',
     )
   })
 
-  test('gets default token value with modifier', () => {
-    expect(getTokenValue(tokens, 'color:text:menuLink:hover')).toEqual(
-      '#0000D0',
+  test('gets token value from state with transform', () => {
+    expect(
+      getTokenValue(TOKENS, 'color:text:link:disabled', (value) =>
+        value.replace(/2/gim, '1'),
+      ),
+    ).toEqual('rgba(155, 155, 155, 0.75)')
+  })
+
+  test('gets token value from state with metadata', () => {
+    expect(getTokenValue(TOKENS, 'style:opacity:control:disabled')).toEqual(
+      0.35,
     )
   })
 
-  test('gets global token value', () => {
-    expect(getTokenValue(tokens, '@mediumSpace')).toEqual(15)
+  test('gets token value from state with metadata with transform', () => {
+    expect(
+      getTokenValue(TOKENS, 'style:opacity:control:disabled', (value) =>
+        (value * 1.5).toFixed(3),
+      ),
+    ).toEqual('0.525')
   })
 
-  test('gets token with multiple value', () => {
-    expect(getTokenValue(tokens, 'style:shadow:input')).toEqual(
-      '0 1px 10px #1976D2',
+  test('gets token value with alias', () => {
+    expect(getTokenValue(TOKENS, 'color:background:primaryControl')).toEqual(
+      '#1589ee',
     )
   })
 
-  test('gets array token value', () => {
-    expect(getTokenValue(tokens, 'space:padding:secondaryBtn')).toEqual(
-      '5px 15',
+  test('gets token value with alias with transform', () => {
+    expect(
+      getTokenValue(TOKENS, 'color:background:primaryControl', (value) =>
+        value.replace('ee', 'dd'),
+      ),
+    ).toEqual('#1589dd')
+  })
+
+  test('gets token value from metadata with alias', () => {
+    expect(getTokenValue(TOKENS, 'color:background:secondaryControl')).toEqual(
+      '#e5e5e5',
     )
   })
 
-  test('gets interpolation token value', () => {
-    expect(getTokenValue(tokens, '@fontSizes')).toEqual(12)
-    expect(getTokenValue(tokens, '@fontSizes.2')).toEqual(16)
-    expect(getTokenValue(tokens, 'space:padding:primary_button')).toEqual(
-      '5 15',
-    )
+  test('gets token value from metadata with alias and transform', () => {
+    expect(
+      getTokenValue(TOKENS, 'color:background:secondaryControl', (value) =>
+        value.replace(/5/gim, '1'),
+      ),
+    ).toEqual('#e1e1e1')
   })
 
-  test("returns an empty string if it doesn't find any token values", () => {
-    expect(getTokenValue(tokens, '@nope')).toEqual('')
-    expect(getTokenValue(tokens, 'space:padding:nope')).toEqual('')
+  test('gets token value with alias (interpolation)', () => {
+    expect(getTokenValue(TOKENS, 'space:padding:input')).toEqual('4 12')
   })
 
-  test('throws error when given an invalid token declarations object', () => {
-    expect(() => getTokenValue({}, 'space:padding:button')).toThrow()
+  test('gets token value with alias (interpolation) and transform', () => {
+    expect(
+      getTokenValue(TOKENS, 'space:padding:input', (value) =>
+        value
+          .split(' ')
+          .map((value) => `${value}px`)
+          .join(' '),
+      ),
+    ).toEqual('4px 12px')
   })
 
-  test('throws error when given an invalid token name', () => {
-    expect(() => getTokenValue(tokens, 'universe:padding:button')).toThrow()
+  test('gets token value with alias (array)', () => {
+    expect(getTokenValue(TOKENS, 'space:padding:control')).toEqual([4, 8])
+  })
+
+  test('gets token value with alias (array) and transform', () => {
+    expect(
+      getTokenValue(TOKENS, 'space:padding:control', (value) => `${value}px`),
+    ).toEqual(['4px', '8px'])
+  })
+
+  test('gets token value from alias', () => {
+    expect(getTokenValue(TOKENS, 'space:padding:@scale.2')).toEqual(8)
+  })
+
+  test('throws error when passing an invalid token config', () => {
+    expect(() => getTokenValue({})).toThrow()
+    expect(() => getTokenValue([])).toThrow()
+    expect(() => getTokenValue(0)).toThrow()
+    expect(() => getTokenValue(null)).toThrow()
+    expect(() => getTokenValue(undefined)).toThrow()
+    expect(() => getTokenValue(() => {})).toThrow()
+  })
+
+  test('throws error when passing an invalid token', () => {
+    expect(() => getTokenValue(TOKENS, {})).toThrow()
+    expect(() => getTokenValue(TOKENS, [])).toThrow()
+    expect(() => getTokenValue(TOKENS, 0)).toThrow()
+    expect(() => getTokenValue(TOKENS, null)).toThrow()
+    expect(() => getTokenValue(TOKENS, undefined)).toThrow()
+    expect(() => getTokenValue(TOKENS, () => {})).toThrow()
+    expect(() => getTokenValue(TOKENS, '')).toThrow()
+    expect(() => getTokenValue(TOKENS, 'background')).toThrow()
+    expect(() => getTokenValue(TOKENS, 'test:background')).toThrow()
+    expect(() => getTokenValue(TOKENS, 'color:test')).toThrow()
   })
 })

@@ -1,107 +1,51 @@
-import get from 'lodash.get'
-import { isString } from '@beatgig/is'
+import { isString, isObject } from '@beatgig/is'
 
-import getTokenParts from './getTokenParts'
-import isGlobalToken from './isGlobalToken'
-import isTokenDeclaration from './isTokenDeclaration'
-import isTokenName from './isTokenName'
-import { TOKEN_CATEGORY_GLOBAL } from './constants'
+import getToken from './getToken'
+import getTokenAliasValue from './getTokenAliasValue'
+import getTokenStructure from './getTokenStructure'
+import isValidAliasName from './isValidAliasName'
 
-/**
- * Returns a the value of the given token declaration.
- * @since 1.0.0
- * @example
- * getTokenValue({
- *   color: {
- *     background: {
- *       button: 'red',
- *     },
- *   },
- * }, 'color:background:button')
- * // => "red"
- *
- * getTokenValue({
- *   color: {
- *     background: {
- *       button: {
- *         default: '#ddd',
- *         disabled: '#eee',
- *       },
- *     },
- *   },
- * }, 'color:background:button:disabled')
- * // => "#eee"
- *
- * getTokenValue({
- *   global: {
- *     fontSizes: [14, 16, 18, 22],
- *   },
- * }, '@fontSizes')
- * // => 14
- *
- * getTokenValue({
- *   global: {
- *     fontSizes: [14, 16, 18, 22],
- *   },
- * }, '@fontSizes.2')
- * // => 18
- */
-const getTokenValue = (tokens, tokenName) => {
-  if (!isTokenDeclaration(tokens)) {
-    throw new TypeError(
-      'Invalid param `tokens` supplied, expected a valid Synth token declaration.',
+const defaultTransform = (value) => value
+
+const getTokenValue = (tokens, token, transform = defaultTransform) => {
+  const { category } = getTokenStructure(token)
+  const tokenContent = getToken(tokens, token)
+  const tokenValue =
+    /** @type {import('@beatgig/synth-core').SynthTokenMetadata} */ (tokenContent)?.value ??
+    tokenContent
+
+  if (isString(tokenValue)) {
+    return transform(
+      /** @type {string} */ (tokenValue).replace(
+        /@[^\s]+/gim,
+        /**
+         * @param {string} alias
+         * @returns {string}
+         */
+        (alias) =>
+          /** @type {string} */ (getTokenAliasValue(tokens, category, alias)),
+      ),
     )
-  }
-
-  if (!isTokenName(tokenName)) {
-    throw new TypeError(
-      `Invalid param "tokenName" supplied (${tokenName}), expected a valid Synth token name.`,
+  } else if (Array.isArray(tokenValue)) {
+    return /** @type {array} */ (tokenValue).map(
+      /**
+       * @param {number|string} value
+       * @returns {*}
+       */
+      (value) =>
+        transform(
+          isValidAliasName(value)
+            ? getTokenAliasValue(
+                tokens,
+                category,
+                /** @type {string} */ (value),
+              )
+            : value,
+        ),
     )
+  } else {
+    return transform(tokenValue)
   }
-
-  if (isGlobalToken(tokenName)) {
-    const index = Number.parseInt(tokenName.split('.').pop(), 10)
-
-    const value = get(
-      tokens,
-      `${TOKEN_CATEGORY_GLOBAL}.${tokenName.replace('@', '')}`,
-    )
-
-    if (value) {
-      if (Array.isArray(value)) {
-        return value[index] || value[0]
-      }
-
-      return value
-    }
-
-    return ''
-  }
-
-  const { category, modifier, name, property } = getTokenParts(tokenName)
-  const tokenPath = `${category}.${property}.${name}`
-  const tokenPathModifier = `${tokenPath}.${modifier}`
-  const tokenValue = get(tokens, tokenPathModifier, get(tokens, tokenPath))
-
-  if (tokenValue == undefined) {
-    return ''
-  }
-
-  const canSplit = isString(tokenValue) && /\s/.test(tokenValue)
-
-  if (canSplit || Array.isArray(tokenValue)) {
-    const valueToMap = canSplit ? tokenValue.split(/\s/) : tokenValue
-
-    return valueToMap
-      .map((value) =>
-        isTokenName(value) ? getTokenValue(tokens, value) : value,
-      )
-      .join(' ')
-  }
-
-  return isGlobalToken(tokenValue)
-    ? getTokenValue(tokens, tokenValue)
-    : tokenValue
 }
 
 export default getTokenValue
