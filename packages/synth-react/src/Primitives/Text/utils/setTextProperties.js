@@ -1,3 +1,5 @@
+import { isNumeric } from '@beatgig/is'
+
 import { TEXT_PROPERTIES } from '../constants'
 
 const PROP_METHOD_MAP = {
@@ -16,11 +18,17 @@ const PROP_METHOD_MAP = {
  * @returns {<T>(props: T & import('@beatgig/synth-react').TextProps & import('@beatgig/synth-react').SynthComponentProps) => string}
  */
 const setTextProperties = () => ({ synth, withoutDefaults, ...props }) => {
-  const textProps = TEXT_PROPERTIES.map((textProperty) =>
-    props[textProperty]
-      ? synth[PROP_METHOD_MAP[textProperty]](props[textProperty])
-      : '',
-  ).join(' ')
+  const textProps = TEXT_PROPERTIES.map((textProperty) => {
+    const prop = props[textProperty]
+    const value = prop ? synth[PROP_METHOD_MAP[textProperty]](prop) : ''
+
+    return value && !value.toJSON()[PROP_METHOD_MAP[textProperty]]
+      ? value.replace(
+          ';',
+          `${textProperty === 'size' && isNumeric(prop) ? `${prop}px` : prop};`,
+        )
+      : value
+  }).join(' ')
 
   const defaultProps = withoutDefaults
     ? ''
