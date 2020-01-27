@@ -1,43 +1,21 @@
 export const tokens = {
-  global: {
-    /**
-     * Colors
-     */
-    Porcelain: '#FCFDFD',
-    Thunder: '#10110E',
-    BalticSea: '#212025',
-    Shark: '#2F3136',
-    Tuna: '#393C40',
-    Mako: '#444850',
-    Abbey: '#4C5058',
-    ShuttleGray: '#5B6066',
-    Stone: '#71777B',
-    Oslo: '#878E8F',
-    BeatGig: ['#FAC62A', '#EFB506'],
-    Error: ['#C5493A', '#B0422F'],
-    Success: ['#00BB53', '#00A76D'],
-
-    /**
-     * Sizes
-     */
-    icons: [16, 18, 20, 22, 24, 26],
-    avatars: [24, 32, 40, 48, 56, 64],
-    cards: [240, 480, 960],
-
-    /**
-     * Spacing
-     */
-    spacing: [2, 8, 14, 20, 26, 32],
-
-    /**
-     * Typography
-     */
-    headings: [18, 22, 26, 30, 34, 38],
-    fontSizes: [12, 14, 16, 18, 20, 22, 24, 26],
-    fontWeights: [300, 400, 500, 600, 700],
-  },
-
   color: {
+    aliases: {
+      Porcelain: '#FCFDFD',
+      Thunder: '#10110E',
+      BalticSea: '#212025',
+      Shark: '#2F3136',
+      Tuna: '#393C40',
+      Mako: '#444850',
+      Abbey: '#4C5058',
+      ShuttleGray: '#5B6066',
+      Stone: '#71777B',
+      Oslo: '#878E8F',
+      BeatGig: ['#FAC62A', '#EFB506'],
+      Error: ['#C5493A', '#B0422F'],
+      Success: ['#00BB53', '#00A76D'],
+    },
+
     background: {
       avatar: '@ShuttleGray',
       card: '@Shark',
@@ -78,8 +56,10 @@ export const tokens = {
       popup: '@Abbey',
     },
 
-    outline: {
-      control: 'rgba(255, 255, 255, 0.15)',
+    shadow: {
+      subtle: 'rgba(0, 0, 0, 0.25)',
+      avatar: '@Oslo',
+      outlineControl: 'inset @ShuttleGray',
     },
 
     text: {
@@ -90,6 +70,14 @@ export const tokens = {
   },
 
   size: {
+    aliases: {
+      avatars: [24, 32, 40, 48, 56, 64],
+      cards: [240, 480, 960],
+      fontSizes: [12, 14, 16, 18, 20, 22, 24, 26],
+      headings: [18, 22, 26, 30, 34, 38],
+      icons: [14, 16, 18, 20, 22, 24, 26, 28],
+    },
+
     border: {
       base: 1,
       control: 2,
@@ -103,8 +91,19 @@ export const tokens = {
       tag: '50rem',
     },
 
-    outline: {
-      base: 1,
+    shadow: {
+      subtle: 5,
+      avatar: [0, 1],
+      outlineControl: [0, 1],
+    },
+
+    text: {
+      base: '@fontSizes.3',
+      control: '@fontSizes.2',
+      heading: '@fontSizes.7',
+      text: '@fontSizes.3',
+      small: '@fontSizes.1',
+      status: '@fontSizes.1',
     },
 
     width: {
@@ -112,28 +111,28 @@ export const tokens = {
     },
 
     maxWidth: {
-      modal: '@cards.1',
+      modal: '@cards.2',
     },
   },
 
   space: {
+    aliases: {
+      spacing: [4, 8, 14, 20, 26, 32],
+    },
+
     margin: {
-      formRow: [0, 0, '@spacing.1'],
-      heading: [0, 0, '@spacing.2'],
-      paragraph: '0 0 @spacing.2',
+      formRow: [0, 0, '@spacing.2'],
+      heading: [0, 0, '@spacing.4'],
+      paragraph: '0 0 @spacing.3',
     },
 
     padding: {
-      card: '@spacing.2',
-      control: ['@spacing.1', '@spacing.2'],
-      header: ['@spacing.2', '@spacing.3'],
-      modalOverlay: '@spacing.5',
-      popupItem: ['@spacing.1', '@spacing.2'],
-      tag: ['@spacing', '@spacing.1'],
-    },
-
-    outline: {
-      base: 2,
+      card: '@spacing.3',
+      control: ['@spacing.2', '@spacing.3'],
+      header: ['@spacing.3', '@spacing.4'],
+      modalOverlay: '@spacing.6',
+      popupItem: ['@spacing.2', '@spacing.3'],
+      tag: ['@spacing.1', '@spacing.2'],
     },
   },
 
@@ -145,22 +144,24 @@ export const tokens = {
       popup: 'solid',
     },
 
-    shadow: {
-      subtle: '0 0 @spacing.1 rgba(0, 0, 0, 0.25)',
-      avatar: '0 0 0 1px @Oslo',
-      outlineControl: '0 0 0 1px inset @ShuttleGray',
-    },
-
     opacity: {
       modalOverlay: 0.85,
     },
+  },
 
-    outline: {
-      base: 'solid',
+  position: {
+    shadow: {
+      subtle: [0, 0],
+      avatar: [0, 0],
+      outlineControl: [0, 0],
     },
   },
 
   typography: {
+    aliases: {
+      fontWeights: [300, 400, 500, 600, 700],
+    },
+
     decoration: {
       link: {
         default: 'none',
@@ -192,25 +193,16 @@ export const tokens = {
       heading: 1.2,
     },
 
-    size: {
-      base: '@fontSizes.1',
-      control: '@fontSizes.1',
-      heading: '@fontSizes.6',
-      text: '@fontSizes.2',
-      small: '@fontSizes',
-      status: '@fontSizes',
-    },
-
     transform: {
       status: 'uppercase',
     },
 
     weight: {
-      base: '@fontWeights',
-      link: '@fontWeights',
+      base: '@fontWeights.1',
+      link: '@fontWeights.1',
       control: '@fontWeights.1',
-      heading: '@fontWeights.2',
-      status: '@fontWeights.2',
+      heading: '@fontWeights.3',
+      status: '@fontWeights.3',
     },
   },
 }
