@@ -26,8 +26,8 @@ const colorNames = [
 addParameters({
   backgrounds: colorNames.map((color) => ({
     name: color,
-    value: getTokenValue(tokens, `@${color}`),
-    default: color === 'Thunder',
+    value: getTokenValue(tokens, `color:@${color}`),
+    default: color === 'BalticSea',
   })),
 })
 
@@ -40,12 +40,12 @@ addParameters({
       brandImage: `data:image/svg+xml;base64,${btoa(
         renderToString(<FullLogo height={30} width="100%" />),
       )}`,
-      appBg: getTokenValue(tokens, '@Shark'),
-      appContentBg: getTokenValue(tokens, '@Thunder'),
-      colorSecondary: getTokenValue(tokens, '@Tuna'),
-      barBg: getTokenValue(tokens, '@BalticSea'),
-      barTextColor: getTokenValue(tokens, '@Oslo'),
-      barSelectedColor: getTokenValue(tokens, '@BeatGig'),
+      appBg: getTokenValue(tokens, 'color:@Shark'),
+      appContentBg: getTokenValue(tokens, 'color:@Thunder'),
+      colorSecondary: getTokenValue(tokens, 'color:@Tuna'),
+      barBg: getTokenValue(tokens, 'color:@BalticSea'),
+      barTextColor: getTokenValue(tokens, 'color:@Oslo'),
+      barSelectedColor: getTokenValue(tokens, 'color:@BeatGig.1'),
     },
   },
 })

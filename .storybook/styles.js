@@ -6,6 +6,9 @@ import {
   borderRadius,
   color,
   fontSize,
+  fontWeight,
+  margin,
+  padding,
 } from '../packages/synth-styled-components/src'
 
 const Styles = createGlobalStyle`
@@ -19,15 +22,19 @@ const Styles = createGlobalStyle`
     width: 100%;
   }
 
-  .sbdocs {
+  .sbdocs {      
     && {
+      &.sbdocs-wrapper {
+        ${padding('@spacing.6')}
+      }
+
       code {
         ${borderRadius()}
+        ${fontSize('@fontSizes.2')}
         background-color: rgba(255, 255, 255, 0.055);
         border: 1px solid rgba(255,255,255,.035);
-        color: rgba(255, 255, 255, 0.75);
+        color: #a7a9be;
         font-family: "Operator Mono", "Fira Code Retina", "Fira Code", FiraCode-Retina, "Andale Mono", "Lucida Console", Consolas, Monaco, monospace;
-        font-size: 85%;
         padding: 1px 2px 2px;
       }
 
@@ -40,18 +47,30 @@ const Styles = createGlobalStyle`
         max-width: 1024px;
       }
 
-      .sbdocs-h2 {
+      .sbdocs-h1,
+      .sbdocs-h2,
+      .sbdocs-h3,
+      .sbdocs-h4,
+      .sbdocs-h5,
+      .sbdocs-h6 {
         color: #fff;
         border: 0 none;
-        margin: 35px 0;
         padding: 0;
+        ${fontWeight('heading')}
+        ${margin('heading')}
       }
 
-      .sbdocs-p {
+      .sbdocs-p,
+      .sbdocs-li {
+        color: #a7a9be;
         ${fontSize('text')}        
+        
+        &.sbdocs-p {
+          ${margin('paragraph')}
+        }
 
         a {
-          ${color('@BeatGig')}
+          ${color('@BeatGig.1')}
           ${fontSize('text')}
           text-decoration: underline;
         }
@@ -65,7 +84,8 @@ const Styles = createGlobalStyle`
         }
 
         thead tr {
-          border-bottom: 1px solid ${({ synth }) => synth.getValue('@Shark')};
+          border-bottom: 1px solid ${({ synth }) =>
+            synth.getValue('color:@Shark')};
         }
 
         th {
@@ -76,7 +96,7 @@ const Styles = createGlobalStyle`
           background-color: transparent;
 
           &:nth-child(even) {
-            background-color: rgba(0, 0, 0, 0.15);
+            background-color: rgba(255, 255, 255, 0.035);
           }
 
           td {
