@@ -2,9 +2,9 @@
   "name": "@beatgig/synth-core",
   "version": "1.1.1",
   "description": "Core library to manage token declarations",
-  "author": "BeatGig Engineering <engineering@beatgig.com>",
-  "homepage": "",
-  "license": "ISC",
+  "author": "BeatGig LLC <engineering@beatgig.com>",
+  "homepage": "https://github.com/beatgig/synth/tree/master/packages/synth-core",
+  "license": "MIT",
   "main": "dist/commonjs/index.js",
   "module": "dist/esm/index.js",
   "files": [

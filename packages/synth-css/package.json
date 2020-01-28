@@ -2,9 +2,9 @@
   "name": "@beatgig/synth-css",
   "version": "1.0.4",
   "description": "CSS bindings for Synth.",
-  "author": "BeatGig Engineering <engineering@beatgig.com>",
-  "homepage": "",
-  "license": "ISC",
+  "author": "BeatGig LLC <engineering@beatgig.com>",
+  "homepage": "https://github.com/beatgig/synth/tree/master/packages/synth-css",
+  "license": "MIT",
   "main": "dist/commonjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
