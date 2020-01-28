@@ -2224,6 +2224,54 @@ Object {
 }
 `;
 
+exports[`css bindings opacity(base) 1`] = `"opacity: 1;"`;
+
+exports[`css bindings opacity(base) 2`] = `
+Object {
+  "opacity": 1,
+}
+`;
+
+exports[`css bindings opacity(base) using alias token directly 1`] = `"opacity: solid;"`;
+
+exports[`css bindings opacity(base) using alias token directly 2`] = `
+Object {
+  "opacity": "solid",
+}
+`;
+
+exports[`css bindings opacity(base) using base value 1`] = `"opacity: 1;"`;
+
+exports[`css bindings opacity(base) using base value 2`] = `
+Object {
+  "opacity": 1,
+}
+`;
+
+exports[`css bindings opacity(disabled) 1`] = `"opacity: 0.35;"`;
+
+exports[`css bindings opacity(disabled) 2`] = `
+Object {
+  "opacity": 0.35,
+}
+`;
+
+exports[`css bindings opacity(disabled) using alias token directly 1`] = `"opacity: solid;"`;
+
+exports[`css bindings opacity(disabled) using alias token directly 2`] = `
+Object {
+  "opacity": "solid",
+}
+`;
+
+exports[`css bindings opacity(disabled) using base value 1`] = `"opacity: 1;"`;
+
+exports[`css bindings opacity(disabled) using base value 2`] = `
+Object {
+  "opacity": 1,
+}
+`;
+
 exports[`css bindings padding(base) 1`] = `"padding: 4px;"`;
 
 exports[`css bindings padding(base) 2`] = `
