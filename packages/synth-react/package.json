@@ -2,9 +2,9 @@
   "name": "@beatgig/synth-react",
   "version": "1.1.1",
   "description": "React bindings for Synth",
-  "author": "BeatGig Engineering <engineering@beatgig.com>",
-  "homepage": "",
-  "license": "ISC",
+  "author": "BeatGig LLC <engineering@beatgig.com>",
+  "homepage": "https://github.com/beatgig/synth/tree/master/packages/synth-react",
+  "license": "MIT",
   "main": "dist/commonjs/index.js",
   "module": "dist/esm/index.js",
   "files": [

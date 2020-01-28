@@ -2,9 +2,9 @@
   "name": "@beatgig/synth-tokens",
   "version": "1.2.2",
   "description": "Default token declarations used for building UI components at BeatGig",
-  "author": "BeatGig Engineering <engineering@beatgig.com>",
-  "homepage": "",
-  "license": "ISC",
+  "author": "BeatGig LLC <engineering@beatgig.com>",
+  "homepage": "https://github.com/beatgig/synth/tree/master/packages/synth-tokens",
+  "license": "MIT",
   "main": "dist/commonjs/index.js",
   "module": "dist/esm/index.js",
   "files": [

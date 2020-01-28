@@ -2,9 +2,9 @@
   "name": "@beatgig/synth-styled-components",
   "version": "1.0.2",
   "description": "styled-components bindings for Synth",
-  "author": "BeatGig Engineering <engineering@beatgig.com>",
-  "homepage": "",
-  "license": "ISC",
+  "author": "BeatGig LLC <engineering@beatgig.com>",
+  "homepage": "https://github.com/beatgig/synth/tree/master/packages/synth-styled-components",
+  "license": "MIT",
   "main": "dist/commonjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
