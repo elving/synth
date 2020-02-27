@@ -450,7 +450,163 @@ Token aliases are defined under the `aliases` property of any given category. Th
 }
 ```
 
-If the value of the token alias is an array, you can select a specific element from the array by using dot notation, e.g., `@aliasArray.1`. Unlike arrays in [most programming languages](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Accessing_array_elements), array values on a Synth token configuration are not zero-indexed so in order to access the first element of an array you use `1` instead of `0`. This is deliberate, as it provides a better user experience when defining and managing your tokens, specially to non-devs.
+If the value of the token alias is an array, you can select a specific element from the array by using dot notation, e.g., `@aliasArray.1`. Unlike arrays in [most programming languages](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Accessing_array_elements), array values on a Synth token configuration are not zero-indexed so in order to access the first element of an array you use `1` instead of `0`.
 
-- accessing tokens
-  - special base tokens per property
+This is deliberate, as it provides a better user experience when defining and managing your tokens, specially to non-developers; It makes array values easier to read and reference.
+
+## Working with token configurations
+
+There are 3 official binding libraries to work with Synth token configurations: `synth-css`, `synth-react` and `synth-styled-components`. All these libraries use the `synth-core` library to retrive and in some cases format token values.
+
+To retrive specific token values, we use a special token selector convention that looks as follows:
+
+`category:property:name:state`
+
+### Selector Examples
+
+| Selector                        | Target                                                                                                                 | Description                                                                                                                                                                                       |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `color:background:button`       | A `background` property token with the name `"button"` within the `color` category.                                    |                                                                                                                                                                                                   |
+| `color:background:button:hover` | The `hover` state of the `background` property token with the name `"button"` within the `color` category.             |                                                                                                                                                                                                   |
+| `color:background`              | The `base` token for the `background` property within the `color` category.                                            | When you leave out the token's name, Synth will look for a special token name called `base`. Use the `base` keyword to define default values to specific properties (`padding`, `opacity`, etc.). |
+| `color:@primary`                | The `"primary"` alias within the `color` category.                                                                     |                                                                                                                                                                                                   |
+| `color:background:labels.2`     | The second value of the array token with the name `"labels"` on the `background` property within the `color` category. |                                                                                                                                                                                                   |
+
+### Retriving string and number based token values
+
+```javascript
+import { getTokenValue } from '@beatgig/synth-core'
+
+const tokenConfiguration = {
+  space: {
+    padding: {
+      card: 12,
+    },
+  },
+  color: {
+    background: {
+      button: '#0172CB',
+    },
+  },
+}
+
+const cardPadding = getTokenValue(tokenConfiguration, 'space:padding:card')
+
+const buttonBackground = getTokenValue(
+  tokenConfiguration,
+  'color:background:button',
+)
+
+// cardPadding = 12
+// buttonBackground = "#0172CB"
+```
+
+### Retriving array-based token values
+
+```javascript
+import { getTokenValue } from '@beatgig/synth-core'
+
+const tokenConfiguration = {
+  space: {
+    padding: {
+      card: [12, 8],
+    },
+  },
+  color: {
+    background: {
+      primary: ['#0172CB', '#65e669'],
+    },
+  },
+}
+
+const cardPadding = getTokenValue(tokenConfiguration, 'space:padding:card')
+
+const primaryBackgrounds = getTokenValue(
+  tokenConfiguration,
+  'color:background:primary',
+)
+
+// cardPadding = [12, 8]
+// primaryBackgrounds = ["#0172CB", "#65e669"]
+```
+
+### Retriving values from metadata objects
+
+```javascript
+import { getTokenValue } from '@beatgig/synth-core'
+
+const tokenConfiguration = {
+  color: {
+    background: {
+      primary: {
+        description: 'Use this color for important or main actions.',
+        release: '1.2.0',
+        value: '#0172CB',
+      },
+    },
+  },
+}
+
+const primaryBackground = getTokenValue('color:background:primary')
+// primaryBackground = "#0172CB"
+```
+
+### Retriving specific token states
+
+```javascript
+import { getTokenValue } from '@beatgig/synth-core'
+
+const tokenConfiguration = {
+  color: {
+    background: {
+      button: {
+        default: '#0172CB',
+        hover: '#52aef7',
+      },
+    },
+  },
+}
+
+const buttonDefaultBackground = getTokenValue(
+  tokenConfiguration,
+  'color:background:button',
+)
+
+const buttonHoverBackground = getTokenValue(
+  tokenConfiguration,
+  'color:background:button:hover',
+)
+
+// buttonDefaultBackground = '#0172CB'
+// buttonHoverBackground = '#52aef7'
+```
+
+### Retrieving token aliases
+
+```javascript
+const tokenConfiguration = {
+  space: {
+    aliases: {
+      sm: 4,
+      md: 8,
+      maxContentWidth: [480, 960, 1024],
+    },
+    padding: {
+      button: ['@md', '@sm'],
+      iconButton: '@sm',
+    },
+  },
+}
+
+const smSpace = getTokenValue(tokenConfiguration, 'space:@sm')
+const buttonPadding = getTokenValue(tokenConfiguration, 'space:padding:button')
+
+const contentWidth = getTokenValue(
+  tokenConfiguration,
+  'space:@maxContentWidth.2',
+)
+
+// smSpace = 4
+// buttonPadding = [8, 4]
+// contentWidth = 960
+```
