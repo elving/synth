@@ -207,7 +207,6 @@ describe('css bindings', () => {
     const [category, property] = tokenPrefix.split(':')
     const binding = toCamelCase(cssProperty)
 
-    console.log(category, property)
     Object.keys(tokens[category][property]).forEach((tokenName) => {
       test(`${binding}(${tokenName})`, () => {
         const bindingValue = bindings[binding](tokens, tokenName)

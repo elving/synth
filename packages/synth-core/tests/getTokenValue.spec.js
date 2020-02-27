@@ -112,6 +112,7 @@ describe('getTokenValue', () => {
   })
 
   test('gets token value from alias', () => {
+    expect(getTokenValue(TOKENS, 'space:@scale.1')).toEqual(4)
     expect(getTokenValue(TOKENS, 'space:padding:@scale.2')).toEqual(8)
   })
 
