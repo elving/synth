@@ -53,28 +53,26 @@
     "typescript": "^3.8.2"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "bootstrap:ci": "lerna bootstrap --ci",
+    "start": "start-storybook -p 5555",
+    "build": "rm -rf ./packages/**/dist && concurrently --names 'commonjs,esm' 'yarn build:commonjs' 'yarn build:esm'",
     "build:commonjs": "lerna exec --parallel -- BABEL_ENV=commonjs babel --root-mode upward src --out-dir dist/commonjs --copy-files --no-copy-ignored --ignore tests,docs --source-maps inline",
     "build:esm": "lerna exec --parallel -- BABEL_ENV=esm babel --root-mode upward src --out-dir dist/esm --copy-files --no-copy-ignored --ignore tests,docs --source-maps inline",
-    "build:watch": "rm -rf ./packages/**/dist && concurrently --names 'commonjs,esm' 'yarn build:commonjs -w' 'yarn build:esm -w'",
-    "build": "rm -rf ./packages/**/dist && concurrently --names 'commonjs,esm' 'yarn build:commonjs' 'yarn build:esm'",
-    "coverage": "yarn build && jest --coverage",
-    "dev": "concurrently --names 'build,storybook' 'yarn build:watch' 'start-storybook -p 5555'",
-    "storybook:start": "start-storybook -p 5555",
-    "docs": "build-storybook --docs -c .storybook -o ./docs && git add ./docs && git commit -m 'chore(release): docs' && git push origin master",
-    "lint:eslint": "lerna exec --parallel -- eslint . -c ./.eslintrc --ext .js,mdx",
-    "lint:types": "lerna exec --parallel -- tsc -p ./tsconfig.json",
-    "lint": "yarn lint:eslint && yarn lint:types",
-    "prepublishOnly": "yarn build",
-    "postpublish": "yarn docs",
+    "build:docs": "build-storybook --docs -c .storybook -o ./docs && git add ./docs && git commit -m 'chore(release): docs' && git push origin master",
+    "lerna:bootstrap": "lerna bootstrap",
+    "lerna:bootstrap:ci": "lerna bootstrap --ci",
     "lerna:publish": "lerna publish --conventional-commits -m 'chore(release): publish'",
     "test": "jest",
-    "test:ci": "jest --ci --silent"
+    "test:ci": "jest --ci --silent",
+    "coverage": "yarn build && jest --coverage",
+    "lint": "yarn lint:eslint && yarn lint:types",
+    "lint:eslint": "lerna exec --parallel -- eslint . -c ./.eslintrc --ext .js,mdx",
+    "lint:types": "lerna exec --parallel -- tsc -p ./tsconfig.json",
+    "prepublishOnly": "yarn build"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "build:docs"
     }
   },
   "sideEffects": false
