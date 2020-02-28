@@ -36,3 +36,7 @@ jobs:
         run: yarn test:ci
         env:
           CI: true
+
+      - name: Publish
+        if: github.event_name == 'push'
+        run: yarn lerna:publish:ci
