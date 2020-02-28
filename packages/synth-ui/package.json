@@ -21,15 +21,15 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@beatgig/array": "^1.1.0",
-    "@beatgig/function": "^1.0.2",
-    "@beatgig/hooks": "^1.1.6",
-    "@beatgig/is": "^1.2.0",
+    "@beatgig/array": "^1.1.1",
+    "@beatgig/function": "^1.0.3",
+    "@beatgig/hooks": "^1.1.7",
+    "@beatgig/is": "^1.3.0",
     "@beatgig/synth-core": "^1.1.1",
     "@beatgig/synth-react": "^1.1.1",
     "@beatgig/synth-styled-components": "^1.0.2",
     "scroll-behavior-polyfill": "^2.0.13",
-    "styled-components": "^5.0.0"
+    "styled-components": "^5.0.1"
   },
   "peerDependencies": {
     "react": "^16.0.0",

@@ -171,6 +171,7 @@ export const tokens = {
 
     font: {
       base: [
+        'PublicSans',
         '-apple-system',
         'system-ui',
         'BlinkMacSystemFont',
