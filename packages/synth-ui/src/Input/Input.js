@@ -7,6 +7,7 @@ import {
   backgroundColor,
   border,
   borderRadius,
+  fontSize,
   fontWeight,
   padding,
 } from '@beatgig/synth-styled-components'
@@ -21,8 +22,9 @@ const StyledInput = styled.input`
   ${setBaseStyles()}
   ${backgroundColor('input')}
   ${border('input')}
-  ${borderRadius()};
-  ${fontWeight('control')}
+  ${borderRadius()}
+  ${fontSize('control')}
+  ${fontWeight('input')}
   ${padding('control')}
   ${setBorderColor()}
   cursor: text;

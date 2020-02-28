@@ -159,7 +159,7 @@ export const tokens = {
 
   typography: {
     aliases: {
-      fontWeights: [300, 400, 500, 600, 700],
+      fontWeights: [100, 200, 300, 400, 500, 600, 700, 800],
     },
 
     decoration: {
@@ -199,11 +199,12 @@ export const tokens = {
     },
 
     weight: {
-      base: '@fontWeights.1',
-      link: '@fontWeights.1',
-      control: '@fontWeights.1',
-      heading: '@fontWeights.3',
-      status: '@fontWeights.3',
+      base: '@fontWeights.3',
+      link: '@fontWeights.3',
+      control: '@fontWeights.4',
+      input: '@fontWeights.3',
+      heading: '@fontWeights.5',
+      status: '@fontWeights.2',
     },
   },
 }

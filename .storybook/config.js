@@ -56,6 +56,7 @@ const StoryContainer = styled(Flex)`
 
 addDecorator((story) => (
   <StoryContainer center full>
+    <BaseStyles />
     {story()}
   </StoryContainer>
 ))

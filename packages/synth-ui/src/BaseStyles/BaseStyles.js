@@ -63,75 +63,75 @@ const fonts = {
       woff: PublicSansThinItalicWOFF,
       woff2: PublicSansThinItalicWOFF2,
     },
-    weight200: {
-      ttf: PublicSansExtraLightTTF,
-      woff: PublicSansExtraLightWOFF,
-      woff2: PublicSansExtraLightWOFF2,
-      italic: {
-        ttf: PublicSansExtraLightItalicTTF,
-        woff: PublicSansExtraLightItalicWOFF,
-        woff2: PublicSansExtraLightItalicWOFF2,
-      },
+  },
+  weight200: {
+    ttf: PublicSansExtraLightTTF,
+    woff: PublicSansExtraLightWOFF,
+    woff2: PublicSansExtraLightWOFF2,
+    italic: {
+      ttf: PublicSansExtraLightItalicTTF,
+      woff: PublicSansExtraLightItalicWOFF,
+      woff2: PublicSansExtraLightItalicWOFF2,
     },
-    weight300: {
-      ttf: PublicSansLightTTF,
-      woff: PublicSansLightWOFF,
-      woff2: PublicSansLightWOFF2,
-      italic: {
-        ttf: PublicSansLightItalicTTF,
-        woff: PublicSansLightItalicWOFF,
-        woff2: PublicSansLightItalicWOFF2,
-      },
+  },
+  weight300: {
+    ttf: PublicSansLightTTF,
+    woff: PublicSansLightWOFF,
+    woff2: PublicSansLightWOFF2,
+    italic: {
+      ttf: PublicSansLightItalicTTF,
+      woff: PublicSansLightItalicWOFF,
+      woff2: PublicSansLightItalicWOFF2,
     },
-    weight400: {
-      ttf: PublicSansRegularTTF,
-      woff: PublicSansRegularWOFF,
-      woff2: PublicSansRegularWOFF2,
-      italic: {
-        ttf: PublicSansItalicTTF,
-        woff: PublicSansItalicWOFF,
-        woff2: PublicSansItalicWOFF2,
-      },
+  },
+  weight400: {
+    ttf: PublicSansRegularTTF,
+    woff: PublicSansRegularWOFF,
+    woff2: PublicSansRegularWOFF2,
+    italic: {
+      ttf: PublicSansItalicTTF,
+      woff: PublicSansItalicWOFF,
+      woff2: PublicSansItalicWOFF2,
     },
-    weight500: {
-      ttf: PublicSansMediumTTF,
-      woff: PublicSansMediumWOFF,
-      woff2: PublicSansMediumWOFF2,
-      italic: {
-        ttf: PublicSansMediumItalicTTF,
-        woff: PublicSansMediumItalicWOFF,
-        woff2: PublicSansMediumItalicWOFF2,
-      },
+  },
+  weight500: {
+    ttf: PublicSansMediumTTF,
+    woff: PublicSansMediumWOFF,
+    woff2: PublicSansMediumWOFF2,
+    italic: {
+      ttf: PublicSansMediumItalicTTF,
+      woff: PublicSansMediumItalicWOFF,
+      woff2: PublicSansMediumItalicWOFF2,
     },
-    weight600: {
-      ttf: PublicSansSemiBoldTTF,
-      woff: PublicSansSemiBoldWOFF,
-      woff2: PublicSansSemiBoldWOFF2,
-      italic: {
-        ttf: PublicSansSemiBoldItalicTTF,
-        woff: PublicSansSemiBoldItalicWOFF,
-        woff2: PublicSansSemiBoldItalicWOFF2,
-      },
+  },
+  weight600: {
+    ttf: PublicSansSemiBoldTTF,
+    woff: PublicSansSemiBoldWOFF,
+    woff2: PublicSansSemiBoldWOFF2,
+    italic: {
+      ttf: PublicSansSemiBoldItalicTTF,
+      woff: PublicSansSemiBoldItalicWOFF,
+      woff2: PublicSansSemiBoldItalicWOFF2,
     },
-    weight700: {
-      ttf: PublicSansBoldTTF,
-      woff: PublicSansBoldWOFF,
-      woff2: PublicSansBoldWOFF2,
-      italic: {
-        ttf: PublicSansBoldItalicTTF,
-        woff: PublicSansBoldItalicWOFF,
-        woff2: PublicSansBoldItalicWOFF2,
-      },
+  },
+  weight700: {
+    ttf: PublicSansBoldTTF,
+    woff: PublicSansBoldWOFF,
+    woff2: PublicSansBoldWOFF2,
+    italic: {
+      ttf: PublicSansBoldItalicTTF,
+      woff: PublicSansBoldItalicWOFF,
+      woff2: PublicSansBoldItalicWOFF2,
     },
-    weight800: {
-      ttf: PublicSansExtraBoldTTF,
-      woff: PublicSansExtraBoldWOFF,
-      woff2: PublicSansExtraBoldWOFF2,
-      italic: {
-        ttf: PublicSansExtraBoldItalicTTF,
-        woff: PublicSansExtraBoldItalicWOFF,
-        woff2: PublicSansExtraBoldItalicWOFF2,
-      },
+  },
+  weight800: {
+    ttf: PublicSansExtraBoldTTF,
+    woff: PublicSansExtraBoldWOFF,
+    woff2: PublicSansExtraBoldWOFF2,
+    italic: {
+      ttf: PublicSansExtraBoldItalicTTF,
+      woff: PublicSansExtraBoldItalicWOFF,
+      woff2: PublicSansExtraBoldItalicWOFF2,
     },
   },
 }
@@ -145,18 +145,20 @@ const generateFontFaces = () => () =>
     font-family: 'PublicSans';
     font-weight: ${fontWeight.replace('weight', '')};
     font-style: normal;
-    src: url(${fonts[fontWeight].tff}) format("truetype"),
-    url(${fonts[fontWeight].woff}) format("woff"),
-    url(${fonts[fontWeight].woff2}) format("woff2");
+    font-display: swap;
+    src: url(${fonts[fontWeight].woff2}) format("woff2"), 
+      url(${fonts[fontWeight].woff}) format("woff"), 
+      url(${fonts[fontWeight].ttf}) format("truetype");
   }
 
   @font-face {
     font-family: 'PublicSans';
     font-weight: ${fontWeight.replace('weight', '')};
     font-style: italic;
-    src: url(${fonts[fontWeight].italic.tff}) format("truetype"),
-    url(${fonts[fontWeight].italic.woff}) format("woff"),
-    url(${fonts[fontWeight].italic.woff2}) format("woff2");
+    font-display: swap;
+    src: url(${fonts[fontWeight].italic.woff}) format("woff2"),
+      url(${fonts[fontWeight].italic.woff2}) format("woff"),
+      url(${fonts[fontWeight].italic.ttf}) format("truetype");
   }
 `,
     '',

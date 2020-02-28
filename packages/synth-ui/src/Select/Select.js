@@ -18,7 +18,7 @@ const setSelectStyles = () => css`
   ${border('input')}
   ${backgroundColor('input')}
   ${borderRadius()};
-  ${fontWeight('control')}
+  ${fontWeight('input')}
   ${setBackground()}
   ${setPadding()}
   appearance: none;

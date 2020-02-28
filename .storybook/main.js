@@ -3,8 +3,6 @@ const path = require('path')
 module.exports = {
   presets: ['@storybook/addon-docs/preset'],
   webpackFinal: async (config, { configType }) => {
-    console.log('config ===> ', JSON.stringify(config, null, 2))
-
     config.watchOptions = {
       ...(config.watchOptions || {}),
       ignored: [
