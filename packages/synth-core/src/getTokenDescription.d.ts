@@ -2,7 +2,7 @@ import { SynthTokenConfiguration } from './'
 
 /**
  * @since 2.0.0
- * @description Gets the given token's description value from it's metadata.
+ * @description Gets the a token's description value from it's metadata given a token selector.
  * @example
  * getTokenDescription({
  *   color: {

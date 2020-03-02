@@ -2,7 +2,7 @@ import { SynthTokenConfiguration } from './'
 
 /**
  * @since 2.0.0
- * @description Validates the given token has metadata.
+ * @description Validates that a token has metadata defined given a valid token selector.
  * @example
  * tokenHasMetadata({
  *   color: {

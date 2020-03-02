@@ -464,13 +464,13 @@ To retrive specific token values, we use a special token selector convention tha
 
 ### Selector Examples
 
-| Selector                        | Target                                                                                                                 | Description                                                                                                                                                                                       |
-| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `color:background:button`       | A `background` property token with the name `"button"` within the `color` category.                                    |                                                                                                                                                                                                   |
-| `color:background:button:hover` | The `hover` state of the `background` property token with the name `"button"` within the `color` category.             |                                                                                                                                                                                                   |
-| `color:background`              | The `base` token for the `background` property within the `color` category.                                            | When you leave out the token's name, Synth will look for a special token name called `base`. Use the `base` keyword to define default values to specific properties (`padding`, `opacity`, etc.). |
-| `color:@primary`                | The `"primary"` alias within the `color` category.                                                                     |                                                                                                                                                                                                   |
-| `color:background:labels.2`     | The second value of the array token with the name `"labels"` on the `background` property within the `color` category. |                                                                                                                                                                                                   |
+| Selector                        | Target                                                                                                                                                                                                                                                                        |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `color:background:button`       | A `background` property token with the name `"button"` within the `color` category.                                                                                                                                                                                           |
+| `color:background:button:hover` | The `hover` state of the `background` property token with the name `"button"` within the `color` category.                                                                                                                                                                    |
+| `color:background`              | The `base` token for the `background` property within the `color` category. When you leave out the token's name, Synth will look for a special token name called `base`. Use the `base` keyword to define default values to specific properties (`padding`, `opacity`, etc.). |
+| `color:@primary`                | The `"primary"` alias within the `color` category.                                                                                                                                                                                                                            |
+| `color:background:labels.2`     | The second value of the array token with the name `"labels"` on the `background` property within the `color` category.                                                                                                                                                        |
 
 ### Retriving string and number based token values
 
@@ -561,7 +561,11 @@ const tokenConfiguration = {
     background: {
       button: {
         default: '#0172CB',
-        hover: '#52aef7',
+        hover: {
+          description:
+            'Use this color for the hover state of primary action buttons.',
+          value: '#52aef7',
+        },
       },
     },
   },

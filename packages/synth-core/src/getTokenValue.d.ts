@@ -2,7 +2,7 @@ import { SynthTokenConfiguration, SynthTokenValue } from './'
 
 /**
  * @since 2.0.0
- * @description Gets the given token's value.
+ * @description Gets the token's value given a token selector.
  * @example
  * getTokenValue({
  *   color: {

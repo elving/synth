@@ -2,7 +2,7 @@ import { SynthCategory, SynthTokenConfiguration, SynthTokenValue } from './'
 
 /**
  * @since 2.0.0
- * @description Gets the value form the given token alias.
+ * @description Gets the value from the given token alias.
  * @example
  * getTokenAliasValue({
  *   space: {

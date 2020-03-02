@@ -2,22 +2,267 @@
 
 # API
 
+The `synth-core` package contains methods to retrieve, validate and introspect your tokens.
+
 ## Retrieving tokens
 
-- getToken
-- getTokenAliasValue
-- getTokenDescription
-- getTokenRelease
-- getTokenStructure
-- getTokenValue
+### `getToken(tokenConfiguration, tokenSelector)`
 
-## Token validation
+Get's the contents of a token given a token selector.
 
-- isValidToken
-- isValidTokenConfig
+```javascript
+getToken({
+  color: {
+    background: {
+      button: '#444'
+    }
+  }
+}, 'color:background:button') // '#444'
 
-## Token introspection
+getToken({
+  color: {
+    background: {
+      button: {
+        hover: '#444'
+      }
+    }
+  }
+}, 'color:background:button') // { hover: '#444' }
 
-- tokenHasMetadata
-- tokenHasStates
-- isValidAliasName
+getToken({
+  color: {
+    background: {
+      button: {
+        description: 'lorem ipsum.'
+        value: '#444'
+      }
+    }
+  }
+}, 'color:background:button') // { description: 'lorem ipsum.', value: '#444' }
+```
+
+### `getTokenAliasValue(tokenConfiguration, category, tokenAliasSelector)`
+
+Get's the contents of a token alias given a token alias selector.
+
+```javascript
+getTokenAliasValue(
+  {
+    space: {
+      aliases: {
+        md: 12,
+      },
+    },
+  },
+  'space',
+  '@md',
+) // 12
+
+getTokenAliasValue(
+  {
+    space: {
+      aliases: {
+        content: [12, 22, 32],
+      },
+    },
+  },
+  'space',
+  '@content.2',
+) // 22
+```
+
+### `getTokenDescription(tokenConfiguration, tokenSelector)`
+
+Gets the a token's description value from it's metadata given a token selector.
+
+```javascript
+getTokenDescription(
+  {
+    color: {
+      background: {
+        button: {
+          description: 'lorem ipsum.',
+          value: '#444',
+        },
+      },
+    },
+  },
+  'color:background:button',
+) // 'lorem ipsum.'
+```
+
+### `getTokenRelease(tokenConfiguration, tokenSelector)`
+
+Gets the a token's release value from it's metadata given a token selector.
+
+```javascript
+getTokenRelease(
+  {
+    color: {
+      background: {
+        button: {
+          description: 'lorem ipsum.',
+          release: '1.2.3',
+          value: '#444',
+        },
+      },
+    },
+  },
+  'color:background:button',
+) // '1.2.3'
+```
+
+### `getTokenValue(tokenConfiguration, tokenSelector)`
+
+Gets the token's value given a token selector.
+
+```javascript
+getTokenValue(
+  {
+    color: {
+      background: {
+        button: {
+          description: 'lorem ipsum.',
+          release: '1.2.3',
+          value: '#444',
+        },
+      },
+    },
+  },
+  'color:background:button',
+) // '#444'
+
+getTokenValue(
+  {
+    color: {
+      background: {
+        button: {
+          default: '#444',
+          hover: '#555',
+        },
+      },
+    },
+  },
+  'color:background:button:hover',
+) // '#555'
+```
+
+## Validating tokens
+
+### `isValidToken(tokenSelector)`
+
+Validates the given value to see if it's a valid Synth token.
+
+```javascript
+isValidToken('color:background:button') // true
+isValidToken('lolor:background:button') // false
+```
+
+### `isValidTokenConfig(tokenConfiguration)`
+
+Validates the given value to see if it's a valid Synth token configuration.
+
+```javascript
+isValidTokenConfig({
+  color: {
+    text: {
+      button: '#232323',
+    },
+  },
+}) // true
+
+isValidTokenConfig({
+  color: {
+    lol: {
+      button: '#232323',
+    },
+  },
+}) // false
+```
+
+## Introspecting tokens
+
+### `getTokenStructure(tokenSelector)`
+
+Gets the structure of a token given valid token selector.
+
+```javascript
+getTokenStructure('color:background:button')
+// { category: 'color', property: 'background', name: 'button' }
+
+getTokenStructure('color:text:btn:hover')
+// { category: 'color', property: 'text', name: 'btn', state: 'hover' }
+```
+
+### `tokenHasStates(tokenConfiguration, tokenSelector)`
+
+Validates that a token has states defined given a valid token selector.
+
+```javascript
+tokenHasStates(
+  {
+    color: {
+      text: {
+        button: {
+          description: 'hello',
+          value: '#232323',
+        },
+      },
+    },
+  },
+  'color:text:button',
+) // false
+
+tokenHasStates(
+  {
+    color: {
+      text: {
+        button: {
+          hover: '#232323',
+        },
+      },
+    },
+  },
+  'color:text:button',
+) // true
+```
+
+### `tokenHasMetadata(tokenConfiguration, tokenSelector)`
+
+Validates that a token has metadata defined given a valid token selector.
+
+```javascript
+tokenHasMetadata(
+  {
+    color: {
+      text: {
+        button: {
+          description: 'hello',
+          value: '#232323',
+        },
+      },
+    },
+  },
+  'color:text:button',
+) // true
+
+tokenHasMetadata(
+  {
+    color: {
+      text: {
+        button: '#232323',
+      },
+    },
+  },
+  'color:text:button',
+) // false
+```
+
+### `isValidAliasName(tokenAliasSelector)`
+
+Validates that the given value is a valid token alias name.
+
+```javascript
+isValidAliasName('md') // false
+isValidAliasName('@md') // true
+```

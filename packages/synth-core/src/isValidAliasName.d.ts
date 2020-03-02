@@ -1,6 +1,6 @@
 /**
  * @since 2.0.0
- * @description Validates the given value is a valid alias name.
+ * @description Validates that the given value is a valid token alias name.
  * @example
  * isValidAliasName('md') => false
  * isValidAliasName('@md') => true

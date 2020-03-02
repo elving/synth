@@ -2,7 +2,7 @@ import { SynthTokenConfiguration } from './'
 
 /**
  * @since 2.0.0
- * @description Validates the given token has states.
+ * @description Validates that a token has states defined given a valid token selector.
  * @example
  * tokenHasStates({
  *   color: {
