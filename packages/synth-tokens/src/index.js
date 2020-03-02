@@ -171,7 +171,7 @@ export const tokens = {
 
     font: {
       base: [
-        'PublicSans',
+        'Inter',
         '-apple-system',
         'system-ui',
         'BlinkMacSystemFont',
@@ -201,9 +201,9 @@ export const tokens = {
     weight: {
       base: '@fontWeights.3',
       link: '@fontWeights.3',
-      control: '@fontWeights.4',
+      control: '@fontWeights.5',
       input: '@fontWeights.3',
-      heading: '@fontWeights.5',
+      heading: '@fontWeights.6',
       status: '@fontWeights.2',
     },
   },
