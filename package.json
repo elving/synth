@@ -50,7 +50,7 @@
     "react-live": "^2.2.2",
     "styled-components": "^5.0.1",
     "typedoc": "^0.16.11",
-    "typescript": "^3.8.2"
+    "typescript": "^3.8.3"
   },
   "scripts": {
     "start": "start-storybook -p 5555",
