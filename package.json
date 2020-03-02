@@ -57,7 +57,7 @@
     "build": "rm -rf ./packages/**/dist && concurrently --names 'commonjs,esm' 'yarn build:commonjs' 'yarn build:esm'",
     "build:commonjs": "lerna exec --parallel -- BABEL_ENV=commonjs babel --root-mode upward src --out-dir dist/commonjs --copy-files --no-copy-ignored --ignore tests,docs --source-maps inline",
     "build:esm": "lerna exec --parallel -- BABEL_ENV=esm babel --root-mode upward src --out-dir dist/esm --copy-files --no-copy-ignored --ignore tests,docs --source-maps inline",
-    "build:docs": "build-storybook --docs -c .storybook -o ./docs && git add ./docs && git commit -m 'chore(release): docs' && git push origin master",
+    "build:docs": "build-storybook --docs -c .storybook -o ./docs && git add ./docs && git commit -m 'chore: docs'",
     "lerna:bootstrap": "lerna bootstrap",
     "lerna:bootstrap:ci": "lerna bootstrap --ci",
     "lerna:publish": "lerna publish --conventional-commits -m '🔖 chore(release): publish'",
