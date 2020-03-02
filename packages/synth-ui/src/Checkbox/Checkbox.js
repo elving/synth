@@ -20,7 +20,7 @@ import { setIconFill, setIconSize } from './utils'
  * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<'div', import('@beatgig/synth-ui').CheckboxProps>}
  */
 const IconContainer = styled.div`
-  ${border('input')}
+  ${backgroundColor('control')}
   ${borderRadius()}
   ${padding('@spacing.1')}
   align-items: center;
@@ -29,8 +29,7 @@ const IconContainer = styled.div`
   transition: all 0.25s ease;
 
   :hover {
-    ${backgroundColor('input:hover')}
-    ${border('input:hover')}
+    ${backgroundColor('control:hover')}
   }
 `
 
@@ -55,8 +54,7 @@ const Input = styled.input.attrs(() => ({
   opacity: 0;
 
   &:checked + ${IconContainer} {
-    ${backgroundColor('input:focus')}
-    ${border('input:focus')}
+    ${backgroundColor('control:focus')}
   }
 
   &:checked + ${IconContainer} > ${Icon} {
