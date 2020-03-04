@@ -68,8 +68,7 @@
     "lint": "yarn lint:eslint && yarn lint:types",
     "lint:eslint": "lerna exec --parallel -- eslint . -c ./.eslintrc --ext .js,mdx",
     "lint:types": "lerna exec --parallel -- tsc -p ./tsconfig.json",
-    "prepublishOnly": "yarn build",
-    "postpublish": "yarn docs"
+    "prepublishOnly": "yarn build && yarn docs"
   },
   "husky": {
     "hooks": {
