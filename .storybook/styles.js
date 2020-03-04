@@ -12,6 +12,14 @@ import {
 } from '../packages/synth-styled-components/src'
 
 const Styles = createGlobalStyle`
+  * {
+    font-family: Inter, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI,Roboto, Oxygen,Ubuntu, Cantarell, Fira Sans, Helvetica Neue, Helvetica, Arial, sans-serif !important;
+  }
+
+  pre, code {
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+  }
+
   body, html {
     ${setBaseStyles()}
     background-color: transparent;
@@ -33,8 +41,6 @@ const Styles = createGlobalStyle`
         ${fontSize('@fontSizes.2')}
         background-color: rgba(255, 255, 255, 0.055);
         border: 1px solid rgba(255,255,255,.035);
-        color: #a7a9be;
-        font-family: "Operator Mono", "Fira Code Retina", "Fira Code", FiraCode-Retina, "Andale Mono", "Lucida Console", Consolas, Monaco, monospace;
         padding: 1px 2px 2px;
       }
 
