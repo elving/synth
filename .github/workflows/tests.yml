@@ -21,8 +21,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: master
 
       - uses: actions/setup-node@v1
         with:
@@ -46,6 +44,11 @@ jobs:
         run: yarn test:ci
         env:
           CI: true
+
+      - uses: actions/checkout@v2
+        if: github.event_name == 'push'
+        with:
+          ref: master
 
       - name: Publish
         if: github.event_name == 'push'
