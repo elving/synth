@@ -57,23 +57,23 @@
     "build": "rm -rf ./packages/**/dist && concurrently --names 'commonjs,esm' 'yarn build:commonjs' 'yarn build:esm'",
     "build:commonjs": "lerna exec --parallel -- BABEL_ENV=commonjs babel --root-mode upward src --out-dir dist/commonjs --copy-files --no-copy-ignored --ignore tests,docs --source-maps inline",
     "build:esm": "lerna exec --parallel -- BABEL_ENV=esm babel --root-mode upward src --out-dir dist/esm --copy-files --no-copy-ignored --ignore tests,docs --source-maps inline",
-    "build:docs": "build-storybook --docs -c .storybook -o ./docs && git add ./docs && git commit -m 'chore: docs'",
+    "docs": "build-storybook --quiet --docs -c .storybook -o ./docs && git add ./docs && git commit -m '📝 chore: docs'",
     "lerna:bootstrap": "lerna bootstrap",
     "lerna:bootstrap:ci": "lerna bootstrap --ci",
     "lerna:publish": "lerna publish --conventional-commits -m '🔖 chore(release): publish'",
-    "lerna:publish:ci": "lerna publish from-git --conventional-commits -m '🔖 chore(release): publish' --yes --force-publish=*",
+    "lerna:publish:ci": "lerna publish --conventional-commits -m '🔖 chore(release): publish' --yes --force-publish=*",
     "test": "jest",
     "test:ci": "jest --ci --silent",
     "coverage": "yarn build && jest --coverage",
     "lint": "yarn lint:eslint && yarn lint:types",
     "lint:eslint": "lerna exec --parallel -- eslint . -c ./.eslintrc --ext .js,mdx",
     "lint:types": "lerna exec --parallel -- tsc -p ./tsconfig.json",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
+    "postpublish": "yarn docs"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn build:docs"
+      "pre-commit": "lint-staged"
     }
   },
   "sideEffects": false

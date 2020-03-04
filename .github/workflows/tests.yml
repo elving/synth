@@ -11,8 +11,18 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      GH_USER: ${{ secrets.GH_USER }}
+      GH_REPO: ${{ secrets.GH_REPO }}
+      GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
+      GIT_NAME: ${{ secrets.GIT_NAME }}
+
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: master
 
       - uses: actions/setup-node@v1
         with:
@@ -39,4 +49,10 @@ jobs:
 
       - name: Publish
         if: github.event_name == 'push'
-        run: yarn lerna:publish:ci
+        run: |
+          git remote set-url origin "https://$GH_USER:$GH_TOKEN@github.com/$GH_REPO.git"
+          git config --global user.email "$GIT_EMAIL"
+          git config --global user.name "$GIT_NAME"
+          npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_TOKEN }}"
+          npm whoami
+          yarn lerna:publish:ci
