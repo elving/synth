@@ -25,7 +25,7 @@ Describes color-specific properties for elements, text and effects.
 
 ##### Example
 
-```JSON
+```json
 {
   "color": {
     "background": {
@@ -56,7 +56,7 @@ Describes values related to animations and transitions that can be applied to el
 
 ##### Example
 
-```JSON
+```json
 {
   "motion": {
     "delay": {
@@ -90,7 +90,7 @@ Describes values related to the positioning and alignment of elements, text and 
 
 ##### Example
 
-```JSON
+```json
 {
   "position": {
     "bottom": {
@@ -118,7 +118,7 @@ Describes values related to the positioning and alignment of elements, text and 
     "top": {
       "popup": 15,
       "toast_notification": "5%"
-    },
+    }
   }
 }
 ```
@@ -142,7 +142,7 @@ Describes size-specific values that affect the dimmensions of elements, text and
 
 ##### Example
 
-```JSON
+```json
 {
   "size": {
     "border": {
@@ -157,7 +157,7 @@ Describes size-specific values that affect the dimmensions of elements, text and
     },
     "maxWidth": {
       "sm": 320,
-      "md": 720,
+      "md": 720
     },
     "minHeight": {
       "emptyState": 120
@@ -193,7 +193,7 @@ Describes spacing-specific values that alter the space between elements and arou
 
 ##### Example
 
-```JSON
+```json
 {
   "space": {
     "margin": {
@@ -218,7 +218,7 @@ Describes values related to style variants that can be applied to elements and t
 
 ##### Example
 
-```JSON
+```json
 {
   "style": {
     "border": {
@@ -246,7 +246,7 @@ Describes typography-related values that only apply to text.
 
 ##### Example
 
-```JSON
+```json
 {
   "typography": {
     "decoration": {
@@ -275,9 +275,9 @@ Describes typography-related values that only apply to text.
 
 In order to define tokens tht belong to a specific category and property, you'll need to provide a token name. The terminology and format of the token names is up to you; You can name your tokens using component-based conventions, e.g., `modal`, `textInput` or you can go the utility-based route, e.g., `sm`, `primary`, you can also choose any formatting you want, like "snake_case" or "camelCase":
 
-```JSON
+```json
 {
-  "color":{
+  "color": {
     "background": {
       "primary": "#007ace",
       "text_input": "#fafafa"
@@ -305,7 +305,7 @@ You can assign 4 different types of values to your design tokens:
 
 String values can be used for unit-based values (e.g., `"10.5em"`) and other non-numeric values (e.g., `"#454545"`).
 
-```JSON
+```json
 {
   "color": {
     "text": {
@@ -324,7 +324,7 @@ String values can be used for unit-based values (e.g., `"10.5em"`) and other non
 
 Use numbers for unitless values, e.g., `1.5`. You can also use numbers for absolute length values like `px` for CSS or `dp` for Android.
 
-```JSON
+```json
 {
   "size": {
     "maxWidth": {
@@ -343,7 +343,7 @@ Use numbers for unitless values, e.g., `1.5`. You can also use numbers for absol
 
 Arrays are useful for assigning two or more values to the same token; These values could be numbers or strings. They can also be used to define reusable scales of values (more on this later).
 
-```JSON
+```json
 {
   "space": {
     "padding": {
@@ -357,7 +357,7 @@ Arrays are useful for assigning two or more values to the same token; These valu
 
 A metadata object is an object that will contain a `value` key which stores your token's value along side other information that describes your token. When using a metadata object as a token's value it is required for the object to have a `value` key but every other key in the object is up to you. Use this object to provide as much information as you can about your tokens.
 
-```JSON
+```json
 {
   "color": {
     "background": {
@@ -375,7 +375,7 @@ A metadata object is an object that will contain a `value` key which stores your
 
 You can define how your token values are altered by different states by passing a state object:
 
-```JSON
+```json
 {
   "color": {
     "background": {
@@ -407,7 +407,7 @@ Token aliases are a way for you to reuse the same value on multiple components. 
 
 In order to use a token alias as another token's value you have to prefix the alias name with an "@" symbol, e.g., `@aliasName`.
 
-```JSON
+```json
 {
   "space": {
     "aliases": {
@@ -424,8 +424,8 @@ In order to use a token alias as another token's value you have to prefix the al
 
 Token aliases are defined under the `aliases` property of any given category. They work exactly the same as all your other tokens, so their values can also be a string, number, array or a metadata object:
 
-```JSON
- {
+```json
+{
   "color": {
     "aliases": {
       "primary": {
@@ -439,7 +439,7 @@ Token aliases are defined under the `aliases` property of any given category. Th
       "primaryButton": {
         "default": "@primary.1",
         "hover": "@primary.2",
-        "active": "@primary.3",
+        "active": "@primary.3"
       },
       "iconButton": {
         "description": "Icon buttons should blend with their container's background.",

@@ -3,6 +3,7 @@ import { withSynth } from '../packages/synth-react/src'
 import { createGlobalStyle } from 'styled-components'
 
 import {
+  backgroundColor,
   borderRadius,
   color,
   fontSize,
@@ -36,7 +37,12 @@ const Styles = createGlobalStyle`
         ${padding('@spacing.6')}
       }
 
-      code {
+      pre {
+        background-color: ${({ synth }) =>
+          synth.getValue('color:@BalticSea')} !important;
+      }
+
+      code {        
         ${borderRadius()}
         ${fontSize('@fontSizes.2')}
         background-color: rgba(255, 255, 255, 0.055);
