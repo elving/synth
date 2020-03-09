@@ -55,6 +55,8 @@ export {
   LENGTH_BINDINGS_MAP,
 } from './constants'
 
+export { bindings }
+export { default as getPropertyToTokenMap } from './getPropertyToTokenMap'
 export { default as getTokenValue } from './getTokenValue'
 export { default as withTokens } from './withTokens'
 export { toEm, toHex, toRem, toRgba } from './transforms'
