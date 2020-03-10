@@ -19,5 +19,11 @@ export {
 } from './getPropertyToTokenMap'
 
 export { default as getTokenValue } from './getTokenValue'
-export { default as withTokens } from './withTokens'
+
+export {
+  default as withTokens,
+  SynthCSSBindings,
+  SynthCSSBindingsWithTokens,
+} from './withTokens'
+
 export { toHex, toRem, toRgba } from './transforms'
