@@ -1,33 +1,15 @@
 import * as SynthCore from '@beatgig/synth-core'
 
-interface SynthCSSBindings {
-  backgroundColor(tokenName?: string): string
-  border(tokenName?: string): string
-  borderRadius(tokenName?: string): string
-  bottom(tokenName?: string): string
-  boxShadow(tokenName?: string): string
-  color(tokenName?: string): string
-  fontFamily(tokenName?: string): string
-  fontSize(tokenName?: string): string
-  fontWeight(tokenName?: string): string
-  height(tokenName?: string): string
-  left(tokenName?: string): string
-  letterSpacing(tokenName?: string): string
-  lineHeight(tokenName?: string): string
-  margin(tokenName?: string): string
-  maxHeight(tokenName?: string): string
-  maxWidth(tokenName?: string): string
-  minHeight(tokenName?: string): string
-  minWidth(tokenName?: string): string
-  opacity(tokenName?: string): string
-  outline(tokenName?: string): string
-  padding(tokenName?: string): string
-  right(tokenName?: string): string
-  textDecoration(tokenName?: string): string
-  textTransform(tokenName?: string): string
-  top(tokenName?: string): string
-  width(tokenName?: string): string
-  zIndex(tokenName?: string): string
+import { CamelCaseMap } from './getPropertyToTokenMap'
+
+type SynthCSSBindings = {
+  [key in keyof CamelCaseMap]: (tokenName?: string) => string
+}
+
+type SynthCSSBindingsWithTokens = {
+  [key in keyof CamelCaseMap]: (
+    tokenName?: string,
+  ) => (tokens: SynthCore.SynthTokenConfiguration, tokenName: string) => string
 }
 
 /**
@@ -48,11 +30,7 @@ interface SynthCSSBindings {
  */
 declare function withTokens(
   tokens: SynthCore.SynthTokenConfiguration,
-): {
-  [key: string]: (
-    tokenName: string,
-  ) => (tokens: SynthCore.SynthTokenConfiguration, tokenName: string) => string
-}
+): SynthCSSBindingsWithTokens
 
-export { SynthCSSBindings }
+export { SynthCSSBindings, SynthCSSBindingsWithTokens }
 export default withTokens
