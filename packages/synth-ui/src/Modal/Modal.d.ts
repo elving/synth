@@ -33,6 +33,7 @@ interface ModalProps extends PopupProps {
 type ModalComponentProps = React.HTMLAttributes<HTMLDivElement> &
   React.RefAttributes<HTMLDivElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & ModalProps
 
 type ModalComponent = SynthReact.SynthComponent<

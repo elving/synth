@@ -33,6 +33,7 @@ interface RatingProps {
 type RatingComponentProps = React.HTMLAttributes<HTMLDivElement> &
   React.RefAttributes<HTMLDivElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & RatingProps
 
 type RatingComponent = SynthReact.SynthComponent<

@@ -16,6 +16,7 @@ interface HeaderLinkProps {
 type HeaderLinkComponentProps = React.AnchorHTMLAttributes<HTMLAnchorElement> &
   React.RefAttributes<HTMLAnchorElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & HeaderLinkProps
 
 type HeaderLinkComponent = SynthReact.SynthComponent<

@@ -20,6 +20,7 @@ interface AvatarProps {
 type AvatarComponentProps = React.ImgHTMLAttributes<HTMLImageElement> &
   React.RefAttributes<HTMLImageElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & AvatarProps
 
 type AvatarComponent = SynthReact.SynthComponent<

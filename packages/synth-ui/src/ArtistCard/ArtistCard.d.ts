@@ -27,6 +27,7 @@ interface ArtistCardProps {
 type ArtistCardComponentProps = React.HTMLAttributes<HTMLDivElement> &
   React.RefAttributes<HTMLDivElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & ArtistCardProps
 
 type ArtistCardComponent = SynthReact.SynthComponent<

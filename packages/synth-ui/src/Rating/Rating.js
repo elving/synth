@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import React, { forwardRef, Fragment } from 'react'
-import styled from 'styled-components'
 import { withSynth } from '@beatgig/synth-react'
 
 import { Flex } from '../Flex'
@@ -18,7 +17,7 @@ import {
 
 const Rating = forwardRef(
   /**
-   * @param {import('@beatgig/synth-ui').RatingProps} props
+   * @param {import('@beatgig/synth-ui').RatingProps & import('@beatgig/synth-react').SynthComponentProps} props
    */
   (
     {
@@ -128,7 +127,6 @@ Rating.propTypes = {
 }
 
 Rating.defaultProps = {
-  children: null,
   className: '',
   rating: 0,
   scale: 1,

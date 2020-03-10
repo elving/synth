@@ -21,6 +21,7 @@ interface SidebarLinkProps {
 type SidebarLinkComponentProps = React.AnchorHTMLAttributes<HTMLAnchorElement> &
   React.RefAttributes<HTMLAnchorElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & SidebarLinkProps
 
 type SidebarLinkComponent = SynthReact.SynthComponent<

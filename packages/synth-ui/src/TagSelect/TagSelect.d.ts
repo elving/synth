@@ -65,6 +65,7 @@ interface TagSelectProps {
 type TagSelectComponentProps = React.HTMLAttributes<HTMLDivElement> &
   React.RefAttributes<HTMLDivElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & TagSelectProps
 
 type TagSelectComponent = SynthReact.SynthComponent<

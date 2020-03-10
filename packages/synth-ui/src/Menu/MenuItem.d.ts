@@ -26,6 +26,7 @@ interface MenuItemProps {
 type MenuItemComponentProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   React.RefAttributes<HTMLButtonElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & MenuItemProps
 
 type MenuItemComponent = SynthReact.SynthComponent<

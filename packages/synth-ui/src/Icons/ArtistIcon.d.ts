@@ -8,6 +8,7 @@ interface ArtistIconProps extends IconProps {}
 type ArtistIconComponentProps = React.SVGAttributes<SVGElement> &
   React.RefAttributes<SVGElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & ArtistIconProps
 
 type ArtistIconComponent = SynthReact.SynthComponent<

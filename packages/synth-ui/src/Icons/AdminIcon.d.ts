@@ -8,6 +8,7 @@ interface AdminIconProps extends IconProps {}
 type AdminIconComponentProps = React.SVGAttributes<SVGElement> &
   React.RefAttributes<SVGElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & AdminIconProps
 
 type AdminIconComponent = SynthReact.SynthComponent<

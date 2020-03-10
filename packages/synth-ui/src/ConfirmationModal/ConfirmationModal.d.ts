@@ -39,6 +39,7 @@ interface ConfirmationModalProps extends ModalProps {
 type ConfirmationModalComponentProps = React.HTMLAttributes<HTMLInputElement> &
   React.RefAttributes<HTMLInputElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & ConfirmationModalProps
 
 type ConfirmationModalComponent = SynthReact.SynthComponent<

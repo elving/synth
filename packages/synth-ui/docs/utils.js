@@ -7,16 +7,8 @@ import { Button, Flex, Popup, usePopup } from '../src'
 import ArtistVertical from './assets/images/artist-vertical.jpg'
 import ArtistHorizontal from './assets/images/artist-horizontal.jpg'
 
-const Box = styled(Flex)`
-  background-color: ${({ bg }) => bg || 'rgba(0, 0, 0, 0.15)'};
-  height: ${({ height }) => height || 'inherit'};
-  max-width: ${({ maxWidth }) => maxWidth || 'inherit'};
-  padding: 15px;
-  width: ${({ maxWidth, width }) => (width || maxWidth ? '100%' : 'inherit')};
-`
-
 const PopupWrapper = styled.div`
-  min-height: 300px;
+  height: 300px;
   position: relative;
   transform: translateZ(0);
   max-width: ${({ maxWidth }) => maxWidth || '100%'};
@@ -226,7 +218,6 @@ const artists = [
 
 export {
   artists,
-  Box,
   CardWrapper,
   CoverHorizontalImage,
   CoverVerticalImage,

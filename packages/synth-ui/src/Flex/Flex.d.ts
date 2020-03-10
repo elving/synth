@@ -120,6 +120,7 @@ interface FlexProps extends SynthReact.BoxProps {
 type FlexComponentProps = React.HTMLAttributes<HTMLDivElement> &
   React.RefAttributes<HTMLDivElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & FlexProps
 
 type FlexComponent = SynthReact.SynthComponent<

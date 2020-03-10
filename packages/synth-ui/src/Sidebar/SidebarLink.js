@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import { isNil } from '@beatgig/is'
-import { Text, withSynth } from '@beatgig/synth-react'
+import { withSynth } from '@beatgig/synth-react'
 
 import {
   backgroundColor,
@@ -14,6 +14,7 @@ import {
 } from '@beatgig/synth-styled-components'
 
 import { Spacer } from '../Spacer'
+import { Text } from '../Typography'
 
 import { setBaseStyles } from '../utils'
 
@@ -56,7 +57,7 @@ const SidebarLink = forwardRef(
       <StyledSidebarLink {...props} className={className} synth={synth}>
         {hasIcon ? icon : null}
         {hasIcon ? <Spacer inline left scale={2} /> : null}
-        <Text size="@fontSizes.3">{children}</Text>
+        <Text fontSize="@fontSizes.3">{children}</Text>
       </StyledSidebarLink>
     )
   },

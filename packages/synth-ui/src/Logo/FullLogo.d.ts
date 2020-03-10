@@ -24,6 +24,7 @@ interface FullLogoProps {
 type FullLogoComponentProps = React.SVGAttributes<SVGElement> &
   React.RefAttributes<SVGElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & FullLogoProps
 
 type FullLogoComponent = SynthReact.SynthComponent<

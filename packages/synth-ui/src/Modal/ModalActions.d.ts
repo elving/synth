@@ -16,6 +16,7 @@ interface ModalActionsProps {
 type ModalActionsComponentProps = React.HTMLAttributes<HTMLDivElement> &
   React.RefAttributes<HTMLDivElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & ModalActionsProps
 
 type ModalActionsComponent = SynthReact.SynthComponent<

@@ -18,6 +18,7 @@ interface ModalTitleProps extends HeadingProps {
 type ModalTitleComponentProps = React.HTMLAttributes<HTMLHeadingElement> &
   React.RefAttributes<HTMLHeadingElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & ModalTitleProps
 
 type ModalTitleComponent = SynthReact.SynthComponent<
