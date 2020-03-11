@@ -74,34 +74,49 @@ const bindings = {
   ...colorBindings,
   ...lengthBindings,
   ...otherBindings,
-  border:
-    /**
-     * @param {import('@beatgig/synth-core').SynthTokenConfiguration} tokens
-     * @param {string} tokenName
-     * @returns {string}
-     */
-    (tokens, tokenName) => `
-      ${lengthBindings.borderWidth(tokens, tokenName)}
-      ${otherBindings.borderStyle(tokens, tokenName)}
-      ${colorBindings.borderColor(tokens, tokenName)}
-    `,
-  boxShadow:
-    /**
-     * @param {import('@beatgig/synth-core').SynthTokenConfiguration} tokens
-     * @param {string} tokenName
-     * @returns {string}
-     */
-    (tokens, tokenName) =>
-      toArray(tokenName)
-        .map(
-          (value) =>
-            `box-shadow: ${[
-              getTokenValue(tokens, `position:shadow:${value}`),
-              getTokenValue(tokens, `size:shadow:${value}`),
-              getTokenValue(tokens, `color:shadow:${value}`),
-            ].join(' ')};`,
-        )
-        .join(','),
+  border: (tokens, tokenName) => {
+    const borderWidth = lengthBindings.borderWidth(tokens, tokenName)
+    const borderStyle = otherBindings.borderStyle(tokens, tokenName)
+    const borderColor = colorBindings.borderColor(tokens, tokenName)
+
+    const CSSDeclaration = new String(`
+        ${borderWidth}
+        ${borderStyle}
+        ${borderColor}
+      `)
+
+    Object.defineProperty(CSSDeclaration, 'toJSON', {
+      value: () => ({
+        ...borderWidth.toJSON(),
+        ...borderStyle.toJSON(),
+        ...borderColor.toJSON(),
+      }),
+    })
+
+    return CSSDeclaration
+  },
+  boxShadow: (tokens, tokenName) => {
+    const boxShadow = toArray(tokenName).reduce(
+      (declarations, tokenName, index) => {
+        const declaration = [
+          getTokenValue(tokens, `position:shadow:${tokenName}`),
+          getTokenValue(tokens, `size:shadow:${tokenName}`),
+          getTokenValue(tokens, `color:shadow:${tokenName}`),
+        ].join(' ')
+
+        return index === 0 ? declaration : `${declarations}, ${declaration}`
+      },
+      '',
+    )
+
+    const CSSDeclaration = new String(`box-shadow: ${boxShadow};`)
+
+    Object.defineProperty(CSSDeclaration, 'toJSON', {
+      value: () => ({ boxShadow }),
+    })
+
+    return CSSDeclaration
+  },
 }
 
 export default bindings

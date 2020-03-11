@@ -312,6 +312,22 @@ Object {
 }
 `;
 
+exports[`css bindings border CSS binding 1`] = `
+"
+        border-width: 1px;
+        border-style: solid;
+        border-color: #d5d5d5;
+      "
+`;
+
+exports[`css bindings border CSS binding 2`] = `
+Object {
+  "borderColor": "#d5d5d5",
+  "borderStyle": "solid",
+  "borderWidth": "1px",
+}
+`;
+
 exports[`css bindings borderColor(base) 1`] = `"border-color: #000;"`;
 
 exports[`css bindings borderColor(base) 2`] = `
@@ -2989,6 +3005,14 @@ exports[`css bindings right(toast_notification) using base value 1`] = `"right: 
 exports[`css bindings right(toast_notification) using base value 2`] = `
 Object {
   "right": "15px",
+}
+`;
+
+exports[`css bindings shadow CSS binding 1`] = `"box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);"`;
+
+exports[`css bindings shadow CSS binding 2`] = `
+Object {
+  "boxShadow": "0px 1px 10px rgba(0, 0, 0, 0.15)",
 }
 `;
 

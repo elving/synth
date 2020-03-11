@@ -1,19 +1,17 @@
-import * as SynthCore from '@beatgig/synth-core/src'
+import * as SynthCore from '@beatgig/synth-core'
 
-export interface ColorCSSDeclaration extends String {
-  hex: () => string
-  rgba: (alpha: number) => string
-  toJSON: {
-    [key: string]: string
-    hex: () => { [key: string]: string }
-    rgba: (alpha: number) => { [key: string]: string }
-  }
+type DeclarationJSON<T extends string> = {
+  [key in T]: string
 }
 
-export type ColorCSSBinding = (
-  tokens: SynthCore.SynthTokenConfiguration,
-  tokenName: string,
-) => ColorCSSDeclaration
+export interface ColorCSSDeclaration<T extends string> extends String {
+  hex(): string
+  rgba(alpha: number): string
+  toJSON(): DeclarationJSON<T> & {
+    hex(): DeclarationJSON<T>
+    rgba(alpha: number): DeclarationJSON<T>
+  }
+}
 
 export interface ColorCSSBindings {
   /**
@@ -79,92 +77,223 @@ export interface ColorCSSBindings {
    *   },
    * }, 'primaryButton').toJSON().rgba() // => { backgroundColor: 'rgba(0, 0, 0, 1)' }
    */
-  backgroundColor: ColorCSSBinding
-  borderColor: ColorCSSBinding
-  color: ColorCSSBinding
+  backgroundColor: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['color']['background'],
+  ) => ColorCSSDeclaration<'backgroundColor'>
+  borderColor: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['color']['border'],
+  ) => ColorCSSDeclaration<'borderColor'>
+  color: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['color']['text'],
+  ) => ColorCSSDeclaration<'color'>
 }
 
-export interface LengthCSSDeclaration extends String {
-  em: (relativeTo: string) => string
-  rem: () => string
-  toJSON: {
-    [key: string]: string
-    em: (relativeTo: string) => { [key: string]: string }
-    rem: () => { [key: string]: string }
+interface LengthCSSDeclaration<T extends string> {
+  em(relativeTo: string): string
+  rem(): string
+  toJSON(): DeclarationJSON<T> & {
+    em(relativeTo: string): DeclarationJSON<T>
+    rem(): DeclarationJSON<T>
   }
 }
 
-export type LengthCSSBinding = (
-  tokens: SynthCore.SynthTokenConfiguration,
-  tokenName: string,
-) => LengthCSSDeclaration
-
-export interface LengthCSSBindings {
-  borderRadius: LengthCSSBinding
-  borderWidth: LengthCSSBinding
-  bottom: LengthCSSBinding
-  fontSize: LengthCSSBinding
-  height: LengthCSSBinding
-  left: LengthCSSBinding
-  letterSpacing: LengthCSSBinding
-  margin: LengthCSSBinding
-  marginBottom: LengthCSSBinding
-  marginLeft: LengthCSSBinding
-  marginRight: LengthCSSBinding
-  marginTop: LengthCSSBinding
-  maxHeight: LengthCSSBinding
-  maxWidth: LengthCSSBinding
-  minHeight: LengthCSSBinding
-  minWidth: LengthCSSBinding
-  padding: LengthCSSBinding
-  paddingBottom: LengthCSSBinding
-  paddingLeft: LengthCSSBinding
-  paddingRight: LengthCSSBinding
-  paddingTop: LengthCSSBinding
-  right: LengthCSSBinding
-  textAlign: LengthCSSBinding
-  top: LengthCSSBinding
-  width: LengthCSSBinding
+interface LengthCSSBindings {
+  borderRadius: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['size']['radius'],
+  ) => LengthCSSDeclaration<'borderRadius'>
+  borderWidth: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['size']['border'],
+  ) => LengthCSSDeclaration<'borderWidth'>
+  bottom: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['position']['bottom'],
+  ) => LengthCSSDeclaration<'bottom'>
+  fontSize: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['size']['text'],
+  ) => LengthCSSDeclaration<'fontSize'>
+  height: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['size']['height'],
+  ) => LengthCSSDeclaration<'height'>
+  left: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['position']['left'],
+  ) => LengthCSSDeclaration<'left'>
+  letterSpacing: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['typography']['spacing'],
+  ) => LengthCSSDeclaration<'letterSpacing'>
+  margin: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['space']['margin'],
+  ) => LengthCSSDeclaration<'margin'>
+  marginBottom: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['space']['margin'],
+  ) => LengthCSSDeclaration<'marginBottom'>
+  marginLeft: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['space']['margin'],
+  ) => LengthCSSDeclaration<'marginLeft'>
+  marginRight: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['space']['margin'],
+  ) => LengthCSSDeclaration<'marginRight'>
+  marginTop: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['space']['margin'],
+  ) => LengthCSSDeclaration<'marginTop'>
+  maxHeight: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['size']['maxHeight'],
+  ) => LengthCSSDeclaration<'maxHeight'>
+  maxWidth: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['size']['maxWidth'],
+  ) => LengthCSSDeclaration<'maxWidth'>
+  minHeight: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['size']['minHeight'],
+  ) => LengthCSSDeclaration<'minHeight'>
+  minWidth: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['size']['minWidth'],
+  ) => LengthCSSDeclaration<'minWidth'>
+  padding: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['space']['padding'],
+  ) => LengthCSSDeclaration<'padding'>
+  paddingBottom: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['space']['padding'],
+  ) => LengthCSSDeclaration<'paddingBottom'>
+  paddingLeft: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['space']['padding'],
+  ) => LengthCSSDeclaration<'paddingLeft'>
+  paddingRight: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['space']['padding'],
+  ) => LengthCSSDeclaration<'paddingRight'>
+  paddingTop: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['space']['padding'],
+  ) => LengthCSSDeclaration<'paddingTop'>
+  right: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['position']['right'],
+  ) => LengthCSSDeclaration<'right'>
+  top: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['position']['top'],
+  ) => LengthCSSDeclaration<'top'>
+  width: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['size']['width'],
+  ) => LengthCSSDeclaration<'width'>
 }
 
-export interface CSSDeclaration extends String {
-  toJSON: { [key: string]: string }
+export interface CSSDeclaration<T extends string> extends String {
+  toJSON(): DeclarationJSON<T>
 }
 
-export type CSSBinding = (
+export type CSSBinding<T extends string> = (
   tokens: SynthCore.SynthTokenConfiguration,
   tokenName: string,
-) => CSSDeclaration
+) => CSSDeclaration<T>
 
 export interface CSSBindings {
-  animationDelay: CSSBinding
-  animationDuration: CSSBinding
-  animationTimingFunction: CSSBinding
-  borderStyle: CSSBinding
-  fontFamily: CSSBinding
-  fontStyle: CSSBinding
-  fontWeight: CSSBinding
-  lineHeight: CSSBinding
-  textDecoration: CSSBinding
-  textTransform: CSSBinding
-  transitionDelay: CSSBinding
-  transitionDuration: CSSBinding
-  transitionTimingFunction: CSSBinding
-  zIndex: CSSBinding
+  animationDelay: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['motion']['delay'],
+  ) => CSSDeclaration<'animationDelay'>
+  animationDuration: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['motion']['duration'],
+  ) => CSSDeclaration<'animationDuration'>
+  animationTimingFunction: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['motion']['effect'],
+  ) => CSSDeclaration<'animationTimingFunction'>
+  borderStyle: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['style']['border'],
+  ) => CSSDeclaration<'borderStyle'>
+  fontFamily: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['typography']['font'],
+  ) => CSSDeclaration<'fontFamily'>
+  fontStyle: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['style']['text'],
+  ) => CSSDeclaration<'fontStyle'>
+  fontWeight: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['typography']['weight'],
+  ) => CSSDeclaration<'fontWeight'>
+  lineHeight: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['typography']['lineHeight'],
+  ) => CSSDeclaration<'lineHeight'>
+  textAlign: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['position']['text'],
+  ) => CSSDeclaration<'textAlign'>
+  textDecoration: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['typography']['decoration'],
+  ) => CSSDeclaration<'textDecoration'>
+  textTransform: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['typography']['transform'],
+  ) => CSSDeclaration<'textTransform'>
+  transitionDelay: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['motion']['delay'],
+  ) => CSSDeclaration<'transitionDelay'>
+  transitionDuration: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['motion']['duration'],
+  ) => CSSDeclaration<'transitionDuration'>
+  transitionTimingFunction: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['motion']['effect'],
+  ) => CSSDeclaration<'transitionTimingFunction'>
+  zIndex: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['position']['index'],
+  ) => CSSDeclaration<'zIndex'>
 }
 
 export interface Bindings
   extends CSSBindings,
     LengthCSSBindings,
     ColorCSSBindings {
-  border: (
-    tokens: SynthCore.SynthTokenConfiguration,
-    tokenName: string,
-  ) => string
-  boxShadow: (
-    tokens: SynthCore.SynthTokenConfiguration,
-    tokenName: string | string[],
-  ) => string
+  border: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName:
+      | keyof C['color']['border']
+      | keyof C['size']['border']
+      | keyof C['style']['border'],
+  ) => CSSDeclaration<'borderWidth' | 'borderStyle' | 'borderColor'>
+  boxShadow<C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName:
+      | keyof C['color']['shadow']
+      | keyof C['size']['shadow']
+      | keyof C['position']['shadow']
+      | [
+          | keyof C['color']['shadow']
+          | keyof C['size']['shadow']
+          | keyof C['position']['shadow'],
+        ],
+  ): CSSDeclaration<'boxShadow'>
 }
 
 declare const bindings: Bindings
