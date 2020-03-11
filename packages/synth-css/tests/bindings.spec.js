@@ -1,9 +1,11 @@
 import bindings from '../src/bindings'
+
 import {
   ALL_BINDINGS,
   COLOR_BINDINGS_MAP,
   LENGTH_BINDINGS_MAP,
 } from '../src/constants'
+
 import { toCamelCase } from '../src/utils'
 
 const tokens = {
@@ -21,7 +23,7 @@ const tokens = {
     },
     shadow: {
       base: 'rgba(0, 0, 0, 0.5)',
-      content: 'rgba(0, 0, 0, 0.15)',
+      button: 'rgba(0, 0, 0, 0.15)',
     },
     text: {
       base: '#393939',
@@ -258,5 +260,17 @@ describe('css bindings', () => {
         })
       }
     })
+  })
+
+  test('border CSS binding', () => {
+    const bindingValue = bindings.border(tokens, 'button')
+    expect(bindingValue.toString()).toMatchSnapshot()
+    expect(bindingValue).toMatchSnapshot()
+  })
+
+  test('shadow CSS binding', () => {
+    const bindingValue = bindings.boxShadow(tokens, 'button')
+    expect(bindingValue.toString()).toMatchSnapshot()
+    expect(bindingValue).toMatchSnapshot()
   })
 })
