@@ -60,7 +60,7 @@ const lengthDeclaration = (tokenPrefix, property) => (
     },
   })
 
-  return /** @type {import('@beatgig/synth-css').LengthCSSDeclaration} */ (CSSDeclaration)
+  return /** @type {any & import('@beatgig/synth-css').LengthCSSDeclaration} */ (CSSDeclaration)
 }
 
 export default lengthDeclaration
