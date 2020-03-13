@@ -1,4 +1,3 @@
-import { isNumeric } from '@beatgig/is'
 import { toArray } from '@beatgig/array'
 
 import getTokenValue from './getTokenValue'

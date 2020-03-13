@@ -1,16 +1,6 @@
 import * as SynthCore from '@beatgig/synth-core'
 
-import { CamelCaseMap } from './getPropertyToTokenMap'
-
-type SynthCSSBindings = {
-  [key in keyof CamelCaseMap]: (tokenName?: string) => string
-}
-
-type SynthCSSBindingsWithTokens = {
-  [key in keyof CamelCaseMap]: (
-    tokenName?: string,
-  ) => (tokens: SynthCore.SynthTokenConfiguration, tokenName: string) => string
-}
+import { BindingsWithTokens } from './bindings'
 
 /**
  * Returns an object containing all CSS helper functions with the given
@@ -28,9 +18,14 @@ type SynthCSSBindingsWithTokens = {
  *
  * // => background-color: 'red';
  */
-declare function withTokens(
-  tokens: SynthCore.SynthTokenConfiguration,
-): SynthCSSBindingsWithTokens
+declare function withTokens<C extends SynthCore.SynthTokenConfiguration>(
+  tokens: C,
+): {
+  [BindingKey in keyof BindingsWithTokens<C>]: <
+    B extends BindingsWithTokens<C>[BindingKey]
+  >(
+    tokenName?: Parameters<B>[1],
+  ) => ReturnType<B>
+}
 
-export { SynthCSSBindings, SynthCSSBindingsWithTokens }
 export default withTokens
