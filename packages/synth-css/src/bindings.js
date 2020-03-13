@@ -92,7 +92,7 @@ const bindings = {
       }),
     })
 
-    return CSSDeclaration
+    return /** @type {import('@beatgig/synth-css').CSSDeclaration} */ (CSSDeclaration)
   },
   boxShadow: (tokens, tokenName) => {
     const boxShadow = toArray(tokenName).reduce(
@@ -114,7 +114,7 @@ const bindings = {
       value: () => ({ boxShadow }),
     })
 
-    return CSSDeclaration
+    return /** @type {import('@beatgig/synth-css').CSSDeclaration} */ (CSSDeclaration)
   },
 }
 
