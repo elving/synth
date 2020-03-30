@@ -178,6 +178,10 @@ export interface CSSBindings {
     tokens: C,
     tokenName: keyof C['typography']['lineHeight'],
   ) => CSSDeclaration<'lineHeight'>
+  opacity: <C extends SynthCore.SynthTokenConfiguration>(
+    tokens: C,
+    tokenName: keyof C['style']['opacity'],
+  ) => CSSDeclaration<'opacity'>
   textAlign: <C extends SynthCore.SynthTokenConfiguration>(
     tokens: C,
     tokenName: keyof C['position']['text'],
@@ -446,12 +450,5 @@ export interface BindingsWithTokens<
 declare const bindings: Bindings
 declare const ALL_BINDINGS: object
 
-export {
-  ALL_BINDINGS,
-  BindingsWithTokens,
-  ColorCSSBindingsWithTokens,
-  CSSBindingsWithTokens,
-  LengthCSSBindingsWithTokens,
-}
-
+export { ALL_BINDINGS }
 export default bindings
