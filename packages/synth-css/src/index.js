@@ -30,6 +30,7 @@ export const {
   maxWidth,
   minHeight,
   minWidth,
+  opacity,
   padding,
   paddingBottom,
   paddingLeft,

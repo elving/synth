@@ -3024,27 +3024,11 @@ Object {
 }
 `;
 
-exports[`css bindings textAlign(base) length transforms 1`] = `"text-align: 1.0000rem;"`;
-
-exports[`css bindings textAlign(base) length transforms 2`] = `
-Object {
-  "textAlign": "1.0000rem",
-}
-`;
-
-exports[`css bindings textAlign(base) length transforms 3`] = `"text-align: 1.0000em;"`;
-
-exports[`css bindings textAlign(base) length transforms 4`] = `
-Object {
-  "textAlign": "1.0000em",
-}
-`;
-
-exports[`css bindings textAlign(base) using alias token directly 1`] = `"text-align: 25px;"`;
+exports[`css bindings textAlign(base) using alias token directly 1`] = `"text-align: 25;"`;
 
 exports[`css bindings textAlign(base) using alias token directly 2`] = `
 Object {
-  "textAlign": "25px",
+  "textAlign": 25,
 }
 `;
 
@@ -3064,27 +3048,11 @@ Object {
 }
 `;
 
-exports[`css bindings textAlign(button) length transforms 1`] = `"text-align: 1.0000rem;"`;
-
-exports[`css bindings textAlign(button) length transforms 2`] = `
-Object {
-  "textAlign": "1.0000rem",
-}
-`;
-
-exports[`css bindings textAlign(button) length transforms 3`] = `"text-align: 1.0000em;"`;
-
-exports[`css bindings textAlign(button) length transforms 4`] = `
-Object {
-  "textAlign": "1.0000em",
-}
-`;
-
-exports[`css bindings textAlign(button) using alias token directly 1`] = `"text-align: 25px;"`;
+exports[`css bindings textAlign(button) using alias token directly 1`] = `"text-align: 25;"`;
 
 exports[`css bindings textAlign(button) using alias token directly 2`] = `
 Object {
-  "textAlign": "25px",
+  "textAlign": 25,
 }
 `;
 
