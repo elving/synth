@@ -8,6 +8,7 @@ interface StarHalfIconProps extends IconProps {}
 type StarHalfIconComponentProps = React.SVGAttributes<SVGElement> &
   React.RefAttributes<SVGElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & StarHalfIconProps
 
 type StarHalfIconComponent = SynthReact.SynthComponent<

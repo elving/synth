@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as SynthCore from '@beatgig/synth-core'
 import * as SynthCSS from '@beatgig/synth-css'
 
-interface SynthConsumerProps extends SynthCSS.Bindings {
+interface SynthConsumerProps extends SynthCSS.SynthCSSBindingsWithTokens {
   getUnit(string): string
   getValue(string): string
   tokens: SynthCore.SynthTokenConfiguration

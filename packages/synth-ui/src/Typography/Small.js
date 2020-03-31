@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { forwardRef } from 'react'
-import { Text } from '@beatgig/synth-react'
+
+import Text from './Text'
 
 const Small = forwardRef(
   /**
@@ -9,11 +10,11 @@ const Small = forwardRef(
   ({ children = null, className = '', ...props }, ref) => (
     <Text
       {...props}
+      as="small"
       className={className}
-      forwardedAs="small"
+      fontSize="small"
       lineHeight="small"
       ref={ref}
-      size="small"
     >
       {children}
     </Text>

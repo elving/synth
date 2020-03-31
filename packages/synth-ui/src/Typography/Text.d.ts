@@ -1,9 +1,9 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface HeaderProps {
+interface TextProps extends SynthReact.BoxProps {
   /**
-   * The elements you want to display within this component.
+   * The elements you want to display within the small component.
    */
   children?: React.ReactNode
   /**
@@ -13,21 +13,18 @@ interface HeaderProps {
   className?: string
 }
 
-type HeaderComponentProps = React.HTMLAttributes<HTMLDivElement> &
-  React.RefAttributes<HTMLDivElement> & {
+type TextComponentProps = React.HTMLAttributes<HTMLElement> &
+  React.RefAttributes<HTMLElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
     forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
-  } & HeaderProps
+  } & TextProps
 
-type HeaderComponent = SynthReact.SynthComponent<
-  HeaderComponentProps,
-  HTMLDivElement
->
+type TextComponent = SynthReact.SynthComponent<TextComponentProps, HTMLElement>
 
 /**
- * @since 1.0.0
+ * @since 2.0.0
  */
-declare const Header: HeaderComponent
+declare const Text: TextComponent
 
-export { HeaderComponent, HeaderComponentProps, HeaderProps }
-export default Header
+export { TextComponent, TextComponentProps, TextProps }
+export default Text

@@ -48,6 +48,7 @@ interface BackgroundProps extends AspectRatioProps {
 type BackgroundComponentProps = React.HTMLAttributes<HTMLDivElement> &
   React.RefAttributes<HTMLDivElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & BackgroundProps
 
 type BackgroundComponent = SynthReact.SynthComponent<

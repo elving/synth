@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface LabelProps extends SynthReact.TextProps {
+interface LabelProps extends SynthReact.BoxProps {
   /**
    * The elements you want to display within the label component.
    */
@@ -16,6 +16,7 @@ interface LabelProps extends SynthReact.TextProps {
 type LabelComponentProps = React.HTMLAttributes<HTMLLabelElement> &
   React.RefAttributes<HTMLLabelElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & LabelProps
 
 type LabelComponent = SynthReact.SynthComponent<

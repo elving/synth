@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface ParagraphProps extends SynthReact.TextProps {
+interface ParagraphProps extends SynthReact.BoxProps {
   /**
    * The elements you want to display within the paragraph component.
    */
@@ -16,6 +16,7 @@ interface ParagraphProps extends SynthReact.TextProps {
 type ParagraphComponentProps = React.HTMLAttributes<HTMLParagraphElement> &
   React.RefAttributes<HTMLParagraphElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & ParagraphProps
 
 type ParagraphComponent = SynthReact.SynthComponent<

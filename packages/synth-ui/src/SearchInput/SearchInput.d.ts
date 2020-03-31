@@ -7,6 +7,7 @@ interface SearchInputProps extends InputProps {}
 type SearchInputComponentProps = React.InputHTMLAttributes<HTMLInputElement> &
   React.RefAttributes<HTMLInputElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & SearchInputProps
 
 type SearchInputComponent = SynthReact.SynthComponent<

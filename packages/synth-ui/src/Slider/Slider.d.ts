@@ -20,6 +20,7 @@ interface SliderProps {
 type SliderComponentProps = React.HTMLAttributes<HTMLDivElement> &
   React.RefAttributes<HTMLDivElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & SliderProps
 
 type SliderComponent = SynthReact.SynthComponent<

@@ -1,14 +1,16 @@
 import PropTypes from 'prop-types'
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
-import { Text } from '@beatgig/synth-react'
+
+import Text from './Text'
 
 /**
- * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('@beatgig/synth-react').TextComponent>}
+ * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('@beatgig/synth-ui').TextComponent>}
  */
 const StyledLabel = styled(Text)`
   cursor: pointer;
   line-height: 1.25;
+  align-items: center;
   display: flex;
   position: relative;
 `
@@ -20,10 +22,10 @@ const Label = forwardRef(
   ({ children = null, className = '', ...props }, ref) => (
     <StyledLabel
       {...props}
+      as="label"
       className={className}
-      forwardedAs="label"
+      fontWeight="control"
       ref={ref}
-      weight="control"
     >
       {children}
     </StyledLabel>
