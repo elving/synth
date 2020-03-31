@@ -16,6 +16,7 @@ interface MenuProps {
 type MenuComponentProps = React.HTMLAttributes<HTMLDivElement> &
   React.RefAttributes<HTMLDivElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & MenuProps
 
 type MenuComponent = SynthReact.SynthComponent<

@@ -3,7 +3,7 @@ import * as SynthReact from '@beatgig/synth-react'
 
 type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
-interface HeadingProps extends SynthReact.TextProps {
+interface HeadingProps extends SynthReact.BoxProps {
   /**
    * The elements you want to display within the heading component.
    */
@@ -26,6 +26,7 @@ interface HeadingProps extends SynthReact.TextProps {
 type HeadingComponentProps = React.HTMLAttributes<HTMLHeadingElement> &
   React.RefAttributes<HTMLHeadingElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & HeadingProps
 
 type HeadingComponent = SynthReact.SynthComponent<

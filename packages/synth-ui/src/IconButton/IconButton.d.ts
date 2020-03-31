@@ -9,6 +9,7 @@ interface IconButtonProps
 type IconButtonComponentProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   React.RefAttributes<HTMLButtonElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & IconButtonProps
 
 type IconButtonComponent = SynthReact.SynthComponent<

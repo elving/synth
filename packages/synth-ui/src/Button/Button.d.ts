@@ -36,6 +36,7 @@ interface ButtonProps {
 type ButtonComponentProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   React.RefAttributes<HTMLButtonElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & ButtonProps
 
 type ButtonComponent = SynthReact.SynthComponent<

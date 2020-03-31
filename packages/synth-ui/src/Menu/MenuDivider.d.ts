@@ -12,6 +12,7 @@ interface MenuDividerProps {
 type MenuDividerComponentProps = React.HTMLAttributes<HTMLHRElement> &
   React.RefAttributes<HTMLHRElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & MenuDividerProps
 
 type MenuDividerComponent = SynthReact.SynthComponent<

@@ -7,6 +7,7 @@ interface EditableProps extends InputProps {}
 type EditableComponentProps = React.InputHTMLAttributes<HTMLInputElement> &
   React.RefAttributes<HTMLInputElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & EditableProps
 
 type EditableComponent = SynthReact.SynthComponent<

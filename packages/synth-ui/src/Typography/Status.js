@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { forwardRef } from 'react'
-import { Text } from '@beatgig/synth-react'
+
+import Text from './Text'
 
 const Status = forwardRef(
   /**
@@ -12,9 +13,9 @@ const Status = forwardRef(
       className={className}
       color="status"
       ref={ref}
-      size="status"
-      transform="status"
-      weight="status"
+      fontSize="status"
+      textTransform="status"
+      fontWeight="status"
     >
       {children}
     </Text>

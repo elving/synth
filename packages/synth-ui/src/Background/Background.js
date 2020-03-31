@@ -9,7 +9,7 @@ import { setBackgroundColor } from './utils'
 import { styleProp } from '../utils'
 
 /**
- * @type {import('@beatgig/synth-react').SynthComponent<import('@beatgig/synth-ui').AspectRatioComponent, import('@beatgig/synth-ui').BackgroundProps>}
+ * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('@beatgig/synth-ui').AspectRatioComponent, import('@beatgig/synth-ui').BackgroundProps>}
  */
 const StyledBackground = styled(AspectRatio)`
   ${setBackgroundColor()}
@@ -23,7 +23,7 @@ const StyledBackground = styled(AspectRatio)`
 
 const Background = forwardRef(
   /**
-   * @param {import('@beatgig/synth-ui').BackgroundProps} & import('@beatgig/synth-react').SynthComponentProps props
+   * @param {import('@beatgig/synth-ui').BackgroundProps & import('@beatgig/synth-react').SynthComponentProps} props
    */
   ({ children = null, className = '', synth, ...props }, ref) => (
     <StyledBackground {...props} className={className} ref={ref} synth={synth}>

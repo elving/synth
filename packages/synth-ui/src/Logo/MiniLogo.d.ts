@@ -24,6 +24,7 @@ interface MiniLogoProps {
 type MiniLogoComponentProps = React.SVGAttributes<SVGElement> &
   React.RefAttributes<SVGElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & MiniLogoProps
 
 type MiniLogoComponent = SynthReact.SynthComponent<

@@ -41,6 +41,7 @@ interface SpacerProps {
 type SpacerComponentProps = React.HTMLAttributes<HTMLDivElement> &
   React.RefAttributes<HTMLDivElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & SpacerProps
 
 type SpacerComponent = SynthReact.SynthComponent<

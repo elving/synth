@@ -26,5 +26,8 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "sideEffects": false,
-  "types": "src/index.d.ts"
+  "types": "src/index.d.ts",
+  "dependencies": {
+    "@beatgig/synth-css": "^1.0.4"
+  }
 }

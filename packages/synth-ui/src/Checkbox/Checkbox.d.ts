@@ -20,6 +20,7 @@ interface CheckboxProps {
 type CheckboxComponentProps = React.InputHTMLAttributes<HTMLInputElement> &
   React.RefAttributes<HTMLInputElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & CheckboxProps
 
 type CheckboxComponent = SynthReact.SynthComponent<

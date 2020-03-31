@@ -1,7 +1,7 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
 
 import { Flex, Grid, GridItem, Popup } from '../src'
-import { Box, PopupWithHook, PopupWrapper } from './utils'
+import { PopupWithHook, PopupWrapper } from './utils'
 
 <Meta title="synth-ui|Popups/Popup" component={Popup} />
 
@@ -11,11 +11,11 @@ The `<Popup>` is a variant of the `<Card>` component used to display contextual 
 
 <Preview>
   <Story name="intro">
-    <Box bg="transparent" height="100px">
+    <div style={{ height: '100px' }}>
       <Popup renderInPlace>
         <Text>A popup</Text>
       </Popup>
-    </Box>
+    </div>
   </Story>
 </Preview>
 

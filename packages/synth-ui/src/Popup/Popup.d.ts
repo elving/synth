@@ -72,6 +72,7 @@ interface PopupProps {
 type PopupComponentProps = React.HTMLAttributes<HTMLDivElement> &
   React.RefAttributes<HTMLDivElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & PopupProps
 
 type PopupComponent = SynthReact.SynthComponent<

@@ -309,6 +309,10 @@ export {
   StatusComponent,
   StatusComponentProps,
   StatusProps,
+  Text,
+  TextComponent,
+  TextComponentProps,
+  TextProps,
 } from './Typography'
 
 export {
