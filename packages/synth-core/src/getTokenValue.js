@@ -11,8 +11,8 @@ const getTokenValue = (tokens, token, transform = defaultTransform) => {
   const { category } = getTokenStructure(token)
   const tokenContent = getToken(tokens, token)
   const tokenValue =
-    /** @type {import('@beatgig/synth-core').SynthTokenMetadata} */ (tokenContent)?.value ??
-    tokenContent
+    /** @type {import('@beatgig/synth-core').SynthTokenMetadata} */ (tokenContent)
+      ?.value ?? tokenContent
 
   if (isString(tokenValue)) {
     return transform(

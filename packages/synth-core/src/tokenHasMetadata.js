@@ -8,7 +8,8 @@ const tokenHasMetadata = (tokens, token) => {
   return (
     isObject(tokenContent) &&
     !isNil(
-      /** @type {import('@beatgig/synth-core').SynthTokenMetadata} */ (tokenContent).value,
+      /** @type {import('@beatgig/synth-core').SynthTokenMetadata} */ (tokenContent)
+        .value,
     ) &&
     Object.keys(tokenContent).length > 1
   )

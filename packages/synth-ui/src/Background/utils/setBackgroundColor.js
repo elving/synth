@@ -8,11 +8,13 @@ import { isValidAliasName } from '@beatgig/synth-core'
  * @returns {<T>(props: T & Props) => string}
  */
 const setBackgroundColor = () => ({ color, synth }) => `
-  background-color: ${synth.getValue(
-    isValidAliasName(color) ? `color:${color}` : `color:background:${color}`,
-  ) ||
+  background-color: ${
+    synth.getValue(
+      isValidAliasName(color) ? `color:${color}` : `color:background:${color}`,
+    ) ||
     color ||
-    'inherit'};
+    'inherit'
+  };
 `
 
 export default setBackgroundColor
