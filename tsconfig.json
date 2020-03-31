@@ -15,7 +15,7 @@
     "paths": {
       "@beatgig/synth-*": ["./packages/synth-*/src"]
     },
-    "skipLibCheck": true,
+    "skipLibCheck": false,
     "strict": false,
     "target": "esnext"
   },
