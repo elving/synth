@@ -1,11 +1,10 @@
 import * as SynthCSS from '@beatgig/synth-css'
-
-type CSSBindingNames = keyof SynthCSS.Bindings
+import * as SynthReact from '@beatgig/synth-react'
 
 type SynthStyledComponentsBindings = {
-  [Key in CSSBindingNames]?: (
+  [Key in keyof SynthCSS.Bindings]: (
     tokenName?: string,
-  ) => (props: { [key: string]: any }) => ReturnType<SynthCSS.Bindings[Key]>
+  ) => (props: SynthReact.SynthComponentProps) => ReturnType<SynthCSS.Bindings[Key]>
 }
 
 /**
