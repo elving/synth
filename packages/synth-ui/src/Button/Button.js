@@ -7,6 +7,7 @@ import { withSynth } from '@beatgig/synth-react'
 import {
   border,
   borderRadius,
+  boxShadow,
   fontSize,
   fontWeight,
   padding,
@@ -64,7 +65,7 @@ const StyledButton = styled.button.attrs(() => ({
   display: inline-flex;
   justify-content: center;
   margin: 0;
-  transition: all 0.2s ease-in-out 0s;
+  transition: all 0.15s ease-in-out;
   line-height: 1.45;
   text-decoration: none;
 
@@ -75,6 +76,8 @@ const StyledButton = styled.button.attrs(() => ({
   }
 
   :focus {
+    ${border('control:focus')}
+    ${boxShadow('control:focus')}
     outline: 0 none;
     text-decoration: none;
   }

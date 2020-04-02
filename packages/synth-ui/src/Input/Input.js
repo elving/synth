@@ -34,7 +34,6 @@ const StyledInput = styled.input`
 
   :hover {
     ${backgroundColor('input:hover')}
-    ${border('input:hover')}
   }
 
   :focus {

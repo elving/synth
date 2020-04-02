@@ -23,7 +23,7 @@ import { setBaseStyles } from '../utils'
  */
 const StyledSidebarLink = styled.a`
   ${setBaseStyles()}
-  ${backgroundColor('@Shark')}
+  ${backgroundColor('@contrast.2')}
   ${borderRadius()}
   ${fontSize('text')}
   ${fontWeight('control')}
@@ -37,7 +37,7 @@ const StyledSidebarLink = styled.a`
   transition: all 0.2s ease-in-out 0s;
 
   :hover {
-    ${backgroundColor('@Mako')}
+    ${backgroundColor('@contrast.2')}
     text-decoration: none;
   }
 

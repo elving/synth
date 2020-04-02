@@ -26,7 +26,9 @@ const FormField = forwardRef(
       className={className}
       ref={ref}
     >
-      <Label as={withoutLabelWrapper ? 'label' : 'span'}>{label}</Label>
+      <Label forwardedAs={withoutLabelWrapper ? 'label' : 'span'}>
+        {label}
+      </Label>
       {hint && <Small>{hint}</Small>}
       {Children.map(
         children,

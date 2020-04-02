@@ -169,7 +169,7 @@ const BaseStyles = createGlobalStyle`
 
   body, html {
     ${setBaseStyles()}
-    ${backgroundColor('@Thunder')}
+    ${backgroundColor('@primary')}
     -webkit-overflow-scrolling: touch;
     box-sizing: border-box;
     margin: 0;

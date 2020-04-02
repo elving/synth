@@ -16,12 +16,12 @@ import { setBaseStyles } from '../utils'
  */
 const StyledHeaderLink = styled.a`
   ${setBaseStyles()}
-  ${color('@Oslo')}
+  ${color('@contrast.2')}
   ${fontWeight('@fontWeights.2')}
   ${textDecoration('link')}
 
   :hover {
-    ${color('@Porcelain')}
+    ${color('@prominent')}
     ${textDecoration('link:hover')}
   }
 `

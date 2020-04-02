@@ -10,7 +10,7 @@ const Small = forwardRef(
   ({ children = null, className = '', ...props }, ref) => (
     <Text
       {...props}
-      as="small"
+      forwardedAs="small"
       className={className}
       fontSize="small"
       lineHeight="small"

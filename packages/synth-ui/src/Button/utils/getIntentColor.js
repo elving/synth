@@ -12,7 +12,7 @@ import {
  */
 const getIntentColor = (
   intent = BUTTON_INTENT_NONE,
-  defaultIntent = 'base',
+  defaultIntent = 'control',
 ) => {
   switch (intent) {
     case BUTTON_INTENT_NONE: {

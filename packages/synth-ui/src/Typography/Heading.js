@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types'
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
-import { Box, withSynth } from '@beatgig/synth-react'
+import { withSynth } from '@beatgig/synth-react'
 
+import Text from './Text'
 import { setHeadingFontSize, setHeadingMargin } from './utils'
 
 /**
- * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('@beatgig/synth-react').BoxComponent, import('@beatgig/synth-ui').HeadingProps>}
+ * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<import('@beatgig/synth-ui').TextComponent, import('@beatgig/synth-ui').HeadingProps>}
  */
-const StyledHeading = styled(Box)`
+const StyledHeading = styled(Text)`
   ${setHeadingMargin()}
   ${setHeadingFontSize()}
 `
@@ -32,8 +33,9 @@ const Heading = forwardRef(
   ) => (
     <StyledHeading
       {...props}
-      as={level}
+      forwardedAs={level}
       className={className}
+      color="@prominent"
       fontWeight={fontWeight}
       level={level}
       lineHeight={lineHeight}
@@ -47,7 +49,7 @@ const Heading = forwardRef(
 )
 
 Heading.propTypes = {
-  ...Box.propTypes,
+  ...Text.propTypes,
   /**
    * The elements you want to display within the heading component.
    */
@@ -77,7 +79,7 @@ Heading.propTypes = {
 }
 
 Heading.defaultProps = {
-  ...Box.defaultProps,
+  ...Text.defaultProps,
   children: null,
   className: '',
   fontWeight: 'heading',

@@ -64,13 +64,11 @@ const ArtistCard = forwardRef(
         />
         <Spacer scale={2} bottom />
         <Content center column fullWidth>
-          <StageName level="h6" fontWeight="@fontWeights.1" withoutMargin>
+          <StageName level="h6" fontWeight="@fontWeights.2" withoutMargin>
             {artist.stageName}
           </StageName>
           <Spacer bottom />
-          <Genres color="meta" title={genres}>
-            {genres}
-          </Genres>
+          <Genres title={genres}>{genres}</Genres>
           <Spacer bottom />
           <Rating scale={2} rating={artist.rating} />
         </Content>

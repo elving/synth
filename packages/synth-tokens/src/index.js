@@ -1,45 +1,47 @@
+/**
+ * @type {import('@beatgig/synth-tokens').tokens}
+ */
 export const tokens = {
   color: {
     aliases: {
-      Porcelain: '#FCFDFD',
-      Thunder: '#10110E',
-      BalticSea: '#212025',
-      Shark: '#2F3136',
-      Tuna: '#393C40',
-      Mako: '#444850',
-      Abbey: '#4C5058',
-      ShuttleGray: '#5B6066',
-      Stone: '#71777B',
-      Oslo: '#878E8F',
+      prominent: 'rgba(255, 255, 254, 1)', // #FCFDFD
+      primary: 'rgba(15, 15, 16, 1)', // #0f0f10
+      copy: 'rgba(167, 169, 190, 1)', // #A7A9BE
       BeatGig: ['#FAC62A', '#EFB506'],
       Error: ['#C5493A', '#B0422F'],
       Success: ['#00BB53', '#00A76D'],
+      contrast: [
+        'rgba(125, 125, 145, 0.14)',
+        'rgba(125, 125, 145, 0.20)',
+        'rgba(125, 125, 145, 0.26)',
+        'rgba(125, 125, 145, 0.32)',
+      ],
     },
 
     background: {
-      avatar: '@ShuttleGray',
-      card: '@Shark',
-      header: '@Shark',
-      modalOverlay: '@Thunder',
-      popup: '@Shark',
-      tag: '@Stone',
+      avatar: '@contrast.1',
+      card: '@contrast.1',
+      header: '@contrast.1',
+      modalOverlay: '@primary',
+      popup: '@contrast.1',
+      tag: '@contrast.2',
 
       control: {
-        active: '@Mako',
-        default: '@Abbey',
-        focus: '@Mako',
-        hover: '@ShuttleGray',
+        active: '@contrast.3',
+        default: '@contrast.1',
+        focus: '@contrast.3',
+        hover: '@contrast.2',
       },
 
       input: {
         default: 'transparent',
-        focus: '@Abbey',
+        focus: '@contrast.3',
         hover: 'transparent',
       },
 
       popupItem: {
-        default: '@Shark',
-        hover: '@Tuna',
+        default: '@contrast.1',
+        hover: '@contrast.2',
       },
     },
 
@@ -48,24 +50,29 @@ export const tokens = {
       control: 'transparent',
 
       input: {
-        default: '@Abbey',
-        hover: '@Stone',
-        focus: '@Stone',
+        default: '@contrast.1',
+        hover: '@contrast.2',
+        focus: '@contrast.3',
       },
 
-      popup: '@Abbey',
+      popup: '@contrast.1',
     },
 
     shadow: {
       subtle: 'rgba(0, 0, 0, 0.25)',
-      avatar: '@Oslo',
-      outlineControl: 'inset @ShuttleGray',
+      avatar: '@contrast.2',
+      control: {
+        default: 'transparent',
+        focus: '@contrast.4',
+      },
     },
 
     text: {
-      base: '@Porcelain',
-      meta: '@Oslo',
-      status: '@Oslo',
+      base: '@copy',
+      control: '@prominent',
+      meta: '@contrast.4',
+      heading: '@prominent',
+      status: '@contrast.4',
     },
   },
 
@@ -94,7 +101,10 @@ export const tokens = {
     shadow: {
       subtle: 5,
       avatar: [0, 1],
-      outlineControl: [0, 1],
+      control: {
+        default: [0, 2.5],
+        focus: [0, 2.5],
+      },
     },
 
     text: {
@@ -153,7 +163,7 @@ export const tokens = {
     shadow: {
       subtle: [0, 0],
       avatar: [0, 0],
-      outlineControl: [0, 0],
+      control: { default: [0, 0], focus: [0, 0] },
     },
   },
 
@@ -199,12 +209,12 @@ export const tokens = {
     },
 
     weight: {
-      base: '@fontWeights.3',
-      link: '@fontWeights.3',
+      base: '@fontWeights.4',
+      link: '@fontWeights.4',
       control: '@fontWeights.5',
-      input: '@fontWeights.3',
+      input: '@fontWeights.4',
       heading: '@fontWeights.6',
-      status: '@fontWeights.2',
+      status: '@fontWeights.3',
     },
   },
 }

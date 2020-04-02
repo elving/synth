@@ -22,8 +22,9 @@ const Label = forwardRef(
   ({ children = null, className = '', ...props }, ref) => (
     <StyledLabel
       {...props}
-      as="label"
+      forwardedAs="label"
       className={className}
+      color="@prominent"
       fontWeight="control"
       ref={ref}
     >

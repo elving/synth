@@ -39,7 +39,7 @@ const Styles = createGlobalStyle`
 
       pre {
         background-color: ${({ synth }) =>
-          synth.getValue('color:@BalticSea')} !important;
+          synth.getValue('color:@contrast.1')} !important;
       }
 
       code {        
@@ -97,11 +97,11 @@ const Styles = createGlobalStyle`
 
         thead tr {
           border-bottom: 1px solid ${({ synth }) =>
-            synth.getValue('color:@Shark')};
+            synth.getValue('color:@contrast.2')};
         }
 
         th {
-          ${color('@Oslo')}
+          ${color('@contrast.3')}
         }
         
         tr {

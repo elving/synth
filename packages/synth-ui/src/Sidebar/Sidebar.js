@@ -11,7 +11,7 @@ import { setBaseStyles } from '../utils'
  */
 const StyledSidebar = styled.div`
   ${setBaseStyles()}
-  ${backgroundColor('@Shark')}
+  ${backgroundColor('@contrast.2')}
   ${padding('@spacing.3')}
   display: flex;
   flex-direction: column;

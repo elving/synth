@@ -11,8 +11,8 @@ import { BUTTON_INTENT_HIGHLIGHT } from '../constants'
  * @returns {<T>(props: T & Props) => string}
  */
 const setColorHover = () => ({ intent, outline, synth }) =>
-  intent === BUTTON_INTENT_HIGHLIGHT && outline
-    ? `color: ${synth.getValue('color:@BalticSea')};`
-    : color()({ synth })
+  intent === BUTTON_INTENT_HIGHLIGHT
+    ? `color: ${synth.getValue('color:@primary')};`
+    : color('control')({ synth })
 
 export default setColorHover

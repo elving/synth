@@ -20,7 +20,7 @@ const Paragraph = forwardRef(
   ({ children = null, className = '', synth, ...props }, ref) => (
     <StyledParagraph
       {...props}
-      as="p"
+      forwardedAs="p"
       className={className}
       synth={synth}
       ref={ref}

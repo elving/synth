@@ -19,5 +19,8 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "sideEffects": false,
-  "types": "dist/types.d.ts"
+  "types": "dist/types.d.ts",
+  "dependencies": {
+    "@beatgig/synth-core": "^1.1.1"
+  }
 }
