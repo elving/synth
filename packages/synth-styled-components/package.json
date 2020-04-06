@@ -1,6 +1,6 @@
 {
   "name": "@beatgig/synth-styled-components",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "styled-components bindings for Synth",
   "author": "BeatGig LLC <engineering@beatgig.com>",
   "homepage": "https://github.com/beatgig/synth/tree/master/packages/synth-styled-components",
@@ -28,6 +28,6 @@
   "sideEffects": false,
   "types": "src/index.d.ts",
   "dependencies": {
-    "@beatgig/synth-css": "^1.0.4"
+    "@beatgig/synth-css": "^2.0.0"
   }
 }

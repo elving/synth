@@ -1,6 +1,6 @@
 {
   "name": "@beatgig/synth-tokens",
-  "version": "1.2.2",
+  "version": "2.0.0",
   "description": "Default token declarations used for building UI components at BeatGig",
   "author": "BeatGig LLC <engineering@beatgig.com>",
   "homepage": "https://github.com/beatgig/synth/tree/master/packages/synth-tokens",
@@ -21,6 +21,6 @@
   "sideEffects": false,
   "types": "dist/types.d.ts",
   "dependencies": {
-    "@beatgig/synth-core": "^1.1.1"
+    "@beatgig/synth-core": "^2.0.0"
   }
 }

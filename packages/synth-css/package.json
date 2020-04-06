@@ -1,6 +1,6 @@
 {
   "name": "@beatgig/synth-css",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "CSS bindings for Synth.",
   "author": "BeatGig LLC <engineering@beatgig.com>",
   "homepage": "https://github.com/beatgig/synth/tree/master/packages/synth-css",
@@ -23,7 +23,7 @@
   "dependencies": {
     "@beatgig/array": "^1.1.1",
     "@beatgig/is": "^1.3.0",
-    "@beatgig/synth-core": "^1.1.1"
+    "@beatgig/synth-core": "^2.0.0"
   },
   "types": "src/index.d.ts"
 }
