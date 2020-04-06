@@ -1,9 +1,6 @@
-name: Tests
+name: Release
 
 on:
-  push:
-    branches:
-      - master
   pull_request:
     branches:
       - master
@@ -46,12 +43,12 @@ jobs:
           CI: true
 
       - uses: actions/checkout@v2
-        if: github.event_name == 'push'
+        if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
         with:
           ref: master
 
       - name: Publish
-        if: github.event_name == 'push'
+        if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
         run: |
           git remote set-url origin "https://$GH_USER:$GH_TOKEN@github.com/$GH_REPO.git"
           git config --global user.email "$GIT_EMAIL"
