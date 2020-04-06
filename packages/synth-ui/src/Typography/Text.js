@@ -6,24 +6,21 @@ const Text = forwardRef(
   /**
    * @param {import('@beatgig/synth-ui').TextProps & import('@beatgig/synth-react').SynthComponentProps} props
    */
-  ({ children = null, className = '', ...props }, ref) => {
-    console.log('props', props)
-    return (
-      <Box
-        as="span"
-        className={className}
-        color="base"
-        fontFamily="base"
-        fontSize="base"
-        fontWeight="base"
-        lineHeight="base"
-        ref={ref}
-        {...props}
-      >
-        {children}
-      </Box>
-    )
-  },
+  ({ children = null, className = '', ...props }, ref) => (
+    <Box
+      as="span"
+      className={className}
+      color="base"
+      fontFamily="base"
+      fontSize="base"
+      fontWeight="base"
+      lineHeight="base"
+      ref={ref}
+      {...props}
+    >
+      {children}
+    </Box>
+  ),
 )
 
 Text.propTypes = {
