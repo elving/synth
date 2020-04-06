@@ -180,22 +180,8 @@ export const tokens = {
     },
 
     font: {
-      base: [
-        'Inter',
-        '-apple-system',
-        'system-ui',
-        'BlinkMacSystemFont',
-        'Segoe UI',
-        'Roboto',
-        'Oxygen',
-        'Ubuntu',
-        'Cantarell',
-        'Fira Sans',
-        'Helvetica Neue',
-        'Helvetica',
-        'Arial',
-        'sans-serif',
-      ].join(', '),
+      base:
+        '"SF UI Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
     },
 
     lineHeight: {
