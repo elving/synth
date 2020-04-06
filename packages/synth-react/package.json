@@ -1,6 +1,6 @@
 {
   "name": "@beatgig/synth-react",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "React bindings for Synth",
   "author": "BeatGig LLC <engineering@beatgig.com>",
   "homepage": "https://github.com/beatgig/synth/tree/master/packages/synth-react",
@@ -23,7 +23,7 @@
   "dependencies": {
     "@beatgig/synth-core": "^2.0.0",
     "@beatgig/synth-css": "^2.0.0",
-    "@beatgig/synth-tokens": "^2.0.0"
+    "@beatgig/synth-tokens": "^2.1.0"
   },
   "peerDependencies": {
     "react": "^16.0.0"
