@@ -44,9 +44,7 @@ import {
 /**
  * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<'button', import('@beatgig/synth-ui').ButtonProps>}
  */
-const StyledButton = styled.button.attrs(() => ({
-  type: 'button',
-}))`
+const StyledButton = styled.button`
   ${setBaseStyles()}
   ${border('control')}
   ${borderRadius()}
@@ -110,6 +108,7 @@ const Button = forwardRef(
 
     return (
       <StyledButton
+        type="button"
         {...props}
         className={className}
         iconPosition={iconPosition}
