@@ -8,6 +8,7 @@ interface StarFullIconProps extends IconProps {}
 type StarFullIconComponentProps = React.SVGAttributes<SVGElement> &
   React.RefAttributes<SVGElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & StarFullIconProps
 
 type StarFullIconComponent = SynthReact.SynthComponent<

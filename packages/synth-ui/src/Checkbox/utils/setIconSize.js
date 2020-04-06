@@ -5,8 +5,8 @@
  * @returns {<T>(props: T & Props) => string}
  */
 const setIconSize = () => ({ synth }) => `
-  height: ${synth.getUnit('@fontSizes')};
-  width: ${synth.getUnit('@fontSizes')};
+  height: ${synth.getUnit('size:@fontSizes.1')};
+  width: ${synth.getUnit('size:@fontSizes.1')};
 `
 
 export default setIconSize

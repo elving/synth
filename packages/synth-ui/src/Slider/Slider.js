@@ -84,7 +84,7 @@ const NextBtn = styled(NavBtn)`
  * @type {import('@beatgig/synth-ui').FlexComponent}
  */
 const Item = styled(Flex)`
-  margin-right: ${({ synth }) => synth.getUnit('@spacing.2')};
+  margin-right: ${({ synth }) => synth.getUnit('space:@spacing.3')};
 `
 
 /**
@@ -192,7 +192,7 @@ const Slider = forwardRef(
 
         {totalItems > itemsToShow && (
           <PrevBtn
-            icon={<ArrowLeftIcon scale={5} />}
+            icon={<ArrowLeftIcon scale={6} />}
             disabled={prevBtnDisabled}
             onClick={showPrev}
           />
@@ -230,7 +230,7 @@ const Slider = forwardRef(
 
         {totalItems > itemsToShow && (
           <NextBtn
-            icon={<ArrowRightIcon scale={5} />}
+            icon={<ArrowRightIcon scale={6} />}
             disabled={nextBtnDisabled}
             onClick={showNext}
           />

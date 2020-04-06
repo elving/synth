@@ -1,16 +1,15 @@
 import PropTypes from 'prop-types'
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
-import { unit } from '@beatgig/synth-core'
 
-import { styleProp } from '../utils'
+import { styleProp, unit } from '../utils'
 
 /**
  * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<'svg', import('@beatgig/synth-ui').FullLogoProps>}
  */
 const StyledSvg = styled.svg`
-  height: ${unit(styleProp('height'))};
-  width: ${unit(styleProp('width'))};
+  height: ${(props) => unit(styleProp('height')(props))};
+  width: ${(props) => unit(styleProp('width')(props))};
 `
 
 const FullLogo = forwardRef(

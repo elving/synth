@@ -69,7 +69,7 @@ const MenuItem = forwardRef(
         synth={synth}
       >
         {hasIcon ? icon : null}
-        {hasIcon ? <Spacer scale={1} inline right /> : null}
+        {hasIcon ? <Spacer scale={2} inline right /> : null}
         {children}
       </StyledMenuItem>
     )

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Fragment, forwardRef } from 'react'
 import styled from 'styled-components'
-import { Text, withSynth } from '@beatgig/synth-react'
+import { withSynth } from '@beatgig/synth-react'
 
 import {
   backgroundColor,
@@ -12,7 +12,7 @@ import {
 
 import { CheckIcon } from '../Icons'
 import { Spacer } from '../Spacer'
-import { Label } from '../Typography'
+import { Label, Text } from '../Typography'
 
 import { setIconFill, setIconSize } from './utils'
 
@@ -20,17 +20,16 @@ import { setIconFill, setIconSize } from './utils'
  * @type {import('@beatgig/synth-styled-components').SynthStyledComponent<'div', import('@beatgig/synth-ui').CheckboxProps>}
  */
 const IconContainer = styled.div`
-  ${border('input')}
+  ${backgroundColor('control')}
   ${borderRadius()}
-  ${padding('@spacing')}
+  ${padding('@spacing.1')}
   align-items: center;
   display: inline-flex;
   justify-content: center;
   transition: all 0.25s ease;
 
   :hover {
-    ${backgroundColor('input:hover')}
-    ${border('input:hover')}
+    ${backgroundColor('control:hover')}
   }
 `
 
@@ -55,8 +54,7 @@ const Input = styled.input.attrs(() => ({
   opacity: 0;
 
   &:checked + ${IconContainer} {
-    ${backgroundColor('input:focus')}
-    ${border('input:focus')}
+    ${backgroundColor('control:focus')}
   }
 
   &:checked + ${IconContainer} > ${Icon} {
@@ -69,14 +67,24 @@ const Checkbox = forwardRef(
    * @param {import('@beatgig/synth-ui').CheckboxProps & import('@beatgig/synth-react').SynthComponentProps} props
    */
   ({ className = '', label, synth, withoutLabelWrapper, ...props }, ref) => {
-    const render = () => (
+    const renderCheckbox = () => (
       <Fragment>
         <Input {...props} ref={ref} synth={synth} />
         <IconContainer synth={synth}>
           <Icon synth={synth} />
         </IconContainer>
-        {label ? <Spacer left inline scale={1} /> : null}
-        {label ? <Text size="@fontSizes.1">{label}</Text> : null}
+      </Fragment>
+    )
+
+    const render = () => (
+      <Fragment>
+        {withoutLabelWrapper ? (
+          <label>{renderCheckbox()}</label>
+        ) : (
+          renderCheckbox()
+        )}
+        {label ? <Spacer left inline scale={2} /> : null}
+        {label ? <Text fontSize="@fontSizes.2">{label}</Text> : null}
       </Fragment>
     )
 

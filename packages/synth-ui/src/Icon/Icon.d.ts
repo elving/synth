@@ -20,6 +20,7 @@ interface IconProps {
 type IconComponentProps = React.SVGAttributes<SVGElement> &
   React.RefAttributes<SVGElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & IconProps
 
 type IconComponent = SynthReact.SynthComponent<IconComponentProps, SVGElement>

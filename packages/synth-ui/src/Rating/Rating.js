@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import React, { forwardRef, Fragment } from 'react'
-import styled from 'styled-components'
 import { withSynth } from '@beatgig/synth-react'
 
 import { Flex } from '../Flex'
@@ -18,7 +17,7 @@ import {
 
 const Rating = forwardRef(
   /**
-   * @param {import('@beatgig/synth-ui').RatingProps} props
+   * @param {import('@beatgig/synth-ui').RatingProps & import('@beatgig/synth-react').SynthComponentProps} props
    */
   (
     {
@@ -46,7 +45,7 @@ const Rating = forwardRef(
             return (
               <Fragment>
                 <StarEmptyIcon
-                  fill={synth.getValue('@BeatGig')}
+                  fill={synth.getValue('color:@BeatGig.1')}
                   scale={scale}
                 />
                 <Spacer inline right />
@@ -57,7 +56,10 @@ const Rating = forwardRef(
           case RATING_STAR_HALF: {
             return (
               <Fragment>
-                <StarHalfIcon fill={synth.getValue('@BeatGig')} scale={scale} />
+                <StarHalfIcon
+                  fill={synth.getValue('color:@BeatGig.1')}
+                  scale={scale}
+                />
                 <Spacer inline right />
               </Fragment>
             )
@@ -66,7 +68,10 @@ const Rating = forwardRef(
           case RATING_STAR_FULL: {
             return (
               <Fragment>
-                <StarFullIcon fill={synth.getValue('@BeatGig')} scale={scale} />
+                <StarFullIcon
+                  fill={synth.getValue('color:@BeatGig.1')}
+                  scale={scale}
+                />
                 <Spacer inline right />
               </Fragment>
             )
@@ -76,7 +81,7 @@ const Rating = forwardRef(
             return (
               <Fragment>
                 <StarEmptyIcon
-                  fill={synth.getValue('@BeatGig')}
+                  fill={synth.getValue('color:@BeatGig.1')}
                   scale={scale}
                 />
                 <Spacer inline right />
@@ -122,7 +127,6 @@ Rating.propTypes = {
 }
 
 Rating.defaultProps = {
-  children: null,
   className: '',
   rating: 0,
   scale: 1,

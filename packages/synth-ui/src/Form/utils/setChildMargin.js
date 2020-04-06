@@ -6,8 +6,8 @@
  * @returns {<T>(props: T & Props) => string}
  */
 const setChildMargin = () => ({ inline, synth }) => `
-  margin-right: ${inline ? synth.getUnit('@spacing.1') : 0};
-  margin-bottom: ${inline ? 0 : synth.getUnit('@spacing.1')};
+  margin-right: ${inline ? synth.getUnit('space:@spacing.2') : 0};
+  margin-bottom: ${inline ? 0 : synth.getUnit('space:@spacing.2')};
 `
 
 export default setChildMargin

@@ -26,7 +26,9 @@ const FormField = forwardRef(
       className={className}
       ref={ref}
     >
-      <Label as={withoutLabelWrapper ? 'label' : 'span'}>{label}</Label>
+      <Label forwardedAs={withoutLabelWrapper ? 'label' : 'span'}>
+        {label}
+      </Label>
       {hint && <Small>{hint}</Small>}
       {Children.map(
         children,
@@ -35,7 +37,7 @@ const FormField = forwardRef(
          */
         (child) => cloneElement(child, { hasError: !!error }),
       )}
-      {error && <Small color="@Error">{error}</Small>}
+      {error && <Small color="@Error.1">{error}</Small>}
     </FormRow>
   ),
 )

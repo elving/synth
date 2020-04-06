@@ -1,47 +1,36 @@
-import { SynthTokenDeclaration } from './isTokenDeclaration'
+import { SynthTokenConfiguration, SynthTokenValue } from './'
 
 /**
- * Returns a the value of the given token declaration.
- * @since 1.0.0
+ * @since 2.0.0
+ * @description Gets the token's value given a token selector.
  * @example
  * getTokenValue({
  *   color: {
  *     background: {
- *       button: 'red',
- *     },
- *   },
- * }, 'color:background:button')
- * // => "red"
+ *       button: {
+ *         description: 'lorem ipsum.',
+ *         release: '1.2.3',
+ *         value: '#444'
+ *       }
+ *     }
+ *   }
+ * }, 'color:background:button') => '#444'
  *
  * getTokenValue({
  *   color: {
  *     background: {
  *       button: {
- *         default: '#ddd',
- *         disabled: '#eee',
- *       },
- *     },
- *   },
- * }, 'color:background:button:disabled')
- * // => "#eee"
- *
- * getTokenValue({
- *   global: {
- *     fontSizes: [14, 16, 18, 22],
- *   },
- * }, '@fontSizes')
- * // => 14
- *
- * getTokenValue({
- *   global: {
- *     fontSizes: [14, 16, 18, 22],
- *   },
- * }, '@fontSizes.2')
- * // => 18
+ *         default: '#444',
+ *         hover: '#555'
+ *       }
+ *     }
+ *   }
+ * }, 'color:background:button:hover') => '#555'
  */
 declare function getTokenValue(
-  tokens: SynthTokenDeclaration,
-  tokenName: string,
-): string | number | string[] | number[]
+  tokens: SynthTokenConfiguration,
+  token: string,
+  transform?: () => any,
+): SynthTokenValue
 
 export default getTokenValue

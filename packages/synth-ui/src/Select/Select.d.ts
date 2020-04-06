@@ -13,6 +13,7 @@ interface SelectProps {
 type SelectComponentProps = React.SelectHTMLAttributes<HTMLSelectElement> &
   React.RefAttributes<HTMLSelectElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & SelectProps
 
 type SelectComponent = SynthReact.SynthComponent<

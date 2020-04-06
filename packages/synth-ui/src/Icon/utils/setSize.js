@@ -1,5 +1,3 @@
-import { unit } from '@beatgig/synth-core'
-
 /**
  * @typedef {object} Props
  * @property {number} scale
@@ -7,8 +5,8 @@ import { unit } from '@beatgig/synth-core'
  * @property {(tokenName: string) => string} synth.getUnit
  * @returns {<T>(props: T & Props) => string}
  */
-const setSize = () => ({ scale = 0, synth }) => `  
-  font-size: ${synth.getUnit(`@icons.${scale}`)};
+const setSize = () => ({ scale = 1, synth }) => `  
+  font-size: ${synth.getUnit(`size:@icons.${scale}`)};
   height: 1em;
   width: 1em;  
 `

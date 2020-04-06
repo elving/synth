@@ -5,7 +5,7 @@
  * @returns {<T>(props: T & Props) => string}
  */
 const setIconFill = () => ({ synth }) => `
-  fill: ${synth.getValue('@Porcelain')};
+  fill: ${synth.getValue('color:@prominent')};
 `
 
 export default setIconFill

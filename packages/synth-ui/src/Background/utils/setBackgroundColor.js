@@ -1,4 +1,4 @@
-import { isGlobalToken } from '@beatgig/synth-core'
+import { isValidAliasName } from '@beatgig/synth-core'
 
 /**
  * @typedef {object} Props
@@ -8,9 +8,13 @@ import { isGlobalToken } from '@beatgig/synth-core'
  * @returns {<T>(props: T & Props) => string}
  */
 const setBackgroundColor = () => ({ color, synth }) => `
-  background-color: ${synth.getValue(
-    isGlobalToken(color) ? color : `color:background:${color}`,
-  ) || color};
+  background-color: ${
+    synth.getValue(
+      isValidAliasName(color) ? `color:${color}` : `color:background:${color}`,
+    ) ||
+    color ||
+    'inherit'
+  };
 `
 
 export default setBackgroundColor

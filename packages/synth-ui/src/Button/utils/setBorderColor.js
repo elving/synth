@@ -12,7 +12,9 @@ import getIntentColor from './getIntentColor'
 const setBorderColor = () => ({ intent, outline, synth }) => {
   if (intent !== BUTTON_INTENT_NONE) {
     return outline
-      ? `border-color: ${synth.getValue(getIntentColor(intent, 'control'))};`
+      ? `border-color: ${synth.getValue(
+          `color:${getIntentColor(intent, 'control')}`,
+        )};`
       : ''
   } else if (outline) {
     return `border-color: ${synth.getValue('color:background:control')};`

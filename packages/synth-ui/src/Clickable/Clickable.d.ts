@@ -12,6 +12,7 @@ interface ClickableProps extends ButtonProps {
 type ClickableComponentProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   React.RefAttributes<HTMLButtonElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & ClickableProps
 
 type ClickableComponent = SynthReact.SynthComponent<

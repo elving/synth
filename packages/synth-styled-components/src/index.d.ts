@@ -1,9 +1,9 @@
 import * as React from 'react'
 import * as styled from 'styled-components'
-import { SynthConsumerProps } from '@beatgig/synth-react'
+import * as SynthReact from '@beatgig/synth-react'
 
 interface SynthStyledComponentProps {
-  synth?: SynthConsumerProps
+  synth?: SynthReact.SynthConsumerProps
   className?: string
 }
 
@@ -20,31 +20,51 @@ declare type SynthStyledComponent<
   never
 >
 
-export { default as backgroundColor } from './backgroundColor'
-export { default as border } from './border'
-export { default as borderRadius } from './borderRadius'
-export { default as bottom } from './bottom'
-export { default as boxShadow } from './boxShadow'
-export { default as color } from './color'
-export { default as fontFamily } from './fontFamily'
-export { default as fontSize } from './fontSize'
-export { default as fontWeight } from './fontWeight'
-export { default as height } from './height'
-export { default as left } from './left'
-export { default as letterSpacing } from './letterSpacing'
-export { default as lineHeight } from './lineHeight'
-export { default as margin } from './margin'
-export { default as maxHeight } from './maxHeight'
-export { default as maxWidth } from './maxWidth'
-export { default as minHeight } from './minHeight'
-export { default as minWidth } from './minWidth'
-export { default as opacity } from './opacity'
-export { default as outline } from './outline'
-export { default as padding } from './padding'
-export { default as right } from './right'
-export { default as textDecoration } from './textDecoration'
-export { default as textTransform } from './textTransform'
-export { default as top } from './top'
-export { default as width } from './width'
-export { default as zIndex } from './zIndex'
+export { default as bindings, SynthStyledComponentsBindings } from './bindings'
 export { SynthStyledComponentProps, SynthStyledComponent }
+
+export declare const animationDelay: SynthStyledComponentsBindings['animationDelay']
+export declare const animationDuration: SynthStyledComponentsBindings['animationDuration']
+export declare const animationTimingFunction: SynthStyledComponentsBindings['animationTimingFunction']
+export declare const backgroundColor: SynthStyledComponentsBindings['backgroundColor']
+export declare const border: SynthStyledComponentsBindings['border']
+export declare const borderColor: SynthStyledComponentsBindings['borderColor']
+export declare const borderRadius: SynthStyledComponentsBindings['borderRadius']
+export declare const borderStyle: SynthStyledComponentsBindings['borderStyle']
+export declare const borderWidth: SynthStyledComponentsBindings['borderWidth']
+export declare const bottom: SynthStyledComponentsBindings['bottom']
+export declare const boxShadow: SynthStyledComponentsBindings['boxShadow']
+export declare const color: SynthStyledComponentsBindings['color']
+export declare const fontFamily: SynthStyledComponentsBindings['fontFamily']
+export declare const fontSize: SynthStyledComponentsBindings['fontSize']
+export declare const fontStyle: SynthStyledComponentsBindings['fontStyle']
+export declare const fontWeight: SynthStyledComponentsBindings['fontWeight']
+export declare const height: SynthStyledComponentsBindings['height']
+export declare const left: SynthStyledComponentsBindings['left']
+export declare const letterSpacing: SynthStyledComponentsBindings['letterSpacing']
+export declare const lineHeight: SynthStyledComponentsBindings['lineHeight']
+export declare const margin: SynthStyledComponentsBindings['margin']
+export declare const marginBottom: SynthStyledComponentsBindings['marginBottom']
+export declare const marginLeft: SynthStyledComponentsBindings['marginLeft']
+export declare const marginRight: SynthStyledComponentsBindings['marginRight']
+export declare const marginTop: SynthStyledComponentsBindings['marginTop']
+export declare const maxHeight: SynthStyledComponentsBindings['maxHeight']
+export declare const maxWidth: SynthStyledComponentsBindings['maxWidth']
+export declare const minHeight: SynthStyledComponentsBindings['minHeight']
+export declare const minWidth: SynthStyledComponentsBindings['minWidth']
+export declare const opacity: SynthStyledComponentsBindings['opacity']
+export declare const padding: SynthStyledComponentsBindings['padding']
+export declare const paddingBottom: SynthStyledComponentsBindings['paddingBottom']
+export declare const paddingLeft: SynthStyledComponentsBindings['paddingLeft']
+export declare const paddingRight: SynthStyledComponentsBindings['paddingRight']
+export declare const paddingTop: SynthStyledComponentsBindings['paddingTop']
+export declare const right: SynthStyledComponentsBindings['right']
+export declare const textAlign: SynthStyledComponentsBindings['textAlign']
+export declare const textDecoration: SynthStyledComponentsBindings['textDecoration']
+export declare const textTransform: SynthStyledComponentsBindings['textTransform']
+export declare const top: SynthStyledComponentsBindings['top']
+export declare const transitionDelay: SynthStyledComponentsBindings['transitionDelay']
+export declare const transitionDuration: SynthStyledComponentsBindings['transitionDuration']
+export declare const transitionTimingFunction: SynthStyledComponentsBindings['transitionTimingFunction']
+export declare const width: SynthStyledComponentsBindings['width']
+export declare const zIndex: SynthStyledComponentsBindings['zIndex']

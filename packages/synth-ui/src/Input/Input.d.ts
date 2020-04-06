@@ -16,6 +16,7 @@ interface InputProps {
 type InputComponentProps = React.InputHTMLAttributes<HTMLInputElement> &
   React.RefAttributes<HTMLInputElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & InputProps
 
 type InputComponent = SynthReact.SynthComponent<

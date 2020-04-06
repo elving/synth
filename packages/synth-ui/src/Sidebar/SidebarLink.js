@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import { isNil } from '@beatgig/is'
-import { Text, withSynth } from '@beatgig/synth-react'
+import { withSynth } from '@beatgig/synth-react'
 
 import {
   backgroundColor,
@@ -14,6 +14,7 @@ import {
 } from '@beatgig/synth-styled-components'
 
 import { Spacer } from '../Spacer'
+import { Text } from '../Typography'
 
 import { setBaseStyles } from '../utils'
 
@@ -22,12 +23,12 @@ import { setBaseStyles } from '../utils'
  */
 const StyledSidebarLink = styled.a`
   ${setBaseStyles()}
-  ${backgroundColor('@Shark')}
+  ${backgroundColor('@contrast.2')}
   ${borderRadius()}
   ${fontSize('text')}
   ${fontWeight('control')}
   ${margin('formRow')}
-  ${padding('@spacing.2')}
+  ${padding('@spacing.3')}
   cursor: pointer;
   text-decoration: none;
   align-items: center;
@@ -36,7 +37,7 @@ const StyledSidebarLink = styled.a`
   transition: all 0.2s ease-in-out 0s;
 
   :hover {
-    ${backgroundColor('@Mako')}
+    ${backgroundColor('@contrast.2')}
     text-decoration: none;
   }
 
@@ -55,8 +56,8 @@ const SidebarLink = forwardRef(
     return (
       <StyledSidebarLink {...props} className={className} synth={synth}>
         {hasIcon ? icon : null}
-        {hasIcon ? <Spacer inline left scale={1} /> : null}
-        <Text size="@fontSizes.2">{children}</Text>
+        {hasIcon ? <Spacer inline left scale={2} /> : null}
+        <Text fontSize="@fontSizes.3">{children}</Text>
       </StyledSidebarLink>
     )
   },

@@ -1,67 +1,47 @@
+/**
+ * @type {import('@beatgig/synth-tokens').tokens}
+ */
 export const tokens = {
-  global: {
-    /**
-     * Colors
-     */
-    Porcelain: '#FCFDFD',
-    Thunder: '#10110E',
-    BalticSea: '#212025',
-    Shark: '#2F3136',
-    Tuna: '#393C40',
-    Mako: '#444850',
-    Abbey: '#4C5058',
-    ShuttleGray: '#5B6066',
-    Stone: '#71777B',
-    Oslo: '#878E8F',
-    BeatGig: ['#FAC62A', '#EFB506'],
-    Error: ['#C5493A', '#B0422F'],
-    Success: ['#00BB53', '#00A76D'],
-
-    /**
-     * Sizes
-     */
-    icons: [16, 18, 20, 22, 24, 26],
-    avatars: [24, 32, 40, 48, 56, 64],
-    cards: [240, 480, 960],
-
-    /**
-     * Spacing
-     */
-    spacing: [2, 8, 14, 20, 26, 32],
-
-    /**
-     * Typography
-     */
-    headings: [18, 22, 26, 30, 34, 38],
-    fontSizes: [12, 14, 16, 18, 20, 22, 24, 26],
-    fontWeights: [300, 400, 500, 600, 700],
-  },
-
   color: {
+    aliases: {
+      prominent: 'rgba(255, 255, 254, 1)', // #FCFDFD
+      primary: 'rgba(15, 15, 16, 1)', // #0f0f10
+      copy: 'rgba(167, 169, 190, 1)', // #A7A9BE
+      BeatGig: ['#FAC62A', '#EFB506'],
+      Error: ['#C5493A', '#B0422F'],
+      Success: ['#00BB53', '#00A76D'],
+      contrast: [
+        'rgba(125, 125, 145, 0.14)',
+        'rgba(125, 125, 145, 0.20)',
+        'rgba(125, 125, 145, 0.26)',
+        'rgba(125, 125, 145, 0.32)',
+      ],
+    },
+
     background: {
-      avatar: '@ShuttleGray',
-      card: '@Shark',
-      header: '@Shark',
-      modalOverlay: '@Thunder',
-      popup: '@Shark',
-      tag: '@Stone',
+      avatar: '@contrast.1',
+      card: '@contrast.1',
+      header: '@contrast.1',
+      modalOverlay: '@primary',
+      popup: '@contrast.1',
+      tag: '@contrast.2',
 
       control: {
-        active: '@Mako',
-        default: '@Abbey',
-        focus: '@Mako',
-        hover: '@ShuttleGray',
+        active: '@contrast.3',
+        default: '@contrast.1',
+        focus: '@contrast.3',
+        hover: '@contrast.2',
       },
 
       input: {
         default: 'transparent',
-        focus: '@Abbey',
+        focus: '@contrast.3',
         hover: 'transparent',
       },
 
       popupItem: {
-        default: '@Shark',
-        hover: '@Tuna',
+        default: '@contrast.1',
+        hover: '@contrast.2',
       },
     },
 
@@ -70,26 +50,41 @@ export const tokens = {
       control: 'transparent',
 
       input: {
-        default: '@Abbey',
-        hover: '@Stone',
-        focus: '@Stone',
+        default: '@contrast.1',
+        hover: '@contrast.2',
+        focus: '@contrast.3',
       },
 
-      popup: '@Abbey',
+      popup: '@contrast.1',
     },
 
-    outline: {
-      control: 'rgba(255, 255, 255, 0.15)',
+    shadow: {
+      subtle: 'rgba(0, 0, 0, 0.25)',
+      avatar: '@contrast.2',
+      control: {
+        default: 'transparent',
+        focus: '@contrast.4',
+      },
     },
 
     text: {
-      base: '@Porcelain',
-      meta: '@Oslo',
-      status: '@Oslo',
+      base: '@copy',
+      control: '@prominent',
+      meta: '@contrast.4',
+      heading: '@prominent',
+      status: '@contrast.4',
     },
   },
 
   size: {
+    aliases: {
+      avatars: [24, 32, 40, 48, 56, 64],
+      cards: [240, 480, 960],
+      fontSizes: [12, 14, 16, 18, 20, 22, 24, 26],
+      headings: [18, 22, 26, 30, 34, 38],
+      icons: [14, 16, 18, 20, 22, 24, 26, 28],
+    },
+
     border: {
       base: 1,
       control: 2,
@@ -103,8 +98,22 @@ export const tokens = {
       tag: '50rem',
     },
 
-    outline: {
-      base: 1,
+    shadow: {
+      subtle: 5,
+      avatar: [0, 1],
+      control: {
+        default: [0, 2.5],
+        focus: [0, 2.5],
+      },
+    },
+
+    text: {
+      base: '@fontSizes.3',
+      control: '@fontSizes.2',
+      heading: '@fontSizes.7',
+      text: '@fontSizes.3',
+      small: '@fontSizes.1',
+      status: '@fontSizes.1',
     },
 
     width: {
@@ -112,28 +121,28 @@ export const tokens = {
     },
 
     maxWidth: {
-      modal: '@cards.1',
+      modal: '@cards.2',
     },
   },
 
   space: {
+    aliases: {
+      spacing: [4, 8, 14, 20, 26, 32],
+    },
+
     margin: {
-      formRow: [0, 0, '@spacing.1'],
-      heading: [0, 0, '@spacing.2'],
-      paragraph: '0 0 @spacing.2',
+      formRow: [0, 0, '@spacing.2'],
+      heading: [0, 0, '@spacing.4'],
+      paragraph: '0 0 @spacing.3',
     },
 
     padding: {
-      card: '@spacing.2',
-      control: ['@spacing.1', '@spacing.2'],
-      header: ['@spacing.2', '@spacing.3'],
-      modalOverlay: '@spacing.5',
-      popupItem: ['@spacing.1', '@spacing.2'],
-      tag: ['@spacing', '@spacing.1'],
-    },
-
-    outline: {
-      base: 2,
+      card: '@spacing.3',
+      control: ['@spacing.2', '@spacing.3'],
+      header: ['@spacing.3', '@spacing.4'],
+      modalOverlay: '@spacing.6',
+      popupItem: ['@spacing.2', '@spacing.3'],
+      tag: ['@spacing.1', '@spacing.2'],
     },
   },
 
@@ -145,22 +154,24 @@ export const tokens = {
       popup: 'solid',
     },
 
-    shadow: {
-      subtle: '0 0 @spacing.1 rgba(0, 0, 0, 0.25)',
-      avatar: '0 0 0 1px @Oslo',
-      outlineControl: '0 0 0 1px inset @ShuttleGray',
-    },
-
     opacity: {
       modalOverlay: 0.85,
     },
+  },
 
-    outline: {
-      base: 'solid',
+  position: {
+    shadow: {
+      subtle: [0, 0],
+      avatar: [0, 0],
+      control: { default: [0, 0], focus: [0, 0] },
     },
   },
 
   typography: {
+    aliases: {
+      fontWeights: [100, 200, 300, 400, 500, 600, 700, 800],
+    },
+
     decoration: {
       link: {
         default: 'none',
@@ -170,6 +181,7 @@ export const tokens = {
 
     font: {
       base: [
+        'Inter',
         '-apple-system',
         'system-ui',
         'BlinkMacSystemFont',
@@ -192,25 +204,17 @@ export const tokens = {
       heading: 1.2,
     },
 
-    size: {
-      base: '@fontSizes.1',
-      control: '@fontSizes.1',
-      heading: '@fontSizes.6',
-      text: '@fontSizes.2',
-      small: '@fontSizes',
-      status: '@fontSizes',
-    },
-
     transform: {
       status: 'uppercase',
     },
 
     weight: {
-      base: '@fontWeights',
-      link: '@fontWeights',
-      control: '@fontWeights.1',
-      heading: '@fontWeights.2',
-      status: '@fontWeights.2',
+      base: '@fontWeights.4',
+      link: '@fontWeights.4',
+      control: '@fontWeights.5',
+      input: '@fontWeights.4',
+      heading: '@fontWeights.6',
+      status: '@fontWeights.3',
     },
   },
 }

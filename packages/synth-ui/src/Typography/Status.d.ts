@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as SynthReact from '@beatgig/synth-react'
 
-interface StatusProps extends SynthReact.TextProps {
+interface StatusProps extends SynthReact.BoxProps {
   /**
    * The elements you want to display within the small component.
    */
@@ -16,6 +16,7 @@ interface StatusProps extends SynthReact.TextProps {
 type StatusComponentProps = React.HTMLAttributes<HTMLElement> &
   React.RefAttributes<HTMLElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & StatusProps
 
 type StatusComponent = SynthReact.SynthComponent<

@@ -60,7 +60,7 @@ Icon.defaultProps = {
   children: null,
   className: '',
   fill: 'currentColor',
-  scale: 0,
+  scale: 1,
 }
 
 Icon.displayName = 'Icon'

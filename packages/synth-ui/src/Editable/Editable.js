@@ -13,7 +13,7 @@ const StyledEditable = styled.input.attrs(() => ({
   type: 'text',
 }))`
   ${setBaseStyles()}
-  ${fontWeight('control')}
+  ${fontWeight('input')}
   ${padding('control')}
   background-color: transparent;
   border: 0 none;

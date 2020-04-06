@@ -24,6 +24,7 @@ interface FormFieldProps extends FormRowProps {
 type FormFieldComponentProps = React.HTMLAttributes<HTMLDivElement> &
   React.RefAttributes<HTMLDivElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & FormFieldProps
 
 type FormFieldComponent = SynthReact.SynthComponent<

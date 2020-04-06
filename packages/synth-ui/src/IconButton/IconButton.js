@@ -10,7 +10,7 @@ import { Button } from '../Button'
  */
 const StyledButton = styled(Button)`
   ${borderRadius('rounded')}
-  ${padding('@spacing')}
+  ${padding('@spacing.1')}
 `
 
 const IconButton = forwardRef(

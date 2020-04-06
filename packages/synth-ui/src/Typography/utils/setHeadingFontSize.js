@@ -8,7 +8,7 @@ import getHeadingLevelScale from './getHeadingLevelScale'
  * @returns {<T>(props: T & Props) => string}
  */
 const setHeadingFontSize = () => ({ level, synth }) => `
-  font-size: ${synth.getUnit(`@headings.${getHeadingLevelScale(level)}`)};
+  font-size: ${synth.getUnit(`size:@headings.${getHeadingLevelScale(level)}`)};
 `
 
 export default setHeadingFontSize

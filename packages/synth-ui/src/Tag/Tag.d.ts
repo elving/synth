@@ -16,6 +16,7 @@ interface TagProps {
 type TagComponentProps = React.HTMLAttributes<HTMLElement> &
   React.RefAttributes<HTMLElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & TagProps
 
 type TagComponent = SynthReact.SynthComponent<TagComponentProps, HTMLElement>

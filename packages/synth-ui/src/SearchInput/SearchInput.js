@@ -61,7 +61,7 @@ const SearchInput = forwardRef(
   ({ className = '', synth, ...props }, ref) => (
     <SearchInputContainer>
       <StyledInput {...props} className={className} synth={synth} ref={ref} />
-      <StyledSearchIcon synth={synth} />
+      <StyledSearchIcon synth={synth} scale={3} />
     </SearchInputContainer>
   ),
 )

@@ -26,6 +26,7 @@ interface ModalHeaderProps {
 type ModalHeaderComponentProps = React.HTMLAttributes<HTMLDivElement> &
   React.RefAttributes<HTMLDivElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & ModalHeaderProps
 
 type ModalHeaderComponent = SynthReact.SynthComponent<

@@ -12,7 +12,7 @@ import {
  */
 const getIntentColor = (
   intent = BUTTON_INTENT_NONE,
-  defaultIntent = 'base',
+  defaultIntent = 'control',
 ) => {
   switch (intent) {
     case BUTTON_INTENT_NONE: {
@@ -20,15 +20,15 @@ const getIntentColor = (
     }
 
     case BUTTON_INTENT_DANGER: {
-      return '@Error'
+      return '@Error.1'
     }
 
     case BUTTON_INTENT_SUCCESS: {
-      return '@Success'
+      return '@Success.1'
     }
 
     case BUTTON_INTENT_HIGHLIGHT: {
-      return '@BeatGig'
+      return '@BeatGig.1'
     }
 
     default: {

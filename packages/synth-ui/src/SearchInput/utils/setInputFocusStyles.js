@@ -5,9 +5,9 @@
  * @returns {<T>(props: T & Props) => string}
  */
 const setInputFocusStyles = () => ({ synth }) => `
-  background-color: ${synth.getValue('@Porcelain')};
-  border-color: ${synth.getValue('@Porcelain')};
-  color: ${synth.getValue('@BalticSea')};  
+  background-color: ${synth.getValue('color:@prominent')};
+  border-color: ${synth.getValue('color:@prominent')};
+  color: ${synth.getValue('color:@contrast.1')};  
 `
 
 export default setInputFocusStyles

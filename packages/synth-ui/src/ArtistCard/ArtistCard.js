@@ -2,11 +2,11 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import React, { forwardRef } from 'react'
 import { borderRadius, boxShadow } from '@beatgig/synth-styled-components'
-import { Text, withSynth } from '@beatgig/synth-react'
+import { withSynth } from '@beatgig/synth-react'
 
 import { Background } from '../Background'
 import { Flex } from '../Flex'
-import { Heading } from '../Typography'
+import { Heading, Text } from '../Typography'
 import { Rating } from '../Rating'
 import { Spacer } from '../Spacer'
 
@@ -16,6 +16,7 @@ import { Spacer } from '../Spacer'
 const StyledBackground = styled(Background)`
   ${borderRadius()}
   ${boxShadow('subtle')}
+  width: 100%;
 `
 
 /**
@@ -36,7 +37,7 @@ const StageName = styled(Heading)`
 `
 
 /**
- * @type {import('@beatgig/synth-react').TextComponent}
+ * @type {import('@beatgig/synth-ui').TextComponent}
  */
 const Genres = styled(Text)`
   overflow: hidden;
@@ -60,19 +61,16 @@ const ArtistCard = forwardRef(
           repeat="no-repeat"
           size="cover"
           synth={synth}
-          width="100%"
         />
-        <Spacer scale={1} bottom />
+        <Spacer scale={2} bottom />
         <Content center column fullWidth>
-          <StageName level="h6" weight="@fontWeights" withoutMargin>
+          <StageName level="h6" fontWeight="@fontWeights.2" withoutMargin>
             {artist.stageName}
           </StageName>
           <Spacer bottom />
-          <Genres color="meta" title={genres}>
-            {genres}
-          </Genres>
+          <Genres title={genres}>{genres}</Genres>
           <Spacer bottom />
-          <Rating scale={1} rating={artist.rating} />
+          <Rating scale={2} rating={artist.rating} />
         </Content>
       </Flex>
     )

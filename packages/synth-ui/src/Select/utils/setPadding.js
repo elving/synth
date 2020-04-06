@@ -6,7 +6,7 @@
  */
 const setPadding = () => ({ synth }) => {
   const [paddingY, paddingX] = synth.getUnit('space:padding:control').split(' ')
-  const iconSize = synth.getUnit('@icons.5')
+  const iconSize = synth.getUnit('size:@icons.5')
 
   return `padding: ${paddingY} calc(${iconSize} + ${paddingX}) ${paddingY} ${paddingX};`
 }

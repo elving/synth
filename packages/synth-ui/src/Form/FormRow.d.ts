@@ -29,6 +29,7 @@ interface FormRowProps {
 type FormRowComponentProps = React.HTMLAttributes<HTMLDivElement> &
   React.RefAttributes<HTMLDivElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & FormRowProps
 
 type FormRowComponent = SynthReact.SynthComponent<

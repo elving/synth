@@ -5,8 +5,8 @@
  * @returns {<T>(props: T & Props) => string}
  */
 const setInputPadding = () => ({ synth }) => `
-  padding-left: calc(${synth.getUnit('@icons')} + ${synth.getUnit(
-  '@spacing.1',
+  padding-left: calc(${synth.getUnit('size:@icons.3')} + ${synth.getUnit(
+  'space:@spacing.2',
 )} + ${synth.getUnit('size:border:control')});`
 
 export default setInputPadding

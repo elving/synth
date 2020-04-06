@@ -55,6 +55,6 @@ export { Slider } from './Slider'
 export { Spacer } from './Spacer'
 export { Tag } from './Tag'
 export { TagSelect } from './TagSelect'
-export { Heading, Label, Paragraph, Small, Status } from './Typography'
+export { Heading, Label, Paragraph, Small, Status, Text } from './Typography'
 
 export { setBaseStyles, noop, ScrollIntoView, withForwardedRef } from './utils'

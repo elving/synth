@@ -3,12 +3,24 @@ import { withSynth } from '../packages/synth-react/src'
 import { createGlobalStyle } from 'styled-components'
 
 import {
+  backgroundColor,
   borderRadius,
   color,
   fontSize,
+  fontWeight,
+  margin,
+  padding,
 } from '../packages/synth-styled-components/src'
 
 const Styles = createGlobalStyle`
+  * {
+    font-family: Inter, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI,Roboto, Oxygen,Ubuntu, Cantarell, Fira Sans, Helvetica Neue, Helvetica, Arial, sans-serif !important;
+  }
+
+  pre, code {
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+  }
+
   body, html {
     ${setBaseStyles()}
     background-color: transparent;
@@ -19,15 +31,22 @@ const Styles = createGlobalStyle`
     width: 100%;
   }
 
-  .sbdocs {
+  .sbdocs {      
     && {
-      code {
+      &.sbdocs-wrapper {
+        ${padding('@spacing.6')}
+      }
+
+      pre {
+        background-color: ${({ synth }) =>
+          synth.getValue('color:@contrast.1')} !important;
+      }
+
+      code {        
         ${borderRadius()}
+        ${fontSize('@fontSizes.2')}
         background-color: rgba(255, 255, 255, 0.055);
         border: 1px solid rgba(255,255,255,.035);
-        color: rgba(255, 255, 255, 0.75);
-        font-family: "Operator Mono", "Fira Code Retina", "Fira Code", FiraCode-Retina, "Andale Mono", "Lucida Console", Consolas, Monaco, monospace;
-        font-size: 85%;
         padding: 1px 2px 2px;
       }
 
@@ -40,18 +59,30 @@ const Styles = createGlobalStyle`
         max-width: 1024px;
       }
 
-      .sbdocs-h2 {
+      .sbdocs-h1,
+      .sbdocs-h2,
+      .sbdocs-h3,
+      .sbdocs-h4,
+      .sbdocs-h5,
+      .sbdocs-h6 {
         color: #fff;
         border: 0 none;
-        margin: 35px 0;
         padding: 0;
+        ${fontWeight('heading')}
+        ${margin('heading')}
       }
 
-      .sbdocs-p {
+      .sbdocs-p,
+      .sbdocs-li {
+        color: #a7a9be;
         ${fontSize('text')}        
+        
+        &.sbdocs-p {
+          ${margin('paragraph')}
+        }
 
         a {
-          ${color('@BeatGig')}
+          ${color('@BeatGig.1')}
           ${fontSize('text')}
           text-decoration: underline;
         }
@@ -65,18 +96,19 @@ const Styles = createGlobalStyle`
         }
 
         thead tr {
-          border-bottom: 1px solid ${({ synth }) => synth.getValue('@Shark')};
+          border-bottom: 1px solid ${({ synth }) =>
+            synth.getValue('color:@contrast.2')};
         }
 
         th {
-          ${color('@Oslo')}
+          ${color('@contrast.3')}
         }
         
         tr {
           background-color: transparent;
 
           &:nth-child(even) {
-            background-color: rgba(0, 0, 0, 0.15);
+            background-color: rgba(255, 255, 255, 0.035);
           }
 
           td {

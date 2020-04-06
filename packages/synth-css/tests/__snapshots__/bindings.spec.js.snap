@@ -1,0 +1,3649 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`css bindings animationDelay(base) 1`] = `"animation-delay: 1.5s;"`;
+
+exports[`css bindings animationDelay(base) 2`] = `
+Object {
+  "animationDelay": "1.5s",
+}
+`;
+
+exports[`css bindings animationDelay(base) using alias token directly 1`] = `"animation-delay: 150ms;"`;
+
+exports[`css bindings animationDelay(base) using alias token directly 2`] = `
+Object {
+  "animationDelay": "150ms",
+}
+`;
+
+exports[`css bindings animationDelay(base) using base value 1`] = `"animation-delay: 1.5s;"`;
+
+exports[`css bindings animationDelay(base) using base value 2`] = `
+Object {
+  "animationDelay": "1.5s",
+}
+`;
+
+exports[`css bindings animationDelay(fast) 1`] = `"animation-delay: 150ms;"`;
+
+exports[`css bindings animationDelay(fast) 2`] = `
+Object {
+  "animationDelay": "150ms",
+}
+`;
+
+exports[`css bindings animationDelay(fast) using alias token directly 1`] = `"animation-delay: 150ms;"`;
+
+exports[`css bindings animationDelay(fast) using alias token directly 2`] = `
+Object {
+  "animationDelay": "150ms",
+}
+`;
+
+exports[`css bindings animationDelay(fast) using base value 1`] = `"animation-delay: 1.5s;"`;
+
+exports[`css bindings animationDelay(fast) using base value 2`] = `
+Object {
+  "animationDelay": "1.5s",
+}
+`;
+
+exports[`css bindings animationDelay(slow) 1`] = `"animation-delay: 0.5s;"`;
+
+exports[`css bindings animationDelay(slow) 2`] = `
+Object {
+  "animationDelay": "0.5s",
+}
+`;
+
+exports[`css bindings animationDelay(slow) using alias token directly 1`] = `"animation-delay: 150ms;"`;
+
+exports[`css bindings animationDelay(slow) using alias token directly 2`] = `
+Object {
+  "animationDelay": "150ms",
+}
+`;
+
+exports[`css bindings animationDelay(slow) using base value 1`] = `"animation-delay: 1.5s;"`;
+
+exports[`css bindings animationDelay(slow) using base value 2`] = `
+Object {
+  "animationDelay": "1.5s",
+}
+`;
+
+exports[`css bindings animationDuration(base) 1`] = `"animation-duration: 100ms;"`;
+
+exports[`css bindings animationDuration(base) 2`] = `
+Object {
+  "animationDuration": "100ms",
+}
+`;
+
+exports[`css bindings animationDuration(base) using alias token directly 1`] = `"animation-duration: 150ms;"`;
+
+exports[`css bindings animationDuration(base) using alias token directly 2`] = `
+Object {
+  "animationDuration": "150ms",
+}
+`;
+
+exports[`css bindings animationDuration(base) using base value 1`] = `"animation-duration: 100ms;"`;
+
+exports[`css bindings animationDuration(base) using base value 2`] = `
+Object {
+  "animationDuration": "100ms",
+}
+`;
+
+exports[`css bindings animationDuration(fast) 1`] = `"animation-duration: 200ms;"`;
+
+exports[`css bindings animationDuration(fast) 2`] = `
+Object {
+  "animationDuration": "200ms",
+}
+`;
+
+exports[`css bindings animationDuration(fast) using alias token directly 1`] = `"animation-duration: 150ms;"`;
+
+exports[`css bindings animationDuration(fast) using alias token directly 2`] = `
+Object {
+  "animationDuration": "150ms",
+}
+`;
+
+exports[`css bindings animationDuration(fast) using base value 1`] = `"animation-duration: 100ms;"`;
+
+exports[`css bindings animationDuration(fast) using base value 2`] = `
+Object {
+  "animationDuration": "100ms",
+}
+`;
+
+exports[`css bindings animationDuration(slow) 1`] = `"animation-duration: 1500ms;"`;
+
+exports[`css bindings animationDuration(slow) 2`] = `
+Object {
+  "animationDuration": "1500ms",
+}
+`;
+
+exports[`css bindings animationDuration(slow) using alias token directly 1`] = `"animation-duration: 150ms;"`;
+
+exports[`css bindings animationDuration(slow) using alias token directly 2`] = `
+Object {
+  "animationDuration": "150ms",
+}
+`;
+
+exports[`css bindings animationDuration(slow) using base value 1`] = `"animation-duration: 100ms;"`;
+
+exports[`css bindings animationDuration(slow) using base value 2`] = `
+Object {
+  "animationDuration": "100ms",
+}
+`;
+
+exports[`css bindings animationTimingFunction(base) 1`] = `"animation-timing-function: linear;"`;
+
+exports[`css bindings animationTimingFunction(base) 2`] = `
+Object {
+  "animationTimingFunction": "linear",
+}
+`;
+
+exports[`css bindings animationTimingFunction(base) using alias token directly 1`] = `"animation-timing-function: 150ms;"`;
+
+exports[`css bindings animationTimingFunction(base) using alias token directly 2`] = `
+Object {
+  "animationTimingFunction": "150ms",
+}
+`;
+
+exports[`css bindings animationTimingFunction(base) using base value 1`] = `"animation-timing-function: linear;"`;
+
+exports[`css bindings animationTimingFunction(base) using base value 2`] = `
+Object {
+  "animationTimingFunction": "linear",
+}
+`;
+
+exports[`css bindings animationTimingFunction(fast) 1`] = `"animation-timing-function: ease-in-out;"`;
+
+exports[`css bindings animationTimingFunction(fast) 2`] = `
+Object {
+  "animationTimingFunction": "ease-in-out",
+}
+`;
+
+exports[`css bindings animationTimingFunction(fast) using alias token directly 1`] = `"animation-timing-function: 150ms;"`;
+
+exports[`css bindings animationTimingFunction(fast) using alias token directly 2`] = `
+Object {
+  "animationTimingFunction": "150ms",
+}
+`;
+
+exports[`css bindings animationTimingFunction(fast) using base value 1`] = `"animation-timing-function: linear;"`;
+
+exports[`css bindings animationTimingFunction(fast) using base value 2`] = `
+Object {
+  "animationTimingFunction": "linear",
+}
+`;
+
+exports[`css bindings animationTimingFunction(slow) 1`] = `"animation-timing-function: linear;"`;
+
+exports[`css bindings animationTimingFunction(slow) 2`] = `
+Object {
+  "animationTimingFunction": "linear",
+}
+`;
+
+exports[`css bindings animationTimingFunction(slow) using alias token directly 1`] = `"animation-timing-function: 150ms;"`;
+
+exports[`css bindings animationTimingFunction(slow) using alias token directly 2`] = `
+Object {
+  "animationTimingFunction": "150ms",
+}
+`;
+
+exports[`css bindings animationTimingFunction(slow) using base value 1`] = `"animation-timing-function: linear;"`;
+
+exports[`css bindings animationTimingFunction(slow) using base value 2`] = `
+Object {
+  "animationTimingFunction": "linear",
+}
+`;
+
+exports[`css bindings backgroundColor(base) 1`] = `"background-color: #111;"`;
+
+exports[`css bindings backgroundColor(base) 2`] = `
+Object {
+  "backgroundColor": "#111",
+}
+`;
+
+exports[`css bindings backgroundColor(base) color transforms 1`] = `"background-color: #111;"`;
+
+exports[`css bindings backgroundColor(base) color transforms 2`] = `
+Object {
+  "backgroundColor": "#111",
+}
+`;
+
+exports[`css bindings backgroundColor(base) color transforms 3`] = `"background-color: rgba(17, 17, 17, 1);"`;
+
+exports[`css bindings backgroundColor(base) color transforms 4`] = `
+Object {
+  "backgroundColor": "rgba(17, 17, 17, 1)",
+}
+`;
+
+exports[`css bindings backgroundColor(base) color transforms 5`] = `"background-color: rgba(17, 17, 17, 0.5);"`;
+
+exports[`css bindings backgroundColor(base) color transforms 6`] = `
+Object {
+  "backgroundColor": "rgba(17, 17, 17, 0.5)",
+}
+`;
+
+exports[`css bindings backgroundColor(base) using alias token directly 1`] = `"background-color: #e5e5e5;"`;
+
+exports[`css bindings backgroundColor(base) using alias token directly 2`] = `
+Object {
+  "backgroundColor": "#e5e5e5",
+}
+`;
+
+exports[`css bindings backgroundColor(base) using base value 1`] = `"background-color: #111;"`;
+
+exports[`css bindings backgroundColor(base) using base value 2`] = `
+Object {
+  "backgroundColor": "#111",
+}
+`;
+
+exports[`css bindings backgroundColor(button) 1`] = `"background-color: #e5e5e5;"`;
+
+exports[`css bindings backgroundColor(button) 2`] = `
+Object {
+  "backgroundColor": "#e5e5e5",
+}
+`;
+
+exports[`css bindings backgroundColor(button) color transforms 1`] = `"background-color: #e5e5e5;"`;
+
+exports[`css bindings backgroundColor(button) color transforms 2`] = `
+Object {
+  "backgroundColor": "#e5e5e5",
+}
+`;
+
+exports[`css bindings backgroundColor(button) color transforms 3`] = `"background-color: rgba(229, 229, 229, 1);"`;
+
+exports[`css bindings backgroundColor(button) color transforms 4`] = `
+Object {
+  "backgroundColor": "rgba(229, 229, 229, 1)",
+}
+`;
+
+exports[`css bindings backgroundColor(button) color transforms 5`] = `"background-color: rgba(229, 229, 229, 0.5);"`;
+
+exports[`css bindings backgroundColor(button) color transforms 6`] = `
+Object {
+  "backgroundColor": "rgba(229, 229, 229, 0.5)",
+}
+`;
+
+exports[`css bindings backgroundColor(button) using alias token directly 1`] = `"background-color: #e5e5e5;"`;
+
+exports[`css bindings backgroundColor(button) using alias token directly 2`] = `
+Object {
+  "backgroundColor": "#e5e5e5",
+}
+`;
+
+exports[`css bindings backgroundColor(button) using base value 1`] = `"background-color: #111;"`;
+
+exports[`css bindings backgroundColor(button) using base value 2`] = `
+Object {
+  "backgroundColor": "#111",
+}
+`;
+
+exports[`css bindings border CSS binding 1`] = `
+"
+        border-width: 1px;
+        border-style: solid;
+        border-color: #d5d5d5;
+      "
+`;
+
+exports[`css bindings border CSS binding 2`] = `
+Object {
+  "borderColor": "#d5d5d5",
+  "borderStyle": "solid",
+  "borderWidth": "1px",
+}
+`;
+
+exports[`css bindings borderColor(base) 1`] = `"border-color: #000;"`;
+
+exports[`css bindings borderColor(base) 2`] = `
+Object {
+  "borderColor": "#000",
+}
+`;
+
+exports[`css bindings borderColor(base) color transforms 1`] = `"border-color: #000;"`;
+
+exports[`css bindings borderColor(base) color transforms 2`] = `
+Object {
+  "borderColor": "#000",
+}
+`;
+
+exports[`css bindings borderColor(base) color transforms 3`] = `"border-color: rgba(0, 0, 0, 1);"`;
+
+exports[`css bindings borderColor(base) color transforms 4`] = `
+Object {
+  "borderColor": "rgba(0, 0, 0, 1)",
+}
+`;
+
+exports[`css bindings borderColor(base) color transforms 5`] = `"border-color: rgba(0, 0, 0, 0.5);"`;
+
+exports[`css bindings borderColor(base) color transforms 6`] = `
+Object {
+  "borderColor": "rgba(0, 0, 0, 0.5)",
+}
+`;
+
+exports[`css bindings borderColor(base) using alias token directly 1`] = `"border-color: #e5e5e5;"`;
+
+exports[`css bindings borderColor(base) using alias token directly 2`] = `
+Object {
+  "borderColor": "#e5e5e5",
+}
+`;
+
+exports[`css bindings borderColor(base) using base value 1`] = `"border-color: #000;"`;
+
+exports[`css bindings borderColor(base) using base value 2`] = `
+Object {
+  "borderColor": "#000",
+}
+`;
+
+exports[`css bindings borderColor(button) 1`] = `"border-color: #d5d5d5;"`;
+
+exports[`css bindings borderColor(button) 2`] = `
+Object {
+  "borderColor": "#d5d5d5",
+}
+`;
+
+exports[`css bindings borderColor(button) color transforms 1`] = `"border-color: #d5d5d5;"`;
+
+exports[`css bindings borderColor(button) color transforms 2`] = `
+Object {
+  "borderColor": "#d5d5d5",
+}
+`;
+
+exports[`css bindings borderColor(button) color transforms 3`] = `"border-color: rgba(213, 213, 213, 1);"`;
+
+exports[`css bindings borderColor(button) color transforms 4`] = `
+Object {
+  "borderColor": "rgba(213, 213, 213, 1)",
+}
+`;
+
+exports[`css bindings borderColor(button) color transforms 5`] = `"border-color: rgba(213, 213, 213, 0.5);"`;
+
+exports[`css bindings borderColor(button) color transforms 6`] = `
+Object {
+  "borderColor": "rgba(213, 213, 213, 0.5)",
+}
+`;
+
+exports[`css bindings borderColor(button) using alias token directly 1`] = `"border-color: #e5e5e5;"`;
+
+exports[`css bindings borderColor(button) using alias token directly 2`] = `
+Object {
+  "borderColor": "#e5e5e5",
+}
+`;
+
+exports[`css bindings borderColor(button) using base value 1`] = `"border-color: #000;"`;
+
+exports[`css bindings borderColor(button) using base value 2`] = `
+Object {
+  "borderColor": "#000",
+}
+`;
+
+exports[`css bindings borderRadius(base) 1`] = `"border-radius: 2px;"`;
+
+exports[`css bindings borderRadius(base) 2`] = `
+Object {
+  "borderRadius": "2px",
+}
+`;
+
+exports[`css bindings borderRadius(base) length transforms 1`] = `"border-radius: 0.1250rem;"`;
+
+exports[`css bindings borderRadius(base) length transforms 2`] = `
+Object {
+  "borderRadius": "0.1250rem",
+}
+`;
+
+exports[`css bindings borderRadius(base) length transforms 3`] = `"border-radius: 0.1250em;"`;
+
+exports[`css bindings borderRadius(base) length transforms 4`] = `
+Object {
+  "borderRadius": "0.1250em",
+}
+`;
+
+exports[`css bindings borderRadius(base) using alias token directly 1`] = `"border-radius: 320px;"`;
+
+exports[`css bindings borderRadius(base) using alias token directly 2`] = `
+Object {
+  "borderRadius": "320px",
+}
+`;
+
+exports[`css bindings borderRadius(base) using base value 1`] = `"border-radius: 2px;"`;
+
+exports[`css bindings borderRadius(base) using base value 2`] = `
+Object {
+  "borderRadius": "2px",
+}
+`;
+
+exports[`css bindings borderRadius(button) 1`] = `"border-radius: 3px;"`;
+
+exports[`css bindings borderRadius(button) 2`] = `
+Object {
+  "borderRadius": "3px",
+}
+`;
+
+exports[`css bindings borderRadius(button) length transforms 1`] = `"border-radius: 0.1875rem;"`;
+
+exports[`css bindings borderRadius(button) length transforms 2`] = `
+Object {
+  "borderRadius": "0.1875rem",
+}
+`;
+
+exports[`css bindings borderRadius(button) length transforms 3`] = `"border-radius: 0.1875em;"`;
+
+exports[`css bindings borderRadius(button) length transforms 4`] = `
+Object {
+  "borderRadius": "0.1875em",
+}
+`;
+
+exports[`css bindings borderRadius(button) using alias token directly 1`] = `"border-radius: 320px;"`;
+
+exports[`css bindings borderRadius(button) using alias token directly 2`] = `
+Object {
+  "borderRadius": "320px",
+}
+`;
+
+exports[`css bindings borderRadius(button) using base value 1`] = `"border-radius: 2px;"`;
+
+exports[`css bindings borderRadius(button) using base value 2`] = `
+Object {
+  "borderRadius": "2px",
+}
+`;
+
+exports[`css bindings borderStyle(base) 1`] = `"border-style: dotted;"`;
+
+exports[`css bindings borderStyle(base) 2`] = `
+Object {
+  "borderStyle": "dotted",
+}
+`;
+
+exports[`css bindings borderStyle(base) using alias token directly 1`] = `"border-style: solid;"`;
+
+exports[`css bindings borderStyle(base) using alias token directly 2`] = `
+Object {
+  "borderStyle": "solid",
+}
+`;
+
+exports[`css bindings borderStyle(base) using base value 1`] = `"border-style: dotted;"`;
+
+exports[`css bindings borderStyle(base) using base value 2`] = `
+Object {
+  "borderStyle": "dotted",
+}
+`;
+
+exports[`css bindings borderStyle(button) 1`] = `"border-style: solid;"`;
+
+exports[`css bindings borderStyle(button) 2`] = `
+Object {
+  "borderStyle": "solid",
+}
+`;
+
+exports[`css bindings borderStyle(button) using alias token directly 1`] = `"border-style: solid;"`;
+
+exports[`css bindings borderStyle(button) using alias token directly 2`] = `
+Object {
+  "borderStyle": "solid",
+}
+`;
+
+exports[`css bindings borderStyle(button) using base value 1`] = `"border-style: dotted;"`;
+
+exports[`css bindings borderStyle(button) using base value 2`] = `
+Object {
+  "borderStyle": "dotted",
+}
+`;
+
+exports[`css bindings borderWidth(base) 1`] = `"border-width: 1px;"`;
+
+exports[`css bindings borderWidth(base) 2`] = `
+Object {
+  "borderWidth": "1px",
+}
+`;
+
+exports[`css bindings borderWidth(base) length transforms 1`] = `"border-width: 0.0625rem;"`;
+
+exports[`css bindings borderWidth(base) length transforms 2`] = `
+Object {
+  "borderWidth": "0.0625rem",
+}
+`;
+
+exports[`css bindings borderWidth(base) length transforms 3`] = `"border-width: 0.0625em;"`;
+
+exports[`css bindings borderWidth(base) length transforms 4`] = `
+Object {
+  "borderWidth": "0.0625em",
+}
+`;
+
+exports[`css bindings borderWidth(base) using alias token directly 1`] = `"border-width: 320px;"`;
+
+exports[`css bindings borderWidth(base) using alias token directly 2`] = `
+Object {
+  "borderWidth": "320px",
+}
+`;
+
+exports[`css bindings borderWidth(base) using base value 1`] = `"border-width: 1px;"`;
+
+exports[`css bindings borderWidth(base) using base value 2`] = `
+Object {
+  "borderWidth": "1px",
+}
+`;
+
+exports[`css bindings borderWidth(button) 1`] = `"border-width: 1px;"`;
+
+exports[`css bindings borderWidth(button) 2`] = `
+Object {
+  "borderWidth": "1px",
+}
+`;
+
+exports[`css bindings borderWidth(button) length transforms 1`] = `"border-width: 0.0625rem;"`;
+
+exports[`css bindings borderWidth(button) length transforms 2`] = `
+Object {
+  "borderWidth": "0.0625rem",
+}
+`;
+
+exports[`css bindings borderWidth(button) length transforms 3`] = `"border-width: 0.0625em;"`;
+
+exports[`css bindings borderWidth(button) length transforms 4`] = `
+Object {
+  "borderWidth": "0.0625em",
+}
+`;
+
+exports[`css bindings borderWidth(button) using alias token directly 1`] = `"border-width: 320px;"`;
+
+exports[`css bindings borderWidth(button) using alias token directly 2`] = `
+Object {
+  "borderWidth": "320px",
+}
+`;
+
+exports[`css bindings borderWidth(button) using base value 1`] = `"border-width: 1px;"`;
+
+exports[`css bindings borderWidth(button) using base value 2`] = `
+Object {
+  "borderWidth": "1px",
+}
+`;
+
+exports[`css bindings borderWidth(input) 1`] = `"border-width: 2px;"`;
+
+exports[`css bindings borderWidth(input) 2`] = `
+Object {
+  "borderWidth": "2px",
+}
+`;
+
+exports[`css bindings borderWidth(input) length transforms 1`] = `"border-width: 0.1250rem;"`;
+
+exports[`css bindings borderWidth(input) length transforms 2`] = `
+Object {
+  "borderWidth": "0.1250rem",
+}
+`;
+
+exports[`css bindings borderWidth(input) length transforms 3`] = `"border-width: 0.1250em;"`;
+
+exports[`css bindings borderWidth(input) length transforms 4`] = `
+Object {
+  "borderWidth": "0.1250em",
+}
+`;
+
+exports[`css bindings borderWidth(input) using alias token directly 1`] = `"border-width: 320px;"`;
+
+exports[`css bindings borderWidth(input) using alias token directly 2`] = `
+Object {
+  "borderWidth": "320px",
+}
+`;
+
+exports[`css bindings borderWidth(input) using base value 1`] = `"border-width: 1px;"`;
+
+exports[`css bindings borderWidth(input) using base value 2`] = `
+Object {
+  "borderWidth": "1px",
+}
+`;
+
+exports[`css bindings bottom(base) 1`] = `"bottom: 5px;"`;
+
+exports[`css bindings bottom(base) 2`] = `
+Object {
+  "bottom": "5px",
+}
+`;
+
+exports[`css bindings bottom(base) length transforms 1`] = `"bottom: 0.3125rem;"`;
+
+exports[`css bindings bottom(base) length transforms 2`] = `
+Object {
+  "bottom": "0.3125rem",
+}
+`;
+
+exports[`css bindings bottom(base) length transforms 3`] = `"bottom: 0.3125em;"`;
+
+exports[`css bindings bottom(base) length transforms 4`] = `
+Object {
+  "bottom": "0.3125em",
+}
+`;
+
+exports[`css bindings bottom(base) using alias token directly 1`] = `"bottom: 25px;"`;
+
+exports[`css bindings bottom(base) using alias token directly 2`] = `
+Object {
+  "bottom": "25px",
+}
+`;
+
+exports[`css bindings bottom(base) using base value 1`] = `"bottom: 5px;"`;
+
+exports[`css bindings bottom(base) using base value 2`] = `
+Object {
+  "bottom": "5px",
+}
+`;
+
+exports[`css bindings bottom(popup) 1`] = `"bottom: 15px;"`;
+
+exports[`css bindings bottom(popup) 2`] = `
+Object {
+  "bottom": "15px",
+}
+`;
+
+exports[`css bindings bottom(popup) length transforms 1`] = `"bottom: 0.9375rem;"`;
+
+exports[`css bindings bottom(popup) length transforms 2`] = `
+Object {
+  "bottom": "0.9375rem",
+}
+`;
+
+exports[`css bindings bottom(popup) length transforms 3`] = `"bottom: 0.9375em;"`;
+
+exports[`css bindings bottom(popup) length transforms 4`] = `
+Object {
+  "bottom": "0.9375em",
+}
+`;
+
+exports[`css bindings bottom(popup) using alias token directly 1`] = `"bottom: 25px;"`;
+
+exports[`css bindings bottom(popup) using alias token directly 2`] = `
+Object {
+  "bottom": "25px",
+}
+`;
+
+exports[`css bindings bottom(popup) using base value 1`] = `"bottom: 5px;"`;
+
+exports[`css bindings bottom(popup) using base value 2`] = `
+Object {
+  "bottom": "5px",
+}
+`;
+
+exports[`css bindings bottom(toast_notification) 1`] = `"bottom: 25px;"`;
+
+exports[`css bindings bottom(toast_notification) 2`] = `
+Object {
+  "bottom": "25px",
+}
+`;
+
+exports[`css bindings bottom(toast_notification) length transforms 1`] = `"bottom: 1.5625rem;"`;
+
+exports[`css bindings bottom(toast_notification) length transforms 2`] = `
+Object {
+  "bottom": "1.5625rem",
+}
+`;
+
+exports[`css bindings bottom(toast_notification) length transforms 3`] = `"bottom: 1.5625em;"`;
+
+exports[`css bindings bottom(toast_notification) length transforms 4`] = `
+Object {
+  "bottom": "1.5625em",
+}
+`;
+
+exports[`css bindings bottom(toast_notification) using alias token directly 1`] = `"bottom: 25px;"`;
+
+exports[`css bindings bottom(toast_notification) using alias token directly 2`] = `
+Object {
+  "bottom": "25px",
+}
+`;
+
+exports[`css bindings bottom(toast_notification) using base value 1`] = `"bottom: 5px;"`;
+
+exports[`css bindings bottom(toast_notification) using base value 2`] = `
+Object {
+  "bottom": "5px",
+}
+`;
+
+exports[`css bindings color(base) 1`] = `"color: #393939;"`;
+
+exports[`css bindings color(base) 2`] = `
+Object {
+  "color": "#393939",
+}
+`;
+
+exports[`css bindings color(base) color transforms 1`] = `"color: #393939;"`;
+
+exports[`css bindings color(base) color transforms 2`] = `
+Object {
+  "color": "#393939",
+}
+`;
+
+exports[`css bindings color(base) color transforms 3`] = `"color: rgba(57, 57, 57, 1);"`;
+
+exports[`css bindings color(base) color transforms 4`] = `
+Object {
+  "color": "rgba(57, 57, 57, 1)",
+}
+`;
+
+exports[`css bindings color(base) color transforms 5`] = `"color: rgba(57, 57, 57, 0.5);"`;
+
+exports[`css bindings color(base) color transforms 6`] = `
+Object {
+  "color": "rgba(57, 57, 57, 0.5)",
+}
+`;
+
+exports[`css bindings color(base) using alias token directly 1`] = `"color: #e5e5e5;"`;
+
+exports[`css bindings color(base) using alias token directly 2`] = `
+Object {
+  "color": "#e5e5e5",
+}
+`;
+
+exports[`css bindings color(base) using base value 1`] = `"color: #393939;"`;
+
+exports[`css bindings color(base) using base value 2`] = `
+Object {
+  "color": "#393939",
+}
+`;
+
+exports[`css bindings color(heading) 1`] = `"color: #454545;"`;
+
+exports[`css bindings color(heading) 2`] = `
+Object {
+  "color": "#454545",
+}
+`;
+
+exports[`css bindings color(heading) color transforms 1`] = `"color: #454545;"`;
+
+exports[`css bindings color(heading) color transforms 2`] = `
+Object {
+  "color": "#454545",
+}
+`;
+
+exports[`css bindings color(heading) color transforms 3`] = `"color: rgba(69, 69, 69, 1);"`;
+
+exports[`css bindings color(heading) color transforms 4`] = `
+Object {
+  "color": "rgba(69, 69, 69, 1)",
+}
+`;
+
+exports[`css bindings color(heading) color transforms 5`] = `"color: rgba(69, 69, 69, 0.5);"`;
+
+exports[`css bindings color(heading) color transforms 6`] = `
+Object {
+  "color": "rgba(69, 69, 69, 0.5)",
+}
+`;
+
+exports[`css bindings color(heading) using alias token directly 1`] = `"color: #e5e5e5;"`;
+
+exports[`css bindings color(heading) using alias token directly 2`] = `
+Object {
+  "color": "#e5e5e5",
+}
+`;
+
+exports[`css bindings color(heading) using base value 1`] = `"color: #393939;"`;
+
+exports[`css bindings color(heading) using base value 2`] = `
+Object {
+  "color": "#393939",
+}
+`;
+
+exports[`css bindings fontFamily(base) 1`] = `"font-family: \\"Comic Sans MS\\";"`;
+
+exports[`css bindings fontFamily(base) 2`] = `
+Object {
+  "fontFamily": "\\"Comic Sans MS\\"",
+}
+`;
+
+exports[`css bindings fontFamily(base) using alias token directly 1`] = `"font-family: 200;"`;
+
+exports[`css bindings fontFamily(base) using alias token directly 2`] = `
+Object {
+  "fontFamily": 200,
+}
+`;
+
+exports[`css bindings fontFamily(base) using base value 1`] = `"font-family: \\"Comic Sans MS\\";"`;
+
+exports[`css bindings fontFamily(base) using base value 2`] = `
+Object {
+  "fontFamily": "\\"Comic Sans MS\\"",
+}
+`;
+
+exports[`css bindings fontFamily(code) 1`] = `"font-family: monaco, monospace;"`;
+
+exports[`css bindings fontFamily(code) 2`] = `
+Object {
+  "fontFamily": "monaco, monospace",
+}
+`;
+
+exports[`css bindings fontFamily(code) using alias token directly 1`] = `"font-family: 200;"`;
+
+exports[`css bindings fontFamily(code) using alias token directly 2`] = `
+Object {
+  "fontFamily": 200,
+}
+`;
+
+exports[`css bindings fontFamily(code) using base value 1`] = `"font-family: \\"Comic Sans MS\\";"`;
+
+exports[`css bindings fontFamily(code) using base value 2`] = `
+Object {
+  "fontFamily": "\\"Comic Sans MS\\"",
+}
+`;
+
+exports[`css bindings fontSize(base) 1`] = `"font-size: 16px;"`;
+
+exports[`css bindings fontSize(base) 2`] = `
+Object {
+  "fontSize": "16px",
+}
+`;
+
+exports[`css bindings fontSize(base) length transforms 1`] = `"font-size: 1.0000rem;"`;
+
+exports[`css bindings fontSize(base) length transforms 2`] = `
+Object {
+  "fontSize": "1.0000rem",
+}
+`;
+
+exports[`css bindings fontSize(base) length transforms 3`] = `"font-size: 1.0000em;"`;
+
+exports[`css bindings fontSize(base) length transforms 4`] = `
+Object {
+  "fontSize": "1.0000em",
+}
+`;
+
+exports[`css bindings fontSize(base) using alias token directly 1`] = `"font-size: 320px;"`;
+
+exports[`css bindings fontSize(base) using alias token directly 2`] = `
+Object {
+  "fontSize": "320px",
+}
+`;
+
+exports[`css bindings fontSize(base) using base value 1`] = `"font-size: 16px;"`;
+
+exports[`css bindings fontSize(base) using base value 2`] = `
+Object {
+  "fontSize": "16px",
+}
+`;
+
+exports[`css bindings fontSize(description) 1`] = `"font-size: 13px;"`;
+
+exports[`css bindings fontSize(description) 2`] = `
+Object {
+  "fontSize": "13px",
+}
+`;
+
+exports[`css bindings fontSize(description) length transforms 1`] = `"font-size: 0.8125rem;"`;
+
+exports[`css bindings fontSize(description) length transforms 2`] = `
+Object {
+  "fontSize": "0.8125rem",
+}
+`;
+
+exports[`css bindings fontSize(description) length transforms 3`] = `"font-size: 0.8125em;"`;
+
+exports[`css bindings fontSize(description) length transforms 4`] = `
+Object {
+  "fontSize": "0.8125em",
+}
+`;
+
+exports[`css bindings fontSize(description) using alias token directly 1`] = `"font-size: 320px;"`;
+
+exports[`css bindings fontSize(description) using alias token directly 2`] = `
+Object {
+  "fontSize": "320px",
+}
+`;
+
+exports[`css bindings fontSize(description) using base value 1`] = `"font-size: 16px;"`;
+
+exports[`css bindings fontSize(description) using base value 2`] = `
+Object {
+  "fontSize": "16px",
+}
+`;
+
+exports[`css bindings fontSize(heading) 1`] = `"font-size: 24px;"`;
+
+exports[`css bindings fontSize(heading) 2`] = `
+Object {
+  "fontSize": "24px",
+}
+`;
+
+exports[`css bindings fontSize(heading) length transforms 1`] = `"font-size: 1.5000rem;"`;
+
+exports[`css bindings fontSize(heading) length transforms 2`] = `
+Object {
+  "fontSize": "1.5000rem",
+}
+`;
+
+exports[`css bindings fontSize(heading) length transforms 3`] = `"font-size: 1.5000em;"`;
+
+exports[`css bindings fontSize(heading) length transforms 4`] = `
+Object {
+  "fontSize": "1.5000em",
+}
+`;
+
+exports[`css bindings fontSize(heading) using alias token directly 1`] = `"font-size: 320px;"`;
+
+exports[`css bindings fontSize(heading) using alias token directly 2`] = `
+Object {
+  "fontSize": "320px",
+}
+`;
+
+exports[`css bindings fontSize(heading) using base value 1`] = `"font-size: 16px;"`;
+
+exports[`css bindings fontSize(heading) using base value 2`] = `
+Object {
+  "fontSize": "16px",
+}
+`;
+
+exports[`css bindings fontStyle(base) 1`] = `"font-style: normal;"`;
+
+exports[`css bindings fontStyle(base) 2`] = `
+Object {
+  "fontStyle": "normal",
+}
+`;
+
+exports[`css bindings fontStyle(base) using alias token directly 1`] = `"font-style: solid;"`;
+
+exports[`css bindings fontStyle(base) using alias token directly 2`] = `
+Object {
+  "fontStyle": "solid",
+}
+`;
+
+exports[`css bindings fontStyle(base) using base value 1`] = `"font-style: normal;"`;
+
+exports[`css bindings fontStyle(base) using base value 2`] = `
+Object {
+  "fontStyle": "normal",
+}
+`;
+
+exports[`css bindings fontStyle(emphasis) 1`] = `"font-style: italic;"`;
+
+exports[`css bindings fontStyle(emphasis) 2`] = `
+Object {
+  "fontStyle": "italic",
+}
+`;
+
+exports[`css bindings fontStyle(emphasis) using alias token directly 1`] = `"font-style: solid;"`;
+
+exports[`css bindings fontStyle(emphasis) using alias token directly 2`] = `
+Object {
+  "fontStyle": "solid",
+}
+`;
+
+exports[`css bindings fontStyle(emphasis) using base value 1`] = `"font-style: normal;"`;
+
+exports[`css bindings fontStyle(emphasis) using base value 2`] = `
+Object {
+  "fontStyle": "normal",
+}
+`;
+
+exports[`css bindings fontWeight(base) 1`] = `"font-weight: 100;"`;
+
+exports[`css bindings fontWeight(base) 2`] = `
+Object {
+  "fontWeight": "100",
+}
+`;
+
+exports[`css bindings fontWeight(base) using alias token directly 1`] = `"font-weight: 200;"`;
+
+exports[`css bindings fontWeight(base) using alias token directly 2`] = `
+Object {
+  "fontWeight": 200,
+}
+`;
+
+exports[`css bindings fontWeight(base) using base value 1`] = `"font-weight: 100;"`;
+
+exports[`css bindings fontWeight(base) using base value 2`] = `
+Object {
+  "fontWeight": "100",
+}
+`;
+
+exports[`css bindings fontWeight(heading) 1`] = `"font-weight: 300;"`;
+
+exports[`css bindings fontWeight(heading) 2`] = `
+Object {
+  "fontWeight": "300",
+}
+`;
+
+exports[`css bindings fontWeight(heading) using alias token directly 1`] = `"font-weight: 200;"`;
+
+exports[`css bindings fontWeight(heading) using alias token directly 2`] = `
+Object {
+  "fontWeight": 200,
+}
+`;
+
+exports[`css bindings fontWeight(heading) using base value 1`] = `"font-weight: 100;"`;
+
+exports[`css bindings fontWeight(heading) using base value 2`] = `
+Object {
+  "fontWeight": "100",
+}
+`;
+
+exports[`css bindings height(base) 1`] = `"height: 10px;"`;
+
+exports[`css bindings height(base) 2`] = `
+Object {
+  "height": "10px",
+}
+`;
+
+exports[`css bindings height(base) length transforms 1`] = `"height: 0.6250rem;"`;
+
+exports[`css bindings height(base) length transforms 2`] = `
+Object {
+  "height": "0.6250rem",
+}
+`;
+
+exports[`css bindings height(base) length transforms 3`] = `"height: 0.6250em;"`;
+
+exports[`css bindings height(base) length transforms 4`] = `
+Object {
+  "height": "0.6250em",
+}
+`;
+
+exports[`css bindings height(base) using alias token directly 1`] = `"height: 320px;"`;
+
+exports[`css bindings height(base) using alias token directly 2`] = `
+Object {
+  "height": "320px",
+}
+`;
+
+exports[`css bindings height(base) using base value 1`] = `"height: 10px;"`;
+
+exports[`css bindings height(base) using base value 2`] = `
+Object {
+  "height": "10px",
+}
+`;
+
+exports[`css bindings height(sidebarIcon) 1`] = `"height: 22px;"`;
+
+exports[`css bindings height(sidebarIcon) 2`] = `
+Object {
+  "height": "22px",
+}
+`;
+
+exports[`css bindings height(sidebarIcon) length transforms 1`] = `"height: 1.3750rem;"`;
+
+exports[`css bindings height(sidebarIcon) length transforms 2`] = `
+Object {
+  "height": "1.3750rem",
+}
+`;
+
+exports[`css bindings height(sidebarIcon) length transforms 3`] = `"height: 1.3750em;"`;
+
+exports[`css bindings height(sidebarIcon) length transforms 4`] = `
+Object {
+  "height": "1.3750em",
+}
+`;
+
+exports[`css bindings height(sidebarIcon) using alias token directly 1`] = `"height: 320px;"`;
+
+exports[`css bindings height(sidebarIcon) using alias token directly 2`] = `
+Object {
+  "height": "320px",
+}
+`;
+
+exports[`css bindings height(sidebarIcon) using base value 1`] = `"height: 10px;"`;
+
+exports[`css bindings height(sidebarIcon) using base value 2`] = `
+Object {
+  "height": "10px",
+}
+`;
+
+exports[`css bindings left(base) 1`] = `"left: 20px;"`;
+
+exports[`css bindings left(base) 2`] = `
+Object {
+  "left": "20px",
+}
+`;
+
+exports[`css bindings left(base) length transforms 1`] = `"left: 1.2500rem;"`;
+
+exports[`css bindings left(base) length transforms 2`] = `
+Object {
+  "left": "1.2500rem",
+}
+`;
+
+exports[`css bindings left(base) length transforms 3`] = `"left: 1.2500em;"`;
+
+exports[`css bindings left(base) length transforms 4`] = `
+Object {
+  "left": "1.2500em",
+}
+`;
+
+exports[`css bindings left(base) using alias token directly 1`] = `"left: 25px;"`;
+
+exports[`css bindings left(base) using alias token directly 2`] = `
+Object {
+  "left": "25px",
+}
+`;
+
+exports[`css bindings left(base) using base value 1`] = `"left: 20px;"`;
+
+exports[`css bindings left(base) using base value 2`] = `
+Object {
+  "left": "20px",
+}
+`;
+
+exports[`css bindings left(popup) 1`] = `"left: 15px;"`;
+
+exports[`css bindings left(popup) 2`] = `
+Object {
+  "left": "15px",
+}
+`;
+
+exports[`css bindings left(popup) length transforms 1`] = `"left: 0.9375rem;"`;
+
+exports[`css bindings left(popup) length transforms 2`] = `
+Object {
+  "left": "0.9375rem",
+}
+`;
+
+exports[`css bindings left(popup) length transforms 3`] = `"left: 0.9375em;"`;
+
+exports[`css bindings left(popup) length transforms 4`] = `
+Object {
+  "left": "0.9375em",
+}
+`;
+
+exports[`css bindings left(popup) using alias token directly 1`] = `"left: 25px;"`;
+
+exports[`css bindings left(popup) using alias token directly 2`] = `
+Object {
+  "left": "25px",
+}
+`;
+
+exports[`css bindings left(popup) using base value 1`] = `"left: 20px;"`;
+
+exports[`css bindings left(popup) using base value 2`] = `
+Object {
+  "left": "20px",
+}
+`;
+
+exports[`css bindings left(toast_notification) 1`] = `"left: 5%;"`;
+
+exports[`css bindings left(toast_notification) 2`] = `
+Object {
+  "left": "5%",
+}
+`;
+
+exports[`css bindings left(toast_notification) length transforms 1`] = `"left: 1.0000rem;"`;
+
+exports[`css bindings left(toast_notification) length transforms 2`] = `
+Object {
+  "left": "1.0000rem",
+}
+`;
+
+exports[`css bindings left(toast_notification) length transforms 3`] = `"left: 1.0000em;"`;
+
+exports[`css bindings left(toast_notification) length transforms 4`] = `
+Object {
+  "left": "1.0000em",
+}
+`;
+
+exports[`css bindings left(toast_notification) using alias token directly 1`] = `"left: 25px;"`;
+
+exports[`css bindings left(toast_notification) using alias token directly 2`] = `
+Object {
+  "left": "25px",
+}
+`;
+
+exports[`css bindings left(toast_notification) using base value 1`] = `"left: 20px;"`;
+
+exports[`css bindings left(toast_notification) using base value 2`] = `
+Object {
+  "left": "20px",
+}
+`;
+
+exports[`css bindings letterSpacing(base) 1`] = `"letter-spacing: 0px;"`;
+
+exports[`css bindings letterSpacing(base) 2`] = `
+Object {
+  "letterSpacing": "0px",
+}
+`;
+
+exports[`css bindings letterSpacing(base) length transforms 1`] = `"letter-spacing: 0.0000rem;"`;
+
+exports[`css bindings letterSpacing(base) length transforms 2`] = `
+Object {
+  "letterSpacing": "0.0000rem",
+}
+`;
+
+exports[`css bindings letterSpacing(base) length transforms 3`] = `"letter-spacing: 0.0000em;"`;
+
+exports[`css bindings letterSpacing(base) length transforms 4`] = `
+Object {
+  "letterSpacing": "0.0000em",
+}
+`;
+
+exports[`css bindings letterSpacing(base) using alias token directly 1`] = `"letter-spacing: 200px;"`;
+
+exports[`css bindings letterSpacing(base) using alias token directly 2`] = `
+Object {
+  "letterSpacing": "200px",
+}
+`;
+
+exports[`css bindings letterSpacing(base) using base value 1`] = `"letter-spacing: 0px;"`;
+
+exports[`css bindings letterSpacing(base) using base value 2`] = `
+Object {
+  "letterSpacing": "0px",
+}
+`;
+
+exports[`css bindings letterSpacing(lead) 1`] = `"letter-spacing: 2px;"`;
+
+exports[`css bindings letterSpacing(lead) 2`] = `
+Object {
+  "letterSpacing": "2px",
+}
+`;
+
+exports[`css bindings letterSpacing(lead) length transforms 1`] = `"letter-spacing: 0.1250rem;"`;
+
+exports[`css bindings letterSpacing(lead) length transforms 2`] = `
+Object {
+  "letterSpacing": "0.1250rem",
+}
+`;
+
+exports[`css bindings letterSpacing(lead) length transforms 3`] = `"letter-spacing: 0.1250em;"`;
+
+exports[`css bindings letterSpacing(lead) length transforms 4`] = `
+Object {
+  "letterSpacing": "0.1250em",
+}
+`;
+
+exports[`css bindings letterSpacing(lead) using alias token directly 1`] = `"letter-spacing: 200px;"`;
+
+exports[`css bindings letterSpacing(lead) using alias token directly 2`] = `
+Object {
+  "letterSpacing": "200px",
+}
+`;
+
+exports[`css bindings letterSpacing(lead) using base value 1`] = `"letter-spacing: 0px;"`;
+
+exports[`css bindings letterSpacing(lead) using base value 2`] = `
+Object {
+  "letterSpacing": "0px",
+}
+`;
+
+exports[`css bindings lineHeight(base) 1`] = `"line-height: 1.2;"`;
+
+exports[`css bindings lineHeight(base) 2`] = `
+Object {
+  "lineHeight": 1.2,
+}
+`;
+
+exports[`css bindings lineHeight(base) using alias token directly 1`] = `"line-height: 200;"`;
+
+exports[`css bindings lineHeight(base) using alias token directly 2`] = `
+Object {
+  "lineHeight": 200,
+}
+`;
+
+exports[`css bindings lineHeight(base) using base value 1`] = `"line-height: 1.2;"`;
+
+exports[`css bindings lineHeight(base) using base value 2`] = `
+Object {
+  "lineHeight": 1.2,
+}
+`;
+
+exports[`css bindings lineHeight(copy) 1`] = `"line-height: 1.55;"`;
+
+exports[`css bindings lineHeight(copy) 2`] = `
+Object {
+  "lineHeight": 1.55,
+}
+`;
+
+exports[`css bindings lineHeight(copy) using alias token directly 1`] = `"line-height: 200;"`;
+
+exports[`css bindings lineHeight(copy) using alias token directly 2`] = `
+Object {
+  "lineHeight": 200,
+}
+`;
+
+exports[`css bindings lineHeight(copy) using base value 1`] = `"line-height: 1.2;"`;
+
+exports[`css bindings lineHeight(copy) using base value 2`] = `
+Object {
+  "lineHeight": 1.2,
+}
+`;
+
+exports[`css bindings margin(base) 1`] = `"margin: 10px;"`;
+
+exports[`css bindings margin(base) 2`] = `
+Object {
+  "margin": "10px",
+}
+`;
+
+exports[`css bindings margin(base) length transforms 1`] = `"margin: 0.6250rem;"`;
+
+exports[`css bindings margin(base) length transforms 2`] = `
+Object {
+  "margin": "0.6250rem",
+}
+`;
+
+exports[`css bindings margin(base) length transforms 3`] = `"margin: 0.6250em;"`;
+
+exports[`css bindings margin(base) length transforms 4`] = `
+Object {
+  "margin": "0.6250em",
+}
+`;
+
+exports[`css bindings margin(base) using alias token directly 1`] = `"margin: 6px;"`;
+
+exports[`css bindings margin(base) using alias token directly 2`] = `
+Object {
+  "margin": "6px",
+}
+`;
+
+exports[`css bindings margin(base) using base value 1`] = `"margin: 10px;"`;
+
+exports[`css bindings margin(base) using base value 2`] = `
+Object {
+  "margin": "10px",
+}
+`;
+
+exports[`css bindings margin(paragraph) 1`] = `"margin: 0px 0px 15px;"`;
+
+exports[`css bindings margin(paragraph) 2`] = `
+Object {
+  "margin": "0px 0px 15px",
+}
+`;
+
+exports[`css bindings margin(paragraph) length transforms 1`] = `"margin: 0.0000rem 0.0000rem 0.9375rem;"`;
+
+exports[`css bindings margin(paragraph) length transforms 2`] = `
+Object {
+  "margin": "0.0000rem 0.0000rem 0.9375rem",
+}
+`;
+
+exports[`css bindings margin(paragraph) length transforms 3`] = `"margin: 0.0000em 0.0000em 0.9375em;"`;
+
+exports[`css bindings margin(paragraph) length transforms 4`] = `
+Object {
+  "margin": "0.0000em 0.0000em 0.9375em",
+}
+`;
+
+exports[`css bindings margin(paragraph) using alias token directly 1`] = `"margin: 6px;"`;
+
+exports[`css bindings margin(paragraph) using alias token directly 2`] = `
+Object {
+  "margin": "6px",
+}
+`;
+
+exports[`css bindings margin(paragraph) using base value 1`] = `"margin: 10px;"`;
+
+exports[`css bindings margin(paragraph) using base value 2`] = `
+Object {
+  "margin": "10px",
+}
+`;
+
+exports[`css bindings marginBottom(base) 1`] = `"margin-bottom: 10px;"`;
+
+exports[`css bindings marginBottom(base) 2`] = `
+Object {
+  "marginBottom": "10px",
+}
+`;
+
+exports[`css bindings marginBottom(base) length transforms 1`] = `"margin-bottom: 0.6250rem;"`;
+
+exports[`css bindings marginBottom(base) length transforms 2`] = `
+Object {
+  "marginBottom": "0.6250rem",
+}
+`;
+
+exports[`css bindings marginBottom(base) length transforms 3`] = `"margin-bottom: 0.6250em;"`;
+
+exports[`css bindings marginBottom(base) length transforms 4`] = `
+Object {
+  "marginBottom": "0.6250em",
+}
+`;
+
+exports[`css bindings marginBottom(base) using alias token directly 1`] = `"margin-bottom: 6px;"`;
+
+exports[`css bindings marginBottom(base) using alias token directly 2`] = `
+Object {
+  "marginBottom": "6px",
+}
+`;
+
+exports[`css bindings marginBottom(base) using base value 1`] = `"margin-bottom: 10px;"`;
+
+exports[`css bindings marginBottom(base) using base value 2`] = `
+Object {
+  "marginBottom": "10px",
+}
+`;
+
+exports[`css bindings marginBottom(paragraph) 1`] = `"margin-bottom: 0px 0px 15px;"`;
+
+exports[`css bindings marginBottom(paragraph) 2`] = `
+Object {
+  "marginBottom": "0px 0px 15px",
+}
+`;
+
+exports[`css bindings marginBottom(paragraph) length transforms 1`] = `"margin-bottom: 0.0000rem 0.0000rem 0.9375rem;"`;
+
+exports[`css bindings marginBottom(paragraph) length transforms 2`] = `
+Object {
+  "marginBottom": "0.0000rem 0.0000rem 0.9375rem",
+}
+`;
+
+exports[`css bindings marginBottom(paragraph) length transforms 3`] = `"margin-bottom: 0.0000em 0.0000em 0.9375em;"`;
+
+exports[`css bindings marginBottom(paragraph) length transforms 4`] = `
+Object {
+  "marginBottom": "0.0000em 0.0000em 0.9375em",
+}
+`;
+
+exports[`css bindings marginBottom(paragraph) using alias token directly 1`] = `"margin-bottom: 6px;"`;
+
+exports[`css bindings marginBottom(paragraph) using alias token directly 2`] = `
+Object {
+  "marginBottom": "6px",
+}
+`;
+
+exports[`css bindings marginBottom(paragraph) using base value 1`] = `"margin-bottom: 10px;"`;
+
+exports[`css bindings marginBottom(paragraph) using base value 2`] = `
+Object {
+  "marginBottom": "10px",
+}
+`;
+
+exports[`css bindings marginLeft(base) 1`] = `"margin-left: 10px;"`;
+
+exports[`css bindings marginLeft(base) 2`] = `
+Object {
+  "marginLeft": "10px",
+}
+`;
+
+exports[`css bindings marginLeft(base) length transforms 1`] = `"margin-left: 0.6250rem;"`;
+
+exports[`css bindings marginLeft(base) length transforms 2`] = `
+Object {
+  "marginLeft": "0.6250rem",
+}
+`;
+
+exports[`css bindings marginLeft(base) length transforms 3`] = `"margin-left: 0.6250em;"`;
+
+exports[`css bindings marginLeft(base) length transforms 4`] = `
+Object {
+  "marginLeft": "0.6250em",
+}
+`;
+
+exports[`css bindings marginLeft(base) using alias token directly 1`] = `"margin-left: 6px;"`;
+
+exports[`css bindings marginLeft(base) using alias token directly 2`] = `
+Object {
+  "marginLeft": "6px",
+}
+`;
+
+exports[`css bindings marginLeft(base) using base value 1`] = `"margin-left: 10px;"`;
+
+exports[`css bindings marginLeft(base) using base value 2`] = `
+Object {
+  "marginLeft": "10px",
+}
+`;
+
+exports[`css bindings marginLeft(paragraph) 1`] = `"margin-left: 0px 0px 15px;"`;
+
+exports[`css bindings marginLeft(paragraph) 2`] = `
+Object {
+  "marginLeft": "0px 0px 15px",
+}
+`;
+
+exports[`css bindings marginLeft(paragraph) length transforms 1`] = `"margin-left: 0.0000rem 0.0000rem 0.9375rem;"`;
+
+exports[`css bindings marginLeft(paragraph) length transforms 2`] = `
+Object {
+  "marginLeft": "0.0000rem 0.0000rem 0.9375rem",
+}
+`;
+
+exports[`css bindings marginLeft(paragraph) length transforms 3`] = `"margin-left: 0.0000em 0.0000em 0.9375em;"`;
+
+exports[`css bindings marginLeft(paragraph) length transforms 4`] = `
+Object {
+  "marginLeft": "0.0000em 0.0000em 0.9375em",
+}
+`;
+
+exports[`css bindings marginLeft(paragraph) using alias token directly 1`] = `"margin-left: 6px;"`;
+
+exports[`css bindings marginLeft(paragraph) using alias token directly 2`] = `
+Object {
+  "marginLeft": "6px",
+}
+`;
+
+exports[`css bindings marginLeft(paragraph) using base value 1`] = `"margin-left: 10px;"`;
+
+exports[`css bindings marginLeft(paragraph) using base value 2`] = `
+Object {
+  "marginLeft": "10px",
+}
+`;
+
+exports[`css bindings marginRight(base) 1`] = `"margin-right: 10px;"`;
+
+exports[`css bindings marginRight(base) 2`] = `
+Object {
+  "marginRight": "10px",
+}
+`;
+
+exports[`css bindings marginRight(base) length transforms 1`] = `"margin-right: 0.6250rem;"`;
+
+exports[`css bindings marginRight(base) length transforms 2`] = `
+Object {
+  "marginRight": "0.6250rem",
+}
+`;
+
+exports[`css bindings marginRight(base) length transforms 3`] = `"margin-right: 0.6250em;"`;
+
+exports[`css bindings marginRight(base) length transforms 4`] = `
+Object {
+  "marginRight": "0.6250em",
+}
+`;
+
+exports[`css bindings marginRight(base) using alias token directly 1`] = `"margin-right: 6px;"`;
+
+exports[`css bindings marginRight(base) using alias token directly 2`] = `
+Object {
+  "marginRight": "6px",
+}
+`;
+
+exports[`css bindings marginRight(base) using base value 1`] = `"margin-right: 10px;"`;
+
+exports[`css bindings marginRight(base) using base value 2`] = `
+Object {
+  "marginRight": "10px",
+}
+`;
+
+exports[`css bindings marginRight(paragraph) 1`] = `"margin-right: 0px 0px 15px;"`;
+
+exports[`css bindings marginRight(paragraph) 2`] = `
+Object {
+  "marginRight": "0px 0px 15px",
+}
+`;
+
+exports[`css bindings marginRight(paragraph) length transforms 1`] = `"margin-right: 0.0000rem 0.0000rem 0.9375rem;"`;
+
+exports[`css bindings marginRight(paragraph) length transforms 2`] = `
+Object {
+  "marginRight": "0.0000rem 0.0000rem 0.9375rem",
+}
+`;
+
+exports[`css bindings marginRight(paragraph) length transforms 3`] = `"margin-right: 0.0000em 0.0000em 0.9375em;"`;
+
+exports[`css bindings marginRight(paragraph) length transforms 4`] = `
+Object {
+  "marginRight": "0.0000em 0.0000em 0.9375em",
+}
+`;
+
+exports[`css bindings marginRight(paragraph) using alias token directly 1`] = `"margin-right: 6px;"`;
+
+exports[`css bindings marginRight(paragraph) using alias token directly 2`] = `
+Object {
+  "marginRight": "6px",
+}
+`;
+
+exports[`css bindings marginRight(paragraph) using base value 1`] = `"margin-right: 10px;"`;
+
+exports[`css bindings marginRight(paragraph) using base value 2`] = `
+Object {
+  "marginRight": "10px",
+}
+`;
+
+exports[`css bindings marginTop(base) 1`] = `"margin-top: 10px;"`;
+
+exports[`css bindings marginTop(base) 2`] = `
+Object {
+  "marginTop": "10px",
+}
+`;
+
+exports[`css bindings marginTop(base) length transforms 1`] = `"margin-top: 0.6250rem;"`;
+
+exports[`css bindings marginTop(base) length transforms 2`] = `
+Object {
+  "marginTop": "0.6250rem",
+}
+`;
+
+exports[`css bindings marginTop(base) length transforms 3`] = `"margin-top: 0.6250em;"`;
+
+exports[`css bindings marginTop(base) length transforms 4`] = `
+Object {
+  "marginTop": "0.6250em",
+}
+`;
+
+exports[`css bindings marginTop(base) using alias token directly 1`] = `"margin-top: 6px;"`;
+
+exports[`css bindings marginTop(base) using alias token directly 2`] = `
+Object {
+  "marginTop": "6px",
+}
+`;
+
+exports[`css bindings marginTop(base) using base value 1`] = `"margin-top: 10px;"`;
+
+exports[`css bindings marginTop(base) using base value 2`] = `
+Object {
+  "marginTop": "10px",
+}
+`;
+
+exports[`css bindings marginTop(paragraph) 1`] = `"margin-top: 0px 0px 15px;"`;
+
+exports[`css bindings marginTop(paragraph) 2`] = `
+Object {
+  "marginTop": "0px 0px 15px",
+}
+`;
+
+exports[`css bindings marginTop(paragraph) length transforms 1`] = `"margin-top: 0.0000rem 0.0000rem 0.9375rem;"`;
+
+exports[`css bindings marginTop(paragraph) length transforms 2`] = `
+Object {
+  "marginTop": "0.0000rem 0.0000rem 0.9375rem",
+}
+`;
+
+exports[`css bindings marginTop(paragraph) length transforms 3`] = `"margin-top: 0.0000em 0.0000em 0.9375em;"`;
+
+exports[`css bindings marginTop(paragraph) length transforms 4`] = `
+Object {
+  "marginTop": "0.0000em 0.0000em 0.9375em",
+}
+`;
+
+exports[`css bindings marginTop(paragraph) using alias token directly 1`] = `"margin-top: 6px;"`;
+
+exports[`css bindings marginTop(paragraph) using alias token directly 2`] = `
+Object {
+  "marginTop": "6px",
+}
+`;
+
+exports[`css bindings marginTop(paragraph) using base value 1`] = `"margin-top: 10px;"`;
+
+exports[`css bindings marginTop(paragraph) using base value 2`] = `
+Object {
+  "marginTop": "10px",
+}
+`;
+
+exports[`css bindings maxHeight(base) 1`] = `"max-height: 120px;"`;
+
+exports[`css bindings maxHeight(base) 2`] = `
+Object {
+  "maxHeight": "120px",
+}
+`;
+
+exports[`css bindings maxHeight(base) length transforms 1`] = `"max-height: 7.5000rem;"`;
+
+exports[`css bindings maxHeight(base) length transforms 2`] = `
+Object {
+  "maxHeight": "7.5000rem",
+}
+`;
+
+exports[`css bindings maxHeight(base) length transforms 3`] = `"max-height: 7.5000em;"`;
+
+exports[`css bindings maxHeight(base) length transforms 4`] = `
+Object {
+  "maxHeight": "7.5000em",
+}
+`;
+
+exports[`css bindings maxHeight(base) using alias token directly 1`] = `"max-height: 320px;"`;
+
+exports[`css bindings maxHeight(base) using alias token directly 2`] = `
+Object {
+  "maxHeight": "320px",
+}
+`;
+
+exports[`css bindings maxHeight(base) using base value 1`] = `"max-height: 120px;"`;
+
+exports[`css bindings maxHeight(base) using base value 2`] = `
+Object {
+  "maxHeight": "120px",
+}
+`;
+
+exports[`css bindings maxHeight(usersList) 1`] = `"max-height: 200px;"`;
+
+exports[`css bindings maxHeight(usersList) 2`] = `
+Object {
+  "maxHeight": "200px",
+}
+`;
+
+exports[`css bindings maxHeight(usersList) length transforms 1`] = `"max-height: 12.5000rem;"`;
+
+exports[`css bindings maxHeight(usersList) length transforms 2`] = `
+Object {
+  "maxHeight": "12.5000rem",
+}
+`;
+
+exports[`css bindings maxHeight(usersList) length transforms 3`] = `"max-height: 12.5000em;"`;
+
+exports[`css bindings maxHeight(usersList) length transforms 4`] = `
+Object {
+  "maxHeight": "12.5000em",
+}
+`;
+
+exports[`css bindings maxHeight(usersList) using alias token directly 1`] = `"max-height: 320px;"`;
+
+exports[`css bindings maxHeight(usersList) using alias token directly 2`] = `
+Object {
+  "maxHeight": "320px",
+}
+`;
+
+exports[`css bindings maxHeight(usersList) using base value 1`] = `"max-height: 120px;"`;
+
+exports[`css bindings maxHeight(usersList) using base value 2`] = `
+Object {
+  "maxHeight": "120px",
+}
+`;
+
+exports[`css bindings maxWidth(base) 1`] = `"max-width: 1024px;"`;
+
+exports[`css bindings maxWidth(base) 2`] = `
+Object {
+  "maxWidth": "1024px",
+}
+`;
+
+exports[`css bindings maxWidth(base) length transforms 1`] = `"max-width: 64.0000rem;"`;
+
+exports[`css bindings maxWidth(base) length transforms 2`] = `
+Object {
+  "maxWidth": "64.0000rem",
+}
+`;
+
+exports[`css bindings maxWidth(base) length transforms 3`] = `"max-width: 64.0000em;"`;
+
+exports[`css bindings maxWidth(base) length transforms 4`] = `
+Object {
+  "maxWidth": "64.0000em",
+}
+`;
+
+exports[`css bindings maxWidth(base) using alias token directly 1`] = `"max-width: 320px;"`;
+
+exports[`css bindings maxWidth(base) using alias token directly 2`] = `
+Object {
+  "maxWidth": "320px",
+}
+`;
+
+exports[`css bindings maxWidth(base) using base value 1`] = `"max-width: 1024px;"`;
+
+exports[`css bindings maxWidth(base) using base value 2`] = `
+Object {
+  "maxWidth": "1024px",
+}
+`;
+
+exports[`css bindings maxWidth(md) 1`] = `"max-width: 720px;"`;
+
+exports[`css bindings maxWidth(md) 2`] = `
+Object {
+  "maxWidth": "720px",
+}
+`;
+
+exports[`css bindings maxWidth(md) length transforms 1`] = `"max-width: 45.0000rem;"`;
+
+exports[`css bindings maxWidth(md) length transforms 2`] = `
+Object {
+  "maxWidth": "45.0000rem",
+}
+`;
+
+exports[`css bindings maxWidth(md) length transforms 3`] = `"max-width: 45.0000em;"`;
+
+exports[`css bindings maxWidth(md) length transforms 4`] = `
+Object {
+  "maxWidth": "45.0000em",
+}
+`;
+
+exports[`css bindings maxWidth(md) using alias token directly 1`] = `"max-width: 320px;"`;
+
+exports[`css bindings maxWidth(md) using alias token directly 2`] = `
+Object {
+  "maxWidth": "320px",
+}
+`;
+
+exports[`css bindings maxWidth(md) using base value 1`] = `"max-width: 1024px;"`;
+
+exports[`css bindings maxWidth(md) using base value 2`] = `
+Object {
+  "maxWidth": "1024px",
+}
+`;
+
+exports[`css bindings maxWidth(sm) 1`] = `"max-width: 320px;"`;
+
+exports[`css bindings maxWidth(sm) 2`] = `
+Object {
+  "maxWidth": "320px",
+}
+`;
+
+exports[`css bindings maxWidth(sm) length transforms 1`] = `"max-width: 20.0000rem;"`;
+
+exports[`css bindings maxWidth(sm) length transforms 2`] = `
+Object {
+  "maxWidth": "20.0000rem",
+}
+`;
+
+exports[`css bindings maxWidth(sm) length transforms 3`] = `"max-width: 20.0000em;"`;
+
+exports[`css bindings maxWidth(sm) length transforms 4`] = `
+Object {
+  "maxWidth": "20.0000em",
+}
+`;
+
+exports[`css bindings maxWidth(sm) using alias token directly 1`] = `"max-width: 320px;"`;
+
+exports[`css bindings maxWidth(sm) using alias token directly 2`] = `
+Object {
+  "maxWidth": "320px",
+}
+`;
+
+exports[`css bindings maxWidth(sm) using base value 1`] = `"max-width: 1024px;"`;
+
+exports[`css bindings maxWidth(sm) using base value 2`] = `
+Object {
+  "maxWidth": "1024px",
+}
+`;
+
+exports[`css bindings minHeight(base) 1`] = `"min-height: 10em;"`;
+
+exports[`css bindings minHeight(base) 2`] = `
+Object {
+  "minHeight": "10em",
+}
+`;
+
+exports[`css bindings minHeight(base) length transforms 1`] = `"min-height: 1.0000rem;"`;
+
+exports[`css bindings minHeight(base) length transforms 2`] = `
+Object {
+  "minHeight": "1.0000rem",
+}
+`;
+
+exports[`css bindings minHeight(base) length transforms 3`] = `"min-height: 1.0000em;"`;
+
+exports[`css bindings minHeight(base) length transforms 4`] = `
+Object {
+  "minHeight": "1.0000em",
+}
+`;
+
+exports[`css bindings minHeight(base) using alias token directly 1`] = `"min-height: 320px;"`;
+
+exports[`css bindings minHeight(base) using alias token directly 2`] = `
+Object {
+  "minHeight": "320px",
+}
+`;
+
+exports[`css bindings minHeight(base) using base value 1`] = `"min-height: 10em;"`;
+
+exports[`css bindings minHeight(base) using base value 2`] = `
+Object {
+  "minHeight": "10em",
+}
+`;
+
+exports[`css bindings minHeight(emptyState) 1`] = `"min-height: 120px;"`;
+
+exports[`css bindings minHeight(emptyState) 2`] = `
+Object {
+  "minHeight": "120px",
+}
+`;
+
+exports[`css bindings minHeight(emptyState) length transforms 1`] = `"min-height: 7.5000rem;"`;
+
+exports[`css bindings minHeight(emptyState) length transforms 2`] = `
+Object {
+  "minHeight": "7.5000rem",
+}
+`;
+
+exports[`css bindings minHeight(emptyState) length transforms 3`] = `"min-height: 7.5000em;"`;
+
+exports[`css bindings minHeight(emptyState) length transforms 4`] = `
+Object {
+  "minHeight": "7.5000em",
+}
+`;
+
+exports[`css bindings minHeight(emptyState) using alias token directly 1`] = `"min-height: 320px;"`;
+
+exports[`css bindings minHeight(emptyState) using alias token directly 2`] = `
+Object {
+  "minHeight": "320px",
+}
+`;
+
+exports[`css bindings minHeight(emptyState) using base value 1`] = `"min-height: 10em;"`;
+
+exports[`css bindings minHeight(emptyState) using base value 2`] = `
+Object {
+  "minHeight": "10em",
+}
+`;
+
+exports[`css bindings minWidth(base) 1`] = `"min-width: 100px;"`;
+
+exports[`css bindings minWidth(base) 2`] = `
+Object {
+  "minWidth": "100px",
+}
+`;
+
+exports[`css bindings minWidth(base) length transforms 1`] = `"min-width: 6.2500rem;"`;
+
+exports[`css bindings minWidth(base) length transforms 2`] = `
+Object {
+  "minWidth": "6.2500rem",
+}
+`;
+
+exports[`css bindings minWidth(base) length transforms 3`] = `"min-width: 6.2500em;"`;
+
+exports[`css bindings minWidth(base) length transforms 4`] = `
+Object {
+  "minWidth": "6.2500em",
+}
+`;
+
+exports[`css bindings minWidth(base) using alias token directly 1`] = `"min-width: 320px;"`;
+
+exports[`css bindings minWidth(base) using alias token directly 2`] = `
+Object {
+  "minWidth": "320px",
+}
+`;
+
+exports[`css bindings minWidth(base) using base value 1`] = `"min-width: 100px;"`;
+
+exports[`css bindings minWidth(base) using base value 2`] = `
+Object {
+  "minWidth": "100px",
+}
+`;
+
+exports[`css bindings minWidth(emptyState) 1`] = `"min-width: 120px;"`;
+
+exports[`css bindings minWidth(emptyState) 2`] = `
+Object {
+  "minWidth": "120px",
+}
+`;
+
+exports[`css bindings minWidth(emptyState) length transforms 1`] = `"min-width: 7.5000rem;"`;
+
+exports[`css bindings minWidth(emptyState) length transforms 2`] = `
+Object {
+  "minWidth": "7.5000rem",
+}
+`;
+
+exports[`css bindings minWidth(emptyState) length transforms 3`] = `"min-width: 7.5000em;"`;
+
+exports[`css bindings minWidth(emptyState) length transforms 4`] = `
+Object {
+  "minWidth": "7.5000em",
+}
+`;
+
+exports[`css bindings minWidth(emptyState) using alias token directly 1`] = `"min-width: 320px;"`;
+
+exports[`css bindings minWidth(emptyState) using alias token directly 2`] = `
+Object {
+  "minWidth": "320px",
+}
+`;
+
+exports[`css bindings minWidth(emptyState) using base value 1`] = `"min-width: 100px;"`;
+
+exports[`css bindings minWidth(emptyState) using base value 2`] = `
+Object {
+  "minWidth": "100px",
+}
+`;
+
+exports[`css bindings opacity(base) 1`] = `"opacity: 1;"`;
+
+exports[`css bindings opacity(base) 2`] = `
+Object {
+  "opacity": 1,
+}
+`;
+
+exports[`css bindings opacity(base) using alias token directly 1`] = `"opacity: solid;"`;
+
+exports[`css bindings opacity(base) using alias token directly 2`] = `
+Object {
+  "opacity": "solid",
+}
+`;
+
+exports[`css bindings opacity(base) using base value 1`] = `"opacity: 1;"`;
+
+exports[`css bindings opacity(base) using base value 2`] = `
+Object {
+  "opacity": 1,
+}
+`;
+
+exports[`css bindings opacity(disabled) 1`] = `"opacity: 0.35;"`;
+
+exports[`css bindings opacity(disabled) 2`] = `
+Object {
+  "opacity": 0.35,
+}
+`;
+
+exports[`css bindings opacity(disabled) using alias token directly 1`] = `"opacity: solid;"`;
+
+exports[`css bindings opacity(disabled) using alias token directly 2`] = `
+Object {
+  "opacity": "solid",
+}
+`;
+
+exports[`css bindings opacity(disabled) using base value 1`] = `"opacity: 1;"`;
+
+exports[`css bindings opacity(disabled) using base value 2`] = `
+Object {
+  "opacity": 1,
+}
+`;
+
+exports[`css bindings padding(base) 1`] = `"padding: 4px;"`;
+
+exports[`css bindings padding(base) 2`] = `
+Object {
+  "padding": "4px",
+}
+`;
+
+exports[`css bindings padding(base) length transforms 1`] = `"padding: 0.2500rem;"`;
+
+exports[`css bindings padding(base) length transforms 2`] = `
+Object {
+  "padding": "0.2500rem",
+}
+`;
+
+exports[`css bindings padding(base) length transforms 3`] = `"padding: 0.2500em;"`;
+
+exports[`css bindings padding(base) length transforms 4`] = `
+Object {
+  "padding": "0.2500em",
+}
+`;
+
+exports[`css bindings padding(base) using alias token directly 1`] = `"padding: 6px;"`;
+
+exports[`css bindings padding(base) using alias token directly 2`] = `
+Object {
+  "padding": "6px",
+}
+`;
+
+exports[`css bindings padding(base) using base value 1`] = `"padding: 4px;"`;
+
+exports[`css bindings padding(base) using base value 2`] = `
+Object {
+  "padding": "4px",
+}
+`;
+
+exports[`css bindings padding(button) 1`] = `"padding: 8px 6px;"`;
+
+exports[`css bindings padding(button) 2`] = `
+Object {
+  "padding": "8px 6px",
+}
+`;
+
+exports[`css bindings padding(button) length transforms 1`] = `"padding: 0.5000rem 0.3750rem;"`;
+
+exports[`css bindings padding(button) length transforms 2`] = `
+Object {
+  "padding": "0.5000rem 0.3750rem",
+}
+`;
+
+exports[`css bindings padding(button) length transforms 3`] = `"padding: 0.5000em 0.3750em;"`;
+
+exports[`css bindings padding(button) length transforms 4`] = `
+Object {
+  "padding": "0.5000em 0.3750em",
+}
+`;
+
+exports[`css bindings padding(button) using alias token directly 1`] = `"padding: 6px;"`;
+
+exports[`css bindings padding(button) using alias token directly 2`] = `
+Object {
+  "padding": "6px",
+}
+`;
+
+exports[`css bindings padding(button) using base value 1`] = `"padding: 4px;"`;
+
+exports[`css bindings padding(button) using base value 2`] = `
+Object {
+  "padding": "4px",
+}
+`;
+
+exports[`css bindings padding(input) 1`] = `"padding: 2px 4px 10px;"`;
+
+exports[`css bindings padding(input) 2`] = `
+Object {
+  "padding": "2px 4px 10px",
+}
+`;
+
+exports[`css bindings padding(input) length transforms 1`] = `"padding: 1.0000rem;"`;
+
+exports[`css bindings padding(input) length transforms 2`] = `
+Object {
+  "padding": "1.0000rem",
+}
+`;
+
+exports[`css bindings padding(input) length transforms 3`] = `"padding: 1.0000em;"`;
+
+exports[`css bindings padding(input) length transforms 4`] = `
+Object {
+  "padding": "1.0000em",
+}
+`;
+
+exports[`css bindings padding(input) using alias token directly 1`] = `"padding: 6px;"`;
+
+exports[`css bindings padding(input) using alias token directly 2`] = `
+Object {
+  "padding": "6px",
+}
+`;
+
+exports[`css bindings padding(input) using base value 1`] = `"padding: 4px;"`;
+
+exports[`css bindings padding(input) using base value 2`] = `
+Object {
+  "padding": "4px",
+}
+`;
+
+exports[`css bindings paddingBottom(base) 1`] = `"padding-bottom: 4px;"`;
+
+exports[`css bindings paddingBottom(base) 2`] = `
+Object {
+  "paddingBottom": "4px",
+}
+`;
+
+exports[`css bindings paddingBottom(base) length transforms 1`] = `"padding-bottom: 0.2500rem;"`;
+
+exports[`css bindings paddingBottom(base) length transforms 2`] = `
+Object {
+  "paddingBottom": "0.2500rem",
+}
+`;
+
+exports[`css bindings paddingBottom(base) length transforms 3`] = `"padding-bottom: 0.2500em;"`;
+
+exports[`css bindings paddingBottom(base) length transforms 4`] = `
+Object {
+  "paddingBottom": "0.2500em",
+}
+`;
+
+exports[`css bindings paddingBottom(base) using alias token directly 1`] = `"padding-bottom: 6px;"`;
+
+exports[`css bindings paddingBottom(base) using alias token directly 2`] = `
+Object {
+  "paddingBottom": "6px",
+}
+`;
+
+exports[`css bindings paddingBottom(base) using base value 1`] = `"padding-bottom: 4px;"`;
+
+exports[`css bindings paddingBottom(base) using base value 2`] = `
+Object {
+  "paddingBottom": "4px",
+}
+`;
+
+exports[`css bindings paddingBottom(button) 1`] = `"padding-bottom: 8px 6px;"`;
+
+exports[`css bindings paddingBottom(button) 2`] = `
+Object {
+  "paddingBottom": "8px 6px",
+}
+`;
+
+exports[`css bindings paddingBottom(button) length transforms 1`] = `"padding-bottom: 0.5000rem 0.3750rem;"`;
+
+exports[`css bindings paddingBottom(button) length transforms 2`] = `
+Object {
+  "paddingBottom": "0.5000rem 0.3750rem",
+}
+`;
+
+exports[`css bindings paddingBottom(button) length transforms 3`] = `"padding-bottom: 0.5000em 0.3750em;"`;
+
+exports[`css bindings paddingBottom(button) length transforms 4`] = `
+Object {
+  "paddingBottom": "0.5000em 0.3750em",
+}
+`;
+
+exports[`css bindings paddingBottom(button) using alias token directly 1`] = `"padding-bottom: 6px;"`;
+
+exports[`css bindings paddingBottom(button) using alias token directly 2`] = `
+Object {
+  "paddingBottom": "6px",
+}
+`;
+
+exports[`css bindings paddingBottom(button) using base value 1`] = `"padding-bottom: 4px;"`;
+
+exports[`css bindings paddingBottom(button) using base value 2`] = `
+Object {
+  "paddingBottom": "4px",
+}
+`;
+
+exports[`css bindings paddingBottom(input) 1`] = `"padding-bottom: 2px 4px 10px;"`;
+
+exports[`css bindings paddingBottom(input) 2`] = `
+Object {
+  "paddingBottom": "2px 4px 10px",
+}
+`;
+
+exports[`css bindings paddingBottom(input) length transforms 1`] = `"padding-bottom: 1.0000rem;"`;
+
+exports[`css bindings paddingBottom(input) length transforms 2`] = `
+Object {
+  "paddingBottom": "1.0000rem",
+}
+`;
+
+exports[`css bindings paddingBottom(input) length transforms 3`] = `"padding-bottom: 1.0000em;"`;
+
+exports[`css bindings paddingBottom(input) length transforms 4`] = `
+Object {
+  "paddingBottom": "1.0000em",
+}
+`;
+
+exports[`css bindings paddingBottom(input) using alias token directly 1`] = `"padding-bottom: 6px;"`;
+
+exports[`css bindings paddingBottom(input) using alias token directly 2`] = `
+Object {
+  "paddingBottom": "6px",
+}
+`;
+
+exports[`css bindings paddingBottom(input) using base value 1`] = `"padding-bottom: 4px;"`;
+
+exports[`css bindings paddingBottom(input) using base value 2`] = `
+Object {
+  "paddingBottom": "4px",
+}
+`;
+
+exports[`css bindings paddingLeft(base) 1`] = `"padding-left: 4px;"`;
+
+exports[`css bindings paddingLeft(base) 2`] = `
+Object {
+  "paddingLeft": "4px",
+}
+`;
+
+exports[`css bindings paddingLeft(base) length transforms 1`] = `"padding-left: 0.2500rem;"`;
+
+exports[`css bindings paddingLeft(base) length transforms 2`] = `
+Object {
+  "paddingLeft": "0.2500rem",
+}
+`;
+
+exports[`css bindings paddingLeft(base) length transforms 3`] = `"padding-left: 0.2500em;"`;
+
+exports[`css bindings paddingLeft(base) length transforms 4`] = `
+Object {
+  "paddingLeft": "0.2500em",
+}
+`;
+
+exports[`css bindings paddingLeft(base) using alias token directly 1`] = `"padding-left: 6px;"`;
+
+exports[`css bindings paddingLeft(base) using alias token directly 2`] = `
+Object {
+  "paddingLeft": "6px",
+}
+`;
+
+exports[`css bindings paddingLeft(base) using base value 1`] = `"padding-left: 4px;"`;
+
+exports[`css bindings paddingLeft(base) using base value 2`] = `
+Object {
+  "paddingLeft": "4px",
+}
+`;
+
+exports[`css bindings paddingLeft(button) 1`] = `"padding-left: 8px 6px;"`;
+
+exports[`css bindings paddingLeft(button) 2`] = `
+Object {
+  "paddingLeft": "8px 6px",
+}
+`;
+
+exports[`css bindings paddingLeft(button) length transforms 1`] = `"padding-left: 0.5000rem 0.3750rem;"`;
+
+exports[`css bindings paddingLeft(button) length transforms 2`] = `
+Object {
+  "paddingLeft": "0.5000rem 0.3750rem",
+}
+`;
+
+exports[`css bindings paddingLeft(button) length transforms 3`] = `"padding-left: 0.5000em 0.3750em;"`;
+
+exports[`css bindings paddingLeft(button) length transforms 4`] = `
+Object {
+  "paddingLeft": "0.5000em 0.3750em",
+}
+`;
+
+exports[`css bindings paddingLeft(button) using alias token directly 1`] = `"padding-left: 6px;"`;
+
+exports[`css bindings paddingLeft(button) using alias token directly 2`] = `
+Object {
+  "paddingLeft": "6px",
+}
+`;
+
+exports[`css bindings paddingLeft(button) using base value 1`] = `"padding-left: 4px;"`;
+
+exports[`css bindings paddingLeft(button) using base value 2`] = `
+Object {
+  "paddingLeft": "4px",
+}
+`;
+
+exports[`css bindings paddingLeft(input) 1`] = `"padding-left: 2px 4px 10px;"`;
+
+exports[`css bindings paddingLeft(input) 2`] = `
+Object {
+  "paddingLeft": "2px 4px 10px",
+}
+`;
+
+exports[`css bindings paddingLeft(input) length transforms 1`] = `"padding-left: 1.0000rem;"`;
+
+exports[`css bindings paddingLeft(input) length transforms 2`] = `
+Object {
+  "paddingLeft": "1.0000rem",
+}
+`;
+
+exports[`css bindings paddingLeft(input) length transforms 3`] = `"padding-left: 1.0000em;"`;
+
+exports[`css bindings paddingLeft(input) length transforms 4`] = `
+Object {
+  "paddingLeft": "1.0000em",
+}
+`;
+
+exports[`css bindings paddingLeft(input) using alias token directly 1`] = `"padding-left: 6px;"`;
+
+exports[`css bindings paddingLeft(input) using alias token directly 2`] = `
+Object {
+  "paddingLeft": "6px",
+}
+`;
+
+exports[`css bindings paddingLeft(input) using base value 1`] = `"padding-left: 4px;"`;
+
+exports[`css bindings paddingLeft(input) using base value 2`] = `
+Object {
+  "paddingLeft": "4px",
+}
+`;
+
+exports[`css bindings paddingRight(base) 1`] = `"padding-right: 4px;"`;
+
+exports[`css bindings paddingRight(base) 2`] = `
+Object {
+  "paddingRight": "4px",
+}
+`;
+
+exports[`css bindings paddingRight(base) length transforms 1`] = `"padding-right: 0.2500rem;"`;
+
+exports[`css bindings paddingRight(base) length transforms 2`] = `
+Object {
+  "paddingRight": "0.2500rem",
+}
+`;
+
+exports[`css bindings paddingRight(base) length transforms 3`] = `"padding-right: 0.2500em;"`;
+
+exports[`css bindings paddingRight(base) length transforms 4`] = `
+Object {
+  "paddingRight": "0.2500em",
+}
+`;
+
+exports[`css bindings paddingRight(base) using alias token directly 1`] = `"padding-right: 6px;"`;
+
+exports[`css bindings paddingRight(base) using alias token directly 2`] = `
+Object {
+  "paddingRight": "6px",
+}
+`;
+
+exports[`css bindings paddingRight(base) using base value 1`] = `"padding-right: 4px;"`;
+
+exports[`css bindings paddingRight(base) using base value 2`] = `
+Object {
+  "paddingRight": "4px",
+}
+`;
+
+exports[`css bindings paddingRight(button) 1`] = `"padding-right: 8px 6px;"`;
+
+exports[`css bindings paddingRight(button) 2`] = `
+Object {
+  "paddingRight": "8px 6px",
+}
+`;
+
+exports[`css bindings paddingRight(button) length transforms 1`] = `"padding-right: 0.5000rem 0.3750rem;"`;
+
+exports[`css bindings paddingRight(button) length transforms 2`] = `
+Object {
+  "paddingRight": "0.5000rem 0.3750rem",
+}
+`;
+
+exports[`css bindings paddingRight(button) length transforms 3`] = `"padding-right: 0.5000em 0.3750em;"`;
+
+exports[`css bindings paddingRight(button) length transforms 4`] = `
+Object {
+  "paddingRight": "0.5000em 0.3750em",
+}
+`;
+
+exports[`css bindings paddingRight(button) using alias token directly 1`] = `"padding-right: 6px;"`;
+
+exports[`css bindings paddingRight(button) using alias token directly 2`] = `
+Object {
+  "paddingRight": "6px",
+}
+`;
+
+exports[`css bindings paddingRight(button) using base value 1`] = `"padding-right: 4px;"`;
+
+exports[`css bindings paddingRight(button) using base value 2`] = `
+Object {
+  "paddingRight": "4px",
+}
+`;
+
+exports[`css bindings paddingRight(input) 1`] = `"padding-right: 2px 4px 10px;"`;
+
+exports[`css bindings paddingRight(input) 2`] = `
+Object {
+  "paddingRight": "2px 4px 10px",
+}
+`;
+
+exports[`css bindings paddingRight(input) length transforms 1`] = `"padding-right: 1.0000rem;"`;
+
+exports[`css bindings paddingRight(input) length transforms 2`] = `
+Object {
+  "paddingRight": "1.0000rem",
+}
+`;
+
+exports[`css bindings paddingRight(input) length transforms 3`] = `"padding-right: 1.0000em;"`;
+
+exports[`css bindings paddingRight(input) length transforms 4`] = `
+Object {
+  "paddingRight": "1.0000em",
+}
+`;
+
+exports[`css bindings paddingRight(input) using alias token directly 1`] = `"padding-right: 6px;"`;
+
+exports[`css bindings paddingRight(input) using alias token directly 2`] = `
+Object {
+  "paddingRight": "6px",
+}
+`;
+
+exports[`css bindings paddingRight(input) using base value 1`] = `"padding-right: 4px;"`;
+
+exports[`css bindings paddingRight(input) using base value 2`] = `
+Object {
+  "paddingRight": "4px",
+}
+`;
+
+exports[`css bindings paddingTop(base) 1`] = `"padding-top: 4px;"`;
+
+exports[`css bindings paddingTop(base) 2`] = `
+Object {
+  "paddingTop": "4px",
+}
+`;
+
+exports[`css bindings paddingTop(base) length transforms 1`] = `"padding-top: 0.2500rem;"`;
+
+exports[`css bindings paddingTop(base) length transforms 2`] = `
+Object {
+  "paddingTop": "0.2500rem",
+}
+`;
+
+exports[`css bindings paddingTop(base) length transforms 3`] = `"padding-top: 0.2500em;"`;
+
+exports[`css bindings paddingTop(base) length transforms 4`] = `
+Object {
+  "paddingTop": "0.2500em",
+}
+`;
+
+exports[`css bindings paddingTop(base) using alias token directly 1`] = `"padding-top: 6px;"`;
+
+exports[`css bindings paddingTop(base) using alias token directly 2`] = `
+Object {
+  "paddingTop": "6px",
+}
+`;
+
+exports[`css bindings paddingTop(base) using base value 1`] = `"padding-top: 4px;"`;
+
+exports[`css bindings paddingTop(base) using base value 2`] = `
+Object {
+  "paddingTop": "4px",
+}
+`;
+
+exports[`css bindings paddingTop(button) 1`] = `"padding-top: 8px 6px;"`;
+
+exports[`css bindings paddingTop(button) 2`] = `
+Object {
+  "paddingTop": "8px 6px",
+}
+`;
+
+exports[`css bindings paddingTop(button) length transforms 1`] = `"padding-top: 0.5000rem 0.3750rem;"`;
+
+exports[`css bindings paddingTop(button) length transforms 2`] = `
+Object {
+  "paddingTop": "0.5000rem 0.3750rem",
+}
+`;
+
+exports[`css bindings paddingTop(button) length transforms 3`] = `"padding-top: 0.5000em 0.3750em;"`;
+
+exports[`css bindings paddingTop(button) length transforms 4`] = `
+Object {
+  "paddingTop": "0.5000em 0.3750em",
+}
+`;
+
+exports[`css bindings paddingTop(button) using alias token directly 1`] = `"padding-top: 6px;"`;
+
+exports[`css bindings paddingTop(button) using alias token directly 2`] = `
+Object {
+  "paddingTop": "6px",
+}
+`;
+
+exports[`css bindings paddingTop(button) using base value 1`] = `"padding-top: 4px;"`;
+
+exports[`css bindings paddingTop(button) using base value 2`] = `
+Object {
+  "paddingTop": "4px",
+}
+`;
+
+exports[`css bindings paddingTop(input) 1`] = `"padding-top: 2px 4px 10px;"`;
+
+exports[`css bindings paddingTop(input) 2`] = `
+Object {
+  "paddingTop": "2px 4px 10px",
+}
+`;
+
+exports[`css bindings paddingTop(input) length transforms 1`] = `"padding-top: 1.0000rem;"`;
+
+exports[`css bindings paddingTop(input) length transforms 2`] = `
+Object {
+  "paddingTop": "1.0000rem",
+}
+`;
+
+exports[`css bindings paddingTop(input) length transforms 3`] = `"padding-top: 1.0000em;"`;
+
+exports[`css bindings paddingTop(input) length transforms 4`] = `
+Object {
+  "paddingTop": "1.0000em",
+}
+`;
+
+exports[`css bindings paddingTop(input) using alias token directly 1`] = `"padding-top: 6px;"`;
+
+exports[`css bindings paddingTop(input) using alias token directly 2`] = `
+Object {
+  "paddingTop": "6px",
+}
+`;
+
+exports[`css bindings paddingTop(input) using base value 1`] = `"padding-top: 4px;"`;
+
+exports[`css bindings paddingTop(input) using base value 2`] = `
+Object {
+  "paddingTop": "4px",
+}
+`;
+
+exports[`css bindings right(base) 1`] = `"right: 15px;"`;
+
+exports[`css bindings right(base) 2`] = `
+Object {
+  "right": "15px",
+}
+`;
+
+exports[`css bindings right(base) length transforms 1`] = `"right: 0.9375rem;"`;
+
+exports[`css bindings right(base) length transforms 2`] = `
+Object {
+  "right": "0.9375rem",
+}
+`;
+
+exports[`css bindings right(base) length transforms 3`] = `"right: 0.9375em;"`;
+
+exports[`css bindings right(base) length transforms 4`] = `
+Object {
+  "right": "0.9375em",
+}
+`;
+
+exports[`css bindings right(base) using alias token directly 1`] = `"right: 25px;"`;
+
+exports[`css bindings right(base) using alias token directly 2`] = `
+Object {
+  "right": "25px",
+}
+`;
+
+exports[`css bindings right(base) using base value 1`] = `"right: 15px;"`;
+
+exports[`css bindings right(base) using base value 2`] = `
+Object {
+  "right": "15px",
+}
+`;
+
+exports[`css bindings right(popup) 1`] = `"right: 15px;"`;
+
+exports[`css bindings right(popup) 2`] = `
+Object {
+  "right": "15px",
+}
+`;
+
+exports[`css bindings right(popup) length transforms 1`] = `"right: 0.9375rem;"`;
+
+exports[`css bindings right(popup) length transforms 2`] = `
+Object {
+  "right": "0.9375rem",
+}
+`;
+
+exports[`css bindings right(popup) length transforms 3`] = `"right: 0.9375em;"`;
+
+exports[`css bindings right(popup) length transforms 4`] = `
+Object {
+  "right": "0.9375em",
+}
+`;
+
+exports[`css bindings right(popup) using alias token directly 1`] = `"right: 25px;"`;
+
+exports[`css bindings right(popup) using alias token directly 2`] = `
+Object {
+  "right": "25px",
+}
+`;
+
+exports[`css bindings right(popup) using base value 1`] = `"right: 15px;"`;
+
+exports[`css bindings right(popup) using base value 2`] = `
+Object {
+  "right": "15px",
+}
+`;
+
+exports[`css bindings right(toast_notification) 1`] = `"right: 5%;"`;
+
+exports[`css bindings right(toast_notification) 2`] = `
+Object {
+  "right": "5%",
+}
+`;
+
+exports[`css bindings right(toast_notification) length transforms 1`] = `"right: 1.0000rem;"`;
+
+exports[`css bindings right(toast_notification) length transforms 2`] = `
+Object {
+  "right": "1.0000rem",
+}
+`;
+
+exports[`css bindings right(toast_notification) length transforms 3`] = `"right: 1.0000em;"`;
+
+exports[`css bindings right(toast_notification) length transforms 4`] = `
+Object {
+  "right": "1.0000em",
+}
+`;
+
+exports[`css bindings right(toast_notification) using alias token directly 1`] = `"right: 25px;"`;
+
+exports[`css bindings right(toast_notification) using alias token directly 2`] = `
+Object {
+  "right": "25px",
+}
+`;
+
+exports[`css bindings right(toast_notification) using base value 1`] = `"right: 15px;"`;
+
+exports[`css bindings right(toast_notification) using base value 2`] = `
+Object {
+  "right": "15px",
+}
+`;
+
+exports[`css bindings shadow CSS binding 1`] = `"box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);"`;
+
+exports[`css bindings shadow CSS binding 2`] = `
+Object {
+  "boxShadow": "0px 1px 10px rgba(0, 0, 0, 0.15)",
+}
+`;
+
+exports[`css bindings textAlign(base) 1`] = `"text-align: left;"`;
+
+exports[`css bindings textAlign(base) 2`] = `
+Object {
+  "textAlign": "left",
+}
+`;
+
+exports[`css bindings textAlign(base) using alias token directly 1`] = `"text-align: 25;"`;
+
+exports[`css bindings textAlign(base) using alias token directly 2`] = `
+Object {
+  "textAlign": 25,
+}
+`;
+
+exports[`css bindings textAlign(base) using base value 1`] = `"text-align: left;"`;
+
+exports[`css bindings textAlign(base) using base value 2`] = `
+Object {
+  "textAlign": "left",
+}
+`;
+
+exports[`css bindings textAlign(button) 1`] = `"text-align: center;"`;
+
+exports[`css bindings textAlign(button) 2`] = `
+Object {
+  "textAlign": "center",
+}
+`;
+
+exports[`css bindings textAlign(button) using alias token directly 1`] = `"text-align: 25;"`;
+
+exports[`css bindings textAlign(button) using alias token directly 2`] = `
+Object {
+  "textAlign": 25,
+}
+`;
+
+exports[`css bindings textAlign(button) using base value 1`] = `"text-align: left;"`;
+
+exports[`css bindings textAlign(button) using base value 2`] = `
+Object {
+  "textAlign": "left",
+}
+`;
+
+exports[`css bindings textDecoration(base) 1`] = `"text-decoration: none;"`;
+
+exports[`css bindings textDecoration(base) 2`] = `
+Object {
+  "textDecoration": "none",
+}
+`;
+
+exports[`css bindings textDecoration(base) using alias token directly 1`] = `"text-decoration: 200;"`;
+
+exports[`css bindings textDecoration(base) using alias token directly 2`] = `
+Object {
+  "textDecoration": 200,
+}
+`;
+
+exports[`css bindings textDecoration(base) using base value 1`] = `"text-decoration: none;"`;
+
+exports[`css bindings textDecoration(base) using base value 2`] = `
+Object {
+  "textDecoration": "none",
+}
+`;
+
+exports[`css bindings textDecoration(link) 1`] = `"text-decoration: underline;"`;
+
+exports[`css bindings textDecoration(link) 2`] = `
+Object {
+  "textDecoration": "underline",
+}
+`;
+
+exports[`css bindings textDecoration(link) using alias token directly 1`] = `"text-decoration: 200;"`;
+
+exports[`css bindings textDecoration(link) using alias token directly 2`] = `
+Object {
+  "textDecoration": 200,
+}
+`;
+
+exports[`css bindings textDecoration(link) using base value 1`] = `"text-decoration: none;"`;
+
+exports[`css bindings textDecoration(link) using base value 2`] = `
+Object {
+  "textDecoration": "none",
+}
+`;
+
+exports[`css bindings textTransform(base) 1`] = `"text-transform: lowercase;"`;
+
+exports[`css bindings textTransform(base) 2`] = `
+Object {
+  "textTransform": "lowercase",
+}
+`;
+
+exports[`css bindings textTransform(base) using alias token directly 1`] = `"text-transform: 200;"`;
+
+exports[`css bindings textTransform(base) using alias token directly 2`] = `
+Object {
+  "textTransform": 200,
+}
+`;
+
+exports[`css bindings textTransform(base) using base value 1`] = `"text-transform: lowercase;"`;
+
+exports[`css bindings textTransform(base) using base value 2`] = `
+Object {
+  "textTransform": "lowercase",
+}
+`;
+
+exports[`css bindings textTransform(heading) 1`] = `"text-transform: uppercase;"`;
+
+exports[`css bindings textTransform(heading) 2`] = `
+Object {
+  "textTransform": "uppercase",
+}
+`;
+
+exports[`css bindings textTransform(heading) using alias token directly 1`] = `"text-transform: 200;"`;
+
+exports[`css bindings textTransform(heading) using alias token directly 2`] = `
+Object {
+  "textTransform": 200,
+}
+`;
+
+exports[`css bindings textTransform(heading) using base value 1`] = `"text-transform: lowercase;"`;
+
+exports[`css bindings textTransform(heading) using base value 2`] = `
+Object {
+  "textTransform": "lowercase",
+}
+`;
+
+exports[`css bindings top(base) 1`] = `"top: 5%;"`;
+
+exports[`css bindings top(base) 2`] = `
+Object {
+  "top": "5%",
+}
+`;
+
+exports[`css bindings top(base) length transforms 1`] = `"top: 1.0000rem;"`;
+
+exports[`css bindings top(base) length transforms 2`] = `
+Object {
+  "top": "1.0000rem",
+}
+`;
+
+exports[`css bindings top(base) length transforms 3`] = `"top: 1.0000em;"`;
+
+exports[`css bindings top(base) length transforms 4`] = `
+Object {
+  "top": "1.0000em",
+}
+`;
+
+exports[`css bindings top(base) using alias token directly 1`] = `"top: 25px;"`;
+
+exports[`css bindings top(base) using alias token directly 2`] = `
+Object {
+  "top": "25px",
+}
+`;
+
+exports[`css bindings top(base) using base value 1`] = `"top: 5%;"`;
+
+exports[`css bindings top(base) using base value 2`] = `
+Object {
+  "top": "5%",
+}
+`;
+
+exports[`css bindings top(popup) 1`] = `"top: 15px;"`;
+
+exports[`css bindings top(popup) 2`] = `
+Object {
+  "top": "15px",
+}
+`;
+
+exports[`css bindings top(popup) length transforms 1`] = `"top: 0.9375rem;"`;
+
+exports[`css bindings top(popup) length transforms 2`] = `
+Object {
+  "top": "0.9375rem",
+}
+`;
+
+exports[`css bindings top(popup) length transforms 3`] = `"top: 0.9375em;"`;
+
+exports[`css bindings top(popup) length transforms 4`] = `
+Object {
+  "top": "0.9375em",
+}
+`;
+
+exports[`css bindings top(popup) using alias token directly 1`] = `"top: 25px;"`;
+
+exports[`css bindings top(popup) using alias token directly 2`] = `
+Object {
+  "top": "25px",
+}
+`;
+
+exports[`css bindings top(popup) using base value 1`] = `"top: 5%;"`;
+
+exports[`css bindings top(popup) using base value 2`] = `
+Object {
+  "top": "5%",
+}
+`;
+
+exports[`css bindings top(toast_notification) 1`] = `"top: 5%;"`;
+
+exports[`css bindings top(toast_notification) 2`] = `
+Object {
+  "top": "5%",
+}
+`;
+
+exports[`css bindings top(toast_notification) length transforms 1`] = `"top: 1.0000rem;"`;
+
+exports[`css bindings top(toast_notification) length transforms 2`] = `
+Object {
+  "top": "1.0000rem",
+}
+`;
+
+exports[`css bindings top(toast_notification) length transforms 3`] = `"top: 1.0000em;"`;
+
+exports[`css bindings top(toast_notification) length transforms 4`] = `
+Object {
+  "top": "1.0000em",
+}
+`;
+
+exports[`css bindings top(toast_notification) using alias token directly 1`] = `"top: 25px;"`;
+
+exports[`css bindings top(toast_notification) using alias token directly 2`] = `
+Object {
+  "top": "25px",
+}
+`;
+
+exports[`css bindings top(toast_notification) using base value 1`] = `"top: 5%;"`;
+
+exports[`css bindings top(toast_notification) using base value 2`] = `
+Object {
+  "top": "5%",
+}
+`;
+
+exports[`css bindings transitionDelay(base) 1`] = `"transition-delay: 1.5s;"`;
+
+exports[`css bindings transitionDelay(base) 2`] = `
+Object {
+  "transitionDelay": "1.5s",
+}
+`;
+
+exports[`css bindings transitionDelay(base) using alias token directly 1`] = `"transition-delay: 150ms;"`;
+
+exports[`css bindings transitionDelay(base) using alias token directly 2`] = `
+Object {
+  "transitionDelay": "150ms",
+}
+`;
+
+exports[`css bindings transitionDelay(base) using base value 1`] = `"transition-delay: 1.5s;"`;
+
+exports[`css bindings transitionDelay(base) using base value 2`] = `
+Object {
+  "transitionDelay": "1.5s",
+}
+`;
+
+exports[`css bindings transitionDelay(fast) 1`] = `"transition-delay: 150ms;"`;
+
+exports[`css bindings transitionDelay(fast) 2`] = `
+Object {
+  "transitionDelay": "150ms",
+}
+`;
+
+exports[`css bindings transitionDelay(fast) using alias token directly 1`] = `"transition-delay: 150ms;"`;
+
+exports[`css bindings transitionDelay(fast) using alias token directly 2`] = `
+Object {
+  "transitionDelay": "150ms",
+}
+`;
+
+exports[`css bindings transitionDelay(fast) using base value 1`] = `"transition-delay: 1.5s;"`;
+
+exports[`css bindings transitionDelay(fast) using base value 2`] = `
+Object {
+  "transitionDelay": "1.5s",
+}
+`;
+
+exports[`css bindings transitionDelay(slow) 1`] = `"transition-delay: 0.5s;"`;
+
+exports[`css bindings transitionDelay(slow) 2`] = `
+Object {
+  "transitionDelay": "0.5s",
+}
+`;
+
+exports[`css bindings transitionDelay(slow) using alias token directly 1`] = `"transition-delay: 150ms;"`;
+
+exports[`css bindings transitionDelay(slow) using alias token directly 2`] = `
+Object {
+  "transitionDelay": "150ms",
+}
+`;
+
+exports[`css bindings transitionDelay(slow) using base value 1`] = `"transition-delay: 1.5s;"`;
+
+exports[`css bindings transitionDelay(slow) using base value 2`] = `
+Object {
+  "transitionDelay": "1.5s",
+}
+`;
+
+exports[`css bindings transitionDuration(base) 1`] = `"transition-duration: 100ms;"`;
+
+exports[`css bindings transitionDuration(base) 2`] = `
+Object {
+  "transitionDuration": "100ms",
+}
+`;
+
+exports[`css bindings transitionDuration(base) using alias token directly 1`] = `"transition-duration: 150ms;"`;
+
+exports[`css bindings transitionDuration(base) using alias token directly 2`] = `
+Object {
+  "transitionDuration": "150ms",
+}
+`;
+
+exports[`css bindings transitionDuration(base) using base value 1`] = `"transition-duration: 100ms;"`;
+
+exports[`css bindings transitionDuration(base) using base value 2`] = `
+Object {
+  "transitionDuration": "100ms",
+}
+`;
+
+exports[`css bindings transitionDuration(fast) 1`] = `"transition-duration: 200ms;"`;
+
+exports[`css bindings transitionDuration(fast) 2`] = `
+Object {
+  "transitionDuration": "200ms",
+}
+`;
+
+exports[`css bindings transitionDuration(fast) using alias token directly 1`] = `"transition-duration: 150ms;"`;
+
+exports[`css bindings transitionDuration(fast) using alias token directly 2`] = `
+Object {
+  "transitionDuration": "150ms",
+}
+`;
+
+exports[`css bindings transitionDuration(fast) using base value 1`] = `"transition-duration: 100ms;"`;
+
+exports[`css bindings transitionDuration(fast) using base value 2`] = `
+Object {
+  "transitionDuration": "100ms",
+}
+`;
+
+exports[`css bindings transitionDuration(slow) 1`] = `"transition-duration: 1500ms;"`;
+
+exports[`css bindings transitionDuration(slow) 2`] = `
+Object {
+  "transitionDuration": "1500ms",
+}
+`;
+
+exports[`css bindings transitionDuration(slow) using alias token directly 1`] = `"transition-duration: 150ms;"`;
+
+exports[`css bindings transitionDuration(slow) using alias token directly 2`] = `
+Object {
+  "transitionDuration": "150ms",
+}
+`;
+
+exports[`css bindings transitionDuration(slow) using base value 1`] = `"transition-duration: 100ms;"`;
+
+exports[`css bindings transitionDuration(slow) using base value 2`] = `
+Object {
+  "transitionDuration": "100ms",
+}
+`;
+
+exports[`css bindings transitionTimingFunction(base) 1`] = `"transition-timing-function: linear;"`;
+
+exports[`css bindings transitionTimingFunction(base) 2`] = `
+Object {
+  "transitionTimingFunction": "linear",
+}
+`;
+
+exports[`css bindings transitionTimingFunction(base) using alias token directly 1`] = `"transition-timing-function: 150ms;"`;
+
+exports[`css bindings transitionTimingFunction(base) using alias token directly 2`] = `
+Object {
+  "transitionTimingFunction": "150ms",
+}
+`;
+
+exports[`css bindings transitionTimingFunction(base) using base value 1`] = `"transition-timing-function: linear;"`;
+
+exports[`css bindings transitionTimingFunction(base) using base value 2`] = `
+Object {
+  "transitionTimingFunction": "linear",
+}
+`;
+
+exports[`css bindings transitionTimingFunction(fast) 1`] = `"transition-timing-function: ease-in-out;"`;
+
+exports[`css bindings transitionTimingFunction(fast) 2`] = `
+Object {
+  "transitionTimingFunction": "ease-in-out",
+}
+`;
+
+exports[`css bindings transitionTimingFunction(fast) using alias token directly 1`] = `"transition-timing-function: 150ms;"`;
+
+exports[`css bindings transitionTimingFunction(fast) using alias token directly 2`] = `
+Object {
+  "transitionTimingFunction": "150ms",
+}
+`;
+
+exports[`css bindings transitionTimingFunction(fast) using base value 1`] = `"transition-timing-function: linear;"`;
+
+exports[`css bindings transitionTimingFunction(fast) using base value 2`] = `
+Object {
+  "transitionTimingFunction": "linear",
+}
+`;
+
+exports[`css bindings transitionTimingFunction(slow) 1`] = `"transition-timing-function: linear;"`;
+
+exports[`css bindings transitionTimingFunction(slow) 2`] = `
+Object {
+  "transitionTimingFunction": "linear",
+}
+`;
+
+exports[`css bindings transitionTimingFunction(slow) using alias token directly 1`] = `"transition-timing-function: 150ms;"`;
+
+exports[`css bindings transitionTimingFunction(slow) using alias token directly 2`] = `
+Object {
+  "transitionTimingFunction": "150ms",
+}
+`;
+
+exports[`css bindings transitionTimingFunction(slow) using base value 1`] = `"transition-timing-function: linear;"`;
+
+exports[`css bindings transitionTimingFunction(slow) using base value 2`] = `
+Object {
+  "transitionTimingFunction": "linear",
+}
+`;
+
+exports[`css bindings width(base) 1`] = `"width: 320px;"`;
+
+exports[`css bindings width(base) 2`] = `
+Object {
+  "width": "320px",
+}
+`;
+
+exports[`css bindings width(base) length transforms 1`] = `"width: 20.0000rem;"`;
+
+exports[`css bindings width(base) length transforms 2`] = `
+Object {
+  "width": "20.0000rem",
+}
+`;
+
+exports[`css bindings width(base) length transforms 3`] = `"width: 20.0000em;"`;
+
+exports[`css bindings width(base) length transforms 4`] = `
+Object {
+  "width": "20.0000em",
+}
+`;
+
+exports[`css bindings width(base) using alias token directly 1`] = `"width: 320px;"`;
+
+exports[`css bindings width(base) using alias token directly 2`] = `
+Object {
+  "width": "320px",
+}
+`;
+
+exports[`css bindings width(base) using base value 1`] = `"width: 320px;"`;
+
+exports[`css bindings width(base) using base value 2`] = `
+Object {
+  "width": "320px",
+}
+`;
+
+exports[`css bindings width(fullWidth) 1`] = `"width: 100%;"`;
+
+exports[`css bindings width(fullWidth) 2`] = `
+Object {
+  "width": "100%",
+}
+`;
+
+exports[`css bindings width(fullWidth) length transforms 1`] = `"width: 1.0000rem;"`;
+
+exports[`css bindings width(fullWidth) length transforms 2`] = `
+Object {
+  "width": "1.0000rem",
+}
+`;
+
+exports[`css bindings width(fullWidth) length transforms 3`] = `"width: 1.0000em;"`;
+
+exports[`css bindings width(fullWidth) length transforms 4`] = `
+Object {
+  "width": "1.0000em",
+}
+`;
+
+exports[`css bindings width(fullWidth) using alias token directly 1`] = `"width: 320px;"`;
+
+exports[`css bindings width(fullWidth) using alias token directly 2`] = `
+Object {
+  "width": "320px",
+}
+`;
+
+exports[`css bindings width(fullWidth) using base value 1`] = `"width: 320px;"`;
+
+exports[`css bindings width(fullWidth) using base value 2`] = `
+Object {
+  "width": "320px",
+}
+`;
+
+exports[`css bindings zIndex(base) 1`] = `"z-index: 5;"`;
+
+exports[`css bindings zIndex(base) 2`] = `
+Object {
+  "zIndex": 5,
+}
+`;
+
+exports[`css bindings zIndex(base) using alias token directly 1`] = `"z-index: 25;"`;
+
+exports[`css bindings zIndex(base) using alias token directly 2`] = `
+Object {
+  "zIndex": 25,
+}
+`;
+
+exports[`css bindings zIndex(base) using base value 1`] = `"z-index: 5;"`;
+
+exports[`css bindings zIndex(base) using base value 2`] = `
+Object {
+  "zIndex": 5,
+}
+`;
+
+exports[`css bindings zIndex(popup) 1`] = `"z-index: 5;"`;
+
+exports[`css bindings zIndex(popup) 2`] = `
+Object {
+  "zIndex": 5,
+}
+`;
+
+exports[`css bindings zIndex(popup) using alias token directly 1`] = `"z-index: 25;"`;
+
+exports[`css bindings zIndex(popup) using alias token directly 2`] = `
+Object {
+  "zIndex": 25,
+}
+`;
+
+exports[`css bindings zIndex(popup) using base value 1`] = `"z-index: 5;"`;
+
+exports[`css bindings zIndex(popup) using base value 2`] = `
+Object {
+  "zIndex": 5,
+}
+`;
+
+exports[`css bindings zIndex(toast_notification) 1`] = `"z-index: 10;"`;
+
+exports[`css bindings zIndex(toast_notification) 2`] = `
+Object {
+  "zIndex": 10,
+}
+`;
+
+exports[`css bindings zIndex(toast_notification) using alias token directly 1`] = `"z-index: 25;"`;
+
+exports[`css bindings zIndex(toast_notification) using alias token directly 2`] = `
+Object {
+  "zIndex": 25,
+}
+`;
+
+exports[`css bindings zIndex(toast_notification) using base value 1`] = `"z-index: 5;"`;
+
+exports[`css bindings zIndex(toast_notification) using base value 2`] = `
+Object {
+  "zIndex": 5,
+}
+`;

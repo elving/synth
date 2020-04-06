@@ -21,7 +21,7 @@ const setBackground = () => ({ synth }) => {
 
   return `
     background-image: url('data:image/svg+xml;base64,${iconSVG}');
-    background-size: auto ${synth.getUnit('@icons.5')};
+    background-size: auto ${synth.getUnit('size:@icons.5')};
     background-position: calc(100% - ${padding} / 2) center;
   `
 }

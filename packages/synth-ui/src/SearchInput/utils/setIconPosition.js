@@ -5,7 +5,7 @@
  * @returns {<T>(props: T & Props) => string}
  */
 const setIconPosition = () => ({ synth }) => `
-  left: ${synth.getUnit('@spacing.1')};
+  left: ${synth.getUnit('space:@spacing.2')};
 `
 
 export default setIconPosition

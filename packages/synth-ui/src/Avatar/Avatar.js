@@ -28,7 +28,7 @@ const Avatar = forwardRef(
   /**
    * @param {import('@beatgig/synth-ui').AvatarProps} props
    */
-  ({ className = '', scale = 0, ...props }, ref) => (
+  ({ className = '', scale = 1, ...props }, ref) => (
     <StyledAvatar {...props} className={className} ref={ref} scale={scale} />
   ),
 )
@@ -51,7 +51,7 @@ Avatar.propTypes = {
 
 Avatar.defaultProps = {
   className: '',
-  scale: 0,
+  scale: 1,
 }
 
 Avatar.displayName = 'Avatar'

@@ -22,6 +22,7 @@ interface AspectRatioProps extends SynthReact.BoxProps {
 type AspectRatioComponentProps = React.HTMLAttributes<HTMLDivElement> &
   React.RefAttributes<HTMLDivElement> & {
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
+    forwardedAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   } & AspectRatioProps
 
 type AspectRatioComponent = SynthReact.SynthComponent<
