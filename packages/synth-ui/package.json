@@ -28,12 +28,15 @@
     "@beatgig/synth-core": "^2.0.0",
     "@beatgig/synth-react": "^2.0.1",
     "@beatgig/synth-styled-components": "^2.0.0",
-    "scroll-behavior-polyfill": "^2.0.13",
+    "scroll-behavior-polyfill": "^2.0.13"    
+  },
+  "devDependencies": {
     "styled-components": "^5.0.1"
   },
   "peerDependencies": {
+    "react-dom": "^16.0.0",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "styled-components": ">= 5"
   },
   "types": "src/index.d.ts",
   "gitHead": "7ceb7d339f10d3b319ae572092f28cc18bb5dd86"
