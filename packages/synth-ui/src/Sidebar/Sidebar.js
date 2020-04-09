@@ -15,7 +15,8 @@ const StyledSidebar = styled.div`
   ${padding('@spacing.3')}
   display: flex;
   flex-direction: column;
-  max-width: 280px;  
+  max-width: 280px;
+  min-height: 100vh;
   width: 100%;
 `
 
