@@ -23,7 +23,7 @@ export const tokens = {
       card: '@contrast.1',
       header: '@contrast.1',
       modalOverlay: '@primary',
-      popup: '@contrast.1',
+      popup: '@primary',
       tag: '@contrast.2',
 
       control: {
@@ -40,8 +40,8 @@ export const tokens = {
       },
 
       popupItem: {
-        default: '@contrast.1',
-        hover: '@contrast.2',
+        default: 'transparent',
+        hover: '@contrast.1',
       },
     },
 
@@ -89,7 +89,7 @@ export const tokens = {
       base: 1,
       control: 2,
       input: 2,
-      popup: 1,
+      popup: 2,
     },
 
     radius: {
