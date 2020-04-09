@@ -189,28 +189,6 @@ Flex.propTypes = {
 Flex.defaultProps = {
   ...Box.defaultProps,
   className: '',
-  row: false,
-  full: false,
-  flex: '',
-  grow: 0,
-  wrap: false,
-  basis: '',
-  shrink: 1,
-  nowrap: false,
-  inline: false,
-  center: false,
-  centerX: false,
-  centerY: false,
-  column: false,
-  fullWidth: false,
-  fullHeight: false,
-  alignItems: FLEX_START,
-  rowReverse: false,
-  wrapReverse: false,
-  alignContent: NORMAL,
-  placeContent: NORMAL,
-  columnReverse: false,
-  justifyContent: FLEX_START,
 }
 
 Flex.displayName = 'Flex'
